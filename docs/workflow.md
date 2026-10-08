@@ -25,7 +25,7 @@ Push a 17 mm die on a flat surface into a roughly 30 × 30 mm square; final orie
 | Pushing-only imitation policy | Planned Benchmark 1; no training yet | [Learning roadmap](learning-roadmap.md) |
 | Full-episode imitation including synthetic scripted labels | Planned Benchmark 2 | [Learning roadmap](learning-roadmap.md) |
 | Learned dynamics predictor and optional model-based control | Planned Benchmark 3 | [Learning roadmap](learning-roadmap.md) |
-| Publish public GitHub submission | Repository created; first upload pending | [GitHub](https://github.com/Valkyrri025/Human-guided-manipulation) |
+| Publish public GitHub submission | Published | [GitHub](https://github.com/Valkyrri025/Human-guided-manipulation) |
 
 Nine recordings are personally collected by the user: the initial trajectory pilot, five original goal episodes, and three new direction pilots (`goal_right1`, `goal_above1`, `goal_below1`). Collection replay numbers are tuning results. The geometric baseline additionally tests eight predefined unseen simulated starts using one recorded demonstration; this is not held-out human-episode evaluation.
 
@@ -141,4 +141,4 @@ All eight drawn-goal episodes pass physical replay with this convention. [Curren
 
 ## Repository publication
 
-The public repository is [Human-guided-manipulation](https://github.com/Valkyrri025/Human-guided-manipulation). Code, documentation, compact trajectory samples and successful replay examples are prepared for its first upload. Original phone recordings remain local under `data/raw/`. Upload status is reported separately from repository creation.
+The public repository is [Human-guided-manipulation](https://github.com/Valkyrri025/Human-guided-manipulation). Code, documentation, compact trajectory samples and successful replay examples are included. Original phone recordings remain local under `data/raw/`. Future project changes can be committed locally and pushed to `origin/main`.
