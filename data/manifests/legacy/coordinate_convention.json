@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "explicit user instruction",
+  "recording_start_to_robot_view_start": {
+    "left": "below",
+    "right": "above",
+    "above": "left",
+    "below": "right"
+  },
+  "robot_view_definition": "robot base below the table; directions describe the side of the target where contact/push begins",
+  "note": "Decoded-video orientation and per-session registration must be accounted for before applying recording labels; do not infer labels from filenames or arbitrary perspective cameras.",
+  "recording_rectangle_dimensions_m": {
+    "horizontal": 0.3,
+    "vertical": 0.297
+  },
+  "robot_view_rectangle_dimensions_m": {
+    "horizontal": 0.297,
+    "vertical": 0.3
+  },
+  "dimensions_source": "User explicitly confirmed these dimensions apply to all recordings"
+}

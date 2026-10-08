@@ -1,0 +1,16 @@
+{
+  "checkpoint": "scripted Panda motion; no human data; no push evaluation",
+  "passed": true,
+  "seed": 7,
+  "steps": 180,
+  "control_hz": 20,
+  "robosuite": "1.5.2",
+  "mujoco_gl": "egl",
+  "camera": "frontview",
+  "max_eef_displacement_m": 0.09956126658244742,
+  "tracking_rmse_m": 0.0038652072248439597,
+  "finite_state": true,
+  "decoded_frames": 180,
+  "wall_seconds": 1.8419934789999388,
+  "video": "outputs/smoke/panda_motion.mp4"
+}

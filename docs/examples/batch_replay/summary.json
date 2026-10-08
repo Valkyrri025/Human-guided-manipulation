@@ -1,0 +1,74 @@
+{
+  "scope": "collection/tuning episode replay; not held-out policy evaluation",
+  "approach_mode": "clearance",
+  "manifest": "data/manifests/goal_batch.json",
+  "passed": 5,
+  "total": 5,
+  "episodes": [
+    {
+      "episode": "pilot_goal",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 1.8963413336263404,
+      "physical_displacement_cm": 11.036889206394065,
+      "fully_inside_goal": true,
+      "yaw_degrees": 1.3167117634208736,
+      "pre_push_displacement_mm": 1.2848888696573826e-09,
+      "final_cube_yaw_degrees": 1.277591427755046,
+      "metrics": "outputs/batch_replay/pilot_goal/metrics.json",
+      "video": "docs/examples/batch_replay/pilot_goal/replay.mp4"
+    },
+    {
+      "episode": "goal_left1",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 1.8793691395724421,
+      "physical_displacement_cm": 4.840133572137683,
+      "fully_inside_goal": true,
+      "yaw_degrees": 1.3261202077105685,
+      "pre_push_displacement_mm": 0.0,
+      "final_cube_yaw_degrees": 1.323390108414475,
+      "metrics": "outputs/batch_replay/goal_left1/metrics.json",
+      "video": "docs/examples/batch_replay/goal_left1/replay.mp4"
+    },
+    {
+      "episode": "goal_left2",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.6641852195994695,
+      "physical_displacement_cm": 7.187861925151788,
+      "fully_inside_goal": true,
+      "yaw_degrees": 0.8430629385222291,
+      "pre_push_displacement_mm": 0.0,
+      "final_cube_yaw_degrees": 0.9095678153082866,
+      "metrics": "outputs/batch_replay/goal_left2/metrics.json",
+      "video": "docs/examples/batch_replay/goal_left2/replay.mp4"
+    },
+    {
+      "episode": "goal_left3",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 2.507266265569298,
+      "physical_displacement_cm": 15.104740851057793,
+      "fully_inside_goal": true,
+      "yaw_degrees": 1.6533639030016807,
+      "pre_push_displacement_mm": 1.288552607204862e-09,
+      "final_cube_yaw_degrees": 1.5555683030712841,
+      "metrics": "outputs/batch_replay/goal_left3/metrics.json",
+      "video": "docs/examples/batch_replay/goal_left3/replay.mp4"
+    },
+    {
+      "episode": "goal_diag1",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.9705326252185236,
+      "physical_displacement_cm": 11.68945344935873,
+      "fully_inside_goal": true,
+      "yaw_degrees": 17.045598695235245,
+      "pre_push_displacement_mm": 1.2848888646723433e-09,
+      "final_cube_yaw_degrees": 17.192985105152182,
+      "metrics": "outputs/batch_replay/goal_diag1/metrics.json",
+      "video": "docs/examples/batch_replay/goal_diag1/replay.mp4"
+    }
+  ]
+}

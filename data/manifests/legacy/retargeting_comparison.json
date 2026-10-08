@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "scope": "initial predefined comparison; eight new simulated starts plus recorded-start control",
+  "demonstration_manifest": "data/manifests/legacy/goal_batch.json",
+  "demonstration_id": "pilot_goal",
+  "selection_rule": "Always use pilot_goal, selected before trials; no nearest-demo or outcome-based selection",
+  "methods": [
+    "absolute",
+    "relative",
+    "relative-scaled"
+  ],
+  "push_timeout_s": 8.0,
+  "goal_dwell_s": 0.2,
+  "seed": 7,
+  "target_rule": "fixed independently calibrated pilot square; no change across starts",
+  "orientation_rule": "all methods face new initial object-to-goal direction, then hold fixed",
+  "starts": [
+    {
+      "id": "recorded_control",
+      "role": "control",
+      "offset_m": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "start_01",
+      "role": "unseen_start",
+      "offset_m": [
+        -0.02,
+        -0.02
+      ]
+    },
+    {
+      "id": "start_02",
+      "role": "unseen_start",
+      "offset_m": [
+        -0.02,
+        0.0
+      ]
+    },
+    {
+      "id": "start_03",
+      "role": "unseen_start",
+      "offset_m": [
+        -0.02,
+        0.02
+      ]
+    },
+    {
+      "id": "start_04",
+      "role": "unseen_start",
+      "offset_m": [
+        0.0,
+        -0.02
+      ]
+    },
+    {
+      "id": "start_05",
+      "role": "unseen_start",
+      "offset_m": [
+        0.0,
+        0.02
+      ]
+    },
+    {
+      "id": "start_06",
+      "role": "unseen_start",
+      "offset_m": [
+        0.02,
+        -0.02
+      ]
+    },
+    {
+      "id": "start_07",
+      "role": "unseen_start",
+      "offset_m": [
+        0.02,
+        0.0
+      ]
+    },
+    {
+      "id": "start_08",
+      "role": "unseen_start",
+      "offset_m": [
+        0.02,
+        0.02
+      ]
+    }
+  ],
+  "limitations": [
+    "One human demonstration and one deterministic seed",
+    "New simulated starts only, not held-out human episodes",
+    "All starts near the original; no arbitrary-direction claims"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "scope": "five goal-directed human recordings; collection/tuning, no held-out evaluation",
+  "episodes": [
+    {
+      "id": "pilot_goal",
+      "video": "data/raw/pilot_goal.mp4",
+      "video_sha256": "f3823f9ed23d57ddb643d7615a5730fa00f28441968d49e0a66aec2f34e046e8",
+      "tracks": "data/processed/pilot_goal/tracks.npz",
+      "calibration": "data/calibration/pilot_goal.json",
+      "start_s": 3.1,
+      "end_s": 8.2,
+      "segment_selection": "Reviewed tracks and sampled overlays; bracket object motion and exclude withdrawal",
+      "role": "collection/tuning",
+      "collector": "user personally collected"
+    },
+    {
+      "id": "goal_left1",
+      "video": "data/raw/goal_left1.mp4",
+      "video_sha256": "46b7a54916503bb4be926d64c01f680d46bae1ca4f4b22634fec2c2a6b032924",
+      "tracks": "data/processed/goal_left1/tracks.npz",
+      "calibration": "data/calibration/goal_left1.json",
+      "start_s": 2.63,
+      "end_s": 6.0,
+      "segment_selection": "Reviewed tracks and sampled overlays; bracket object motion and exclude withdrawal",
+      "role": "collection/tuning",
+      "collector": "user personally collected"
+    },
+    {
+      "id": "goal_left2",
+      "video": "data/raw/goal_left2.mp4",
+      "video_sha256": "e57a494cee84c081fed9aad28052697e0c89e8ba0d3eab6f286a0e2ee6147a37",
+      "tracks": "data/processed/goal_left2/tracks.npz",
+      "calibration": "data/calibration/goal_left2.json",
+      "start_s": 2.56,
+      "end_s": 7.83,
+      "segment_selection": "Reviewed tracks and sampled overlays; bracket object motion and exclude withdrawal",
+      "role": "collection/tuning",
+      "collector": "user personally collected"
+    },
+    {
+      "id": "goal_left3",
+      "video": "data/raw/goal_left3.mp4",
+      "video_sha256": "563d82115e4a9a18bce6d019be8875e13b358cb90b71c8a7601df22980ce9e95",
+      "tracks": "data/processed/goal_left3/tracks.npz",
+      "calibration": "data/calibration/goal_left3.json",
+      "start_s": 2.2,
+      "end_s": 9.8,
+      "segment_selection": "Reviewed tracks and sampled overlays; bracket object motion and exclude withdrawal",
+      "role": "collection/tuning",
+      "collector": "user personally collected"
+    },
+    {
+      "id": "goal_diag1",
+      "video": "data/raw/goal_diag1.mp4",
+      "video_sha256": "1f4dbf097d014b9f4b4ba0c422c2f80c41a45d12add0c9ef2c22c581eb9b8251",
+      "tracks": "data/processed/goal_diag1/tracks.npz",
+      "calibration": "data/calibration/goal_diag1.json",
+      "start_s": 2.1,
+      "end_s": 8.93,
+      "segment_selection": "Reviewed tracks and sampled overlays; bracket object motion and exclude withdrawal",
+      "role": "collection/tuning",
+      "collector": "user personally collected"
+    }
+  ]
+}

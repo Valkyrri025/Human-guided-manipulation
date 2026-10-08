@@ -1,0 +1,103 @@
+{
+  "checkpoint": "physical replay of personally recorded finger motion; pilot diagnostic",
+  "passed": true,
+  "task_success": true,
+  "termination_mode": "goal-or-timeout",
+  "stop_reason": "goal_reached",
+  "push_elapsed_s": 7.050000000000001,
+  "push_timeout_s": 8.0,
+  "goal_dwell_s": 0.2,
+  "success_rule": "whole projected cube inside square; orientation unrestricted",
+  "frames": 401,
+  "seed": 7,
+  "control_hz": 20,
+  "retargeting": {
+    "mode": "absolute",
+    "displacement_scale": 1.0,
+    "rotation_degrees": 0.0
+  },
+  "start_offset_m": [
+    0.0,
+    0.0
+  ],
+  "paper_to_robot_yaw_degrees": 0.0,
+  "detail_camera": "robotview",
+  "paper_to_robot_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "paper_size_robot_xy_m": [
+    0.3,
+    0.297
+  ],
+  "contact_segment_s": [
+    2.2,
+    9.8
+  ],
+  "approach_mode": "clearance",
+  "scripted_approach_retreat_m": 0.00753486550187402,
+  "eef_height_m": 0.868,
+  "tool": "paddle",
+  "tool_description": "rigid 8 x 24 x 12 mm paddle at local z=60 mm with stem",
+  "marker_to_tool_offset_m": [
+    0.016174360041190362,
+    -0.001966043840957317
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "initial_object_xyz_m": [
+    -0.1306502368301153,
+    0.01282379484176635,
+    0.8089999999999999
+  ],
+  "final_object_xyz_m": [
+    0.015140868335142717,
+    0.012096149582758982,
+    0.8082844891595694
+  ],
+  "demonstrated_endpoint_xy_m": [
+    0.02089806497097016,
+    0.009275440931320184
+  ],
+  "target_xy_m": [
+    0.021005278825759893,
+    0.008446310520172112
+  ],
+  "goal_source": "independent drawn square in opening frame",
+  "goal_tolerance_m": 0.01,
+  "final_target_distance_m": 0.006907433357278649,
+  "final_center_inside_goal": true,
+  "final_object_fully_inside_goal": true,
+  "push_yaw_degrees": -1.6533639030016807,
+  "tool_yaw_offset_degrees": 0,
+  "tool_yaw_degrees": -1.6533639030016807,
+  "final_cube_yaw_degrees": -1.6357887055126827,
+  "object_displacement_m": 0.14579292099731828,
+  "displacement_at_push_start_m": 1.2885803632006385e-12,
+  "final_endpoint_distance_m": 0.006411061565753717,
+  "max_object_lift_m": 0.0,
+  "stayed_on_table": true,
+  "tool_object_contact_steps": 126,
+  "tool_table_contact_steps": 0,
+  "push_tracking_rmse_m": 0.004084162036966314,
+  "finite_state": true,
+  "tracks_sha256": "ea5d9604296446f048a9ef118dd5d2137c7210403650128662c2dfae338cac31",
+  "observations": "simulator eef pose for control; cube pose/orientation for termination, logging and diagnostics; no XY steering from cube state",
+  "limitations": [
+    "Pilot tuning result, not held-out success",
+    "Target source is recorded explicitly; independent drawn goal used when calibrated",
+    "Assumed table/object friction; marker parallax uncorrected",
+    "Scripted height, orientation, approach and withdrawal",
+    "Tool attachment differs from human fingertip; no policy trained"
+  ],
+  "robot_coordinate_frame": "user_convention_v1"
+}

@@ -1,0 +1,5 @@
+*.csv text eol=lf
+*.mp4 binary
+*.npz binary
+*.png binary
+*.jpg binary

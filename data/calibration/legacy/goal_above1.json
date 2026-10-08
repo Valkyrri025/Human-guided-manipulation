@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "video": "data/raw/goal_above1.mp4",
+  "rectangle_width_m": 0.3,
+  "rectangle_height_m": 0.297,
+  "coordinate_convention": "origin top-left L intersection; x right, y down; metres",
+  "corners_order": [
+    "top_left",
+    "top_right",
+    "bottom_right",
+    "bottom_left"
+  ],
+  "corners_px": [
+    [
+      434.5,
+      183.5
+    ],
+    [
+      1277.0,
+      177.5
+    ],
+    [
+      1280.5,
+      1028.5
+    ],
+    [
+      448.5,
+      1026.5
+    ]
+  ],
+  "corner_search_windows_px": [
+    [
+      419,
+      167,
+      500,
+      243
+    ],
+    [
+      1211,
+      158,
+      1300,
+      248
+    ],
+    [
+      1214,
+      964,
+      1301,
+      1050
+    ],
+    [
+      430,
+      967,
+      510,
+      1045
+    ]
+  ],
+  "calibration_source": "red L stroke intersections detected in opening frame; inspect preview",
+  "marker_height_correction": "none; planar approximation",
+  "lens_distortion_correction": "none",
+  "red_hsv_ranges": [
+    [
+      [
+        0,
+        100,
+        60
+      ],
+      [
+        10,
+        255,
+        255
+      ]
+    ],
+    [
+      [
+        170,
+        100,
+        60
+      ],
+      [
+        179,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_hsv_ranges": [
+    [
+      [
+        35,
+        70,
+        50
+      ],
+      [
+        90,
+        255,
+        255
+      ]
+    ]
+  ],
+  "finger_hsv_ranges": [
+    [
+      [
+        0,
+        160,
+        140
+      ],
+      [
+        22,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_area_px": [
+    80,
+    5000
+  ],
+  "finger_area_px": [
+    80,
+    7000
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "object_dimensions_source": "user approximate measurement",
+  "finger_workspace_margin_px": 90,
+  "goal": {
+    "source": "independent drawn square in opening frame",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      833.9833333333333,
+      547.6666666666666
+    ],
+    "center_table_xy_m": [
+      0.1415538489818573,
+      0.12779884040355682
+    ],
+    "corners_px": [
+      [
+        792.0,
+        505.0
+      ],
+      [
+        792.0,
+        591.0
+      ],
+      [
+        878.0,
+        592.0
+      ],
+      [
+        878.0,
+        505.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.12668198347091675,
+        0.11281827837228775
+      ],
+      [
+        0.12633147835731506,
+        0.1429443657398224
+      ],
+      [
+        0.15715289115905762,
+        0.14337033033370972
+      ],
+      [
+        0.15746687352657318,
+        0.11292272061109543
+      ]
+    ],
+    "success_center_tolerance_m": 0.01
+  },
+  "paper_to_robot_yaw_degrees": -90.0,
+  "robot_rectangle_dimensions_xy_m": [
+    0.3,
+    0.297
+  ],
+  "registration_source": "User recording above maps robot left; decoded landscape video starts left of target"
+}

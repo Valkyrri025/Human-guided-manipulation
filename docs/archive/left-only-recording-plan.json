@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "scope": "60 new personally recorded episode slots; not collected yet",
+  "existing_data_role": "development/tuning only",
+  "split_rule": "preassigned episode split; all synthetic descendants inherit source split",
+  "episodes": [
+    {
+      "filename": "train_001.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_002.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_003.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_004.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_005.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_006.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_007.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_008.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_009.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_010.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_011.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_012.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_013.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_014.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_015.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_016.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_017.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_018.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_019.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_020.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_021.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_022.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_023.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_024.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_025.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_026.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_027.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_028.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_029.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_030.mp4",
+      "split": "train",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_031.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_032.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_033.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_034.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_035.mp4",
+      "split": "train",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_036.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "train_037.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_038.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "train_039.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "train_040.mp4",
+      "split": "train",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_001.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_002.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_003.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_004.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_005.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_006.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_007.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_008.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_009.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "validation_010.mp4",
+      "split": "validation",
+      "left_of_cross_cm": 6,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "test_001.mp4",
+      "split": "test",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "test_002.mp4",
+      "split": "test",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "test_003.mp4",
+      "split": "test",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "test_004.mp4",
+      "split": "test",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "test_005.mp4",
+      "split": "test",
+      "left_of_cross_cm": 9,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    },
+    {
+      "filename": "test_006.mp4",
+      "split": "test",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -4,
+      "status": "planned"
+    },
+    {
+      "filename": "test_007.mp4",
+      "split": "test",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": -2,
+      "status": "planned"
+    },
+    {
+      "filename": "test_008.mp4",
+      "split": "test",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 0,
+      "status": "planned"
+    },
+    {
+      "filename": "test_009.mp4",
+      "split": "test",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 2,
+      "status": "planned"
+    },
+    {
+      "filename": "test_010.mp4",
+      "split": "test",
+      "left_of_cross_cm": 12,
+      "vertical_offset_cm_positive_down": 4,
+      "status": "planned"
+    }
+  ],
+  "status": "paused",
+  "pause_reason": "User requested all-around target coverage; left-only schedule must be replaced after direction pilots"
+}

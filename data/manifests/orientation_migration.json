@@ -1,0 +1,80 @@
+{
+  "originals_before": {
+    "data/raw/goal_left2.mp4": "e57a494cee84c081fed9aad28052697e0c89e8ba0d3eab6f286a0e2ee6147a37",
+    "data/raw/goal_left1.mp4": "46b7a54916503bb4be926d64c01f680d46bae1ca4f4b22634fec2c2a6b032924",
+    "data/raw/goal_below1.mp4": "5c699d882567f7d95c15620401763c65dc3090eb788dc6594314311e652b5afd",
+    "data/raw/pilot_goal.mp4": "f3823f9ed23d57ddb643d7615a5730fa00f28441968d49e0a66aec2f34e046e8",
+    "data/raw/goal_left3.mp4": "563d82115e4a9a18bce6d019be8875e13b358cb90b71c8a7601df22980ce9e95",
+    "data/raw/goal_diag1.mp4": "1f4dbf097d014b9f4b4ba0c422c2f80c41a45d12add0c9ef2c22c581eb9b8251",
+    "data/raw/goal_above1.mp4": "48a3e8e8b3a9ed8cc16711af5f52a1361baf317f0e1ca8ed24901d29b19ed2b9",
+    "data/raw/pilot_push.mp4": "59a50d549196d2d457eb7f38038052146bbb209603a794a77ef0bf990197d94c",
+    "data/raw/goal_right1.mp4": "4bd71145bef99d7f3eb41fed24493553c97de2e0c335bc2e1f25cea685027bd2"
+  },
+  "episodes": [
+    {
+      "id": "goal_left2",
+      "video": "data/raw/goal_left2.mp4",
+      "calibration": "data/calibration/goal_left2.json",
+      "legacy_calibration": "data/calibration/legacy/goal_left2.json",
+      "output": "data/processed/goal_left2"
+    },
+    {
+      "id": "goal_left1",
+      "video": "data/raw/goal_left1.mp4",
+      "calibration": "data/calibration/goal_left1.json",
+      "legacy_calibration": "data/calibration/legacy/goal_left1.json",
+      "output": "data/processed/goal_left1"
+    },
+    {
+      "id": "goal_below1",
+      "video": "data/raw/goal_below1.mp4",
+      "calibration": "data/calibration/goal_below1.json",
+      "legacy_calibration": "data/calibration/legacy/goal_below1.json",
+      "output": "data/processed/goal_below1"
+    },
+    {
+      "id": "pilot_goal",
+      "video": "data/raw/pilot_goal.mp4",
+      "calibration": "data/calibration/pilot_goal.json",
+      "legacy_calibration": "data/calibration/legacy/pilot_goal.json",
+      "output": "data/processed/pilot_goal"
+    },
+    {
+      "id": "goal_left3",
+      "video": "data/raw/goal_left3.mp4",
+      "calibration": "data/calibration/goal_left3.json",
+      "legacy_calibration": "data/calibration/legacy/goal_left3.json",
+      "output": "data/processed/goal_left3"
+    },
+    {
+      "id": "goal_diag1",
+      "video": "data/raw/goal_diag1.mp4",
+      "calibration": "data/calibration/goal_diag1.json",
+      "legacy_calibration": "data/calibration/legacy/goal_diag1.json",
+      "output": "data/processed/goal_diag1"
+    },
+    {
+      "id": "goal_above1",
+      "video": "data/raw/goal_above1.mp4",
+      "calibration": "data/calibration/goal_above1.json",
+      "legacy_calibration": "data/calibration/legacy/goal_above1.json",
+      "output": "data/processed/goal_above1"
+    },
+    {
+      "id": "pilot",
+      "video": "data/raw/pilot_push.mp4",
+      "calibration": "data/calibration/pilot.json",
+      "legacy_calibration": "data/calibration/legacy/pilot.json",
+      "output": "data/processed/pilot"
+    },
+    {
+      "id": "goal_right1",
+      "video": "data/raw/goal_right1.mp4",
+      "calibration": "data/calibration/goal_right1.json",
+      "legacy_calibration": "data/calibration/legacy/goal_right1.json",
+      "output": "data/processed/goal_right1"
+    }
+  ],
+  "originals_unchanged": true,
+  "frame": "native display axes; user left->robot below, right->above, above->left, below->right"
+}

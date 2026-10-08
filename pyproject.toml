@@ -1,0 +1,32 @@
+[project]
+name = "humanoid-push"
+version = "0.1.0"
+description = "Personally recorded human pushes retargeted to a simulated Panda"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "robosuite==1.5.2",
+  "mujoco==3.3.7",
+  "numpy==1.26.4",
+  "numba==0.61.2",
+  "scipy==1.15.3",
+  "opencv-python==4.11.0.86",
+  "imageio==2.37.0",
+  "imageio-ffmpeg==0.6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+push-smoke = "humanoid_push.smoke:main"
+push-track = "humanoid_push.tracking:main"
+push-replay = "humanoid_push.replay:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/humanoid_push"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+]

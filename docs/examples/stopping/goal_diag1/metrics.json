@@ -1,0 +1,76 @@
+{
+  "checkpoint": "physical replay of personally recorded finger motion; pilot diagnostic",
+  "passed": true,
+  "task_success": true,
+  "termination_mode": "goal-or-timeout",
+  "stop_reason": "goal_reached",
+  "push_elapsed_s": 6.8500000000000005,
+  "push_timeout_s": 8.0,
+  "goal_dwell_s": 0.2,
+  "success_rule": "whole projected cube inside square; orientation unrestricted",
+  "frames": 397,
+  "seed": 7,
+  "control_hz": 20,
+  "contact_segment_s": [
+    2.1,
+    8.93
+  ],
+  "approach_mode": "clearance",
+  "scripted_approach_retreat_m": 0.0,
+  "eef_height_m": 0.868,
+  "tool": "paddle",
+  "tool_description": "rigid 8 x 24 x 12 mm paddle at local z=60 mm with stem",
+  "marker_to_tool_offset_m": [
+    0.013778198663433997,
+    0.0012203320772674105
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "initial_object_xyz_m": [
+    -0.09426998868584632,
+    -0.04352298086881637,
+    0.8089999999999999
+  ],
+  "final_object_xyz_m": [
+    0.015774270684896095,
+    -0.0074596833423910104,
+    0.8082844891595695
+  ],
+  "demonstrated_endpoint_xy_m": [
+    0.02015030980110169,
+    -0.00928034341335296
+  ],
+  "target_xy_m": [
+    0.02058300971984864,
+    -0.008308921813964837
+  ],
+  "goal_source": "independent drawn square in opening frame",
+  "goal_tolerance_m": 0.01,
+  "final_target_distance_m": 0.004883152371970116,
+  "final_center_inside_goal": true,
+  "final_object_fully_inside_goal": true,
+  "push_yaw_degrees": 17.045598695235245,
+  "final_cube_yaw_degrees": 17.034870696961683,
+  "object_displacement_m": 0.11580285164422638,
+  "displacement_at_push_start_m": 1.2848888646723432e-12,
+  "final_endpoint_distance_m": 0.004739675246317686,
+  "max_object_lift_m": 1.8674708521793093e-06,
+  "stayed_on_table": true,
+  "tool_object_contact_steps": 124,
+  "tool_table_contact_steps": 0,
+  "push_tracking_rmse_m": 0.0037363643686617186,
+  "finite_state": true,
+  "tracks_sha256": "33c0f3aab508ebb789b3b3ab90ad4137cec5a1fe1a285a898f98d0e6b1948a68",
+  "observations": "simulator eef pose for control; cube pose/orientation for termination, logging and diagnostics; no XY steering from cube state",
+  "limitations": [
+    "Pilot tuning result, not held-out success",
+    "Target source is recorded explicitly; independent drawn goal used when calibrated",
+    "Assumed table/object friction; marker parallax uncorrected",
+    "Scripted height, orientation, approach and withdrawal",
+    "Tool attachment differs from human fingertip; no policy trained"
+  ],
+  "decoded_video_frames": 397
+}

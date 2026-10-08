@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "video": "data/raw/goal_below1.mp4",
+  "rectangle_width_m": 0.3,
+  "rectangle_height_m": 0.297,
+  "coordinate_convention": "origin top-left L intersection; x right, y down; metres",
+  "corners_order": [
+    "top_left",
+    "top_right",
+    "bottom_right",
+    "bottom_left"
+  ],
+  "corners_px": [
+    [
+      34.0,
+      297.5
+    ],
+    [
+      597.5,
+      289.0
+    ],
+    [
+      601.5,
+      852.0
+    ],
+    [
+      33.0,
+      853.5
+    ]
+  ],
+  "corner_search_windows_px": [
+    [
+      17,
+      280,
+      81,
+      345
+    ],
+    [
+      552,
+      272,
+      616,
+      338
+    ],
+    [
+      551,
+      801,
+      621,
+      872
+    ],
+    [
+      13,
+      804,
+      83,
+      873
+    ]
+  ],
+  "calibration_source": "red L stroke intersections detected in opening frame; inspect preview",
+  "marker_height_correction": "none; planar approximation",
+  "lens_distortion_correction": "none",
+  "red_hsv_ranges": [
+    [
+      [
+        0,
+        100,
+        60
+      ],
+      [
+        10,
+        255,
+        255
+      ]
+    ],
+    [
+      [
+        170,
+        100,
+        60
+      ],
+      [
+        179,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_hsv_ranges": [
+    [
+      [
+        35,
+        70,
+        50
+      ],
+      [
+        90,
+        255,
+        255
+      ]
+    ]
+  ],
+  "finger_hsv_ranges": [
+    [
+      [
+        0,
+        160,
+        140
+      ],
+      [
+        22,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_area_px": [
+    80,
+    5000
+  ],
+  "finger_area_px": [
+    80,
+    7000
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "object_dimensions_source": "user approximate measurement",
+  "finger_workspace_margin_px": 90,
+  "goal": {
+    "source": "independent drawn square in opening frame",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      354.38235294117646,
+      555.6470588235294
+    ],
+    "center_table_xy_m": [
+      0.1710348278284073,
+      0.14012578129768372
+    ],
+    "corners_px": [
+      [
+        325.0,
+        527.0
+      ],
+      [
+        324.0,
+        584.0
+      ],
+      [
+        382.0,
+        585.0
+      ],
+      [
+        383.0,
+        528.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.15551640093326569,
+        0.1247633546590805
+      ],
+      [
+        0.15490247309207916,
+        0.1550256609916687
+      ],
+      [
+        0.18558523058891296,
+        0.15582025051116943
+      ],
+      [
+        0.1862250417470932,
+        0.12559835612773895
+      ]
+    ],
+    "success_center_tolerance_m": 0.01
+  },
+  "max_corner_shift_px": 15.0,
+  "finger_exclusion_windows_px": [
+    [
+      5,
+      580,
+      28,
+      610
+    ]
+  ],
+  "tracking_adjustment": "Exclude inspected stationary red mark; reject corners moving >15 px from opening and fall back to opening homography",
+  "paper_to_robot_yaw_degrees": 180.0,
+  "robot_rectangle_dimensions_xy_m": [
+    0.3,
+    0.297
+  ],
+  "registration_source": "User recording below maps robot right; decoded cube starts below target",
+  "collection_constraint": "Wall prevents farther starts below target; hand enters from left and may obscure corner. No additional real recordings planned for this direction."
+}

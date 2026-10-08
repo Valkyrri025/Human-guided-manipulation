@@ -1,0 +1,86 @@
+{
+  "video": "data/raw/goal_below1.mp4",
+  "video_sha256": "5c699d882567f7d95c15620401763c65dc3090eb788dc6594314311e652b5afd",
+  "frames": 304,
+  "fps": 30.0,
+  "duration_s": 10.133333333333333,
+  "frame_size_px": [
+    720,
+    1280
+  ],
+  "decoded_overlay_frames": 304,
+  "object_detected_frames": 304,
+  "finger_detected_frames": 272,
+  "finger_first_visible_s": 0.0,
+  "finger_last_visible_s": 10.1,
+  "finger_missing_inside_visible_interval": 32,
+  "calibration_fallback_frames": 0,
+  "max_corner_shift_px": 62.5879381350752,
+  "object_start_xy_m": [
+    0.1654834896326065,
+    0.21577133983373642
+  ],
+  "object_end_xy_m": [
+    0.17102661728858948,
+    0.13843616843223572
+  ],
+  "observed_object_displacement_m": 0.07753357337250757,
+  "largest_object_frame_step_m": 0.010716489062724767,
+  "largest_finger_frame_step_m": 0.08917230522677025,
+  "independent_goal": {
+    "source": "independent drawn square in opening frame",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      354.38235294117646,
+      555.6470588235294
+    ],
+    "center_table_xy_m": [
+      0.1710348278284073,
+      0.14012578129768372
+    ],
+    "corners_px": [
+      [
+        325.0,
+        527.0
+      ],
+      [
+        324.0,
+        584.0
+      ],
+      [
+        382.0,
+        585.0
+      ],
+      [
+        383.0,
+        528.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.15551640093326569,
+        0.1247633546590805
+      ],
+      [
+        0.15490247309207916,
+        0.1550256609916687
+      ],
+      [
+        0.18558523058891296,
+        0.15582025051116943
+      ],
+      [
+        0.1862250417470932,
+        0.12559835612773895
+      ]
+    ],
+    "success_center_tolerance_m": 0.01
+  },
+  "limitations": [
+    "No lens distortion or marker-height correction",
+    "Tracks marker centres, not physical finger contact point",
+    "No interpolation of missing detections",
+    "Object endpoint is observed outcome; independent target saved separately when present",
+    "No robot actions or pushing success evaluation generated at this checkpoint"
+  ]
+}
