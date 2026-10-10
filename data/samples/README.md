@@ -18,3 +18,7 @@ Twelve additional source tracks, `train_001`–`train_012`, are included. Use `d
 ## Second new training batch
 
 Ten additional source tracks, `train_013`–`train_022`, are included. Use `data/manifests/public_training_batch_02.json`. Nine replay successfully; 022 times out near the goal and is not an expert rollout. See [the second review](../../docs/training-batch-02.md). Across both batches, all 22 tracks belong to training and 17 current robot rollouts are expert-eligible.
+
+## Third new training batch and timeout update
+
+Ten source tracks, `train_023`–`train_032`, are included with `data/manifests/public_training_batch_03.json`. The current default push limit is 10 seconds. Three replays pass all checks; 032 reaches the goal but fails scripted approach validity. Earlier five failed sources remain unsuccessful when rerun at 10 seconds. Total: 32 new source tracks, 20 validated expert candidates. See [the third review](../../docs/training-batch-03.md). Earlier batch counts describe their original 8-second runs; specify `--push-timeout-s 8` to reproduce those historical results.

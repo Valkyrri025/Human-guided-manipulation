@@ -9,7 +9,7 @@
     "relative",
     "relative-scaled"
   ],
-  "push_timeout_s": 8.0,
+  "push_timeout_s": 10.0,
   "goal_dwell_s": 0.2,
   "seed": 7,
   "target_rule": "fixed independently calibrated pilot square; no change across starts",
@@ -92,5 +92,6 @@
     "One human demonstration and one deterministic seed",
     "New simulated starts only, not held-out human episodes",
     "All starts near the original; no arbitrary-direction claims"
-  ]
+  ],
+  "timeout_update_note": "Current limit changed to 10 s at user request. Earlier measured 8 s results use archived plans; new-plan results have not been rerun."
 }

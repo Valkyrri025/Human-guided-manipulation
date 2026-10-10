@@ -59,7 +59,7 @@ Reproduce all twelve simulation outcomes from bundled numeric tracks:
 ```bash
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
   --manifest data/manifests/public_training_batch_01.json \
-  --no-video --output outputs/training_batch_01
+  --push-timeout-s 8 --no-video --output outputs/training_batch_01
 ```
 
 Omit `--no-video` for inspection. Tracking overlays and failed replay videos were not generated in this review, consistent with the earlier cleanup request. The batch driver retains physical failures as measured results; its exit code reports processing errors separately.

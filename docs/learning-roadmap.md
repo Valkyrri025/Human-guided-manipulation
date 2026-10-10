@@ -1,6 +1,6 @@
 # Staged learning roadmap and next recording batch
 
-**Latest batch:** clips 013–022 are processed (10/10 tracked, 9/10 robot replay success). Next record only `train_023`–`train_032`. Total new data: 22 tracked clips and 17 successful replays. See [the second batch review](training-batch-02.md). Earlier collection updates below describe previous checkpoints.
+**Latest batch:** clips 023–032 are processed (10/10 tracked, 3/10 validated replay successes at the new 10-second push limit). Total: 32 tracked sources, 20 validated robot rollouts. Next record `train_033`–`train_042`. See [the third batch review](training-batch-03.md); earlier updates below are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
@@ -26,7 +26,7 @@ Every trial used `pilot_goal` (contact segment 3.1–8.2 s). The other four squa
 - Learn: Cartesian XYZ motion across all phases; orientation may remain scripted initially and must be disclosed. Use phase/progress information or policy memory to resolve phase ambiguity, especially when the cube is already in the square but withdrawal is unfinished.
 - Script: low-level controller, reset, fixed tool definition and task success/timeout monitor. If phase transitions remain scripted, label this as phase-conditioned imitation, rather than claiming autonomous learned sequencing.
 - Expand robot initial poses/approach offsets in simulation, with checked expert labels, if the original identical scripted approach offers insufficient variety. These are synthetic augmentations, not new human demonstrations.
-- Evaluate: target success plus a defined withdrawal-clearance endpoint, full-episode completion time, and approach/tool-table contacts. Preserve the 8-second pushing benchmark for comparison; define a separate full-episode cap before this benchmark. The current approach alone takes about 9 simulated seconds, so an 8-second total cap would be inappropriate.
+- Evaluate: target success plus a defined withdrawal-clearance endpoint, full-episode completion time, and approach/tool-table contacts. Preserve the 10-second pushing benchmark for comparison; define a separate full-episode cap before this benchmark. The current approach alone takes about 9 simulated seconds, so a 10-second total cap would be inappropriate.
 
 The scripts are useful teachers, not perfect guidance. Validate finite state, reachability, tool clearance, unintended pre-push cube movement and successful withdrawal. For learned approaches, movement of the cube before an externally designated push phase needs a new phase-aware validity definition; do not silently reuse the legacy scripted pre-push gate.
 

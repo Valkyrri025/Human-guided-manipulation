@@ -1,6 +1,6 @@
 # Goal-or-timeout stopping
 
-The task is to push the whole cube into the independently drawn square. There is no desired final cube orientation and no requirement to reach the centre cross. Current defaults are an **8-second simulated pushing limit** and **0.2 seconds of continuous containment**. Approach, lowering, withdrawal and final settling are outside this push clock.
+The task is to push the whole cube into the independently drawn square. There is no desired final cube orientation and no requirement to reach the centre cross. Current defaults are a **10-second simulated pushing limit** and **0.2 seconds of continuous containment**. Approach, lowering, withdrawal and final settling are outside this push clock.
 
 ## What the script does
 
@@ -8,10 +8,12 @@ The task is to push the whole cube into the independently drawn square. There is
 2. Follow the retargeted human finger XY references at 20 Hz, with fixed contact height and initial paddle orientation.
 3. After each action, check all eight projected cube vertices against the calibrated goal polygon, and check the cube is at table height. This uses simulator cube pose/orientation.
 4. On containment, pause advancement of the reference and hold the achieved grip position while checking the dwell. If the cube leaves, reset the dwell and resume the reference at the elapsed reference time.
-5. Stop when containment lasts 0.2 seconds or pushing reaches 8 seconds. If both happen on the same control step, completed containment wins. If the recorded segment ends first, hold its final reference until goal or timeout.
+5. Stop when containment lasts 0.2 seconds or pushing reaches 10 seconds. If both happen on the same control step, completed containment wins. If the recorded segment ends first, hold its final reference until goal or timeout.
 6. Withdraw vertically from the achieved position and settle. Count success only if the goal stop occurred, the cube remains fully inside after withdrawal, state is finite, the cube stayed on the table with less than 5 mm lift, and scripted pre-push displacement was less than 2 mm.
 
 Cube feedback decides termination and pausing; it does not adjust the pushing XY path towards the goal. This remains retargeting, with no trained policy. The target cross is used for initial paddle alignment and distance diagnostics. The historical `goal_tolerance_m` field is retained for the old pilot without a square; it is not a success threshold for square goals.
+
+**10 October update:** the user requested a 10-second limit to accommodate slow recordings. The current defaults use 10 seconds. Historical results below were measured with 8 seconds; pass `--push-timeout-s 8` when reproducing those runs.
 
 ## Reproduce
 
@@ -20,13 +22,13 @@ From `humanoid-push`, with existing processed tracks:
 ```bash
 uv sync --locked --python 3.12
 uv run --locked python scripts/run_batch.py --output outputs/batch_stopping \
-  --push-timeout-s 8 --goal-dwell-s 0.2
+  --push-timeout-s 10 --goal-dwell-s 0.2
 uv run --locked python -m pytest -q tests
 ```
 
 Add `--track` to regenerate tracks from the original videos and reviewed calibrations. Add `--no-video` for physics only. `--termination reference` preserves full-segment replay for historical comparisons. Timeout values must be positive multiples of the 0.05-second control period.
 
-## Measured collection results
+## Historical measured collection results (8-second limit)
 
 | Episode | Stop reason | Push time (s) | Final cross distance (mm) | Whole cube in square after withdrawal |
 |---|---|---:|---:|---|

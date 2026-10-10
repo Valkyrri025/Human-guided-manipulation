@@ -55,7 +55,7 @@ uv run --locked push-track --video data/raw/train_020.mp4 \
 # Reproduce all ten robot outcomes from the numeric samples:
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
   --manifest data/manifests/public_training_batch_02.json \
-  --no-video --output outputs/training_batch_02
+  --push-timeout-s 8 --no-video --output outputs/training_batch_02
 ```
 
 No tracking overlays or failed replay videos were generated, following the earlier cleanup request. Original phone files remain local and unchanged. All synthetic descendants of these episodes inherit the training split.

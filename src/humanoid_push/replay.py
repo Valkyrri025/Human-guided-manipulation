@@ -114,7 +114,7 @@ def main():
     parser.add_argument('--tool-yaw-offset-deg',type=int,choices=[0,180],default=0,help='Choose equivalent symmetric tool face without changing push direction')
     parser.add_argument('--approach',choices=['clearance','recorded'],default='clearance',help='Clearance checks initial geometry before lowering; recorded reproduces development baseline')
     parser.add_argument('--termination',choices=['goal-or-timeout','reference'],default='goal-or-timeout')
-    parser.add_argument('--push-timeout-s',type=float,default=8.,help='Simulation seconds from start of pushing, excluding approach/withdrawal')
+    parser.add_argument('--push-timeout-s',type=float,default=10.,help='Simulation seconds from start of pushing, excluding approach/withdrawal')
     parser.add_argument('--goal-dwell-s',type=float,default=.2)
     parser.add_argument('--retargeting',choices=['absolute','relative','relative-scaled'],default='absolute')
     parser.add_argument('--start-offset-m',type=float,nargs=2,default=[0.,0.],metavar=('DX','DY'),help='Shift simulated cube start in table metres; target stays fixed')

@@ -8,11 +8,11 @@ Robot-learning internship challenge: use personally collected overhead phone vid
 
 ## Next recording batch
 
-Follow [the new recording plan](docs/recording-plan.md): **22 training clips processed; next record `train_023`–`train_032`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. All 22 source clips track continuously during contact; five replay failures remain explicit.
+Follow [the new recording plan](docs/recording-plan.md): **32 training clips processed; next record `train_033`–`train_042`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. The [third batch](docs/training-batch-03.md) adds 3/10 validated successes at the new 10-second push limit. All 32 source clips track continuously during contact; 20 robot rollouts are currently expert-eligible. Failed replays remain explicit.
 
 ## Replay from the public numeric samples
 
-Nine small tracked trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
+Nine pilot samples plus 32 new training trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
 
 ```bash
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \

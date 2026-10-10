@@ -6,7 +6,7 @@
   "methods": [
     "relative-scaled"
   ],
-  "push_timeout_s": 8.0,
+  "push_timeout_s": 10.0,
   "goal_dwell_s": 0.2,
   "starts": [
     {
@@ -36,5 +36,6 @@
   ],
   "selection_rule": "3 remaining cardinal starts 8 cm from fixed target, chosen before trials",
   "seed": 7,
-  "coordinate_convention": "simulation x right, y down in current decoded image"
+  "coordinate_convention": "simulation x right, y down in current decoded image",
+  "timeout_update_note": "Current limit changed to 10 s at user request. Earlier measured 8 s results use archived plans; new-plan results have not been rerun."
 }
