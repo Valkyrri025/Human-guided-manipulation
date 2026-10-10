@@ -1,6 +1,8 @@
 # Dataset recording plan — 8 October 2026
 
-We are ready to collect the next batch: all four approach sides have physically replayed successfully using your fixed direction convention. This validates the current setup, not arbitrary curved trajectories or a learned policy. **Record only the first 12 clips now; we will inspect them before collecting the rest.**
+**10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
+
+We are ready to collect the next batch: all four approach sides have physically replayed successfully using your fixed direction convention. This validates the current setup, not arbitrary curved trajectories or a learned policy. **The first 12 are now processed. Record the remaining 30 training clips next; keep validation/test for after the training pipeline is stable.**
 
 ## Direction and placement
 
@@ -48,7 +50,7 @@ For each file:
 
 Keep successful and failed attempts. If you need another attempt, use `train_001_retry1.mp4`, for example, and note why. All retries inherit the source slot's split; retain the original. Tell me about slipping, loss of marker visibility or camera changes. We will distinguish capture problems, tracking problems and robot replay failures.
 
-After these 12 are uploaded, I will calibrate/track each one, review the contact segment, replay each physically, and report successes, target distances, timeouts and failures. We will resolve systematic problems before expanding collection.
+The first 12 have now been calibrated, tracked and physically replayed. See [the batch review](training-batch-01.md) for eight successes, four near-goal timeouts, and the decision to continue training-data collection.
 
 ## Full target: 60 new real clips
 

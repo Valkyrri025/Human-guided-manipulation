@@ -1,8 +1,10 @@
 # Recording checklist: current square-target task
 
+**10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
+
 **Orientation update:** active previews, calibrations and tracks now follow the native phone display and one fixed user convention. Original videos are unchanged. Use [the standardisation report](orientation-standardisation.md) for current validation and archive paths; earlier metrics below describe their original runs.
 
-**Record the first 12 clips in [the new dataset plan](recording-plan.md).** All four direction pilots have passed replay. The new schedule covers recording left, right and above; the wall-constrained below side uses the existing pilot and separately labelled synthetic augmentation. The old left-only schedule is archived.
+**Record the next training slots, `train_013`–`train_042`, in [the dataset plan](recording-plan.md).** All four direction pilots have passed replay. The new schedule covers recording left, right and above; the wall-constrained below side uses the existing pilot and separately labelled synthetic augmentation. The old left-only schedule is archived.
 
 Use [the dataset plan](recording-plan.md) for exact filenames, positions, split assignments and the stop-after-12 checkpoint. Read [the workflow](workflow.md) for recording → tracking → retargeting → evaluation.
 
@@ -18,7 +20,7 @@ Use [the dataset plan](recording-plan.md) for exact filenames, positions, split 
 
 ## Where to start
 
-Use the first 12 rows in [recording-schedule.csv](recording-schedule.csv), also written in plain language in [recording-plan.md](recording-plan.md). All directions refer to your original recording view. Positions are approximate die-centre offsets from the target cross. Keep the target fixed and push towards its centre; do not repeat an exact trajectory. Stop after 12 uploads so we can check every track and physical replay.
+Use training rows 013–042 in [recording-schedule.csv](recording-schedule.csv). The first 12 rows are already processed; [the batch report](training-batch-01.md) records their outcomes. All directions refer to your original recording view. Positions are approximate die-centre offsets from the target cross. Keep the target fixed and push towards its centre; do not repeat an exact trajectory. Upload groups of 10 so each new set is checked promptly.
 
 ## One clip
 
@@ -27,7 +29,7 @@ Use the first 12 rows in [recording-schedule.csv](recording-schedule.csv), also 
 3. Approach and push slowly with one finger towards the cross. Do not clamp, lift or roll the die.
 4. Pause briefly at the target, withdraw, and leave the final die position visible.
 5. Keep both coloured markers visible throughout contact. The entire arm need not be visible.
-6. Save each original untrimmed clip under its scheduled name, starting with `data/raw/train_001.mp4` through `train_012.mp4`. Preserve `pilot_push.mp4` and `pilot_goal.mp4`.
+6. Save each original untrimmed clip under its scheduled name, next `data/raw/train_013.mp4` through `train_042.mp4`. Preserve `pilot_push.mp4` and `pilot_goal.mp4`.
 
 Current 720 × 1280 / 30 fps clips tracked successfully. Preserve the original file you have; avoid further messaging-app compression. For new captures, 1080p / 30 fps is suitable if practical.
 

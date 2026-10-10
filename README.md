@@ -2,13 +2,13 @@
 
 Robot-learning internship challenge: use personally collected overhead phone video of a human pushing a block to drive a simulated Panda. The first comparison tests absolute replay and geometric retargeting on predefined new simulated starts.
 
-**Current status:** all nine original recordings now use consistent native-display tracking and the user's fixed direction convention. All eight drawn-goal episodes physically replay successfully; the initial pilot also passes its separate endpoint diagnostic. See [current orientation and replay validation](docs/orientation-standardisation.md). No policy has been trained. The earlier new-start comparison (2/8 absolute, 5/8 relative, 8/8 scaled) uses archived legacy inputs; it has not yet been rerun with the standardised dataset.
+**Current status:** the nine original pilot recordings use consistent native-display tracking and the user's fixed direction convention. All eight drawn-goal episodes physically replay successfully; the initial pilot also passes its separate endpoint diagnostic. See [current orientation and replay validation](docs/orientation-standardisation.md). No policy has been trained. The earlier new-start comparison (2/8 absolute, 5/8 relative, 8/8 scaled) uses archived legacy inputs; it has not yet been rerun with the standardised dataset.
 
 **Start with [the complete workflow](docs/workflow.md)** for recording, target definition, tracking, retargeting, saved labels, completed results and remaining work. The first additional batch is complete; use [the recording checklist](docs/recording.md) for any further clips.
 
 ## Next recording batch
 
-Follow [the new recording plan](docs/recording-plan.md): **record 12 training clips first**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv).
+Follow [the new recording plan](docs/recording-plan.md): **first 12 training clips processed; next record `train_013`–`train_042`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports continuous tracking for all 12 and 8/12 successful physical replays; four near-goal timeouts remain recorded as failures.
 
 ## Replay from the public numeric samples
 
