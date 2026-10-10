@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "video": "data/raw/train_020.mp4",
+  "image_orientation": "display",
+  "paper_to_robot_frame": "user_convention_v1",
+  "paper_to_robot_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "robot_rectangle_dimensions_xy_m": [
+    0.3,
+    0.297
+  ],
+  "rectangle_width_m": 0.3,
+  "rectangle_height_m": 0.297,
+  "coordinate_convention": "origin top-left L intersection; x right, y down; metres",
+  "corners_order": [
+    "top_left",
+    "top_right",
+    "bottom_right",
+    "bottom_left"
+  ],
+  "corners_px": [
+    [
+      29.5,
+      263.0
+    ],
+    [
+      625.5,
+      261.5
+    ],
+    [
+      622.5,
+      856.5
+    ],
+    [
+      23.5,
+      851.5
+    ]
+  ],
+  "corner_search_windows_px": [
+    [
+      12,
+      245,
+      79,
+      311
+    ],
+    [
+      581,
+      246,
+      644,
+      313
+    ],
+    [
+      569,
+      805,
+      642,
+      877
+    ],
+    [
+      3,
+      800,
+      75,
+      871
+    ]
+  ],
+  "calibration_source": "red L stroke intersections detected in opening frame; inspect preview",
+  "marker_height_correction": "none; planar approximation",
+  "lens_distortion_correction": "none",
+  "red_hsv_ranges": [
+    [
+      [
+        0,
+        100,
+        60
+      ],
+      [
+        10,
+        255,
+        255
+      ]
+    ],
+    [
+      [
+        170,
+        100,
+        60
+      ],
+      [
+        179,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_hsv_ranges": [
+    [
+      [
+        35,
+        70,
+        50
+      ],
+      [
+        90,
+        255,
+        255
+      ]
+    ]
+  ],
+  "finger_hsv_ranges": [
+    [
+      [
+        0,
+        160,
+        140
+      ],
+      [
+        22,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_area_px": [
+    80,
+    5000
+  ],
+  "finger_area_px": [
+    80,
+    7000
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "object_dimensions_source": "user approximate measurement",
+  "finger_workspace_margin_px": 90,
+  "goal": {
+    "source": "independent drawn square in original opening frame; reviewed outline",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      365.8292682926829,
+      540.7317073170732
+    ],
+    "center_table_xy_m": [
+      0.1711176335811615,
+      0.1400953084230423
+    ],
+    "corners_px": [
+      [
+        335.0,
+        510.0
+      ],
+      [
+        333.0,
+        570.0
+      ],
+      [
+        395.0,
+        572.0
+      ],
+      [
+        397.0,
+        511.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.15553492307662964,
+        0.12470551580190659
+      ],
+      [
+        0.15475817024707794,
+        0.1548260599374771
+      ],
+      [
+        0.18584582209587097,
+        0.1557309925556183
+      ],
+      [
+        0.18663336336612701,
+        0.12514398992061615
+      ]
+    ],
+    "success_center_tolerance_m": 0.01,
+    "review_note": "Default gray<90 outline was fragmented. Reviewed gray<110 mask with 3x3 closing gives the visible independent square; cross centroid uses unclosed mask. No demonstrated endpoint used."
+  }
+}

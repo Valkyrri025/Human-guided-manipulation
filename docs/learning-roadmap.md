@@ -1,8 +1,10 @@
 # Staged learning roadmap and next recording batch
 
+**Latest batch:** clips 013–022 are processed (10/10 tracked, 9/10 robot replay success). Next record only `train_023`–`train_032`. Total new data: 22 tracked clips and 17 successful replays. See [the second batch review](training-batch-02.md). Earlier collection updates below describe previous checkpoints.
+
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
-**Active collection plan:** [recording-plan.md](recording-plan.md), 60 new clips across recording left/right/above, split 42 train / 9 validation / 9 test. The first 12 are processed; next collect training clips 013–042. The below side uses the existing pilot and explicitly synthetic augmentation due to the wall. The old left-only roadmap/schedule are retained in `docs/archive/`.
+**Active collection plan:** [recording-plan.md](recording-plan.md), 60 new clips across recording left/right/above, split 42 train / 9 validation / 9 test. The first 22 are processed; next collect training clips 023–032. The below side uses the existing pilot and explicitly synthetic augmentation due to the wall. The old left-only roadmap/schedule are retained in `docs/archive/`.
 
 Agreed direction: collect a broader personally recorded dataset, train a pushing-only imitation policy, extend imitation to the whole robot episode, then investigate a compact learned dynamics model. These are planned benchmarks; no learned model has been trained yet. The geometric baseline is complete and remains an independent non-learning reference.
 

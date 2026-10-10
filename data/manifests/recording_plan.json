@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "first_12_processed_continue_training_013_to_042",
+  "status": "first_22_processed_next_training_023_to_032",
   "scope": "60 NEW real recording slots across three accessible sides; no new below-side recordings required",
   "coordinate_frame": "native phone display",
   "rectangle_width_m": 0.3,
@@ -168,7 +168,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "135389369f11c15796ef5be3d3068e081892ed795df10b0034c73a7d791a477d"
     },
     {
       "filename": "train_014.mp4",
@@ -179,7 +180,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "b84dd48e73dd7d02345a6fbf97258aaca20340133664275dbd36e9b511946029"
     },
     {
       "filename": "train_015.mp4",
@@ -190,7 +192,8 @@
       "start_dy_cm_positive_down": -6,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "61a6228582010e27e97c7cc94133da2d0e1d2d3642bb9551c07dd6d4bdc33f8d"
     },
     {
       "filename": "train_016.mp4",
@@ -201,7 +204,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "2c3ced28971d318ac92394f8782ebbaa6b44e40ede1069bf552799d152eaa633"
     },
     {
       "filename": "train_017.mp4",
@@ -212,7 +216,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "8c21043cbde630760542a31898c17f6b1f9bf48f291da79f45e9ecc5f50d7120"
     },
     {
       "filename": "train_018.mp4",
@@ -223,7 +228,8 @@
       "start_dy_cm_positive_down": -9,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "475fbd5465e737a3442e60ebb54ed8a6e98e4bf32962dea5caa4799ed3763ffd"
     },
     {
       "filename": "train_019.mp4",
@@ -234,7 +240,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "b067e92cf18bf4195d89f6674cf81ee045e9bfd36dd1de1c50d4a36404f90db0"
     },
     {
       "filename": "train_020.mp4",
@@ -245,7 +252,8 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "266a11e56d20b026fa54177067cfa0635f385d956b46090a051663f143ddf249"
     },
     {
       "filename": "train_021.mp4",
@@ -256,7 +264,8 @@
       "start_dy_cm_positive_down": -12,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_replay_success",
+      "source_sha256": "15ef0ccd66236ff5aa9736da459d67b54bed286e5decdd844c022e91bd0e05cf"
     },
     {
       "filename": "train_022.mp4",
@@ -267,7 +276,8 @@
       "start_dy_cm_positive_down": -4,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_replay_timeout",
+      "source_sha256": "ad19245d3f487a492d11582ac6fb1bf29ade5efb373e4febc82e3e410415873a"
     },
     {
       "filename": "train_023.mp4",

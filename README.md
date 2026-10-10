@@ -8,7 +8,7 @@ Robot-learning internship challenge: use personally collected overhead phone vid
 
 ## Next recording batch
 
-Follow [the new recording plan](docs/recording-plan.md): **first 12 training clips processed; next record `train_013`–`train_042`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports continuous tracking for all 12 and 8/12 successful physical replays; four near-goal timeouts remain recorded as failures.
+Follow [the new recording plan](docs/recording-plan.md): **22 training clips processed; next record `train_023`–`train_032`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. All 22 source clips track continuously during contact; five replay failures remain explicit.
 
 ## Replay from the public numeric samples
 

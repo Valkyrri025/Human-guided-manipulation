@@ -1,0 +1,89 @@
+{
+  "video": "data/raw/train_020.mp4",
+  "video_sha256": "266a11e56d20b026fa54177067cfa0635f385d956b46090a051663f143ddf249",
+  "frames": 285,
+  "fps": 30.0,
+  "duration_s": 9.5,
+  "frame_size_px": [
+    720,
+    1280
+  ],
+  "decoded_overlay_frames": null,
+  "image_orientation": "display",
+  "overlay_generated": false,
+  "object_detected_frames": 285,
+  "finger_detected_frames": 175,
+  "finger_first_visible_s": 1.9333333333333333,
+  "finger_last_visible_s": 7.733333333333333,
+  "finger_missing_inside_visible_interval": 0,
+  "calibration_fallback_frames": 0,
+  "max_corner_shift_px": 4.6097722286464435,
+  "object_start_xy_m": [
+    0.2792482525110245,
+    0.1388690322637558
+  ],
+  "object_end_xy_m": [
+    0.17145000398159027,
+    0.13984277844429016
+  ],
+  "observed_object_displacement_m": 0.10780264638513179,
+  "largest_object_frame_step_m": 0.001943396524710469,
+  "largest_finger_frame_step_m": 0.016352423556814176,
+  "independent_goal": {
+    "source": "independent drawn square in original opening frame; reviewed outline",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      365.8292682926829,
+      540.7317073170732
+    ],
+    "center_table_xy_m": [
+      0.1711176335811615,
+      0.1400953084230423
+    ],
+    "corners_px": [
+      [
+        335.0,
+        510.0
+      ],
+      [
+        333.0,
+        570.0
+      ],
+      [
+        395.0,
+        572.0
+      ],
+      [
+        397.0,
+        511.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.15553492307662964,
+        0.12470551580190659
+      ],
+      [
+        0.15475817024707794,
+        0.1548260599374771
+      ],
+      [
+        0.18584582209587097,
+        0.1557309925556183
+      ],
+      [
+        0.18663336336612701,
+        0.12514398992061615
+      ]
+    ],
+    "success_center_tolerance_m": 0.01,
+    "review_note": "Default gray<90 outline was fragmented. Reviewed gray<110 mask with 3x3 closing gives the visible independent square; cross centroid uses unclosed mask. No demonstrated endpoint used."
+  },
+  "limitations": [
+    "No lens distortion or marker-height correction",
+    "Tracks marker centres, not physical finger contact point",
+    "No interpolation of missing detections",
+    "Object endpoint is observed outcome; independent target saved separately when present",
+    "No robot actions or pushing success evaluation generated at this checkpoint"
+  ]
+}
