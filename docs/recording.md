@@ -1,5 +1,7 @@
 # Recording checklist: current square-target task
 
+**Next collection:** planned for 11 October 2026, starting with `train_033.mp4` through `train_042.mp4`. Successful rendered examples will be retained for each reviewed batch; see [the artifact guide](artifacts.md).
+
 **Latest status:** 32 sources tracked. The recorded-object feedback teacher has 28/32 validated successful rollouts; the preserved finger baseline has 20/32. Next record `train_033`–`train_042`. See [the teacher report](object-trajectory-teacher.md). Earlier collection updates are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.

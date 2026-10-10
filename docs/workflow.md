@@ -146,3 +146,7 @@ The public repository is [Human-guided-manipulation](https://github.com/Valkyrri
 ## Recorded-object feedback teacher update
 
 See [the teacher report](object-trajectory-teacher.md) for the new scripted simulator-feedback method and full comparison. It follows the recorded object trajectory, while the original finger-only replay stays available. It is not a learned policy; cube feedback now steers this optional teacher. Only validated successes are expert candidates. The original source files and split assignments are unchanged.
+
+## Artifact retention
+
+The [folder guide](artifacts.md) lists canonical rollouts and media. Batch runs now automatically retain up to three successful rendered examples even with `--no-video`; explicitly use `--success-videos 0` only for physics-only checks. Obsolete diagnostics were consolidated before cleanup. Next collection is planned for 11 October 2026, starting at `train_033`.

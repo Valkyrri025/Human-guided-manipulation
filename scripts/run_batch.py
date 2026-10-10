@@ -14,11 +14,14 @@ parser.add_argument('--approach',choices=['clearance','recorded'],default='clear
 parser.add_argument('--termination',choices=['goal-or-timeout','reference'],default='goal-or-timeout')
 parser.add_argument('--push-timeout-s',type=float,default=10.)
 parser.add_argument('--goal-dwell-s',type=float,default=.2)
-parser.add_argument('--no-video',action='store_true')
+parser.add_argument('--no-video',action='store_true',help='Skip full-batch rendering; successful examples still render unless --success-videos 0')
+parser.add_argument('--success-videos',type=int,default=3,help='When using --no-video, render and retain up to this many successful examples, preferring different recording sides; 0 disables')
+parser.add_argument('--examples-output',type=Path,help='Where to keep successful example videos; default OUTPUT/successful_examples')
 parser.add_argument('--push-controller',choices=['finger-replay','human-object-feedback'],default='finger-replay')
 args=parser.parse_args()
+if args.success_videos<0:parser.error('--success-videos must be nonnegative')
 manifest=json.loads(args.manifest.read_text());args.output.mkdir(parents=True,exist_ok=True)
-rows=[]
+rows=[];replay_commands={}
 for item in manifest['episodes']:
     name=item['id'];folder=args.output/name;folder.mkdir(parents=True,exist_ok=True)
     cmd=[sys.executable,'-m','humanoid_push.replay','--tracks',item['tracks'],
@@ -29,6 +32,7 @@ for item in manifest['episodes']:
     cmd.extend(['--tool-yaw-offset-deg',str(item.get('tool_yaw_offset_deg',0)),
                 '--detail-camera',item.get('detail_camera','pushview')])
     if args.no_video:cmd.append('--no-video')
+    replay_commands[name]=cmd
     if args.track:
         track_cmd=[sys.executable,'-m','humanoid_push.tracking','--video',item['video'],
                    '--calibration',item['calibration'],'--output',str(Path(item['tracks']).parent)]
@@ -57,10 +61,40 @@ for item in manifest['episodes']:
     if not metrics:row['error']='Replay did not produce metrics; see run.log'
     rows.append(row)
     print(json.dumps(row),flush=True)
+examples=[]
+if args.no_video and args.success_videos:
+    successful=[item for item in manifest['episodes'] if any(r['episode']==item['id'] and r['passed'] for r in rows)]
+    selected=[];sides=set()
+    for item in successful:
+        side=item.get('recording_start_side','unknown')
+        if side not in sides:
+            selected.append(item);sides.add(side)
+    selected.extend(item for item in successful if item not in selected)
+    for item in selected[:args.success_videos]:
+        name=item['id'];folder=(args.examples_output or args.output/'successful_examples')/name
+        folder.mkdir(parents=True,exist_ok=True)
+        cmd=[arg for arg in replay_commands[name] if arg!='--no-video']
+        cmd[cmd.index('--output')+1]=str(folder)
+        metric_path=folder/'metrics.json'
+        if metric_path.exists():metric_path.unlink()
+        rendered=subprocess.run(cmd,capture_output=True,text=True)
+        (folder/'run.log').write_text(rendered.stdout+'\n'+rendered.stderr)
+        m=json.loads(metric_path.read_text()) if metric_path.exists() else {}
+        good=rendered.returncode==0 and bool(m.get('passed')) and m.get('decoded_video_frames')==m.get('frames')
+        if good:
+            examples.append({'episode':name,'video':str(folder/'replay.mp4'),'metrics':str(metric_path)})
+            # Full state/action data already lives in the primary episode folder.
+            (folder/'rollout.npz').unlink(missing_ok=True)
+            print(f"Kept successful example: {folder/'replay.mp4'}",flush=True)
+        else:
+            # Preserve numerical diagnostics, not unsuccessful example videos.
+            (folder/'replay.mp4').unlink(missing_ok=True)
+            (folder/'preview.png').unlink(missing_ok=True)
+            examples.append({'episode':name,'error':'Successful-example rendering failed; see run.log'})
 summary={'scope':'collection/tuning episode replay; not held-out policy evaluation','approach_mode':args.approach,
          'push_controller':args.push_controller,'push_timeout_s':args.push_timeout_s,
          'manifest':str(args.manifest),'passed':sum(r['passed'] for r in rows),'total':len(rows),
-         'episodes':rows}
+         'episodes':rows,'successful_examples':examples}
 (args.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 columns=['episode','passed','target_distance_mm','physical_displacement_cm','fully_inside_goal',
          'yaw_degrees','pre_push_displacement_mm','final_cube_yaw_degrees','stop_reason','push_elapsed_s','returncode']
@@ -68,4 +102,4 @@ with (args.output/'summary.csv').open('w',newline='') as f:
     w=csv.DictWriter(f,fieldnames=columns,extrasaction='ignore');w.writeheader();w.writerows(rows)
 print(f"Batch: {summary['passed']}/{summary['total']} pilot gates passed",flush=True)
 # A physical failure is a measured result; only a processing error fails the batch driver.
-if any('error' in r for r in rows):raise SystemExit(1)
+if any('error' in r for r in rows+examples):raise SystemExit(1)

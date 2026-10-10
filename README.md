@@ -132,3 +132,7 @@ See [model directions](docs/model-directions.md) for how the task could support 
 The agreed expansion is pushing-only imitation, then full-episode imitation with validated synthetic approach/withdrawal labels, then a compact learned dynamics model. See [the learning roadmap](docs/learning-roadmap.md). All four direction pilots passed; the active [recording plan](docs/recording-plan.md) covers left/right/above in the native recording view. Begin with 12 training clips, then continue after review. The wall-constrained below direction uses the existing pilot and separately labelled synthetic augmentation.
 
 **Media cleanup:** original recordings and successful simulation videos remain; failed videos, tracking overlays and identical generated-video copies were removed. Small numerical failure evidence is retained. Successful examples live in `docs/examples/`. See [the cleanup audit](docs/cleanup-report.json). The isolated Python environment remains available.
+
+## Artifact locations and retained videos
+
+See [the folder guide](docs/artifacts.md) for canonical rollouts, successful videos and the latest cleanup. With `--no-video`, batch replay now retains up to three successfully rendered examples unless `--success-videos 0` is specified. Next collection: 11 October 2026, beginning with `train_033`.

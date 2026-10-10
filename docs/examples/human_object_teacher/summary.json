@@ -487,5 +487,27 @@
       "metrics": "outputs/human_object_teacher/train_032/metrics.json",
       "video": null
     }
+  ],
+  "successful_examples": [
+    {
+      "episode": "train_001",
+      "video": "docs/examples/human_object_teacher/successful_examples/train_001/replay.mp4",
+      "metrics": "docs/examples/human_object_teacher/successful_examples/train_001/metrics.json"
+    },
+    {
+      "episode": "train_002",
+      "video": "docs/examples/human_object_teacher/successful_examples/train_002/replay.mp4",
+      "metrics": "docs/examples/human_object_teacher/successful_examples/train_002/metrics.json"
+    },
+    {
+      "episode": "train_006",
+      "video": "docs/examples/human_object_teacher/successful_examples/train_006/replay.mp4",
+      "metrics": "docs/examples/human_object_teacher/successful_examples/train_006/metrics.json"
+    },
+    {
+      "episode": "train_032",
+      "video": "docs/examples/human_object_teacher/train_032_video/replay.mp4",
+      "metrics": "docs/examples/human_object_teacher/train_032_video/metrics.json"
+    }
   ]
 }

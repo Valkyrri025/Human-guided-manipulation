@@ -79,3 +79,7 @@ The manifest points to committed numeric human samples, so raw phone videos are 
 ## Recording guidance and next step
 
 For `train_033`–`train_042`, keep comfortable smooth pushes, preferably contacting near the centre of a cube face. A roughly perpendicular push can reduce twisting, but precise finger angle is neither measured nor required. Keep natural variation rather than forcing identical motions; avoid excessive sideways slip or twisting, keep both patches visible, and finish with the whole die inside. Do not rerecord the existing episodes because their finger angle differs from the paddle. Hold validation/test collection until the training-data pipeline is stable.
+
+## Retained examples and cleanup
+
+Successful examples from [left](examples/human_object_teacher/successful_examples/train_001/replay.mp4), [right](examples/human_object_teacher/successful_examples/train_002/replay.mp4) and [above](examples/human_object_teacher/successful_examples/train_006/replay.mp4) are now retained alongside slow clip 032. Current rollouts remain in `outputs/human_object_teacher/`; redundant development-run rollouts were removed after numerical evidence was archived. See [the folder guide](artifacts.md).
