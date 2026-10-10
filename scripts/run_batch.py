@@ -15,6 +15,7 @@ parser.add_argument('--termination',choices=['goal-or-timeout','reference'],defa
 parser.add_argument('--push-timeout-s',type=float,default=10.)
 parser.add_argument('--goal-dwell-s',type=float,default=.2)
 parser.add_argument('--no-video',action='store_true')
+parser.add_argument('--push-controller',choices=['finger-replay','human-object-feedback'],default='finger-replay')
 args=parser.parse_args()
 manifest=json.loads(args.manifest.read_text());args.output.mkdir(parents=True,exist_ok=True)
 rows=[]
@@ -24,6 +25,7 @@ for item in manifest['episodes']:
          '--calibration',item['calibration'],'--start-s',str(item['start_s']),
          '--end-s',str(item['end_s']),'--output',str(folder),'--approach',args.approach,'--termination',args.termination,
          '--push-timeout-s',str(args.push_timeout_s),'--goal-dwell-s',str(args.goal_dwell_s)]
+    cmd.extend(['--push-controller',args.push_controller])
     cmd.extend(['--tool-yaw-offset-deg',str(item.get('tool_yaw_offset_deg',0)),
                 '--detail-camera',item.get('detail_camera','pushview')])
     if args.no_video:cmd.append('--no-video')
@@ -56,6 +58,7 @@ for item in manifest['episodes']:
     rows.append(row)
     print(json.dumps(row),flush=True)
 summary={'scope':'collection/tuning episode replay; not held-out policy evaluation','approach_mode':args.approach,
+         'push_controller':args.push_controller,'push_timeout_s':args.push_timeout_s,
          'manifest':str(args.manifest),'passed':sum(r['passed'] for r in rows),'total':len(rows),
          'episodes':rows}
 (args.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')

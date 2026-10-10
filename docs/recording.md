@@ -1,6 +1,6 @@
 # Recording checklist: current square-target task
 
-**Latest batch:** clips 023–032 are processed (10/10 tracked, 3/10 validated replay successes at the new 10-second push limit). Total: 32 tracked sources, 20 validated robot rollouts. Next record `train_033`–`train_042`. See [the third batch review](training-batch-03.md); earlier updates below are historical.
+**Latest status:** 32 sources tracked. The recorded-object feedback teacher has 28/32 validated successful rollouts; the preserved finger baseline has 20/32. Next record `train_033`–`train_042`. See [the teacher report](object-trajectory-teacher.md). Earlier collection updates are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
@@ -64,3 +64,5 @@ The pipeline tracks patch centroids on an assumed table plane. Height-related pa
 **Collection constraint:** `goal_below1` is processed and usable. The wall prevents further real recordings from below; no more are requested for that direction. Planned augmentation must be labelled synthetic and kept in the same split as its source clip. The old left-only schedule is archived; the active accessible-workspace plan is [recording-plan.md](recording-plan.md).
 
 **Playback:** HEVC/HDR originals may fail in the IDE preview while still decoding correctly for processing. Compatible H.264 viewing copies of `goal_right1` and `goal_above1` are under `data/viewing/`; see [video-playback.md](video-playback.md). Keep using original files for tracking.
+
+Push near the centre of a face when convenient, without forcing a precise finger angle. Smooth contact and visible markers matter more than reproducing the paddle orientation. Natural variation is welcome; avoid excessive twisting or sideways slipping.

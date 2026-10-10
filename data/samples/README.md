@@ -22,3 +22,7 @@ Ten additional source tracks, `train_013`–`train_022`, are included. Use `data
 ## Third new training batch and timeout update
 
 Ten source tracks, `train_023`–`train_032`, are included with `data/manifests/public_training_batch_03.json`. The current default push limit is 10 seconds. Three replays pass all checks; 032 reaches the goal but fails scripted approach validity. Earlier five failed sources remain unsuccessful when rerun at 10 seconds. Total: 32 new source tracks, 20 validated expert candidates. See [the third review](../../docs/training-batch-03.md). Earlier batch counts describe their original 8-second runs; specify `--push-timeout-s 8` to reproduce those historical results.
+
+## Optional recorded-object teacher
+
+Use `data/manifests/human_object_teacher.json` with `--push-controller human-object-feedback` for the same 32 sources. It validates 28/32 rollouts, compared with 20/32 for the finger baseline. It uses simulator cube position/orientation and the human object trajectory to generate robot labels; it is a scripted teacher, not a learned policy. See [the report](../../docs/object-trajectory-teacher.md).

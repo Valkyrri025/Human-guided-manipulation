@@ -1,6 +1,7 @@
 """Replay personally collected finger XY through physical Panda contact.
 
-No policy training. Cube state monitors termination; it does not steer replay XY.
+No policy training. The optional human-object teacher uses cube-state feedback;
+the original finger replay uses cube state only for termination.
 """
 import argparse
 import hashlib
@@ -20,6 +21,7 @@ from robosuite.controllers import load_composite_controller_config
 from .push_env import PlanarPush
 from .task_rules import StopRule, box_inside_polygon
 from .retargeting import adapt_reference
+from .teacher import object_tracking_target
 
 
 def prepare_reference(tracks_path, calibration_path, start_s, end_s, radius):
@@ -87,6 +89,7 @@ def prepare_reference(tracks_path, calibration_path, start_s, end_s, radius):
     robot_support=float(np.dot(np.abs(robot_direction),size[:2]/2))
     robot_offset=np.median(robot_obj[valid]-robot_finger[valid],axis=0)-robot_direction*(robot_support+radius+.0005)
     result['reference_xy']=robot_finger[selected]+robot_offset
+    result['object_reference_xy']=robot_obj[selected]
     result['object_start']=robot_start
     result['endpoint']=robot_end
     result['target']=(target-origin)@matrix.T
@@ -120,6 +123,7 @@ def main():
     parser.add_argument('--start-offset-m',type=float,nargs=2,default=[0.,0.],metavar=('DX','DY'),help='Shift simulated cube start in table metres; target stays fixed')
     parser.add_argument('--detail-camera',choices=['pushview','robotview'],default='pushview')
     parser.add_argument('--no-video', action='store_true')
+    parser.add_argument('--push-controller',choices=['finger-replay','human-object-feedback'],default='finger-replay',help='Optional scripted teacher tracks the human object path using simulated cube feedback')
     args = parser.parse_args()
     if args.end_s <= args.start_s:
         parser.error('end must follow start')
@@ -130,6 +134,10 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     tool_radius=.004
     reference = prepare_reference(args.tracks, args.calibration, args.start_s, args.end_s, tool_radius)
+    if args.push_controller=='human-object-feedback' and not np.isfinite(reference['object_reference_xy']).all():
+        parser.error('Human-object teacher requires continuous finite object tracks throughout contact')
+    if args.push_controller=='human-object-feedback' and (args.retargeting!='absolute' or np.any(np.asarray(args.start_offset_m)!=0)):
+        parser.error('Human-object teacher currently supports original starting positions only')
     if args.retargeting!='absolute' or np.any(np.asarray(args.start_offset_m)!=0):
         reference=adapt_reference(reference,reference['object_start']+np.asarray(args.start_offset_m),args.retargeting,tool_radius)
     config = load_composite_controller_config(robot='Panda')
@@ -144,6 +152,7 @@ def main():
     observations, actions, desired, phases, contacts, table_contacts = [], [], [], [], [], []
     writer = None
     before_states, before_quats, after_quats = [], [], []
+    cube_quats_before, cube_quats_after = [], []
     tool_yaw=reference['push_yaw_rad']+np.deg2rad(args.tool_yaw_offset_deg)
     orientation=Rotation.from_euler('z',tool_yaw)*Rotation.from_matrix(np.diag([1.,-1.,-1.]))
     try:
@@ -163,7 +172,9 @@ def main():
             action[-1]=1
             before_states.append(np.r_[obs['robot0_eef_pos'],obs['cube_pos']])
             before_quats.append(site_rotation.as_quat())
+            cube_quats_before.append(env.sim.data.body_xquat[env.cube_body_id].copy())
             obs,_,_,_=env.step(action)
+            cube_quats_after.append(env.sim.data.body_xquat[env.cube_body_id].copy())
             after_quats.append(Rotation.from_matrix(env.sim.data.site_xmat[env.robots[0].eef_site_id['right']].reshape(3,3)).as_quat())
             observations.append(np.r_[obs['robot0_eef_pos'],obs['cube_pos']])
             actions.append(action.copy()); desired.append(target.copy()); phases.append(phase)
@@ -199,6 +210,10 @@ def main():
                 smooth=alpha*alpha*(3-2*alpha)
                 command(begin+(target-begin)*smooth,phase)
         first=np.r_[reference['reference_xy'][0],args.eef_height_m]
+        direction=np.array([np.cos(reference['push_yaw_rad']),np.sin(reference['push_yaw_rad'])])
+        if args.push_controller=='human-object-feedback':
+            support=float(np.dot(np.abs(direction),reference['object_size'][:2]/2))
+            first[:2]=reference['object_start']-direction*(support+tool_radius+.0005)
         lower=first.copy()
         approach_retreat=0.
         if args.approach=='clearance':
@@ -208,7 +223,8 @@ def main():
             # centroid can be biased near image boundaries. Do not lower an
             # overlapping paddle onto the die; keep the human XY reference intact.
             gap=float(np.dot(reference['object_start']-first[:2],direction))
-            approach_retreat=max(0.,support+tool_radius+.004-gap)
+            clearance=.012 if args.push_controller=='human-object-feedback' else .004
+            approach_retreat=max(0.,support+tool_radius+clearance-gap)
             lower[:2]-=direction*approach_retreat
         above=lower+np.array([0,0,.10])
         move(above,100,'approach')
@@ -227,6 +243,12 @@ def main():
             if hold_position is None:
                 # Once footage ends, hold the final reference until goal/timeout.
                 xy=np.array([np.interp(t,reference['time_s'],reference['reference_xy'][:,i]) for i in range(2)])
+                if args.push_controller=='human-object-feedback':
+                    object_goal=np.array([np.interp(t,reference['time_s'],reference['object_reference_xy'][:,i]) for i in range(2)])
+                    # Box support changes as contact rotates the cube. Follow
+                    # the recorded object path with bounded state correction.
+                    rotation=env.sim.data.body_xmat[env.cube_body_id].reshape(3,3)
+                    xy=object_tracking_target(object_goal,obs['cube_pos'][:2],rotation,reference['object_size'],direction,tool_radius)
                 target=np.r_[xy,args.eef_height_m]
                 phase='human_push' if t<=reference['time_s'][-1] else 'reference_hold'
             else:
@@ -296,17 +318,22 @@ def main():
             'tool_table_contact_steps':int(np.sum(table_contacts)),
             'push_tracking_rmse_m':float(np.sqrt(np.mean(np.sum((states[push,:3]-goals[push])**2,axis=1)))),
             'finite_state':finite, 'tracks_sha256':hashlib.sha256(args.tracks.read_bytes()).hexdigest(),
-            'observations':'simulator eef pose for control; cube pose/orientation for termination, logging and diagnostics; no XY steering from cube state',
+            'push_controller':args.push_controller,
+            'observations':('simulator eef pose for control; cube pose/orientation for termination, logging and diagnostics; no XY steering from cube state' if args.push_controller=='finger-replay' else 'scripted teacher: simulator cube position/orientation steers XY to the recorded human object trajectory; fixed initial tool yaw; feedback gain 0.75 capped at 6 mm'),
             'limitations':['Pilot tuning result, not held-out success','Target source is recorded explicitly; independent drawn goal used when calibrated',
                           'Assumed table/object friction; marker parallax uncorrected','Scripted height, orientation, approach and withdrawal',
                           'Tool attachment differs from human fingertip; no policy trained']}
         np.savez_compressed(args.output/'rollout.npz',observations=states,actions=np.asarray(actions),
                             observations_before=np.asarray(before_states),eef_quat_site_before=np.asarray(before_quats),
                             eef_quat_site_after=np.asarray(after_quats),action_time_s=np.arange(len(states))/20,
+                            cube_quat_wxyz_before=np.asarray(cube_quats_before),cube_quat_wxyz_after=np.asarray(cube_quats_after),
                             observation_time_s=(np.arange(len(states))+1)/20,
                             target_xyz=goals,phases=phases,tool_object_contact=contacts,
                             human_reference_xy=reference.get('original_reference_xy',reference['reference_xy']),
-                            executed_reference_xy=reference['reference_xy'],human_time_s=reference['time_s'],
+                            executed_reference_xy=(reference['reference_xy'] if args.push_controller=='finger-replay' else goals[np.isin(phases,['human_push','goal_dwell','reference_hold']),:2]),
+                            executed_reference_time_s=(reference['time_s'] if args.push_controller=='finger-replay' else np.arange(push_steps)*.05),
+                            nominal_finger_reference_xy=reference['reference_xy'],human_time_s=reference['time_s'],
+                            human_object_reference_xy=reference['object_reference_xy'],push_controller=np.asarray(args.push_controller),
                             target_xy_m=reference['target'],object_start_xy_m=reference['object_start'],
                             robot_coordinate_frame=np.asarray(reference['paper_to_robot_frame']),
                             paper_to_robot_matrix=reference['paper_to_robot_matrix'])

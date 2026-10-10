@@ -1,10 +1,10 @@
 # Staged learning roadmap and next recording batch
 
-**Latest batch:** clips 023–032 are processed (10/10 tracked, 3/10 validated replay successes at the new 10-second push limit). Total: 32 tracked sources, 20 validated robot rollouts. Next record `train_033`–`train_042`. See [the third batch review](training-batch-03.md); earlier updates below are historical.
+**Latest status:** 32 sources tracked. The recorded-object feedback teacher has 28/32 validated successful rollouts; the preserved finger baseline has 20/32. Next record `train_033`–`train_042`. See [the teacher report](object-trajectory-teacher.md). Earlier collection updates are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
-**Active collection plan:** [recording-plan.md](recording-plan.md), 60 new clips across recording left/right/above, split 42 train / 9 validation / 9 test. The first 22 are processed; next collect training clips 023–032. The below side uses the existing pilot and explicitly synthetic augmentation due to the wall. The old left-only roadmap/schedule are retained in `docs/archive/`.
+**Active collection plan:** [recording-plan.md](recording-plan.md), 60 new clips across recording left/right/above, split 42 train / 9 validation / 9 test. The first 32 are processed; next collect training clips 033–042. The below side uses the existing pilot and explicitly synthetic augmentation due to the wall. The old left-only roadmap/schedule are retained in `docs/archive/`.
 
 Agreed direction: collect a broader personally recorded dataset, train a pushing-only imitation policy, extend imitation to the whole robot episode, then investigate a compact learned dynamics model. These are planned benchmarks; no learned model has been trained yet. The geometric baseline is complete and remains an independent non-learning reference.
 
@@ -14,7 +14,7 @@ Every trial used `pilot_goal` (contact segment 3.1–8.2 s). The other four squa
 
 ## Benchmark 1: learn pushing only
 
-- Source: validated robot rollouts retargeted from personally collected pushes.
+- Source: validated robot rollouts retargeted from personally collected pushes, now including the separately disclosed [recorded-object feedback teacher](object-trajectory-teacher.md). Its simulated cube feedback generates labels; a trained goal-conditioned policy must run without a recorded future trajectory.
 - Learn: planar Cartesian actions during contact/pushing, including appropriate settling near the goal. Phase selection and any dwell labels must be documented.
 - Script: initial approach, lowering, contact height, initial paddle yaw, withdrawal, low-level OSC/joint control and task termination.
 - Observe: simulator end-effector and cube state, plus target-relative geometry; no raw-image or language input initially.

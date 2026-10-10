@@ -1,6 +1,6 @@
 # Dataset recording plan — 8 October 2026
 
-**Latest batch:** clips 023–032 are processed (10/10 tracked, 3/10 validated replay successes at the new 10-second push limit). Total: 32 tracked sources, 20 validated robot rollouts. Next record `train_033`–`train_042`. See [the third batch review](training-batch-03.md); earlier updates below are historical.
+**Latest status:** 32 sources tracked. The recorded-object feedback teacher has 28/32 validated successful rollouts; the preserved finger baseline has 20/32. Next record `train_033`–`train_042`. See [the teacher report](object-trajectory-teacher.md). Earlier collection updates are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
