@@ -142,3 +142,7 @@ The [fourth training-batch review](docs/training-batch-04.md) documents calibrat
 ## Validation references
 
 All nine validation recordings are tracked and teacher-replayed separately: 6/9 successful reference rollouts, with failures retained. Training remains 37/42. See [the validation review](docs/validation-batch-01.md); numerical outputs are in `outputs/validation_batch_01/`. No learned-policy result is reported. Test collection remains reserved for the final frozen evaluation.
+
+## Behavior-cloning implementation
+
+Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training and closed-loop validation commands are implemented. See [the behavior-cloning workflow](docs/behavior-cloning.md) for inputs, labels, split isolation, installation and commands. Current data: 3,318 training pairs from 37 successful teachers; 423 validation reference pairs. Policy training has not started. All nine validation starts will be evaluated; test recordings remain reserved.

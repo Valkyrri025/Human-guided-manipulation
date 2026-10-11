@@ -14,6 +14,17 @@ dependencies = [
   "imageio-ffmpeg==0.6.0",
 ]
 
+[project.optional-dependencies]
+learning = ["torch==2.5.1"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
@@ -22,6 +33,9 @@ build-backend = "hatchling.build"
 push-smoke = "humanoid_push.smoke:main"
 push-track = "humanoid_push.tracking:main"
 push-replay = "humanoid_push.replay:main"
+push-bc-prepare = "humanoid_push.bc_data:main"
+push-bc-train = "humanoid_push.bc_train:main"
+push-bc-evaluate = "humanoid_push.bc_eval:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/humanoid_push"]

@@ -1,0 +1,292 @@
+{
+  "status": "prepared; no policy trained",
+  "feature_version": "relative-planar-v1",
+  "features": [
+    "eef_minus_cube_x",
+    "eef_minus_cube_y",
+    "goal_minus_cube_x",
+    "goal_minus_cube_y",
+    "cube_yaw_sin",
+    "cube_yaw_cos",
+    "eef_yaw_sin",
+    "eef_yaw_cos"
+  ],
+  "phases": [
+    "human_push",
+    "goal_dwell",
+    "reference_hold"
+  ],
+  "labels": "normalized world-frame OSC X/Y actions, bounded +/-0.2",
+  "normalization": "first four position features, statistics from training only",
+  "train_samples": 3318,
+  "validation_samples": 423,
+  "train_sources": [
+    {
+      "episode": "train_001",
+      "samples": 73,
+      "rollout": "outputs/human_object_teacher/train_001/rollout.npz",
+      "sha256": "09a81b01d24fe60770f47fb63c703d2dfecd12fce86ec26439ac3495171d8be2"
+    },
+    {
+      "episode": "train_002",
+      "samples": 58,
+      "rollout": "outputs/human_object_teacher/train_002/rollout.npz",
+      "sha256": "0cc6ead30e592273ff17d24fc12a4a297b0eb323fec22699b41b59013116f615"
+    },
+    {
+      "episode": "train_004",
+      "samples": 88,
+      "rollout": "outputs/human_object_teacher/train_004/rollout.npz",
+      "sha256": "e7c7f669bbf3fd4252163efde75c4ef5fb1e09fbbefe4e22127148ecee76e59b"
+    },
+    {
+      "episode": "train_005",
+      "samples": 67,
+      "rollout": "outputs/human_object_teacher/train_005/rollout.npz",
+      "sha256": "24de60b9b320a2b61e57f0592c240afacdb0d8649349158024102f6c60ca2745"
+    },
+    {
+      "episode": "train_006",
+      "samples": 80,
+      "rollout": "outputs/human_object_teacher/train_006/rollout.npz",
+      "sha256": "d33de2359d5710ce172c8eb29bd699e2cb7bfb167feb71d31df5e6e97587f4eb"
+    },
+    {
+      "episode": "train_007",
+      "samples": 103,
+      "rollout": "outputs/human_object_teacher/train_007/rollout.npz",
+      "sha256": "b8112a76cac9232fcca7235393a1a6380f72c27690a02d2a159b48d7a0da0562"
+    },
+    {
+      "episode": "train_008",
+      "samples": 80,
+      "rollout": "outputs/human_object_teacher/train_008/rollout.npz",
+      "sha256": "f36a1b9156c331af291f2b40a88f52dc5818b99108d541987931209c4beacbe8"
+    },
+    {
+      "episode": "train_010",
+      "samples": 99,
+      "rollout": "outputs/human_object_teacher/train_010/rollout.npz",
+      "sha256": "3bd8435a78f11ea150600baf9e43ec23aab9e8c159e632bc0c05bb5818f40fff"
+    },
+    {
+      "episode": "train_011",
+      "samples": 78,
+      "rollout": "outputs/human_object_teacher/train_011/rollout.npz",
+      "sha256": "0df1ae12b893cf936fb923c251600154aab8c8dbcfb7e2258de00310e5d9c4b6"
+    },
+    {
+      "episode": "train_012",
+      "samples": 99,
+      "rollout": "outputs/human_object_teacher/train_012/rollout.npz",
+      "sha256": "3258efaf4bd9f2166f95e05d9c1c3729337221cbb2314c3c371e0dc4403b0deb"
+    },
+    {
+      "episode": "train_013",
+      "samples": 91,
+      "rollout": "outputs/human_object_teacher/train_013/rollout.npz",
+      "sha256": "8d39a61fd1e4b0893f0727b24485f736bc18a061a2e00b82851db147c83afd5d"
+    },
+    {
+      "episode": "train_014",
+      "samples": 83,
+      "rollout": "outputs/human_object_teacher/train_014/rollout.npz",
+      "sha256": "0691eb37758242c9dd589859aee1c0496efe71adaa4167f053604830bcdc6191"
+    },
+    {
+      "episode": "train_015",
+      "samples": 90,
+      "rollout": "outputs/human_object_teacher/train_015/rollout.npz",
+      "sha256": "25beb2f21436ab705bea38c683061f038e0963e0f6538c9456364bda4d193fbd"
+    },
+    {
+      "episode": "train_016",
+      "samples": 65,
+      "rollout": "outputs/human_object_teacher/train_016/rollout.npz",
+      "sha256": "b653b4ff328c03b757c2b0108c24f37ba2c62aab3e2d0f7e9ed73f25a3b17918"
+    },
+    {
+      "episode": "train_017",
+      "samples": 79,
+      "rollout": "outputs/human_object_teacher/train_017/rollout.npz",
+      "sha256": "a0d5e1f02895c33e08e8090656204488571315a07026401630226ba84dba8477"
+    },
+    {
+      "episode": "train_018",
+      "samples": 72,
+      "rollout": "outputs/human_object_teacher/train_018/rollout.npz",
+      "sha256": "c1f4d5cf0cb21561239720102da6a7dea10a93977b741d956bf00fcd1c1dbcd0"
+    },
+    {
+      "episode": "train_019",
+      "samples": 121,
+      "rollout": "outputs/human_object_teacher/train_019/rollout.npz",
+      "sha256": "11a201397e45916c15a18de0ed292e235a03c4ae6630fffe573a4ffbcdca6c76"
+    },
+    {
+      "episode": "train_020",
+      "samples": 79,
+      "rollout": "outputs/human_object_teacher/train_020/rollout.npz",
+      "sha256": "dff216f239211c5407e7d0feb514f49091ea358047220c974e2860d98d265d88"
+    },
+    {
+      "episode": "train_021",
+      "samples": 83,
+      "rollout": "outputs/human_object_teacher/train_021/rollout.npz",
+      "sha256": "b34102683c200d447408e2fae793ca273dc7847ae947c1bf474f911a54718411"
+    },
+    {
+      "episode": "train_023",
+      "samples": 90,
+      "rollout": "outputs/human_object_teacher/train_023/rollout.npz",
+      "sha256": "a7a9e6973c57b3371646df3c86f41c6149ce41fe6a53e24bcca209af430fc777"
+    },
+    {
+      "episode": "train_024",
+      "samples": 94,
+      "rollout": "outputs/human_object_teacher/train_024/rollout.npz",
+      "sha256": "aa73182d5411e5c16b751e24b2022887cefac722dc2df2cd5b48e3d49b14801f"
+    },
+    {
+      "episode": "train_025",
+      "samples": 104,
+      "rollout": "outputs/human_object_teacher/train_025/rollout.npz",
+      "sha256": "96e8ad1a8194cef5ba713c9b93d720fcf8128a781a5fbabcb90e9e125da1fbbe"
+    },
+    {
+      "episode": "train_026",
+      "samples": 90,
+      "rollout": "outputs/human_object_teacher/train_026/rollout.npz",
+      "sha256": "4edc640c132ba2e8a2d064ec7d448dfb7278882afd3bbcc522a43974e417f812"
+    },
+    {
+      "episode": "train_028",
+      "samples": 103,
+      "rollout": "outputs/human_object_teacher/train_028/rollout.npz",
+      "sha256": "89fda81f3736c9853cad89bee1abb6b53d9a54ee66a215b35df1bcf7bb928a79"
+    },
+    {
+      "episode": "train_029",
+      "samples": 89,
+      "rollout": "outputs/human_object_teacher/train_029/rollout.npz",
+      "sha256": "2f7e61b9a83243d193e80ee2800dff6f4cf8c2c24c839ef7d9a9104b393eacf1"
+    },
+    {
+      "episode": "train_030",
+      "samples": 115,
+      "rollout": "outputs/human_object_teacher/train_030/rollout.npz",
+      "sha256": "10b8cb51b789733ed0cdc2f62d69e6ce50e9c0b4a4be2db4db4af5f1eccac4dc"
+    },
+    {
+      "episode": "train_031",
+      "samples": 158,
+      "rollout": "outputs/human_object_teacher/train_031/rollout.npz",
+      "sha256": "8d4f8de25b08765a59a55013433f8ad76f81710ebd2707fc79550ef1c0f8b9de"
+    },
+    {
+      "episode": "train_032",
+      "samples": 159,
+      "rollout": "outputs/human_object_teacher/train_032/rollout.npz",
+      "sha256": "ee00749be3f290d5499980571825393836226afccf2f2345d2d83608373abc28"
+    },
+    {
+      "episode": "train_033",
+      "samples": 80,
+      "rollout": "outputs/training_batch_04/train_033/rollout.npz",
+      "sha256": "bfc35dce45444cff175d8426c336b3738b507cc7c9dfacafaee0b85d552003ff"
+    },
+    {
+      "episode": "train_034",
+      "samples": 117,
+      "rollout": "outputs/training_batch_04/train_034/rollout.npz",
+      "sha256": "a0d90de916132a4fff8b9aa9b7ac654e394cc1d79e539114b1ca82a0b9f2d3bc"
+    },
+    {
+      "episode": "train_035",
+      "samples": 105,
+      "rollout": "outputs/training_batch_04/train_035/rollout.npz",
+      "sha256": "d4a041b8dd18ea9385ec6aacd4e23baa7ec360dee2a8e74fff4c4f82cf1d46c6"
+    },
+    {
+      "episode": "train_036",
+      "samples": 94,
+      "rollout": "outputs/training_batch_04/train_036/rollout.npz",
+      "sha256": "67d2da36123872d20d7f1cf03739192245901fb16c0de57ab5812ab12299f30f"
+    },
+    {
+      "episode": "train_037",
+      "samples": 96,
+      "rollout": "outputs/training_batch_04/train_037/rollout.npz",
+      "sha256": "816f322c93c9f18f15b558a1ad87672891080a2d78680bb0a007e2a4dd82d138"
+    },
+    {
+      "episode": "train_038",
+      "samples": 95,
+      "rollout": "outputs/training_batch_04/train_038/rollout.npz",
+      "sha256": "69c596ebf6d9db891e7904aa2bfdd9223173ed0bd31da82c076273f7cd895f21"
+    },
+    {
+      "episode": "train_040",
+      "samples": 52,
+      "rollout": "outputs/training_batch_04/train_040/rollout.npz",
+      "sha256": "03853e882b5335bd7d491810e64febf04e172a2c72781b184eecb4147e01e8a8"
+    },
+    {
+      "episode": "train_041",
+      "samples": 46,
+      "rollout": "outputs/training_batch_04/train_041/rollout.npz",
+      "sha256": "d3ff29f1404e9200113a169e63c370300a1435df32230b2b0b596d63c7f788f8"
+    },
+    {
+      "episode": "train_042",
+      "samples": 43,
+      "rollout": "outputs/training_batch_04/train_042/rollout.npz",
+      "sha256": "f1a2ebe619c770df19bf1e65fd520ace3386ae6f59bdd3767a5cdbcce1d985dc"
+    }
+  ],
+  "validation_sources": [
+    {
+      "episode": "validation_001",
+      "samples": 84,
+      "rollout": "outputs/validation_batch_01/validation_001/rollout.npz",
+      "sha256": "296bdcb0cc157178e3cdc97a523899f8f07b7c8dca11f940a182749173aa5b90"
+    },
+    {
+      "episode": "validation_002",
+      "samples": 74,
+      "rollout": "outputs/validation_batch_01/validation_002/rollout.npz",
+      "sha256": "d6ccef7f8f3c8cdf6303088ec723437546afb690065a93d260607729e07c85d3"
+    },
+    {
+      "episode": "validation_004",
+      "samples": 63,
+      "rollout": "outputs/validation_batch_01/validation_004/rollout.npz",
+      "sha256": "81a56992bfb740f125cd74bc64c3e412e8d1bd40267f6360181d498c92118a22"
+    },
+    {
+      "episode": "validation_005",
+      "samples": 73,
+      "rollout": "outputs/validation_batch_01/validation_005/rollout.npz",
+      "sha256": "ec0a2b74271d43d50b67ec8d5372693f58473476b266aa2f5bed35ef468b6480"
+    },
+    {
+      "episode": "validation_006",
+      "samples": 63,
+      "rollout": "outputs/validation_batch_01/validation_006/rollout.npz",
+      "sha256": "1d312807aee6265784d9c82b18012010659c80c11fd5465d6f486eef7745c37d"
+    },
+    {
+      "episode": "validation_008",
+      "samples": 66,
+      "rollout": "outputs/validation_batch_01/validation_008/rollout.npz",
+      "sha256": "c01d9468aecfa88395a082f3da8f209e34827175c85f4d2110226b6f9c59f787"
+    }
+  ],
+  "test_accessed": false,
+  "architecture": [
+    8,
+    64,
+    64,
+    2
+  ]
+}

@@ -154,3 +154,7 @@ The [folder guide](artifacts.md) lists canonical rollouts and media. Batch runs 
 ## Validation reference checkpoint
 
 All nine validation recordings are calibrated, tracked and teacher-replayed with unchanged settings. See [the validation review](validation-batch-01.md). Training remains 37/42; validation teacher references are 6/9 and never enter training gradients. These are reference-generation outcomes, not learned-policy performance. Test remains reserved for final frozen evaluation.
+
+## Pushing-only learning implementation (11 October 2026)
+
+The [behavior-cloning workflow](behavior-cloning.md) now specifies and implements causal feature extraction, train-only normalization, the bounded small MLP, explicit supervised training and closed-loop validation. Prepared data contain 3,318 training pairs from 37 successful teacher episodes and 423 validation reference pairs from six successes. Closed-loop evaluation includes all nine validation starts, without future human paths. The test files are uploaded and remain unopened. Training has not started; next run the documented training command, then assess all-nine validation task success separately from action loss.
