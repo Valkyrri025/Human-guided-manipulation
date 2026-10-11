@@ -2,11 +2,11 @@
 
 **Collection update:** `train_033.mp4` through `train_042.mp4` are now tracked and replayed; next is pushing-only imitation dataset preparation. Successful rendered examples will be retained for each reviewed batch; see [the artifact guide](artifacts.md).
 
-**Latest status (11 October):** all 42 training sources are tracked and teacher-replayed; 37/42 are validated successful training candidates. Batch 04 passes 9/10. No more training recordings are requested now. See [the fourth batch review](training-batch-04.md). Validation/test collection remains pending; earlier updates are historical.
+**Latest status (11 October):** all 42 training and nine validation sources are tracked and teacher-replayed. Training: 37/42 successful candidates. Validation teacher references: 6/9, kept separate from training. See [the validation review](validation-batch-01.md). No more recordings are requested now; reserve test for final frozen evaluation. Earlier updates are historical.
 
 **10 October update:** the first 12 clips are calibrated/tracked; 8/12 robot replays pass. Continue with `train_013`–`train_042`, preferably uploading groups of 10. Keep validation/test slots for after the training pipeline is stable. See [the batch review](training-batch-01.md); no first-batch rerecording is requested.
 
-We are ready to collect the next batch: all four approach sides have physically replayed successfully using your fixed direction convention. This validates the current setup, not arbitrary curved trajectories or a learned policy. **All 42 training sources are tracked. All 42 have teacher robot replays; keep validation/test for after the training pipeline is stable.**
+We are ready to collect the next batch: all four approach sides have physically replayed successfully using your fixed direction convention. This validates the current setup, not arbitrary curved trajectories or a learned policy. **All 42 training sources are tracked. All 42 have teacher robot replays; validation is now processed; reserve test for final frozen evaluation.**
 
 ## Direction and placement
 

@@ -8,7 +8,7 @@ This is the main workflow document. Detailed evidence lives in the linked report
 
 Push a 17 mm die on a flat surface into a roughly 30 × 30 mm square; final orientation is unrestricted. Human video supplies planar motion; a simulated Panda with a rigid mounted paddle performs the push.
 
-**Current collection scope:** all four direction pilots have replayed successfully with the shared native-display convention. New training data cover recording left, right and above. The wall-constrained below side uses the existing pilot plus explicitly labelled synthetic augmentation. All 42 planned new training clips are tracked; teacher results are 37/42 validated successes in [recording-plan.md](recording-plan.md). Keep validation/test collection for after the pipeline is stable. Deliberate curved pushing and changing tool yaw during contact remain extensions.
+**Current collection scope:** all four direction pilots have replayed successfully with the shared native-display convention. New training data cover recording left, right and above. The wall-constrained below side uses the existing pilot plus explicitly labelled synthetic augmentation. All 42 planned new training clips are tracked; teacher results are 37/42 validated successes in [recording-plan.md](recording-plan.md). Validation is processed separately; reserve test for final frozen evaluation. Deliberate curved pushing and changing tool yaw during contact remain extensions.
 
 ## 2. What is done and what remains
 
@@ -20,7 +20,7 @@ Push a 17 mm die on a flat surface into a roughly 30 × 30 mm square; final orie
 | Calibrate independent square goal and replay goal pilot | Done | [Goal pilot report](goal-pilot.md) |
 | Collect and validate first additional batch | Done: 3 straight + 1 diagonal, plus goal pilot | [Batch report](batch-report.md) |
 | Stop on sustained square containment or push timeout | Done: 10 s limit, 0.2 s dwell | [Stopping report](stopping.md) |
-| Structured new dataset | 42/60 source clips tracked: 37/42 validated teacher replays | [Learning roadmap](learning-roadmap.md) |
+| Structured new dataset | 51/60 sources tracked: training teacher 37/42; validation teacher 6/9 | [Learning roadmap](learning-roadmap.md) |
 | Compare absolute/relative replay on new starts | Done: absolute 2/8, relative 5/8, scaled 8/8 | [Comparison report](retargeting-comparison.md) |
 | Pushing-only imitation policy | Planned Benchmark 1; no training yet | [Learning roadmap](learning-roadmap.md) |
 | Full-episode imitation including synthetic scripted labels | Planned Benchmark 2 | [Learning roadmap](learning-roadmap.md) |
@@ -150,3 +150,7 @@ See [the teacher report](object-trajectory-teacher.md) for the new scripted simu
 ## Artifact retention
 
 The [folder guide](artifacts.md) lists canonical rollouts and media. Batch runs now automatically retain up to three successful rendered examples even with `--no-video`; explicitly use `--success-videos 0` only for physics-only checks. Obsolete diagnostics were consolidated before cleanup. All 42 training sources are tracked as of 11 October; next is pushing-only imitation dataset preparation.
+
+## Validation reference checkpoint
+
+All nine validation recordings are calibrated, tracked and teacher-replayed with unchanged settings. See [the validation review](validation-batch-01.md). Training remains 37/42; validation teacher references are 6/9 and never enter training gradients. These are reference-generation outcomes, not learned-policy performance. Test remains reserved for final frozen evaluation.

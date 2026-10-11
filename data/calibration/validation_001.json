@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "video": "data/raw/validation_001.mp4",
+  "image_orientation": "display",
+  "paper_to_robot_frame": "user_convention_v1",
+  "paper_to_robot_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "robot_rectangle_dimensions_xy_m": [
+    0.3,
+    0.297
+  ],
+  "rectangle_width_m": 0.3,
+  "rectangle_height_m": 0.297,
+  "coordinate_convention": "origin top-left L intersection; x right, y down; metres",
+  "corners_order": [
+    "top_left",
+    "top_right",
+    "bottom_right",
+    "bottom_left"
+  ],
+  "corners_px": [
+    [
+      28.5,
+      260.0
+    ],
+    [
+      621.5,
+      255.5
+    ],
+    [
+      620.5,
+      847.0
+    ],
+    [
+      25.5,
+      844.0
+    ]
+  ],
+  "corner_search_windows_px": [
+    [
+      11,
+      243,
+      77,
+      309
+    ],
+    [
+      575,
+      239,
+      639,
+      307
+    ],
+    [
+      568,
+      795,
+      641,
+      867
+    ],
+    [
+      5,
+      793,
+      79,
+      863
+    ]
+  ],
+  "calibration_source": "red L stroke intersections detected in opening frame; inspect preview",
+  "marker_height_correction": "none; planar approximation",
+  "lens_distortion_correction": "none",
+  "red_hsv_ranges": [
+    [
+      [
+        0,
+        100,
+        60
+      ],
+      [
+        10,
+        255,
+        255
+      ]
+    ],
+    [
+      [
+        170,
+        100,
+        60
+      ],
+      [
+        179,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_hsv_ranges": [
+    [
+      [
+        35,
+        70,
+        50
+      ],
+      [
+        90,
+        255,
+        255
+      ]
+    ]
+  ],
+  "finger_hsv_ranges": [
+    [
+      [
+        0,
+        160,
+        140
+      ],
+      [
+        22,
+        255,
+        255
+      ]
+    ]
+  ],
+  "object_area_px": [
+    80,
+    5000
+  ],
+  "finger_area_px": [
+    80,
+    7000
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "object_dimensions_source": "user approximate measurement",
+  "finger_workspace_margin_px": 90,
+  "max_corner_shift_px": 15,
+  "goal": {
+    "source": "independent drawn square in opening frame",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      363.8484848484849,
+      534.1212121212121
+    ],
+    "center_table_xy_m": [
+      0.17103682458400726,
+      0.1399405151605606
+    ],
+    "corners_px": [
+      [
+        334.0,
+        504.0
+      ],
+      [
+        332.0,
+        564.0
+      ],
+      [
+        394.0,
+        565.0
+      ],
+      [
+        395.0,
+        506.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.155925914645195,
+        0.12469232827425003
+      ],
+      [
+        0.15501797199249268,
+        0.1550101339817047
+      ],
+      [
+        0.18627676367759705,
+        0.15554611384868622
+      ],
+      [
+        0.1866910308599472,
+        0.12577269971370697
+      ]
+    ],
+    "success_center_tolerance_m": 0.01
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "scope": "Validation reference rollouts only; never training inputs",
+  "split": "validation",
+  "total": 9,
+  "successful_teacher_references": 6,
+  "training_eligible": false,
+  "protocol_freeze_commit": "2d046e9ecb17c33c5c4899ef549f52605211685c",
+  "episodes": [
+    {
+      "episode": "validation_001",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_001/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_001/metrics.json"
+    },
+    {
+      "episode": "validation_002",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_002/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_002/metrics.json"
+    },
+    {
+      "episode": "validation_003",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": false,
+      "teacher_success": false,
+      "robot_rollout": "outputs/validation_batch_01/validation_003/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_003/metrics.json"
+    },
+    {
+      "episode": "validation_004",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_004/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_004/metrics.json"
+    },
+    {
+      "episode": "validation_005",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_005/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_005/metrics.json"
+    },
+    {
+      "episode": "validation_006",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_006/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_006/metrics.json"
+    },
+    {
+      "episode": "validation_007",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": false,
+      "teacher_success": false,
+      "robot_rollout": "outputs/validation_batch_01/validation_007/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_007/metrics.json"
+    },
+    {
+      "episode": "validation_008",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": true,
+      "teacher_success": true,
+      "robot_rollout": "outputs/validation_batch_01/validation_008/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_008/metrics.json"
+    },
+    {
+      "episode": "validation_009",
+      "split": "validation",
+      "training_eligible": false,
+      "validation_reference_eligible": false,
+      "teacher_success": false,
+      "robot_rollout": "outputs/validation_batch_01/validation_009/rollout.npz",
+      "metrics": "docs/examples/validation_batch_01/validation_009/metrics.json"
+    }
+  ]
+}

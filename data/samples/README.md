@@ -30,3 +30,7 @@ Use `data/manifests/human_object_teacher.json` with `--push-controller human-obj
 ## Fourth training batch: tracking and replay
 
 Ten additional human source tracks (`train_033`–`train_042`) and `data/manifests/public_training_batch_04.json` are included. All ten track continuously during contact; robot replay validates 9/10 expert candidates. Total: 42 new training source clips. Current teacher success is 37/42; all full state/action paths are in `data/manifests/training_rollout_index.json`. See [the review](../../docs/training-batch-04.md).
+
+## Validation source samples
+
+Nine additional personally recorded validation trajectories are included with `data/manifests/public_validation_batch_01.json`. The unchanged teacher generates 6/9 successful references. All nine retain the validation split and stay out of training; failures remain explicit. Training remains 37/42. See [the validation review](../../docs/validation-batch-01.md).

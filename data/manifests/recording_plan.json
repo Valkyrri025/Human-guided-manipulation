@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "all_42_training_sources_tracked_and_teacher_replayed",
+  "status": "training_and_validation_processed_test_pending",
   "scope": "60 NEW real recording slots across three accessible sides; no new below-side recordings required",
   "coordinate_frame": "native phone display",
   "rectangle_width_m": 0.3,
@@ -602,7 +602,10 @@
       "start_dy_cm_positive_down": -3,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "8260034e2284924360a3a2532ba80eab07f7f05b5efa75bd8ed5b9bbdf1786df",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_002.mp4",
@@ -613,7 +616,10 @@
       "start_dy_cm_positive_down": -3,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "feb3c073d5817d38564589f433f669c876411a95ce7295a8ef13d1cc88ca043f",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_003.mp4",
@@ -624,7 +630,10 @@
       "start_dy_cm_positive_down": -7.5,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_timeout",
+      "source_sha256": "65c7cb5b9add1f440af936d156d17370ee37e6ae455b49a5f25cf72bd3e600a2",
+      "teacher_success": false,
+      "training_eligible": false
     },
     {
       "filename": "validation_004.mp4",
@@ -635,7 +644,10 @@
       "start_dy_cm_positive_down": 0,
       "batch": 3,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "064fbbfb3a2f6a6940ddb9cdd9e205f7daa320a49da31e9febb889fcbc43bb4c",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_005.mp4",
@@ -646,7 +658,10 @@
       "start_dy_cm_positive_down": 0,
       "batch": 3,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "8b7c29553c72788381387cee8b76a76e35138f6d53b0bbb2b5af0c4ed40ac8e8",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_006.mp4",
@@ -657,7 +672,10 @@
       "start_dy_cm_positive_down": -10.5,
       "batch": 3,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "855e67eedcdf574e4e04c745a06c12a22b1ba3aaa469b3568e070eca35d0d394",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_007.mp4",
@@ -668,7 +686,10 @@
       "start_dy_cm_positive_down": 3,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_timeout",
+      "source_sha256": "daabd15973652fb28c47e27bf405ef1eaa25559b5eb1fe30ffd5016908b035ab",
+      "teacher_success": false,
+      "training_eligible": false
     },
     {
       "filename": "validation_008.mp4",
@@ -679,7 +700,10 @@
       "start_dy_cm_positive_down": 3,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_success",
+      "source_sha256": "191619ac05f053554562490573ca221063337948316b5ed8c99c598bfc0a1b45",
+      "teacher_success": true,
+      "training_eligible": false
     },
     {
       "filename": "validation_009.mp4",
@@ -690,7 +714,10 @@
       "start_dy_cm_positive_down": -11,
       "batch": 3,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_validation_teacher_timeout",
+      "source_sha256": "e92354b9def7a4490f84cf5be22ff3f0891029404c80822750a6f053429f9b05",
+      "teacher_success": false,
+      "training_eligible": false
     },
     {
       "filename": "test_001.mp4",
@@ -793,5 +820,6 @@
     }
   ],
   "active_teacher": "human-object-feedback",
-  "validated_teacher_successes": 37
+  "validated_teacher_successes": 37,
+  "validation_teacher_successes": 6
 }

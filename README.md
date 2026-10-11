@@ -12,7 +12,7 @@ Follow [the new recording plan](docs/recording-plan.md): **all 42 sources tracke
 
 ## Replay from the public numeric samples
 
-Nine pilot samples plus 42 new training trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
+Nine pilot samples plus 42 new training and nine validation trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
 
 ```bash
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
@@ -138,3 +138,7 @@ The agreed expansion is pushing-only imitation, then full-episode imitation with
 See [the folder guide](docs/artifacts.md) for canonical rollouts, successful videos and the latest cleanup. With `--no-video`, batch replay now retains up to three successfully rendered examples unless `--success-videos 0` is specified. All 42 training recordings are now tracked; next prepare pushing-only imitation inputs.
 
 The [fourth training-batch review](docs/training-batch-04.md) documents calibration/tracking for clips 033–042. Batch 04 validates 9/10 replays; total teacher success is 37/42.
+
+## Validation references
+
+All nine validation recordings are tracked and teacher-replayed separately: 6/9 successful reference rollouts, with failures retained. Training remains 37/42. See [the validation review](docs/validation-batch-01.md); numerical outputs are in `outputs/validation_batch_01/`. No learned-policy result is reported. Test collection remains reserved for the final frozen evaluation.

@@ -1,0 +1,163 @@
+{
+  "scope": "Fixed scripted teacher on validation source episodes; reference generation, not learned-policy evaluation",
+  "approach_mode": "clearance",
+  "push_controller": "human-object-feedback",
+  "push_timeout_s": 10.0,
+  "manifest": "data/manifests/public_validation_batch_01.json",
+  "passed": 6,
+  "total": 9,
+  "episodes": [
+    {
+      "episode": "validation_001",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.7719514279931143,
+      "physical_displacement_cm": 9.08904957940374,
+      "fully_inside_goal": true,
+      "yaw_degrees": -26.3847081003113,
+      "pre_push_displacement_mm": 1.279122642664648e-09,
+      "final_cube_yaw_degrees": -26.362804805868844,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 4.2,
+      "metrics": "outputs/validation_batch_01/validation_001/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_002",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.0361261762653693,
+      "physical_displacement_cm": 8.750781369023464,
+      "fully_inside_goal": true,
+      "yaw_degrees": -148.0147232069642,
+      "pre_push_displacement_mm": 1.2300508037866754e-09,
+      "final_cube_yaw_degrees": 32.02556207430646,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 3.7,
+      "metrics": "outputs/validation_batch_01/validation_002/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_003",
+      "returncode": 1,
+      "passed": false,
+      "target_distance_mm": 4.4155160006085605,
+      "physical_displacement_cm": 10.144274796675218,
+      "fully_inside_goal": false,
+      "yaw_degrees": -54.26784135260758,
+      "pre_push_displacement_mm": 1.4150347560359933e-09,
+      "final_cube_yaw_degrees": 35.96403449446924,
+      "stop_reason": "timeout",
+      "push_elapsed_s": 10.0,
+      "metrics": "outputs/validation_batch_01/validation_003/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_004",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.2958670906250043,
+      "physical_displacement_cm": 10.64170380313968,
+      "fully_inside_goal": true,
+      "yaw_degrees": -2.47308220631842,
+      "pre_push_displacement_mm": 1.2849027455000616e-09,
+      "final_cube_yaw_degrees": -2.4647164175317875,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 3.1500000000000004,
+      "metrics": "outputs/validation_batch_01/validation_004/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_005",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 4.320859513036673,
+      "physical_displacement_cm": 8.904282896570255,
+      "fully_inside_goal": true,
+      "yaw_degrees": -177.9072048431033,
+      "pre_push_displacement_mm": 1.284916623125039e-09,
+      "final_cube_yaw_degrees": 2.0745870447915733,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 3.6500000000000004,
+      "metrics": "outputs/validation_batch_01/validation_005/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_006",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.5734170033061092,
+      "physical_displacement_cm": 9.89388904739809,
+      "fully_inside_goal": true,
+      "yaw_degrees": -89.24574956283728,
+      "pre_push_displacement_mm": 1.2899403767363538e-09,
+      "final_cube_yaw_degrees": 0.7694072738147807,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 3.1500000000000004,
+      "metrics": "outputs/validation_batch_01/validation_006/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_007",
+      "returncode": 1,
+      "passed": false,
+      "target_distance_mm": 6.093200351256046,
+      "physical_displacement_cm": 12.554074531392976,
+      "fully_inside_goal": false,
+      "yaw_degrees": 15.911596678087896,
+      "pre_push_displacement_mm": 1.2849304992769221e-09,
+      "final_cube_yaw_degrees": 15.925209480209887,
+      "stop_reason": "timeout",
+      "push_elapsed_s": 10.0,
+      "metrics": "outputs/validation_batch_01/validation_007/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_008",
+      "returncode": 0,
+      "passed": true,
+      "target_distance_mm": 3.297401130876771,
+      "physical_displacement_cm": 10.230321126917065,
+      "fully_inside_goal": true,
+      "yaw_degrees": 164.44487106203303,
+      "pre_push_displacement_mm": 1.3417045252595017e-10,
+      "final_cube_yaw_degrees": -15.585163713392417,
+      "stop_reason": "goal_reached",
+      "push_elapsed_s": 3.3000000000000003,
+      "metrics": "outputs/validation_batch_01/validation_008/metrics.json",
+      "video": null
+    },
+    {
+      "episode": "validation_009",
+      "returncode": 1,
+      "passed": false,
+      "target_distance_mm": 4.781522862975406,
+      "physical_displacement_cm": 12.18897693443318,
+      "fully_inside_goal": false,
+      "yaw_degrees": -115.44825166357116,
+      "pre_push_displacement_mm": 1.4429224708027313e-10,
+      "final_cube_yaw_degrees": -25.416983067820382,
+      "stop_reason": "timeout",
+      "push_elapsed_s": 10.0,
+      "metrics": "outputs/validation_batch_01/validation_009/metrics.json",
+      "video": null
+    }
+  ],
+  "successful_examples": [
+    {
+      "episode": "validation_001",
+      "video": "docs/examples/validation_batch_01/successful_examples/validation_001/replay.mp4",
+      "metrics": "docs/examples/validation_batch_01/successful_examples/validation_001/metrics.json"
+    },
+    {
+      "episode": "validation_002",
+      "video": "docs/examples/validation_batch_01/successful_examples/validation_002/replay.mp4",
+      "metrics": "docs/examples/validation_batch_01/successful_examples/validation_002/metrics.json"
+    },
+    {
+      "episode": "validation_006",
+      "video": "docs/examples/validation_batch_01/successful_examples/validation_006/replay.mp4",
+      "metrics": "docs/examples/validation_batch_01/successful_examples/validation_006/metrics.json"
+    }
+  ]
+}
