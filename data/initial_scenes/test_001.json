@@ -1,0 +1,25 @@
+{
+  "initial_object_xyz_m": [
+    -0.06766265779733657,
+    -0.029602768957614906,
+    0.809
+  ],
+  "target_xy_m": [
+    0.020912876725196844,
+    0.008609746456146233
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "paper_size_robot_xy_m": [
+    0.3,
+    0.297
+  ],
+  "source": "median green marker centroid from opening 30 frames; no pushing trajectory read",
+  "opening_frames_used": 30,
+  "max_opening_deviation_m": 0.0007344082095241587,
+  "video_sha256": "4f8d314c87be83aa7935d8e6a3595a38bc9f994230726a81455a526896b6297f",
+  "initial_cube_orientation": "identity, same as validation; human object yaw not retargeted"
+}

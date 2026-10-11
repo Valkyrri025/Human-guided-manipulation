@@ -1,4 +1,4 @@
-"""Closed-loop validation: policy sees current state, never a future human path."""
+"""Closed-loop held-out evaluation: policy sees current state, never a future human path."""
 import argparse
 import hashlib
 import json
@@ -18,9 +18,10 @@ def evaluate_episode(model, root, episode, output, timeout=10., render=False):
     from robosuite.controllers import load_composite_controller_config
     from .push_env import PlanarPush
     import imageio.v2 as imageio
-    if episode['split'] != 'validation':
-        raise ValueError('Only validation episodes supported before final protocol freeze')
-    m = json.loads((root / episode['metrics']).read_text())
+    if episode['split'] not in ('validation', 'test'):
+        raise ValueError('Evaluation requires held-out scenes')
+    geometry_path = episode['initial_scene'] if episode['split']=='test' else episode['metrics']
+    m = json.loads((root / geometry_path).read_text())
     c = json.loads((root / episode['calibration']).read_text())
     origin = np.array([c['rectangle_width_m'], c['rectangle_height_m']])/2
     matrix = np.asarray(c['paper_to_robot_matrix'])
@@ -118,6 +119,8 @@ def main():
     p.add_argument('--manifest',type=Path,default=Path('data/manifests/public_validation_batch_01.json'))
     p.add_argument('--output',type=Path,default=Path('outputs/bc_validation'))
     p.add_argument('--success-videos',type=int,default=3)
+    p.add_argument('--split',choices=['validation','test'],default='validation')
+    p.add_argument('--protocol',type=Path,help='Required frozen protocol for test evaluation')
     a = p.parse_args()
     if a.success_videos < 0:
         p.error('success-videos must be nonnegative')
@@ -128,22 +131,36 @@ def main():
     if metadata.get('status') != 'trained':
         p.error('Official evaluation requires a trained checkpoint')
     episodes = json.loads((a.root/a.manifest).read_text())['episodes']
-    if len(episodes)!=9 or any(ep['split']!='validation' for ep in episodes):
-        p.error('Evaluate all nine validation starts; no test access supported here')
-    rows = []; retained = 0
+    if (len(episodes)!=9 or any(ep['split']!=a.split for ep in episodes) or
+            len({ep['id'] for ep in episodes})!=9):
+        p.error('Evaluate all nine distinct starts from the requested held-out split')
+    if a.split=='test':
+        if a.protocol is None:
+            p.error('Test evaluation requires --protocol with the frozen checkpoint and code hashes')
+        protocol=json.loads((a.root/a.protocol).read_text())
+        if hashlib.sha256(a.checkpoint.read_bytes()).hexdigest()!=protocol['checkpoint_sha256']:
+            p.error('Checkpoint differs from the frozen test protocol')
+        for filename,digest in protocol['evaluation_code_sha256'].items():
+            if hashlib.sha256((a.root/filename).read_bytes()).hexdigest()!=digest:
+                p.error(f'Evaluation code differs from frozen protocol: {filename}')
+    rows = []; retained = 0; rendered_sides = set()
     for ep in episodes:
         directory = a.output/ep['id']
         row = evaluate_episode(model,a.root,ep,directory)
-        if row['passed'] and retained<a.success_videos:
+        side=ep.get('recording_start_side',ep['id'])
+        if row['passed'] and retained<a.success_videos and side not in rendered_sides:
             rerun = evaluate_episode(model,a.root,ep,directory,render=True)
             if rerun['passed']:
-                retained += 1
+                retained += 1; rendered_sides.add(side)
             else:
                 raise RuntimeError('Rendered rerun disagrees with successful numerical evaluation')
-        rows.append(row); print(f"{ep['id']}: {row['passed']} ({row['stop_reason']})",flush=True)
-    summary = {'split':'validation','total':len(rows),'successes':sum(r['passed'] for r in rows),
+        rows.append(row)
+        (a.output/'progress.json').write_text(json.dumps({'split':a.split,'completed':len(rows),'episodes':rows},indent=2)+'\n')
+        print(f"{ep['id']}: {row['passed']} ({row['stop_reason']})",flush=True)
+    summary = {'split':a.split,'total':len(rows),'successes':sum(r['passed'] for r in rows),
         'mean_final_target_distance_m':float(np.mean([r['final_target_distance_m'] for r in rows])),
         'checkpoint_sha256':hashlib.sha256(a.checkpoint.read_bytes()).hexdigest(),
-        'checkpoint_metadata':metadata,'episodes':rows,'test_accessed':False}
+        'checkpoint_metadata':metadata,'episodes':rows,'test_accessed':a.split=='test',
+        'protocol':str(a.protocol) if a.protocol else None}
     (a.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-    print(f"Validation: {summary['successes']}/{summary['total']} successes")
+    print(f"{a.split.title()}: {summary['successes']}/{summary['total']} successes")

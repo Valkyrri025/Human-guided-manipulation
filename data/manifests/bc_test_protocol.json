@@ -1,0 +1,61 @@
+{
+  "status": "checkpoint and task rules frozen before decoding test videos",
+  "baseline_commit": "f718b5b",
+  "checkpoint": "docs/examples/bc_validation/best.pt",
+  "checkpoint_sha256": "7ec5a1426abffb8601be95dcc826a842a64817f7fd966665c66dbf894501deb6",
+  "selection": "epoch 143 selected by validation action loss before test access",
+  "architecture": [
+    8,
+    64,
+    64,
+    2
+  ],
+  "push_timeout_s": 10.0,
+  "goal_dwell_s": 0.2,
+  "seed": 7,
+  "task_rules": "whole cube containment dwell, containment after withdrawal, finite state, lift <5 mm, on table, pre-push displacement <2 mm",
+  "learned": "pushing X/Y only; all other phases scripted",
+  "source_setup": "opening 30 frames only; cube starts with identity quaternion as in validation",
+  "test_tuning_permitted": false,
+  "videos": {
+    "test_001.mp4": "4f8d314c87be83aa7935d8e6a3595a38bc9f994230726a81455a526896b6297f",
+    "test_002.mp4": "97b5598b723785853fafe30f63c16144a3b798e66b6a5658777978f4e1c39fd7",
+    "test_003.mp4": "c36842743241ae6d030914729de123d2ee3383596e09026dbeef6a6c31397dc5",
+    "test_004.mp4": "cb20adf2b337ad9539fcd0b130f538e00b1f8d20407732dff7c9c09bd5e0c54f",
+    "test_005.mp4": "83b38a163a3c99cf7d898c6689bd8a739f592578cb32116771b16b8f2671fdfd",
+    "test_006.mp4": "21a8851deb534a810508e0d0f3b345ef405b4a7dd26712cafcdbebb40f4d47ea",
+    "test_007.mp4": "ea8cd076777cd15e9534f0cf84035c304d30e819031ecab31a72c22a38f65f23",
+    "test_008.mp4": "dbc8b0369f1025df3fb45d6464ec68e1cfaebce7ca1fdc43f1a4b602d818809e",
+    "test_009.mp4": "5be2c1b46a45758a071efddd8f4b09853cea582411f7d5da08f3e1a61a55a8b2"
+  },
+  "evaluation_code_sha256": {
+    "src/humanoid_push/bc_eval.py": "3e99efcc6cd2285e1cfbfb664fabc7f099583e59514a7f244f3c27c024f35efa",
+    "src/humanoid_push/bc_data.py": "5d6e6773d5bcfb71a85a5d2ea3e05c5b92fed4aab82e8460a025b0748d58f96a",
+    "src/humanoid_push/bc_model.py": "778eb5a22e541a72b7ca5e40e989aedf844af4c738cfea61ec8dd094b71b3687",
+    "src/humanoid_push/push_env.py": "bb12403698fd3ab59a62c96ed202c9714ca00f1e555d85089cb6200d55075ea0",
+    "src/humanoid_push/task_rules.py": "71a6ed5217a7a366b3b13b59f46f5de245016c00d91842b126720d1a90a3835b"
+  },
+  "initial_geometry_sha256": {
+    "data/calibration/test_008.json": "b8c73d0d379094713237b2c98b6a503c581be3fbf6cd3b5d6a9f74db719bfd3d",
+    "data/calibration/test_002.json": "4c101e8931b32a516e5792f98513ea3c3044bb40860fa5bd5c13421e63113397",
+    "data/calibration/test_004.json": "b9f548548ced4e842ed17191461cdb5268c16dc6e6c4bcfaa83c8a2c6deba0de",
+    "data/calibration/test_003.json": "c421504dc4bc30dc99625cab64bbe0458c5e0fc2d67051b824537f8cc5ea9b11",
+    "data/calibration/test_006.json": "53ad6ec78e9d60b120db9d87c602e7a1644b65962555b026a58338b06910abe6",
+    "data/calibration/test_007.json": "6be6f6646a9a9aede1bf2a175a3aac4e4c044ee4a972aff8ff309e272264691f",
+    "data/calibration/test_001.json": "c91f760a005278fd9cef80e2d4aa34b74ed85f8158d3f02e0e8828c3b867d191",
+    "data/calibration/test_009.json": "53c83563c175205a3cbe8021d81effc236a048f5a2afb548a3873061469d7a9a",
+    "data/calibration/test_005.json": "52a34734d96f4b0fced4bb1cc76a241637277484c08a37a7c79b84aace61aa99",
+    "data/initial_scenes/test_008.json": "58dc6d2059b8adc5df1a18ab6e946b6bfcd4b08360f1a546b2b2211521dc6d02",
+    "data/initial_scenes/test_002.json": "fb02090bf8fad4271f6d441f36a2e41dc6d74b7a83cc61ccf0b10b7a50caead7",
+    "data/initial_scenes/test_004.json": "07f9545e0b25a763ec019d89e013f39800130b5300aaddcfa0e4994515a9296c",
+    "data/initial_scenes/test_003.json": "c565b1bccf10b7f2e4560688841f7600a820fe1bdf76a831112b7a1a8e9f2b6d",
+    "data/initial_scenes/test_006.json": "cd1ba3f4ebf304095d1bb73b25419a8119b888833bffa4c67ead3e511e5d9f3b",
+    "data/initial_scenes/test_007.json": "5923c8484e259fed0bff3f143fccf7c196dd87aad3d94559f2ab72062e5b65d6",
+    "data/initial_scenes/test_001.json": "b2ed1b9042b028cb3035c07866dc95785c77b194c1c81e80de75c2b75add1429",
+    "data/initial_scenes/test_009.json": "c7f7d7e7718dfc83774d6a3c8e18e340c14b6185c27cf61bdd95e8a196e03397",
+    "data/initial_scenes/test_005.json": "f26171b08c9fb27309ba4ab7e77e83844ba65d1bba421e2ec660538b75443bf2"
+  },
+  "manifest_sha256": "07af02af7981df22a027cd7a6db3752af2b510503496f64ae70d7c6d7969d894",
+  "dependency_lock_sha256": "973a1121ad1a34e15e7daa20b8368f60289187531af577314c74f27aec2ceda5",
+  "initial_scenes_reviewed": true
+}

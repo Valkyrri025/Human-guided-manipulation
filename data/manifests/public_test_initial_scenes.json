@@ -1,0 +1,104 @@
+{
+  "scope": "frozen BC test initial scenes only; no teacher replay",
+  "episodes": [
+    {
+      "id": "test_001",
+      "split": "test",
+      "video": "data/raw/test_001.mp4",
+      "video_sha256": "4f8d314c87be83aa7935d8e6a3595a38bc9f994230726a81455a526896b6297f",
+      "calibration": "data/calibration/test_001.json",
+      "initial_scene": "data/initial_scenes/test_001.json",
+      "recording_start_side": "left",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_002",
+      "split": "test",
+      "video": "data/raw/test_002.mp4",
+      "video_sha256": "97b5598b723785853fafe30f63c16144a3b798e66b6a5658777978f4e1c39fd7",
+      "calibration": "data/calibration/test_002.json",
+      "initial_scene": "data/initial_scenes/test_002.json",
+      "recording_start_side": "right",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_003",
+      "split": "test",
+      "video": "data/raw/test_003.mp4",
+      "video_sha256": "c36842743241ae6d030914729de123d2ee3383596e09026dbeef6a6c31397dc5",
+      "calibration": "data/calibration/test_003.json",
+      "initial_scene": "data/initial_scenes/test_003.json",
+      "recording_start_side": "above",
+      "tool_yaw_offset_deg": 180,
+      "training_eligible": false
+    },
+    {
+      "id": "test_004",
+      "split": "test",
+      "video": "data/raw/test_004.mp4",
+      "video_sha256": "cb20adf2b337ad9539fcd0b130f538e00b1f8d20407732dff7c9c09bd5e0c54f",
+      "calibration": "data/calibration/test_004.json",
+      "initial_scene": "data/initial_scenes/test_004.json",
+      "recording_start_side": "left",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_005",
+      "split": "test",
+      "video": "data/raw/test_005.mp4",
+      "video_sha256": "83b38a163a3c99cf7d898c6689bd8a739f592578cb32116771b16b8f2671fdfd",
+      "calibration": "data/calibration/test_005.json",
+      "initial_scene": "data/initial_scenes/test_005.json",
+      "recording_start_side": "right",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_006",
+      "split": "test",
+      "video": "data/raw/test_006.mp4",
+      "video_sha256": "21a8851deb534a810508e0d0f3b345ef405b4a7dd26712cafcdbebb40f4d47ea",
+      "calibration": "data/calibration/test_006.json",
+      "initial_scene": "data/initial_scenes/test_006.json",
+      "recording_start_side": "above",
+      "tool_yaw_offset_deg": 180,
+      "training_eligible": false
+    },
+    {
+      "id": "test_007",
+      "split": "test",
+      "video": "data/raw/test_007.mp4",
+      "video_sha256": "ea8cd076777cd15e9534f0cf84035c304d30e819031ecab31a72c22a38f65f23",
+      "calibration": "data/calibration/test_007.json",
+      "initial_scene": "data/initial_scenes/test_007.json",
+      "recording_start_side": "left",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_008",
+      "split": "test",
+      "video": "data/raw/test_008.mp4",
+      "video_sha256": "dbc8b0369f1025df3fb45d6464ec68e1cfaebce7ca1fdc43f1a4b602d818809e",
+      "calibration": "data/calibration/test_008.json",
+      "initial_scene": "data/initial_scenes/test_008.json",
+      "recording_start_side": "right",
+      "tool_yaw_offset_deg": 0,
+      "training_eligible": false
+    },
+    {
+      "id": "test_009",
+      "split": "test",
+      "video": "data/raw/test_009.mp4",
+      "video_sha256": "5be2c1b46a45758a071efddd8f4b09853cea582411f7d5da08f3e1a61a55a8b2",
+      "calibration": "data/calibration/test_009.json",
+      "initial_scene": "data/initial_scenes/test_009.json",
+      "recording_start_side": "above",
+      "tool_yaw_offset_deg": 180,
+      "training_eligible": false
+    }
+  ]
+}
