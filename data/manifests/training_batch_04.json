@@ -20,8 +20,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_033/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_033/metrics.json"
     },
     {
       "id": "train_034",
@@ -40,8 +44,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_034/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_034/metrics.json"
     },
     {
       "id": "train_035",
@@ -60,8 +68,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_035/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_035/metrics.json"
     },
     {
       "id": "train_036",
@@ -80,8 +92,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_036/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_036/metrics.json"
     },
     {
       "id": "train_037",
@@ -100,8 +116,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_037/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_037/metrics.json"
     },
     {
       "id": "train_038",
@@ -120,8 +140,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_038/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_038/metrics.json"
     },
     {
       "id": "train_039",
@@ -140,8 +164,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": false,
+      "replay_status": "timeout",
+      "replay_outcome": "timeout",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_039/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_039/metrics.json"
     },
     {
       "id": "train_040",
@@ -160,8 +188,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_040/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_040/metrics.json"
     },
     {
       "id": "train_041",
@@ -180,8 +212,12 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_041/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_041/metrics.json"
     },
     {
       "id": "train_042",
@@ -200,11 +236,18 @@
       "segment_selection": "Movement beyond 2 mm from opening median, 4-frame lead; first sustained 0.3 s pause within 2 mm of final median with 5-frame tail; bounded to visible finger; source contact frames reviewed",
       "tracking_usable": true,
       "source_reviewed": true,
-      "expert_eligible": null,
-      "replay_status": "not_run"
+      "expert_eligible": true,
+      "replay_status": "validated_success",
+      "replay_outcome": "goal_reached",
+      "push_controller": "human-object-feedback",
+      "robot_rollout": "outputs/training_batch_04/train_042/rollout.npz",
+      "metrics": "docs/examples/training_batch_04/train_042/metrics.json"
     }
   ],
   "push_timeout_s": 10.0,
   "intended_push_controller": "human-object-feedback",
-  "stage": "calibration and tracking complete; robot replay pending"
+  "stage": "calibration, tracking and robot teacher replay complete",
+  "push_controller": "human-object-feedback",
+  "validated_successes": 9,
+  "total": 10
 }

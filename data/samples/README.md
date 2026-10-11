@@ -25,8 +25,8 @@ Ten source tracks, `train_023`–`train_032`, are included with `data/manifests/
 
 ## Optional recorded-object teacher
 
-Use `data/manifests/human_object_teacher.json` with `--push-controller human-object-feedback` for the same 32 sources. It validates 28/32 rollouts, compared with 20/32 for the finger baseline. It uses simulator cube position/orientation and the human object trajectory to generate robot labels; it is a scripted teacher, not a learned policy. See [the report](../../docs/object-trajectory-teacher.md).
+Use `data/manifests/human_object_teacher.json` with `--push-controller human-object-feedback` for all 42 sources. It validates 37/42 rollouts; the preserved finger baseline remains 20/32. It uses simulator cube position/orientation and the human object trajectory to generate robot labels; it is a scripted teacher, not a learned policy. See [the report](../../docs/object-trajectory-teacher.md).
 
-## Fourth training batch: tracking only
+## Fourth training batch: tracking and replay
 
-Ten additional human source tracks (`train_033`–`train_042`) and `data/manifests/public_training_batch_04.json` are included. All ten track continuously during contact; robot replay and expert eligibility are pending. Total: 42 new training source clips. Existing teacher success stays 28/32 until the new ten are evaluated. See [the review](../../docs/training-batch-04.md).
+Ten additional human source tracks (`train_033`–`train_042`) and `data/manifests/public_training_batch_04.json` are included. All ten track continuously during contact; robot replay validates 9/10 expert candidates. Total: 42 new training source clips. Current teacher success is 37/42; all full state/action paths are in `data/manifests/training_rollout_index.json`. See [the review](../../docs/training-batch-04.md).

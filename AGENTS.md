@@ -7,3 +7,5 @@
 - Distinguish the finger-only baseline, recorded-object feedback teacher and learned policy. The teacher is scripted and uses simulator state. No learned-policy result exists yet.
 - Put inspection/debug/repeated-run numerical diagnostics in a consolidated archive before deleting redundant generated artifacts. Keep unique successful example videos, calibration/tracks, dependency lockfile and the working `.venv`.
 - Follow `docs/artifacts.md` for canonical artifact locations and update the workflow/report/schedule after each reviewed batch.
+
+- Reviewing an uploaded training batch normally includes calibration, tracking, teacher replay, saved state/action rollouts, physical validation and retained successful example videos. Treat tracking-only results as an intermediate checkpoint unless the user explicitly limits scope. Name batch outputs `outputs/training_batch_XX/`; identify the controller method in metrics/manifests rather than adding a suffix. Preserve prior method outputs and distinguish their results.

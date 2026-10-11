@@ -1,0 +1,112 @@
+{
+  "checkpoint": "physical replay of personally recorded finger motion; pilot diagnostic",
+  "passed": true,
+  "task_success": true,
+  "termination_mode": "goal-or-timeout",
+  "stop_reason": "goal_reached",
+  "push_elapsed_s": 5.25,
+  "push_timeout_s": 10.0,
+  "goal_dwell_s": 0.2,
+  "success_rule": "whole projected cube inside square; orientation unrestricted",
+  "frames": 365,
+  "seed": 7,
+  "control_hz": 20,
+  "retargeting": {
+    "mode": "absolute",
+    "displacement_scale": 1.0,
+    "rotation_degrees": 0.0
+  },
+  "start_offset_m": [
+    0.0,
+    0.0
+  ],
+  "paper_to_robot_yaw_degrees": 0.0,
+  "detail_camera": "robotview",
+  "robot_coordinate_frame": "user_convention_v1",
+  "paper_to_robot_matrix": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "paper_size_robot_xy_m": [
+    0.3,
+    0.297
+  ],
+  "contact_segment_s": [
+    2.2333333333333334,
+    7.666666666666667
+  ],
+  "approach_mode": "clearance",
+  "scripted_approach_retreat_m": 0.011500000000000003,
+  "eef_height_m": 0.868,
+  "tool": "paddle",
+  "tool_description": "rigid 8 x 24 x 12 mm paddle at local z=60 mm with stem",
+  "marker_to_tool_offset_m": [
+    -0.012525994497252677,
+    -0.005552163124154842
+  ],
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "initial_object_xyz_m": [
+    0.12944988012313843,
+    0.05757014161348342,
+    0.8089999999999999
+  ],
+  "final_object_xyz_m": [
+    0.024051495011478182,
+    0.007011930203772033,
+    0.8082844891595694
+  ],
+  "demonstrated_endpoint_xy_m": [
+    0.019176623225212103,
+    0.00863506352901458
+  ],
+  "target_xy_m": [
+    0.02123085260391236,
+    0.008365888953208916
+  ],
+  "goal_source": "independent drawn square in opening frame",
+  "goal_tolerance_m": 0.01,
+  "final_target_distance_m": 0.003128774182732818,
+  "final_center_inside_goal": true,
+  "final_object_fully_inside_goal": true,
+  "push_yaw_degrees": -155.54999659622194,
+  "tool_yaw_offset_degrees": 0,
+  "tool_yaw_degrees": -155.54999659622194,
+  "final_cube_yaw_degrees": 24.446251446910875,
+  "object_displacement_m": 0.11689718698538008,
+  "displacement_at_push_start_m": 1.3784117211182818e-13,
+  "final_endpoint_distance_m": 0.005137989560523256,
+  "max_object_lift_m": 1.4852729656178454e-06,
+  "stayed_on_table": true,
+  "tool_object_contact_steps": 92,
+  "tool_table_contact_steps": 0,
+  "push_tracking_rmse_m": 0.005244071474860173,
+  "finite_state": true,
+  "tracks_sha256": "0c72c731e36e06c5f1a656552683f093465b8add100672d5a07f3f879db87d42",
+  "push_controller": "human-object-feedback",
+  "observations": "scripted teacher: simulator cube position/orientation steers XY to the recorded human object trajectory; fixed initial tool yaw; feedback gain 0.75 capped at 6 mm",
+  "limitations": [
+    "Pilot tuning result, not held-out success",
+    "Target source is recorded explicitly; independent drawn goal used when calibrated",
+    "Assumed table/object friction; marker parallax uncorrected",
+    "Scripted height, orientation, approach and withdrawal",
+    "Tool attachment differs from human fingertip; no policy trained"
+  ],
+  "decoded_video_frames": 365
+}
+
+[robosuite WARNING] No private macro file found! (macros.py:57)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:58)
+[robosuite WARNING] To setup, run: python /home/zhangzhiy/git/humanoid-push/.venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (macros.py:59)
+[robosuite WARNING] Could not import robosuite_models. Some robots may not be available. If you want to use these robots, please install robosuite_models from source (https://github.com/ARISE-Initiative/robosuite_models) or through pip install. (__init__.py:30)
+[robosuite WARNING] Could not load the mink-based whole-body IK. Make sure you install related import properly, otherwise you will not be able to use the default IK controller setting for GR1 robot. (__init__.py:40)
+[robosuite INFO] Loading controller configuration from: /home/zhangzhiy/git/humanoid-push/.venv/lib/python3.12/site-packages/robosuite/controllers/config/robots/default_panda.json (composite_controller_factory.py:121)

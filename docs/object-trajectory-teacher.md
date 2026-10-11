@@ -1,5 +1,7 @@
 # Human-object trajectory teacher — 10 October 2026
 
+**11 October update:** batch 04 adds 9/10 validated successes. The current total is **37/42**. Original 32-source development results below remain historical evidence. All 42 rollouts are indexed in `data/manifests/training_rollout_index.json`; see [batch 04](training-batch-04.md).
+
 The recorded human pushes and their robot replays are different episodes. A human success can become a robot failure because the mounted paddle, simulated friction, controller tracking error and cube rotation change the contact. The last batch's tracked human endpoint centres were 1.1–5.3 mm from the independently drawn target cross, whereas several finger-only robot endpoints missed whole-cube containment. Tracking continuity alone does not prove exact contact or footprint accuracy.
 
 **The new scripted teacher succeeds on 28/32 recordings (87.5%), compared with 20/32 (62.5%) validated finger-only replays. On clips 023–032 it improves from 3/10 to 9/10.** This is a development/training-data check on recordings used to improve retargeting, not held-out policy performance. One deterministic simulation seed is used. No imitation policy has been trained.

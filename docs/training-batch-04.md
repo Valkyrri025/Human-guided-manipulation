@@ -1,6 +1,6 @@
-# Fourth training batch: calibration and tracking — 11 October 2026
+# Fourth training batch: tracking and robot replay — 11 October 2026
 
-**All ten videos, `train_033`–`train_042`, are calibrated and usable for tracking. This completes all 42 planned new training recordings. No rerecording is requested. Robot replay for this batch is still pending; these are not yet validated imitation expert rollouts.**
+**All ten videos, `train_033`–`train_042`, are calibrated and usable for tracking. This completes all 42 planned new training recordings. No rerecording is requested. Robot replay is now complete: **9/10** pass every success/physical-validity check and are imitation-training candidates.**
 
 Original untrimmed files are unchanged, verified by SHA-256. Each opening frame supplies four red L intersections and its own independent drawn goal square/cross. The automatic goal detector worked for all ten without manual goal-mask changes. Native phone display orientation and the fixed recording-to-robot convention are unchanged: recording left/right/above/below map to robot below/above/left/right. The paper remains 30 cm horizontally × 29.7 cm vertically in the recording view.
 
@@ -35,7 +35,7 @@ Contact intervals use the existing >2 mm object-motion proposal with a four-fram
 
 - `data/calibration/train_033.json`–`train_042.json`: reviewed corners, goal and shared coordinate mapping.
 - `data/processed/train_033/`–`train_042/`: local `tracks.csv`, `tracks.npz`, native `preview.jpg`, `quality.json` and processing log.
-- `data/manifests/training_batch_04.json`: source provenance and reviewed contact segments; expert eligibility is null while replay is pending.
+- `data/manifests/training_batch_04.json`: source provenance, reviewed contact segments and measured teacher expert eligibility.
 - `data/samples/train_033/`–`train_042/`: public numeric source tracks, with `data/manifests/public_training_batch_04.json` for clone-reproducible replay.
 - `docs/examples/training_batch_04_tracking/`: durable quality summaries, review sheets and per-clip quality reports.
 
@@ -49,16 +49,41 @@ uv run --locked push-track --video data/raw/train_033.mp4 \
 
 All ten were processed with the existing tracker; no implementation/dependency change was needed. Tracking overlays were skipped to avoid duplicate generated videos; native static previews are retained.
 
-## Next checkpoint
+## Robot replay results
 
-Run these ten through the existing recorded-object feedback teacher at the unchanged 10-second limit, validate contact/goal/physical checks, and retain successful rendered examples. No teacher parameters or success rules have been changed in this tracking checkpoint. The intended command is:
+These ten were replayed with the existing recorded-object feedback teacher, unchanged 10-second limit and 0.2-second whole-cube containment dwell. No teacher parameter, calibration, contact segment or success-rule change was made. The following command reproduces the completed run:
 
 ```bash
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
   --manifest data/manifests/public_training_batch_04.json \
   --push-controller human-object-feedback --no-video \
   --examples-output docs/examples/training_batch_04/successful_examples \
-  --output outputs/training_batch_04_teacher
+  --output outputs/training_batch_04
 ```
 
-Across the dataset, 42/42 new training sources are tracked. Existing teacher results remain **28/32**, with ten additional replays pending. No policy has been trained. Keep validation/test collection pending until retargeting and training-data generation are stable; all clips here and their descendants remain in the training split.
+| Clip | Robot outcome | Push time (s) | Final cross distance (mm) | Whole cube inside after withdrawal |
+|---|---|---:|---:|---|
+| train_033 | Success | 4.00 | 3.10 | Yes |
+| train_034 | Success | 5.85 | 3.45 | Yes |
+| train_035 | Success | 5.25 | 3.13 | Yes |
+| train_036 | Success | 4.70 | 3.44 | Yes |
+| train_037 | Success | 4.80 | 4.67 | Yes |
+| train_038 | Success | 4.75 | 3.99 | Yes |
+| train_039 | Timeout | 10.00 | 5.17 | No |
+| train_040 | Success | 2.60 | 5.73 | Yes |
+| train_041 | Success | 2.30 | 3.48 | Yes |
+| train_042 | Success | 2.15 | 2.59 | Yes |
+
+**9/10 validated successes**. `train_039` reaches the 10-second limit with its centre 5.17 mm from the cross; part of the rotated cube footprint remains outside. Its state/actions remain saved as a diagnostic, but it is excluded from successful imitation experts. All ten runs are finite, stay on the table, and meet lift/pre-push-motion limits. A failed replay does not invalidate its human recording.
+
+The full numerical outputs are under **`outputs/training_batch_04/`**, matching the naming of batches 01–03. Each episode contains `rollout.npz`, `metrics.json` and `run.log`; the root contains `summary.json` and `summary.csv`. The method is identified by `push_controller` in metrics and rollouts, rather than a folder suffix. Earlier batches 01–03 are retained finger-baseline outputs; their newer teacher versions remain under `outputs/human_object_teacher/`.
+
+Successful videos and previews are retained for [above: 033](examples/training_batch_04/successful_examples/train_033/replay.mp4), [left: 034](examples/training_batch_04/successful_examples/train_034/replay.mp4), and [right: 035](examples/training_batch_04/successful_examples/train_035/replay.mp4). Rendered repeats also pass physics and full video-decode checks. Metrics and batch summaries are committed under `docs/examples/training_batch_04/`; full state/action arrays remain local and can be regenerated from public numeric samples.
+
+## Training-data readiness
+
+All 42 new training sources are tracked and robot-replayed. The fixed teacher yields **37/42 validated successes (88.1%)**: 28/32 earlier plus 9/10 here. These successful rollouts are candidate imitation data. The five failed sources (003, 009, 022, 027, 039) remain explicit diagnostics and are not successful expert labels. The original finger-only baseline remains 20/32; this batch did not add finger-only runs.
+
+`data/manifests/human_object_teacher.json` now indexes all 42 source episodes and their measured expert eligibility. `data/manifests/training_rollout_index.json` directly lists the local rollout/metrics paths and training split. A future trainer must select `expert_eligible: true` and documented contact/dwell phases for the pushing-only benchmark. Rollouts save simulator observations before actions, cube and end-effector orientations, derived OSC action labels, executed targets, phases and human trajectories. Approach/withdrawal are scripted and belong to the separately planned full-episode benchmark. These are robot examples generated from human video by a scripted feedback teacher, not direct robot demonstrations or learned-policy results.
+
+Next is packaging the pushing-only imitation inputs and defining/fixing the training/evaluation protocol; validation/test collection remains pending until that pipeline is stable. No policy has been trained. All 42 sources and their descendants retain the training split.

@@ -1,6 +1,6 @@
 # Where project files belong
 
-As of **11 October 2026**, all 42 training videos are calibrated and tracked. Clips 033–042 await robot replay review; validation/test collection remains pending until the training-data pipeline is stable.
+As of **11 October 2026**, all 42 training videos are calibrated and tracked. All 42 have teacher replays (37 validated successes); validation/test collection remains pending until the training-data pipeline is stable.
 
 ## Files to keep
 
@@ -15,6 +15,7 @@ As of **11 October 2026**, all 42 training videos are calibrated and tracked. Cl
 | `data/manifests/` | Provenance, selected contact segments, split assignments and expert eligibility |
 | `outputs/human_object_teacher/` | All 32 current teacher state/action rollouts, including four recorded failures |
 | `outputs/training_batch_01/`–`training_batch_03/` | Original finger-only training baseline rollouts and metrics |
+| `outputs/training_batch_04/` | Clips 033–042 with the recorded-object teacher; rollouts, metrics and summary |
 | `outputs/native_replay_validation/` | Native-direction pilot validation rollouts |
 | `outputs/retargeting_comparison/` | Historical geometric comparison rollouts; legacy inputs, not current policy results |
 | `outputs/smoke/`, `outputs/machine.json` | Setup check and machine information |
