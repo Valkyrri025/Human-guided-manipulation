@@ -162,3 +162,7 @@ The [behavior-cloning workflow](behavior-cloning.md) now specifies and implement
 ## First learned-policy result
 
 The user completed 200 training epochs and all-nine closed-loop validation. The epoch-143 checkpoint selected by validation action loss achieved **7/9 successes**, compared with 6/9 for the recorded-object teacher on the same starts. Mean final target distance is 6.68 mm. Episodes 003 and 009 timed out; numerical evidence and three successful rendered videos are retained. See [the complete result](bc-validation.md). Test recordings remain unopened.
+
+## Frozen test benchmark completed
+
+The epoch-143 pushing-only policy achieved **8/9 successes** on opening scenes extracted from the nine test recordings, with 5.44 mm mean final target distance. Only the opening 30 frames supplied starting cube positions and independent drawn-goal calibration; no test pushing trajectory was loaded. The checkpoint/task rules were frozen before test access, and code/geometry were committed before evaluation. All nine numeric rollouts plus three successful videos are retained. See [the final test report](bc-test.md). Benchmark 1 is complete; keep this frozen baseline for subsequent methods.

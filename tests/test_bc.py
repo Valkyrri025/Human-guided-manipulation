@@ -56,3 +56,32 @@ def test_dataset_causality_and_training_only_statistics(tmp_path):
         np.testing.assert_allclose(d['train_y'],[[.1,-.1]])
         assert d['validation_x'][0,0]>10
     assert not report['test_accessed']
+
+
+def test_test_evaluation_requires_frozen_protocol(tmp_path, monkeypatch):
+    import json,sys
+    from humanoid_push import bc_eval
+    manifest=tmp_path/'manifest.json'
+    manifest.write_text(json.dumps({'episodes':[{'id':f'test_{i:03d}','split':'test'} for i in range(1,10)]}))
+    monkeypatch.setattr(bc_eval,'load_policy',lambda path:(None,{'status':'trained'}))
+    monkeypatch.setattr(sys,'argv',['push-bc-evaluate','--checkpoint','unused.pt','--split','test',
+        '--manifest',str(manifest),'--output',str(tmp_path/'output')])
+    with pytest.raises(SystemExit) as error:
+        bc_eval.main()
+    assert error.value.code==2
+    assert not (tmp_path/'output').exists()
+
+
+def test_test_evaluation_rejects_changed_checkpoint(tmp_path, monkeypatch):
+    import json,sys
+    from humanoid_push import bc_eval
+    manifest=tmp_path/'manifest.json';protocol=tmp_path/'protocol.json';checkpoint=tmp_path/'checkpoint.pt'
+    manifest.write_text(json.dumps({'episodes':[{'id':f'test_{i:03d}','split':'test'} for i in range(1,10)]}))
+    protocol.write_text(json.dumps({'checkpoint_sha256':'incorrect-digest'}));checkpoint.write_bytes(b'changed')
+    monkeypatch.setattr(bc_eval,'load_policy',lambda path:(None,{'status':'trained'}))
+    monkeypatch.setattr(sys,'argv',['push-bc-evaluate','--checkpoint',str(checkpoint),'--split','test',
+        '--manifest',str(manifest),'--protocol',str(protocol),'--output',str(tmp_path/'output')])
+    with pytest.raises(SystemExit) as error:
+        bc_eval.main()
+    assert error.value.code==2
+    assert not (tmp_path/'output').exists()

@@ -46,3 +46,7 @@ Current examples: [recording left](examples/human_object_teacher/successful_exam
 Obsolete debug folders, inspection contact sheets, duplicate development/repeat runs, identical preview copies and regenerable caches were removed. Small historical numerical diagnostics were consolidated into [one archive](archive/generated-run-evidence.json); their path keys describe the old locations. Historical report commands can regenerate deleted experiment outputs. Existing published reports and distinct successful videos remain.
 
 The [cleanup audit](cleanup-2026-10-10.json) records removed files, sizes, retained experiment directories and hashes confirming every original source/provenance file stayed unchanged. No files in neighbouring projects were touched.
+
+## Learned-policy benchmark 1
+
+Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9). Public metrics, all nine numeric rollouts per split and three successful videos per split are retained in `docs/examples/bc_validation/` and `docs/examples/bc_test/`. The frozen checkpoint is `docs/examples/bc_validation/best.pt`. Initial test geometry and its frozen hashes are in `data/initial_scenes/` and `data/manifests/bc_test_protocol.json`. The original videos are preserved; only opening frames were decoded for test setup.

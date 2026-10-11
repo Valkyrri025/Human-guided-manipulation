@@ -1,0 +1,22 @@
+{
+  "episode": "test_006",
+  "controller": "learned-BC-pushing; scripted approach/height/yaw/dwell/withdrawal",
+  "passed": true,
+  "stop_reason": "goal_reached",
+  "push_elapsed_s": 4.8500000000000005,
+  "push_timeout_s": 10.0,
+  "goal_dwell_s": 0.2,
+  "final_target_distance_m": 0.0030843319474160654,
+  "finite_state": true,
+  "max_object_lift_m": 5.58545267659305e-06,
+  "stayed_on_table": true,
+  "displacement_at_push_start_m": 1.4150347560359933e-12,
+  "tool_object_contact_steps": 88,
+  "recorded_future_path_accessed": false,
+  "seed": 7,
+  "final_object_xyz_m": [
+    0.02123504044388697,
+    0.011454267982089107,
+    0.8082844891595695
+  ]
+}

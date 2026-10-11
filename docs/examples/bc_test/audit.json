@@ -1,0 +1,11 @@
+{
+  "checkpoint_and_evaluation_code_match_freeze": true,
+  "all_nine_original_video_hashes_unchanged": true,
+  "initial_scene_and_calibration_hashes_match_freeze": true,
+  "test_manifest_hash_matches_freeze": true,
+  "opening_only_extraction_script_reproduces_scene": "test_003, numeric match to 1e-12",
+  "regression_tests_passed": 30,
+  "all_nine_rollouts_finite": true,
+  "three_success_videos_fully_decoded": true,
+  "no_test_trajectory_or_teacher_replay_used": true
+}
