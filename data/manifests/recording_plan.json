@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "first_32_processed_next_training_033_to_042",
+  "status": "all_42_training_sources_tracked_batch_04_replay_pending",
   "scope": "60 NEW real recording slots across three accessible sides; no new below-side recordings required",
   "coordinate_frame": "native phone display",
   "rectangle_width_m": 0.3,
@@ -472,7 +472,9 @@
       "start_dy_cm_positive_down": -12,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "642e20bf694e32dad10e8b7a01cc9a61a689d8bcf37d57afc1f5505e482f3aea",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_034.mp4",
@@ -483,7 +485,9 @@
       "start_dy_cm_positive_down": -4,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "3ab494998f89ecbbdd17e83ef74aafcc4958ed1003cb528e99c300529205add7",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_035.mp4",
@@ -494,7 +498,9 @@
       "start_dy_cm_positive_down": -4,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "3e4f5e7a761dd86c64cc13a15b8a28251fada15c9c8563f40da23bfc79ad89df",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_036.mp4",
@@ -505,7 +511,9 @@
       "start_dy_cm_positive_down": -12,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "cf2bd9e92fb45969d904ea6b3ff92ec009094afbe19d60f37e67afd4e118a9a0",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_037.mp4",
@@ -516,7 +524,9 @@
       "start_dy_cm_positive_down": 4,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "718dff17ee3ec446cfcb5b6954120eb51454ce2e5dd13d008993408f5e0f1e82",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_038.mp4",
@@ -527,7 +537,9 @@
       "start_dy_cm_positive_down": 4,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "5b01f3e1a243c297365de7ad782bf865fcf6b4592c9284e87299998a078fe288",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_039.mp4",
@@ -538,7 +550,9 @@
       "start_dy_cm_positive_down": -12,
       "batch": 2,
       "speed": "slow",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "e2db2ab994ae89b912e2a5c8a5b7a94efbf32141913de089620951b014c41946",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_040.mp4",
@@ -549,7 +563,9 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "af33e7875159ea5f9503332c4507c44c0c5523a6f841c28e57ec160835c6142a",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_041.mp4",
@@ -560,7 +576,9 @@
       "start_dy_cm_positive_down": 0,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "32e658195b5b862f945413843ed5086940b5c016cf4111b434325d9a6768bf70",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "train_042.mp4",
@@ -571,7 +589,9 @@
       "start_dy_cm_positive_down": -6,
       "batch": 2,
       "speed": "comfortable",
-      "status": "planned"
+      "status": "tracked_pending_replay",
+      "source_sha256": "eac9608be82cb4fea324b47ea8078b00fca291e7fc793e33b8d2660c81314f66",
+      "teacher_expert_eligible": null
     },
     {
       "filename": "validation_001.mp4",

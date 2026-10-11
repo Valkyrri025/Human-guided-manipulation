@@ -1,6 +1,6 @@
 # Where project files belong
 
-Next collection is planned for **11 October 2026**, beginning with `train_033.mp4`. Finish the ten training slots through `train_042.mp4`; validation/test collection remains pending until the training-data pipeline is stable.
+As of **11 October 2026**, all 42 training videos are calibrated and tracked. Clips 033–042 await robot replay review; validation/test collection remains pending until the training-data pipeline is stable.
 
 ## Files to keep
 

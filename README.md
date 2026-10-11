@@ -6,13 +6,13 @@ Robot-learning internship challenge: use personally collected overhead phone vid
 
 **Start with [the complete workflow](docs/workflow.md)** for recording, target definition, tracking, retargeting, saved labels, completed results and remaining work. The first additional batch is complete; use [the recording checklist](docs/recording.md) for any further clips.
 
-## Next recording batch
+## Training dataset status
 
-Follow [the new recording plan](docs/recording-plan.md): **32 training clips processed; next record `train_033`–`train_042`**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. The [third batch](docs/training-batch-03.md) adds 3/10 validated successes at the new 10-second push limit. All 32 source clips track continuously during contact; The new [recorded-object feedback teacher](docs/object-trajectory-teacher.md) validates 28/32 rollouts (versus 20/32 for finger-only replay). Failed replays remain explicit.
+Follow [the new recording plan](docs/recording-plan.md): **all 42 training sources tracked; clips 033–042 await robot replay**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. The [third batch](docs/training-batch-03.md) adds 3/10 validated successes at the new 10-second push limit. All 42 source clips track continuously during contact. The new [recorded-object feedback teacher](docs/object-trajectory-teacher.md) validates 28/32 rollouts (versus 20/32 for finger-only replay). Failed replays remain explicit.
 
 ## Replay from the public numeric samples
 
-Nine pilot samples plus 32 new training trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
+Nine pilot samples plus 42 new training trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
 
 ```bash
 MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
@@ -135,4 +135,6 @@ The agreed expansion is pushing-only imitation, then full-episode imitation with
 
 ## Artifact locations and retained videos
 
-See [the folder guide](docs/artifacts.md) for canonical rollouts, successful videos and the latest cleanup. With `--no-video`, batch replay now retains up to three successfully rendered examples unless `--success-videos 0` is specified. Next collection: 11 October 2026, beginning with `train_033`.
+See [the folder guide](docs/artifacts.md) for canonical rollouts, successful videos and the latest cleanup. With `--no-video`, batch replay now retains up to three successfully rendered examples unless `--success-videos 0` is specified. All 42 training recordings are now tracked; next review the last ten robot replays.
+
+The [fourth training-batch review](docs/training-batch-04.md) documents calibration/tracking for clips 033–042. Teacher results remain 28/32 while those ten robot replays are pending.
