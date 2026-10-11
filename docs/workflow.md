@@ -158,3 +158,7 @@ All nine validation recordings are calibrated, tracked and teacher-replayed with
 ## Pushing-only learning implementation (11 October 2026)
 
 The [behavior-cloning workflow](behavior-cloning.md) now specifies and implements causal feature extraction, train-only normalization, the bounded small MLP, explicit supervised training and closed-loop validation. Prepared data contain 3,318 training pairs from 37 successful teacher episodes and 423 validation reference pairs from six successes. Closed-loop evaluation includes all nine validation starts, without future human paths. The test files are uploaded and remain unopened. Training has not started; next run the documented training command, then assess all-nine validation task success separately from action loss.
+
+## First learned-policy result
+
+The user completed 200 training epochs and all-nine closed-loop validation. The epoch-143 checkpoint selected by validation action loss achieved **7/9 successes**, compared with 6/9 for the recorded-object teacher on the same starts. Mean final target distance is 6.68 mm. Episodes 003 and 009 timed out; numerical evidence and three successful rendered videos are retained. See [the complete result](bc-validation.md). Test recordings remain unopened.

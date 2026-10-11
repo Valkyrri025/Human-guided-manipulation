@@ -2,7 +2,7 @@
 
 Robot-learning internship challenge: use personally collected overhead phone video of a human pushing a block to drive a simulated Panda. The first comparison tests absolute replay and geometric retargeting on predefined new simulated starts.
 
-**Current status:** the nine original pilot recordings use consistent native-display tracking and the user's fixed direction convention. All eight drawn-goal episodes physically replay successfully; the initial pilot also passes its separate endpoint diagnostic. See [current orientation and replay validation](docs/orientation-standardisation.md). An optional recorded-object feedback teacher now provides improved training rollouts; no policy has been trained. The earlier new-start comparison (2/8 absolute, 5/8 relative, 8/8 scaled) uses archived legacy inputs; it has not yet been rerun with the standardised dataset.
+**Current status:** the nine original pilot recordings use consistent native-display tracking and the user's fixed direction convention. All eight drawn-goal episodes physically replay successfully; the initial pilot also passes its separate endpoint diagnostic. See [current orientation and replay validation](docs/orientation-standardisation.md). An optional recorded-object feedback teacher now provides improved training rollouts; the first pushing-only policy now achieves **7/9 validation successes**. The earlier new-start comparison (2/8 absolute, 5/8 relative, 8/8 scaled) uses archived legacy inputs; it has not yet been rerun with the standardised dataset.
 
 **Start with [the complete workflow](docs/workflow.md)** for recording, target definition, tracking, retargeting, saved labels, completed results and remaining work. The first additional batch is complete; use [the recording checklist](docs/recording.md) for any further clips.
 
@@ -21,7 +21,7 @@ MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
 
 Current successful videos cover [recording left](docs/examples/native_directions/pilot_goal/replay.mp4), [right](docs/examples/native_directions/goal_right1/replay.mp4), [above](docs/examples/native_directions/goal_above1/replay.mp4) and [below](docs/examples/native_directions/goal_below1/replay.mp4).
 
-Omit `--no-video` to render. These are human-derived simulation replays; no learned policy is included. Reproducing image tracking requires the original videos or your own recordings. See [sample provenance](data/samples/README.md).
+Omit `--no-video` to render. These are human-derived simulation replays; a learned pushing policy is available separately below. Reproducing image tracking requires the original videos or your own recordings. See [sample provenance](data/samples/README.md).
 
 ## Run checkpoint 1
 
@@ -145,4 +145,4 @@ All nine validation recordings are tracked and teacher-replayed separately: 6/9 
 
 ## Behavior-cloning implementation
 
-Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training and closed-loop validation commands are implemented. See [the behavior-cloning workflow](docs/behavior-cloning.md) for inputs, labels, split isolation, installation and commands. Current data: 3,318 training pairs from 37 successful teachers; 423 validation reference pairs. Policy training has not started. All nine validation starts will be evaluated; test recordings remain reserved.
+Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training and closed-loop validation commands are implemented. See [the behavior-cloning workflow](docs/behavior-cloning.md) for inputs, labels, split isolation, installation and commands. Current data: 3,318 training pairs from 37 successful teachers; 423 validation reference pairs. The first policy has completed training and achieved **7/9 validation successes**, with 6.68 mm mean final target distance. See [results, failures and successful videos](docs/bc-validation.md). Test recordings remain reserved.

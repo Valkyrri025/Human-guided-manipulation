@@ -1,6 +1,6 @@
 # Benchmark 1: pushing-only behavior cloning
 
-The implementation passes 28 tests and a short simulator preflight. No learned-policy performance is claimed until training and closed-loop evaluation run.
+The implementation passes 28 tests and a short simulator preflight. The first trained policy achieves **7/9 validation successes**; see [the validation report](bc-validation.md) for metrics, failures, checkpoint and videos.
 
 ## What the network learns
 
@@ -63,4 +63,4 @@ The test recordings stay unopened until architecture, checkpoint selection and e
 
 ## Verification before training
 
-On 11 October 2026, all 28 tests passed. Dataset preparation was run on the retained real rollouts; counts and hashes are published in [the dataset audit](../data/manifests/bc_dataset_provenance.json). A zero-action, untrained network completed scripted approach/withdrawal and two pushing control steps in simulation. The state remained finite, the cube stayed on the table, approach displacement was below 2 mm, and the 0.1-second diagnostic timeout fired. This is a wiring check, not a learned task result. No optimizer was run on the real dataset, no trained checkpoint exists, and no test video was opened.
+On 11 October 2026, all 28 tests passed. Dataset preparation was run on the retained real rollouts; counts and hashes are published in [the dataset audit](../data/manifests/bc_dataset_provenance.json). A zero-action, untrained network completed scripted approach/withdrawal and two pushing control steps in simulation. The state remained finite, the cube stayed on the table, approach displacement was below 2 mm, and the 0.1-second diagnostic timeout fired. This is a wiring check, not a learned task result. At this preflight checkpoint, no optimizer had run on the real dataset and no trained checkpoint existed. The subsequent training and validation run is documented in [the validation report](bc-validation.md); test recordings remain unopened.
