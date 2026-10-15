@@ -59,3 +59,7 @@ MUJOCO_GL=egl python -m humanoid_push.episode_eval \
 ```
 
 Use a fresh output directory. [Full training commands](benchmark-2.md#training-duration-comparison) reproduce the longer experiment. Source hashes, settings, the original checkpoint and the 200-epoch history prefix were verified. All losses and rollouts are finite, and action limits are respected. No runtime/training code changes were needed, so this comparison uses the same previously tested implementation.
+
+## Later duration comparison
+
+The same model was subsequently trained for 2,000 epochs. Its lowest-loss checkpoint reduced validation loss further but completed only 3/9 episodes. This run's epoch-877 checkpoint therefore remains the better controller (5/9). See [the 2,000-epoch loss trends and outcomes](benchmark-2-epochs2000.md).

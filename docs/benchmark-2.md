@@ -1,6 +1,6 @@
 # Benchmark 2: learn the complete approach–push–withdraw episode
 
-**Latest result:** extending the same model to 1,000 epochs improves complete validation success from **2/9 to 5/9**. See [the controlled comparison and videos](benchmark-2-epochs1000.md). The [original 200-epoch run and failures](benchmark-2-results.md) remain preserved.
+**Latest result:** extending the same model to 1,000 epochs improves complete validation success from **2/9 to 5/9**. See [the controlled comparison and videos](benchmark-2-epochs1000.md). The [original 200-epoch run and failures](benchmark-2-results.md) remain preserved. A later [2,000-epoch comparison](benchmark-2-epochs2000.md) lowers supervised loss but scores 3/9; the 1,000-epoch/epoch-877 checkpoint remains the better controller.
 
 All three phases are trained **together in one recurrent policy**, not in three separate training runs. The phase labels are supervised targets; the model never receives ground-truth phase as an input, either during training or evaluation.
 
@@ -63,3 +63,17 @@ MUJOCO_GL=egl python -m humanoid_push.episode_eval \
 ```
 
 The original 200-epoch model and its 2/9 result stay intact. Experiment inputs and code hashes are recorded in `data/manifests/benchmark2_epochs1000_protocol.json`.
+
+## 2,000-epoch extension
+
+The late 1,000-epoch curve showed diminishing returns: validation action MSE averaged 0.003762 at epochs 801–900 and 0.003706 at 901–1,000 (about 1.5% lower), while joint validation loss was approximately flat (0.004106 versus 0.004132). This motivates a bounded 2,000-epoch same-model comparison, not a claim that the loss was steadily decreasing. Model complexity remains unchanged to isolate training duration.
+
+```bash
+python -m humanoid_push.episode_train --epochs 2000 \
+  --output outputs/benchmark2_training_2000
+MUJOCO_GL=egl python -m humanoid_push.episode_eval \
+  --checkpoint outputs/benchmark2_training_2000/best.pt \
+  --output outputs/benchmark2_validation_2000
+```
+
+The same-seed optimization is rerun because existing checkpoints lack optimizer state. Its first 1,000 epochs are checked against the preceding run. Checkpoint selection remains minimum supervised validation joint loss over the full run; it does not automatically choose epoch 2,000. Original 10-second push / 30-second episode limits and all-nine validation remain fixed. Test data are not used. Experiment settings and the measured late-loss windows are saved in `data/manifests/benchmark2_epochs2000_protocol.json`.

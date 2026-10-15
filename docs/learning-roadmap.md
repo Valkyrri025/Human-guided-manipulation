@@ -51,3 +51,5 @@ Update [workflow](workflow.md) and this roadmap at each completed benchmark. Sav
 ## Latest benchmark-2 training-duration comparison
 
 The same recurrent model trained for 1,000 epochs reaches 5/9 complete validation successes versus 2/9 at 200 epochs. Data, architecture, seed, optimizer and evaluation limits are unchanged; the first 200 epoch histories match exactly. See [the controlled comparison](benchmark-2-epochs1000.md). Further capacity/data experiments remain separate; no benchmark-2 test evaluation has been performed.
+
+A subsequent 2,000-epoch same-model run improves minimum supervised validation loss but scores only 3/9. The 1,000-epoch controller remains best at 5/9; future improvements must be judged in closed-loop validation rather than by label loss alone. See [the longer-run comparison](benchmark-2-epochs2000.md).

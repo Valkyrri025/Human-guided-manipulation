@@ -1,0 +1,18 @@
+{
+  "epochs_completed": 2000,
+  "first_1000_epoch_history_exactly_reproduced": true,
+  "only_changed_training_setting": "epochs",
+  "same_architecture_data_optimizer_seed_and_source": true,
+  "original_200_and_1000_checkpoints_preserved": true,
+  "checkpoint_matches_minimum_supervised_validation_joint_loss": true,
+  "all_recorded_losses_finite": true,
+  "all_nine_rollouts_finite_and_actions_bounded": true,
+  "successful_videos_fully_decoded_frames": {
+    "validation_005": 344,
+    "validation_007": 336
+  },
+  "push_timeout_s": 10,
+  "episode_timeout_s": 30,
+  "test_used": false,
+  "preferred_closed_loop_policy_remains": "1000-epoch run, selected epoch 877, 5/9"
+}

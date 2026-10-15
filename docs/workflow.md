@@ -176,3 +176,7 @@ The initial benchmark-2 closed-loop run completes 2/9 episodes (004, 005). Episo
 ## Benchmark 2: longer training, unchanged model
 
 A same-seed 1,000-epoch run exactly reproduces the original first 200 epochs, then trains 800 more. Only the epoch budget changed. Epoch 877 was selected by the same supervised validation loss and achieved **5/9 full validation successes**, up from 2/9 under unchanged rules. Newly successful episodes are 006, 007 and 008; all nine outcomes, three successful videos and both checkpoints are retained. See [the duration comparison](benchmark-2-epochs1000.md). No benchmark-2 test data were evaluated.
+
+## Benchmark 2: 2,000-epoch extension
+
+A further same-model duration experiment exactly reproduces the prior first 1,000 epoch records, then continues to 2,000. Epoch 1,958 has the lowest supervised validation loss (0.002821), but completes only 3/9 full validation episodes, down from 5/9 at the selected epoch-877 checkpoint. Keep that 1,000-epoch controller as the current best. No code/data/optimizer/timeout changes or test evaluation occurred. The [report](benchmark-2-epochs2000.md) records late-loss windows, all-nine outcomes, all rollouts and two successful videos.

@@ -1,0 +1,54 @@
+{
+  "experiment": "same-model 2000-epoch duration comparison",
+  "new_total_epochs": 2000,
+  "execution": "same-seed deterministic rerun; existing checkpoints lack optimizer state; first 1000 histories must match",
+  "seed": 7,
+  "architecture": "15 -> Linear64/ReLU -> GRU64 -> joint phase3 + phase-mixture action6",
+  "dataset_sha256": "75e1550656dd5b96c02d83986b291f06a0653788004db2149bc4a67fb5b90731",
+  "learning_rate": 0.001,
+  "batch_size_episodes": 8,
+  "phase_loss_coefficient": 0.2,
+  "selection": "minimum phase-balanced validation action MSE + 0.2 phase cross-entropy",
+  "reason": "Late validation action error still declines slightly, but joint loss is approximately plateauing; bounded duration experiment before changing model capacity",
+  "previous_training_windows": {
+    "601-700": {
+      "train_joint_loss": 0.0035104386619845955,
+      "validation_joint_loss": 0.004584625083953142,
+      "validation_action_mse": 0.004040429703891278
+    },
+    "701-800": {
+      "train_joint_loss": 0.0032629240379744282,
+      "validation_joint_loss": 0.004372915567364544,
+      "validation_action_mse": 0.0038957732752896847
+    },
+    "801-900": {
+      "train_joint_loss": 0.0030021320794381802,
+      "validation_joint_loss": 0.004105965169146657,
+      "validation_action_mse": 0.003761512329801917
+    },
+    "901-1000": {
+      "train_joint_loss": 0.0030277714051457267,
+      "validation_joint_loss": 0.004132327903062105,
+      "validation_action_mse": 0.0037056769640184937
+    },
+    "951-1000": {
+      "train_joint_loss": 0.0032172149798606296,
+      "validation_joint_loss": 0.004213448115624487,
+      "validation_action_mse": 0.0037387333950027824
+    }
+  },
+  "validation_episodes": 9,
+  "test_used": false,
+  "push_timeout_s": 10,
+  "episode_timeout_s": 30,
+  "baseline200_checkpoint_sha256": "0ef75748c3fd88f7f0f2ab2675a416dbe44ccbf61b8c27d87338a482e6fa91bd",
+  "baseline1000_checkpoint_sha256": "443ff7befb860251f381f1e002faf8ed589e71e640f1e13d5912176b0546e79a",
+  "source_sha256": {
+    "src/humanoid_push/episode_train.py": "52b37486fc1cd1fa4314418e3971761e36bbd9f0acb342aeabfa6271fe14035d",
+    "src/humanoid_push/episode_data.py": "c296ff3f21f9880fcef69509410cc196fbfc56cbc1324834259f704a6d233359",
+    "src/humanoid_push/episode_model.py": "b49456c40355c80f1cf0c1eff49063772a81aa8894d09ab052b115d8b36f1f84",
+    "src/humanoid_push/episode_eval.py": "7affee5c47523e7c4de782fd2fb9548224f6c4d38383b8ad7f96dc3cb35a8005",
+    "src/humanoid_push/push_env.py": "bb12403698fd3ab59a62c96ed202c9714ca00f1e555d85089cb6200d55075ea0",
+    "src/humanoid_push/task_rules.py": "71a6ed5217a7a366b3b13b59f46f5de245016c00d91842b126720d1a90a3835b"
+  }
+}

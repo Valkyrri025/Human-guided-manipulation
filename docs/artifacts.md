@@ -58,3 +58,7 @@ Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9)
 ## Benchmark 2: 1,000-epoch comparison
 
 `outputs/benchmark2_training_1000/` and `outputs/benchmark2_validation_1000/` retain the longer same-model experiment and all-nine validation (5/9). Public checkpoint, history, numeric rollouts/metrics and three successful videos are in `docs/examples/benchmark2_epochs1000/`; protocol/settings are in `data/manifests/benchmark2_epochs1000_protocol.json`. The original 200-epoch model/results remain unchanged.
+
+## Benchmark 2: 2,000-epoch comparison
+
+`outputs/benchmark2_training_2000/` stores best/last weights and full history; `outputs/benchmark2_validation_2000/` stores all nine rollouts (3/9 successes). Public evidence, selected epoch-1,958 checkpoint and two successful videos are in `docs/examples/benchmark2_epochs2000/`. The 1,000-epoch epoch-877 controller remains better (5/9); neither earlier experiment was overwritten. See `data/manifests/benchmark2_epochs2000_protocol.json` for the unchanged settings and original late-loss trend.
