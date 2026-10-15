@@ -155,4 +155,6 @@ The [benchmark-2 workflow](docs/benchmark-2.md) trains approach/lowering, pushin
 
 **Further duration check:** 2,000 epochs lower supervised validation loss by another 20%, but the selected epoch-1,958 policy completes only **3/9 validation episodes**. The 1,000-epoch policy remains the best full-episode controller at **5/9**. See [loss trends, outcomes and retained evidence](docs/benchmark-2-epochs2000.md). Model/data/time limits remain unchanged; benchmark-2 test evaluation has not run.
 
-**Larger-model option:** a separate residual GRU128 with two recurrent layers is ready for user-started GPU training. CUDA-enabled PyTorch lives in `.venv-gpu`; the CPU `.venv` remains intact. See [architecture comparison and commands](docs/benchmark-2-advanced.md). No trained result exists for this architecture yet.
+**Larger-model option:** a separate residual GRU128 with two recurrent layers is ready for user-started GPU training. CUDA-enabled PyTorch lives in `.venv-gpu`; the CPU `.venv` remains intact. See [architecture comparison and commands](docs/benchmark-2-advanced.md). The completed user run and failure analysis are reported below.
+
+**Larger-model result:** the user-trained residual GRU128 selects epoch 857 (validation loss 0.002620) but scores only 1/9 under full physical validity; two additional goal/withdrawal completions have table contact. See [the audit and all eight requested failure videos](docs/benchmark-2-advanced-results.md). The GRU64 epoch-877 model remains best at 5/9.

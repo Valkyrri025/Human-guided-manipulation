@@ -1,0 +1,13 @@
+{
+  "best_epoch": 857,
+  "selected_checkpoint_sha256_matches_evaluation": true,
+  "model_eval_mode": true,
+  "reported_validation_joint_loss": 0.0026197507977485657,
+  "recomputed_cpu_joint_loss": 0.0026197514962404966,
+  "recomputed_gpu_joint_loss": 0.0026197507977485657,
+  "max_cpu_gpu_offline_action_difference": 2.384185791015625e-07,
+  "all_nine_saved_action_sequences_reproduced_from_saved_features": true,
+  "all_action_replay_errors_below": 1e-05,
+  "training_epochs": 2000,
+  "test_used": false
+}

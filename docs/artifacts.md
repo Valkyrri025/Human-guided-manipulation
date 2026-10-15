@@ -62,3 +62,7 @@ Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9)
 ## Benchmark 2: 2,000-epoch comparison
 
 `outputs/benchmark2_training_2000/` stores best/last weights and full history; `outputs/benchmark2_validation_2000/` stores all nine rollouts (3/9 successes). Public evidence, selected epoch-1,958 checkpoint and two successful videos are in `docs/examples/benchmark2_epochs2000/`. The 1,000-epoch epoch-877 controller remains better (5/9); neither earlier experiment was overwritten. See `data/manifests/benchmark2_epochs2000_protocol.json` for the unchanged settings and original late-loss trend.
+
+## Larger-model trained run and requested failure videos
+
+`outputs/benchmark2_training_advanced_gpu/` retains all trained snapshots and history. `outputs/benchmark2_validation_advanced_gpu/` retains the nine numeric episodes, the success video and all eight requested `validation_XXX/failure.mp4` reference videos. Public copies and audits are in `docs/examples/benchmark2_advanced_run/`. Preserve these failures in future cleanups; they are explicitly requested artifacts. See `docs/benchmark-2-advanced-results.md`.

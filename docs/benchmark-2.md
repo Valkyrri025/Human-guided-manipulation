@@ -81,3 +81,5 @@ The same-seed optimization is rerun because existing checkpoints lack optimizer 
 ## Larger model, user-started GPU run
 
 A separate 268,373-parameter residual two-layer GRU128 implementation is ready. It preserves the same 15 inputs, action limits and phase/motion targets, with a richer state encoder, deeper heads and inter-layer dropout. The TITAN V GPU environment and forward/backward execution are verified; no actual training was started. See [architecture, reasoning and training/evaluation commands](benchmark-2-advanced.md). The existing epoch-877 policy remains the best measured controller until the new model is evaluated.
+
+The user-trained larger model now has a measured result: 1/9 physically valid episodes at minimum-loss epoch 857. The [loss audit and failure videos](benchmark-2-advanced-results.md) confirm correct checkpoint use and distinguish goal completion from table-contact validity. All eight failures are retained at the user's request. The smaller 1,000-epoch model remains the best controller (5/9).

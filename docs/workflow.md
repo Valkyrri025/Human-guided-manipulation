@@ -184,3 +184,7 @@ A further same-model duration experiment exactly reproduces the prior first 1,00
 ## Larger architecture and GPU preparation
 
 The user requested to start the next training run themselves. A separate `advanced_model` / `advanced_train` / `advanced_eval` path implements a residual two-layer GRU128 (268,373 parameters), with unchanged observation/action contracts and task loop. PyTorch 2.5.1+cu118 is installed in the isolated `.venv-gpu`, and actual-sized GPU forward/backward plus both environment test suites pass. No real training run was launched. Commands and model rationale are in [the advanced-model workflow](benchmark-2-advanced.md). `best.pt` remains minimum supervised validation loss; periodic snapshots every 100 epochs allow later documented task-based selection.
+
+## Larger-model user run and failure retention
+
+The user completed 2,000 GPU epochs and evaluated the selected epoch-857 checkpoint: 1/9 physically valid successes. Three episodes complete placement/withdrawal, but two have table contact. A CPU/GPU loss and saved-action reproduction audit found no obvious checkpoint or inference-mode error. The user explicitly requested failure videos; all eight are rendered from saved actions with exact position replay, decoded and retained with the successful video. See [the result and all clips](benchmark-2-advanced-results.md). No additional training/test evaluation was launched.

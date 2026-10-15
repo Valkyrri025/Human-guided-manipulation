@@ -1,0 +1,14 @@
+{
+  "episode": "validation_003",
+  "original_passed": false,
+  "source": "saved learned-policy actions, not a new policy run",
+  "original_stop_reason": "push_timeout",
+  "frames": 481,
+  "fps": 20,
+  "rollout_sha256": "164ac01d57ca293f3617b2ab35605893635ec375d6bd1c64589b640291e1ff9d",
+  "max_abs_state_replay_error_m": 0.0,
+  "state_error_tolerance_m": 1e-07,
+  "video_sha256": "18ae0e59b827cef900b4adb6ce7da4f845fe3768e24c0d36f35518328fc1f984",
+  "original_metrics_and_score_unchanged": true,
+  "retention": "user explicitly requested failure videos"
+}

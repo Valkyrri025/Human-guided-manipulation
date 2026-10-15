@@ -1,6 +1,6 @@
 # Benchmark 2: larger recurrent policy, ready for user-started training
 
-This is a proposed capacity upgrade, not an established performance improvement. The current best full-episode controller remains the original 64-unit GRU trained for 1,000 epochs (selected epoch 877, 5/9 validation successes). The 2,000-epoch original model fit demonstrations better but achieved only 3/9. No real training of the larger model has been started by the assistant.
+This is a proposed capacity upgrade, not an established performance improvement. The current best full-episode controller remains the original 64-unit GRU trained for 1,000 epochs (selected epoch 877, 5/9 validation successes). The 2,000-epoch original model fit demonstrations better but achieved only 3/9. The user has now completed training and evaluation: the minimum-loss epoch-857 checkpoint achieves 1/9 physically valid validation successes. See [loss audit, failure analysis and retained failure videos](benchmark-2-advanced-results.md).
 
 ## Current and proposed architecture
 
@@ -74,3 +74,7 @@ Because supervised loss has previously selected a weaker controller, periodic ch
 ## Preflight verification (no actual training)
 
 Both the original CPU environment and the new CUDA environment pass all 36 tests. The TITAN V reports compute capability 7.0 and the installed wheel includes `sm_70`. An actual-sized 8 × 419 × 15 training-input batch passed GPU forward/backward with finite gradients, and the six validation-reference sequences passed a GPU forward pass. Peak allocated VRAM was approximately 165 MB. No optimizer update, training epoch or trained-model output directory was created. [Preflight metadata](examples/benchmark2_advanced/gpu_preflight.json). The prior frozen model/evaluation/training source files retain their recorded hashes.
+
+## Requested failure-video retention
+
+The user requested preserving the eight failures from this run. They are retained as `failure.mp4` beside each failed rollout, with exact saved-action replay verification, plus public copies and links in [the results report](benchmark-2-advanced-results.md). The evaluator’s automatic failed-video deletion does not delete these separately rendered reference files.
