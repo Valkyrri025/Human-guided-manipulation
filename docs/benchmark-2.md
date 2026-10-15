@@ -77,3 +77,7 @@ MUJOCO_GL=egl python -m humanoid_push.episode_eval \
 ```
 
 The same-seed optimization is rerun because existing checkpoints lack optimizer state. Its first 1,000 epochs are checked against the preceding run. Checkpoint selection remains minimum supervised validation joint loss over the full run; it does not automatically choose epoch 2,000. Original 10-second push / 30-second episode limits and all-nine validation remain fixed. Test data are not used. Experiment settings and the measured late-loss windows are saved in `data/manifests/benchmark2_epochs2000_protocol.json`.
+
+## Larger model, user-started GPU run
+
+A separate 268,373-parameter residual two-layer GRU128 implementation is ready. It preserves the same 15 inputs, action limits and phase/motion targets, with a richer state encoder, deeper heads and inter-layer dropout. The TITAN V GPU environment and forward/backward execution are verified; no actual training was started. See [architecture, reasoning and training/evaluation commands](benchmark-2-advanced.md). The existing epoch-877 policy remains the best measured controller until the new model is evaluated.

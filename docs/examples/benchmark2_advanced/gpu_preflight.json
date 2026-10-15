@@ -1,0 +1,22 @@
+{
+  "status": "GPU forward/backward smoke passed; no optimizer step or actual training run",
+  "torch": "2.5.1+cu118",
+  "cuda_runtime": "11.8",
+  "gpu": "NVIDIA TITAN V",
+  "compute_capability": [
+    7,
+    0
+  ],
+  "parameters": 268373,
+  "batch_shape": [
+    8,
+    419,
+    15
+  ],
+  "first_batch_forward_backward_s": 1.2405290469760075,
+  "peak_allocated_vram_mb": 164.50146484375,
+  "all_validation_reference_shapes_forward_passed": true,
+  "cuda_deterministic_mode": true,
+  "tests_passed_cpu_environment": 36,
+  "tests_passed_gpu_environment": 36
+}

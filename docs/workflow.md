@@ -180,3 +180,7 @@ A same-seed 1,000-epoch run exactly reproduces the original first 200 epochs, th
 ## Benchmark 2: 2,000-epoch extension
 
 A further same-model duration experiment exactly reproduces the prior first 1,000 epoch records, then continues to 2,000. Epoch 1,958 has the lowest supervised validation loss (0.002821), but completes only 3/9 full validation episodes, down from 5/9 at the selected epoch-877 checkpoint. Keep that 1,000-epoch controller as the current best. No code/data/optimizer/timeout changes or test evaluation occurred. The [report](benchmark-2-epochs2000.md) records late-loss windows, all-nine outcomes, all rollouts and two successful videos.
+
+## Larger architecture and GPU preparation
+
+The user requested to start the next training run themselves. A separate `advanced_model` / `advanced_train` / `advanced_eval` path implements a residual two-layer GRU128 (268,373 parameters), with unchanged observation/action contracts and task loop. PyTorch 2.5.1+cu118 is installed in the isolated `.venv-gpu`, and actual-sized GPU forward/backward plus both environment test suites pass. No real training run was launched. Commands and model rationale are in [the advanced-model workflow](benchmark-2-advanced.md). `best.pt` remains minimum supervised validation loss; periodic snapshots every 100 epochs allow later documented task-based selection.

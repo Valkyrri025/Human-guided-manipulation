@@ -16,14 +16,26 @@ dependencies = [
 
 [project.optional-dependencies]
 learning = ["torch==2.5.1"]
+learning-gpu = ["torch==2.5.1"]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+
+[tool.uv]
+conflicts = [[{ extra = "learning" }, { extra = "learning-gpu" }]]
+
 [tool.uv.sources]
-torch = { index = "pytorch-cpu" }
+torch = [
+  { index = "pytorch-cpu", extra = "learning" },
+  { index = "pytorch-cu118", extra = "learning-gpu" },
+]
 
 [build-system]
 requires = ["hatchling"]
