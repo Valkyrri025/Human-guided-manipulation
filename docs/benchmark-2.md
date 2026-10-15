@@ -1,6 +1,6 @@
 # Benchmark 2: learn the complete approach–push–withdraw episode
 
-**First run completed:** 200 epochs; 2/9 complete validation successes. See [results and failure analysis](benchmark-2-results.md).
+**Latest result:** extending the same model to 1,000 epochs improves complete validation success from **2/9 to 5/9**. See [the controlled comparison and videos](benchmark-2-epochs1000.md). The [original 200-epoch run and failures](benchmark-2-results.md) remain preserved.
 
 All three phases are trained **together in one recurrent policy**, not in three separate training runs. The phase labels are supervised targets; the model never receives ground-truth phase as an input, either during training or evaluation.
 
@@ -49,3 +49,17 @@ MUJOCO_GL=egl python -m humanoid_push.episode_eval \
 Use a fresh `--output` folder for reruns; existing data/checkpoints/results are protected. Preparation writes `outputs/benchmark2_dataset/`; training writes `outputs/benchmark2_training/`; evaluation writes `outputs/benchmark2_validation/`. Successful videos are retained up to one per available recording side, three total. Failed videos are removed while numeric evidence remains.
 
 Benchmark 1's code, checkpoint and frozen results remain unchanged. Benchmark 2 is a harder task; matching teacher labels offline does not establish successful autonomous episodes.
+
+## Training-duration comparison
+
+A separate 1,000-epoch experiment uses the same dataset, 64-unit GRU architecture, seed 7, Adam settings, phase balancing and supervised validation checkpoint selection as the initial 200-epoch run. Because the original checkpoints do not contain optimizer state, it reruns from the same initialization rather than resetting Adam midway through a continuation. The first 200 epochs are compared with the original history. The best supervised-validation checkpoint is then evaluated on all nine validation starts with the original 10-second push and 30-second episode limits. No benchmark-2 test evaluation is involved.
+
+```bash
+python -m humanoid_push.episode_train --epochs 1000 \
+  --output outputs/benchmark2_training_1000
+MUJOCO_GL=egl python -m humanoid_push.episode_eval \
+  --checkpoint outputs/benchmark2_training_1000/best.pt \
+  --output outputs/benchmark2_validation_1000
+```
+
+The original 200-epoch model and its 2/9 result stay intact. Experiment inputs and code hashes are recorded in `data/manifests/benchmark2_epochs1000_protocol.json`.

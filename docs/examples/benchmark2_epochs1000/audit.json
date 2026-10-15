@@ -1,0 +1,18 @@
+{
+  "epochs_completed": 1000,
+  "first_200_epochs_exactly_reproduce_original": true,
+  "only_changed_training_configuration_field": "epochs",
+  "architecture_data_optimizer_and_seed_unchanged": true,
+  "baseline_checkpoint_and_experiment_source_unchanged": true,
+  "all_recorded_losses_finite": true,
+  "checkpoint_selection_matches_minimum_validation_loss": true,
+  "all_nine_rollouts_finite_and_actions_within_bounds": true,
+  "successful_videos_fully_decoded_frames": {
+    "validation_004": 353,
+    "validation_005": 323,
+    "validation_006": 303
+  },
+  "push_timeout_s": 10,
+  "episode_timeout_s": 30,
+  "test_used": false
+}

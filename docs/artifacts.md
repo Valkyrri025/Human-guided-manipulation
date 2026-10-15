@@ -54,3 +54,7 @@ Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9)
 ## Benchmark 2 initial run
 
 `outputs/benchmark2_dataset/` stores full-episode samples, `outputs/benchmark2_training/` stores 200-epoch checkpoints/history, and `outputs/benchmark2_validation/` stores all nine autonomous episode rollouts (2/9 complete successes). Public evidence and two successful videos are in `docs/examples/benchmark2/`. The code/protocol and synthetic teacher-label provenance are documented in `docs/benchmark-2.md` and `data/manifests/benchmark2_protocol.json`.
+
+## Benchmark 2: 1,000-epoch comparison
+
+`outputs/benchmark2_training_1000/` and `outputs/benchmark2_validation_1000/` retain the longer same-model experiment and all-nine validation (5/9). Public checkpoint, history, numeric rollouts/metrics and three successful videos are in `docs/examples/benchmark2_epochs1000/`; protocol/settings are in `data/manifests/benchmark2_epochs1000_protocol.json`. The original 200-epoch model/results remain unchanged.

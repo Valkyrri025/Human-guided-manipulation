@@ -1,5 +1,7 @@
 # Benchmark 2: first training run and validation
 
+**Later comparison:** the unchanged model trained for 1,000 epochs achieves **5/9 validation successes**. See [the comparison](benchmark-2-epochs1000.md). The original 200-epoch results below remain unchanged.
+
 The first joint full-episode policy completes **2/9 validation episodes**. It predicts approach/lowering, pushing and withdrawal together with all six Cartesian controller commands. No scripted Cartesian movement or ground-truth phase is supplied during evaluation. Benchmark 1 remains unchanged: 7/9 validation and 8/9 frozen test, with scripted approach/orientation/height/withdrawal.
 
 ## Training result

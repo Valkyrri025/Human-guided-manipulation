@@ -150,3 +150,5 @@ Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training a
 ## Benchmark 2: full-episode imitation
 
 The [benchmark-2 workflow](docs/benchmark-2.md) trains approach/lowering, pushing and withdrawal **jointly in one recurrent policy**. It predicts phase and Cartesian XYZ/rotation actions, with no ground-truth phase input or scripted Cartesian movement at evaluation. Human-derived pushing and scripted teacher approach/withdrawal labels remain explicitly distinguished. The initial 200-epoch run completes **2/9 validation episodes** under stricter full-episode criteria. See [results and failure analysis](docs/benchmark-2-results.md); high offline phase accuracy does not imply reliable execution.
+
+**Benchmark-2 duration comparison:** training the same model for 1,000 epochs improves complete validation success from **2/9 to 5/9**, with unchanged data, architecture and 10-second push / 30-second episode limits. The selected checkpoint is epoch 877. See [the comparison and successful videos](docs/benchmark-2-epochs1000.md). No benchmark-2 test evaluation has run.

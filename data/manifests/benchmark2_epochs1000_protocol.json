@@ -1,0 +1,28 @@
+{
+  "experiment": "benchmark2 same-model 1000-epoch duration comparison",
+  "baseline_epochs": 200,
+  "new_total_epochs": 1000,
+  "execution": "same-seed deterministic rerun from initialization; original checkpoints lack optimizer state",
+  "seed": 7,
+  "architecture": "15 -> Linear64/ReLU -> GRU64 -> joint phase3 + phase-mixture action6",
+  "learning_rate": 0.001,
+  "batch_size_episodes": 8,
+  "phase_loss_coefficient": 0.2,
+  "dataset_sha256": "75e1550656dd5b96c02d83986b291f06a0653788004db2149bc4a67fb5b90731",
+  "selection": "minimum phase-balanced validation action MSE + 0.2 phase cross-entropy",
+  "validation_episodes": 9,
+  "evaluation_limits": {
+    "push_seconds": 10,
+    "total_seconds": 30
+  },
+  "test_used": false,
+  "baseline_checkpoint_sha256": "0ef75748c3fd88f7f0f2ab2675a416dbe44ccbf61b8c27d87338a482e6fa91bd",
+  "source_sha256": {
+    "src/humanoid_push/episode_train.py": "52b37486fc1cd1fa4314418e3971761e36bbd9f0acb342aeabfa6271fe14035d",
+    "src/humanoid_push/episode_model.py": "b49456c40355c80f1cf0c1eff49063772a81aa8894d09ab052b115d8b36f1f84",
+    "src/humanoid_push/episode_data.py": "c296ff3f21f9880fcef69509410cc196fbfc56cbc1324834259f704a6d233359",
+    "src/humanoid_push/episode_eval.py": "7affee5c47523e7c4de782fd2fb9548224f6c4d38383b8ad7f96dc3cb35a8005",
+    "src/humanoid_push/push_env.py": "bb12403698fd3ab59a62c96ed202c9714ca00f1e555d85089cb6200d55075ea0",
+    "src/humanoid_push/task_rules.py": "71a6ed5217a7a366b3b13b59f46f5de245016c00d91842b126720d1a90a3835b"
+  }
+}
