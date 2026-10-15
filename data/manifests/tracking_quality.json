@@ -1,0 +1,4492 @@
+{
+  "train_023": {
+    "video": "data/raw/train_023.mp4",
+    "video_sha256": "4add4d9eafde1c3196ee90b70280eb8ffeff4c6d9ab6e6730df07dd2583e30ea",
+    "frames": 299,
+    "fps": 30.0,
+    "duration_s": 9.966666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 299,
+    "finger_detected_frames": 181,
+    "finger_first_visible_s": 1.9666666666666666,
+    "finger_last_visible_s": 7.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.242640687119285,
+    "object_start_xy_m": [
+      0.25508101284503937,
+      0.08358591422438622
+    ],
+    "object_end_xy_m": [
+      0.17167533934116364,
+      0.1377348005771637
+    ],
+    "observed_object_displacement_m": 0.09944148161547639,
+    "largest_object_frame_step_m": 0.0014767500425032466,
+    "largest_finger_frame_step_m": 0.021300438159632007,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.70588235294116,
+        542.9411764705883
+      ],
+      "center_table_xy_m": [
+        0.1713002324104309,
+        0.14000029861927032
+      ],
+      "corners_px": [
+        [
+          332.0,
+          514.0
+        ],
+        [
+          332.0,
+          573.0
+        ],
+        [
+          392.0,
+          573.0
+        ],
+        [
+          391.0,
+          513.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15548869967460632,
+          0.1249973475933075
+        ],
+        [
+          0.1554868370294571,
+          0.15540902316570282
+        ],
+        [
+          0.18635615706443787,
+          0.155546635389328
+        ],
+        [
+          0.1858605146408081,
+          0.12465793639421463
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_018": {
+    "video": "data/raw/train_018.mp4",
+    "video_sha256": "475fbd5465e737a3442e60ebb54ed8a6e98e4bf32962dea5caa4799ed3763ffd",
+    "frames": 258,
+    "fps": 30.0,
+    "duration_s": 8.6,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 258,
+    "finger_detected_frames": 168,
+    "finger_first_visible_s": 1.4,
+    "finger_last_visible_s": 6.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.830951894845301,
+    "object_start_xy_m": [
+      0.17099665850400925,
+      0.045050982385873795
+    ],
+    "object_end_xy_m": [
+      0.17204871773719788,
+      0.14043347537517548
+    ],
+    "observed_object_displacement_m": 0.09538829486621679,
+    "largest_object_frame_step_m": 0.0015726522964382777,
+    "largest_finger_frame_step_m": 0.016123515604913874,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.225,
+        541.05
+      ],
+      "center_table_xy_m": [
+        0.17110762000083923,
+        0.13999737799167633
+      ],
+      "corners_px": [
+        [
+          336.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15625548362731934,
+          0.12438184767961502
+        ],
+        [
+          0.15497219562530518,
+          0.15466788411140442
+        ],
+        [
+          0.18621328473091125,
+          0.15553726255893707
+        ],
+        [
+          0.1864977926015854,
+          0.1252925843000412
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_009": {
+    "video": "data/raw/validation_009.mp4",
+    "video_sha256": "e92354b9def7a4490f84cf5be22ff3f0891029404c80822750a6f053429f9b05",
+    "frames": 229,
+    "fps": 30.0,
+    "duration_s": 7.633333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 229,
+    "finger_detected_frames": 152,
+    "finger_first_visible_s": 1.0333333333333334,
+    "finger_last_visible_s": 6.066666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 25,
+    "max_corner_shift_px": 2.8284271247461903,
+    "object_start_xy_m": [
+      0.2232150435447693,
+      0.030141647905111313
+    ],
+    "object_end_xy_m": [
+      0.1695360243320465,
+      0.13881488144397736
+    ],
+    "observed_object_displacement_m": 0.12120770929042748,
+    "largest_object_frame_step_m": 0.0019249569779488263,
+    "largest_finger_frame_step_m": 0.027399329911183445,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.1363636363636,
+        533.9772727272727
+      ],
+      "center_table_xy_m": [
+        0.17085875570774078,
+        0.14016450941562653
+      ],
+      "corners_px": [
+        [
+          335.0,
+          503.0
+        ],
+        [
+          332.0,
+          563.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          505.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1561281383037567,
+          0.1245206817984581
+        ],
+        [
+          0.15468968451023102,
+          0.15480513870716095
+        ],
+        [
+          0.185932919383049,
+          0.15580715239048004
+        ],
+        [
+          0.18637728691101074,
+          0.12555505335330963
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_033": {
+    "video": "data/raw/train_033.mp4",
+    "video_sha256": "642e20bf694e32dad10e8b7a01cc9a61a689d8bcf37d57afc1f5505e482f3aea",
+    "frames": 253,
+    "fps": 30.0,
+    "duration_s": 8.433333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 253,
+    "finger_detected_frames": 170,
+    "finger_first_visible_s": 1.5333333333333334,
+    "finger_last_visible_s": 7.166666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.23606797749979,
+    "object_start_xy_m": [
+      0.2038700357079506,
+      0.01742083579301834
+    ],
+    "object_end_xy_m": [
+      0.17219959199428558,
+      0.13863757252693176
+    ],
+    "observed_object_displacement_m": 0.12528573051005967,
+    "largest_object_frame_step_m": 0.0019466726529838308,
+    "largest_finger_frame_step_m": 0.018688510530232117,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.97058823529414,
+        535.6470588235294
+      ],
+      "center_table_xy_m": [
+        0.170904740691185,
+        0.1397494226694107
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          565.0
+        ],
+        [
+          390.0,
+          566.0
+        ],
+        [
+          391.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15576107800006866,
+          0.1243511214852333
+        ],
+        [
+          0.15492314100265503,
+          0.15506500005722046
+        ],
+        [
+          0.18554534018039703,
+          0.15549832582473755
+        ],
+        [
+          0.18586599826812744,
+          0.12481839954853058
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_006": {
+    "video": "data/raw/train_006.mp4",
+    "video_sha256": "a0d8445d7cf7fe0d8b2c336c3926403fdbf6270001a7acbabc2eac091e49f678",
+    "frames": 254,
+    "fps": 30.0,
+    "duration_s": 8.466666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 254,
+    "finger_detected_frames": 178,
+    "finger_first_visible_s": 1.3,
+    "finger_last_visible_s": 7.2,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 56,
+    "max_corner_shift_px": 3.2015621187164243,
+    "object_start_xy_m": [
+      0.20753213763237,
+      0.07810023427009583
+    ],
+    "object_end_xy_m": [
+      0.16955453157424927,
+      0.13915905356407166
+    ],
+    "observed_object_displacement_m": 0.07190603573748315,
+    "largest_object_frame_step_m": 0.001365897989103507,
+    "largest_finger_frame_step_m": 0.020353476058899048,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.9677419354839,
+        541.5483870967741
+      ],
+      "center_table_xy_m": [
+        0.1711243987083435,
+        0.14002640545368195
+      ],
+      "corners_px": [
+        [
+          335.0,
+          511.0
+        ],
+        [
+          333.0,
+          572.0
+        ],
+        [
+          394.0,
+          573.0
+        ],
+        [
+          395.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1559760421514511,
+          0.12466181814670563
+        ],
+        [
+          0.15513655543327332,
+          0.1553480178117752
+        ],
+        [
+          0.18577824532985687,
+          0.15581724047660828
+        ],
+        [
+          0.1861325055360794,
+          0.12516871094703674
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_029": {
+    "video": "data/raw/train_029.mp4",
+    "video_sha256": "4f782fc1b2057353235f08aada0798eb1c46936f71eb2dc61d825f99cf1cd3d6",
+    "frames": 283,
+    "fps": 30.0,
+    "duration_s": 9.433333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 283,
+    "finger_detected_frames": 194,
+    "finger_first_visible_s": 1.2666666666666666,
+    "finger_last_visible_s": 7.7,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 14.230249470757707,
+    "object_start_xy_m": [
+      0.27506937086582184,
+      0.10649843886494637
+    ],
+    "object_end_xy_m": [
+      0.17295831441879272,
+      0.13849294185638428
+    ],
+    "observed_object_displacement_m": 0.107006149684948,
+    "largest_object_frame_step_m": 0.0015273089142636967,
+    "largest_finger_frame_step_m": 0.014876306025452484,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        363.0357142857143,
+        550.75
+      ],
+      "center_table_xy_m": [
+        0.17124471068382263,
+        0.13967689871788025
+      ],
+      "corners_px": [
+        [
+          332.0,
+          522.0
+        ],
+        [
+          332.0,
+          581.0
+        ],
+        [
+          392.0,
+          580.0
+        ],
+        [
+          391.0,
+          522.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1552271842956543,
+          0.12470095604658127
+        ],
+        [
+          0.15517058968544006,
+          0.15524013340473175
+        ],
+        [
+          0.18616372346878052,
+          0.15487885475158691
+        ],
+        [
+          0.18572969734668732,
+          0.12488124519586563
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_019": {
+    "video": "data/raw/train_019.mp4",
+    "video_sha256": "b067e92cf18bf4195d89f6674cf81ee045e9bfd36dd1de1c50d4a36404f90db0",
+    "frames": 341,
+    "fps": 30.0,
+    "duration_s": 11.366666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 341,
+    "finger_detected_frames": 264,
+    "finger_first_visible_s": 0.7333333333333333,
+    "finger_last_visible_s": 9.5,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.70087712549569,
+    "object_start_xy_m": [
+      0.05212809331715107,
+      0.13599000871181488
+    ],
+    "object_end_xy_m": [
+      0.1711193472146988,
+      0.1433180868625641
+    ],
+    "observed_object_displacement_m": 0.11921669024718877,
+    "largest_object_frame_step_m": 0.0011452979011607207,
+    "largest_finger_frame_step_m": 0.016776364611690457,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.78125,
+        541.03125
+      ],
+      "center_table_xy_m": [
+        0.17113614082336426,
+        0.1401212215423584
+      ],
+      "corners_px": [
+        [
+          336.0,
+          510.0
+        ],
+        [
+          334.0,
+          571.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15600357949733734,
+          0.12452945113182068
+        ],
+        [
+          0.155228391289711,
+          0.1552918255329132
+        ],
+        [
+          0.18596185743808746,
+          0.15565849840641022
+        ],
+        [
+          0.18624283373355865,
+          0.12493544071912766
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_005": {
+    "video": "data/raw/train_005.mp4",
+    "video_sha256": "f4a8eb60d875726a2a2653c8bab7bc42c84e5437d2211643fd059674046d1391",
+    "frames": 275,
+    "fps": 30.0,
+    "duration_s": 9.166666666666666,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 275,
+    "finger_detected_frames": 167,
+    "finger_first_visible_s": 1.7,
+    "finger_last_visible_s": 7.233333333333333,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 13.46291201783626,
+    "object_start_xy_m": [
+      0.23372229933738708,
+      0.1619863137602806
+    ],
+    "object_end_xy_m": [
+      0.17015300691127777,
+      0.1402827948331833
+    ],
+    "observed_object_displacement_m": 0.06717214953665746,
+    "largest_object_frame_step_m": 0.001776622213940131,
+    "largest_finger_frame_step_m": 0.01802563704272489,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        367.29411764705884,
+        548.9411764705883
+      ],
+      "center_table_xy_m": [
+        0.17101815342903137,
+        0.14012044668197632
+      ],
+      "corners_px": [
+        [
+          337.0,
+          518.0
+        ],
+        [
+          335.0,
+          579.0
+        ],
+        [
+          398.0,
+          580.0
+        ],
+        [
+          398.0,
+          519.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15595577657222748,
+          0.12470761686563492
+        ],
+        [
+          0.15504778921604156,
+          0.15501683950424194
+        ],
+        [
+          0.18625235557556152,
+          0.15555919706821442
+        ],
+        [
+          0.18620212376117706,
+          0.12528041005134583
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_009": {
+    "video": "data/raw/train_009.mp4",
+    "video_sha256": "44b5bf1bdadd280cf950715faf81b9ae1e4dddcc919ec5aab9427c850e94ee4b",
+    "frames": 251,
+    "fps": 30.0,
+    "duration_s": 8.366666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 251,
+    "finger_detected_frames": 174,
+    "finger_first_visible_s": 1.3,
+    "finger_last_visible_s": 7.066666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 3.905124837953327,
+    "object_start_xy_m": [
+      0.126583993434906,
+      0.05263927951455116
+    ],
+    "object_end_xy_m": [
+      0.169486865401268,
+      0.13854169845581055
+    ],
+    "observed_object_displacement_m": 0.09602021663650676,
+    "largest_object_frame_step_m": 0.0014367635928741766,
+    "largest_finger_frame_step_m": 0.020939577049797643,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.0882352941176,
+        540.2058823529412
+      ],
+      "center_table_xy_m": [
+        0.17104606330394745,
+        0.13984958827495575
+      ],
+      "corners_px": [
+        [
+          335.0,
+          510.0
+        ],
+        [
+          333.0,
+          571.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1558370590209961,
+          0.12467168271541595
+        ],
+        [
+          0.1550111472606659,
+          0.15534420311450958
+        ],
+        [
+          0.18614596128463745,
+          0.15580008924007416
+        ],
+        [
+          0.18648722767829895,
+          0.12566576898097992
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_025": {
+    "video": "data/raw/train_025.mp4",
+    "video_sha256": "3910a2f6979c87e27c59d2520d2e787bdb0c3aafd17567c461eb6ec6ea2c9ece",
+    "frames": 308,
+    "fps": 30.0,
+    "duration_s": 10.266666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 308,
+    "finger_detected_frames": 220,
+    "finger_first_visible_s": 1.3666666666666667,
+    "finger_last_visible_s": 8.666666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.301162633521313,
+    "object_start_xy_m": [
+      0.07416237890720367,
+      0.18579837679862976
+    ],
+    "object_end_xy_m": [
+      0.16811510920524597,
+      0.14048616588115692
+    ],
+    "observed_object_displacement_m": 0.1043087340000166,
+    "largest_object_frame_step_m": 0.001513315992746481,
+    "largest_finger_frame_step_m": 0.020989169911697657,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.8157894736842,
+        542.1052631578947
+      ],
+      "center_table_xy_m": [
+        0.17106039822101593,
+        0.1400071531534195
+      ],
+      "corners_px": [
+        [
+          332.0,
+          513.0
+        ],
+        [
+          332.0,
+          572.0
+        ],
+        [
+          392.0,
+          572.0
+        ],
+        [
+          392.0,
+          513.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15518848598003387,
+          0.12492319196462631
+        ],
+        [
+          0.1551607996225357,
+          0.15534627437591553
+        ],
+        [
+          0.18606917560100555,
+          0.1554722785949707
+        ],
+        [
+          0.18610765039920807,
+          0.12508201599121094
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_013": {
+    "video": "data/raw/train_013.mp4",
+    "video_sha256": "135389369f11c15796ef5be3d3068e081892ed795df10b0034c73a7d791a477d",
+    "frames": 603,
+    "fps": 59.940357852882705,
+    "duration_s": 10.06,
+    "frame_size_px": [
+      1080,
+      1920
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 603,
+    "finger_detected_frames": 490,
+    "finger_first_visible_s": 0.5839137645107794,
+    "finger_last_visible_s": 8.742023217247098,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 14,
+    "max_corner_shift_px": 5.315072906367325,
+    "object_start_xy_m": [
+      0.11361753195524216,
+      0.13902249932289124
+    ],
+    "object_end_xy_m": [
+      0.1686718761920929,
+      0.14171940088272095
+    ],
+    "observed_object_displacement_m": 0.05512036009836177,
+    "largest_object_frame_step_m": 0.0008092758940550338,
+    "largest_finger_frame_step_m": 0.006662842308656398,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        548.6212121212121,
+        812.0757575757576
+      ],
+      "center_table_xy_m": [
+        0.1709575206041336,
+        0.14032144844532013
+      ],
+      "corners_px": [
+        [
+          503.0,
+          767.0
+        ],
+        [
+          500.0,
+          856.0
+        ],
+        [
+          592.0,
+          859.0
+        ],
+        [
+          594.0,
+          768.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15549835562705994,
+          0.12519200146198273
+        ],
+        [
+          0.15472473204135895,
+          0.15517805516719818
+        ],
+        [
+          0.18564258515834808,
+          0.15605036914348602
+        ],
+        [
+          0.1860915720462799,
+          0.1254263073205948
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_008": {
+    "video": "data/raw/validation_008.mp4",
+    "video_sha256": "191619ac05f053554562490573ca221063337948316b5ed8c99c598bfc0a1b45",
+    "frames": 247,
+    "fps": 30.0,
+    "duration_s": 8.233333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 247,
+    "finger_detected_frames": 151,
+    "finger_first_visible_s": 1.2666666666666666,
+    "finger_last_visible_s": 6.266666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.2726936936378479,
+      0.16844484955072403
+    ],
+    "object_end_xy_m": [
+      0.16925892233848572,
+      0.1413412243127823
+    ],
+    "observed_object_displacement_m": 0.10692688349891318,
+    "largest_object_frame_step_m": 0.00207228732440981,
+    "largest_finger_frame_step_m": 0.022283935086023693,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.31111111111113,
+        534.0444444444445
+      ],
+      "center_table_xy_m": [
+        0.17102760076522827,
+        0.1401449739933014
+      ],
+      "corners_px": [
+        [
+          335.0,
+          503.0
+        ],
+        [
+          332.0,
+          563.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          505.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15619774162769318,
+          0.12441796809434891
+        ],
+        [
+          0.15475904941558838,
+          0.15476153790950775
+        ],
+        [
+          0.18602612614631653,
+          0.15580445528030396
+        ],
+        [
+          0.18646466732025146,
+          0.12549443542957306
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_014": {
+    "video": "data/raw/train_014.mp4",
+    "video_sha256": "b84dd48e73dd7d02345a6fbf97258aaca20340133664275dbd36e9b511946029",
+    "frames": 329,
+    "fps": 30.0,
+    "duration_s": 10.966666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 329,
+    "finger_detected_frames": 214,
+    "finger_first_visible_s": 2.0,
+    "finger_last_visible_s": 9.1,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.743416490252569,
+    "object_start_xy_m": [
+      0.22256353497505188,
+      0.13802632689476013
+    ],
+    "object_end_xy_m": [
+      0.17153103649616241,
+      0.1387818455696106
+    ],
+    "observed_object_displacement_m": 0.05103809077018755,
+    "largest_object_frame_step_m": 0.001019564815515376,
+    "largest_finger_frame_step_m": 0.01875940029946708,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.94444444444446,
+        542.8888888888889
+      ],
+      "center_table_xy_m": [
+        0.1712859719991684,
+        0.13982467353343964
+      ],
+      "corners_px": [
+        [
+          335.0,
+          513.0
+        ],
+        [
+          333.0,
+          572.0
+        ],
+        [
+          395.0,
+          574.0
+        ],
+        [
+          396.0,
+          514.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15555553138256073,
+          0.12479761242866516
+        ],
+        [
+          0.15478508174419403,
+          0.15460552275180817
+        ],
+        [
+          0.1860463172197342,
+          0.15545061230659485
+        ],
+        [
+          0.18632100522518158,
+          0.12517239153385162
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_042": {
+    "video": "data/raw/train_042.mp4",
+    "video_sha256": "eac9608be82cb4fea324b47ea8078b00fca291e7fc793e33b8d2660c81314f66",
+    "frames": 189,
+    "fps": 30.0,
+    "duration_s": 6.3,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 189,
+    "finger_detected_frames": 109,
+    "finger_first_visible_s": 1.0,
+    "finger_last_visible_s": 4.6,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.9154759474226504,
+    "object_start_xy_m": [
+      0.16876548528671265,
+      0.07288482785224915
+    ],
+    "object_end_xy_m": [
+      0.172580748796463,
+      0.13906660676002502
+    ],
+    "observed_object_displacement_m": 0.06629165931734218,
+    "largest_object_frame_step_m": 0.001681530892471679,
+    "largest_finger_frame_step_m": 0.026031306060181558,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.125,
+        534.675
+      ],
+      "center_table_xy_m": [
+        0.17068839073181152,
+        0.1401640623807907
+      ],
+      "corners_px": [
+        [
+          332.0,
+          505.0
+        ],
+        [
+          330.0,
+          563.0
+        ],
+        [
+          390.0,
+          565.0
+        ],
+        [
+          391.0,
+          506.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15546447038650513,
+          0.12478697299957275
+        ],
+        [
+          0.1546623408794403,
+          0.15491919219493866
+        ],
+        [
+          0.18576231598854065,
+          0.15585537254810333
+        ],
+        [
+          0.1860521137714386,
+          0.12524136900901794
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_028": {
+    "video": "data/raw/train_028.mp4",
+    "video_sha256": "f1f2df334a334e6a58b3e3ba056b4943522c1d58f9c19621e9263e06af574c14",
+    "frames": 268,
+    "fps": 30.0,
+    "duration_s": 8.933333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 268,
+    "finger_detected_frames": 206,
+    "finger_first_visible_s": 0.9666666666666667,
+    "finger_last_visible_s": 7.8,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 10.735455276791944,
+    "object_start_xy_m": [
+      0.045473940670490265,
+      0.09994407743215561
+    ],
+    "object_end_xy_m": [
+      0.16977792978286743,
+      0.13835546374320984
+    ],
+    "observed_object_displacement_m": 0.1301034830724644,
+    "largest_object_frame_step_m": 0.0016485191295024918,
+    "largest_finger_frame_step_m": 0.011847520802784145,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        363.125,
+        546.2916666666666
+      ],
+      "center_table_xy_m": [
+        0.17138300836086273,
+        0.1397944539785385
+      ],
+      "corners_px": [
+        [
+          333.0,
+          517.0
+        ],
+        [
+          331.0,
+          575.0
+        ],
+        [
+          391.0,
+          576.0
+        ],
+        [
+          391.0,
+          517.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15582706034183502,
+          0.12450478971004486
+        ],
+        [
+          0.15472368896007538,
+          0.15453989803791046
+        ],
+        [
+          0.18574956059455872,
+          0.1552656590938568
+        ],
+        [
+          0.18583717942237854,
+          0.12473830580711365
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_004": {
+    "video": "data/raw/train_004.mp4",
+    "video_sha256": "3c77a0e3f1c23d179085784fca1b7c91839d01c1365177284a5c7dd929cc830f",
+    "frames": 289,
+    "fps": 30.0,
+    "duration_s": 9.633333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 289,
+    "finger_detected_frames": 204,
+    "finger_first_visible_s": 1.3,
+    "finger_last_visible_s": 8.066666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.0891842320561409,
+      0.16179269552230835
+    ],
+    "object_end_xy_m": [
+      0.16908293962478638,
+      0.138550266623497
+    ],
+    "observed_object_displacement_m": 0.08321066020803,
+    "largest_object_frame_step_m": 0.0012786555941276033,
+    "largest_finger_frame_step_m": 0.014855017714002687,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        355.5882352941176,
+        546.0294117647059
+      ],
+      "center_table_xy_m": [
+        0.1707528978586197,
+        0.13997049629688263
+      ],
+      "corners_px": [
+        [
+          327.0,
+          517.0
+        ],
+        [
+          325.0,
+          575.0
+        ],
+        [
+          385.0,
+          576.0
+        ],
+        [
+          385.0,
+          518.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15575948357582092,
+          0.12471494823694229
+        ],
+        [
+          0.1548052877187729,
+          0.15512309968471527
+        ],
+        [
+          0.18615196645259857,
+          0.15569357573986053
+        ],
+        [
+          0.1860738843679428,
+          0.1253223717212677
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_016": {
+    "video": "data/raw/train_016.mp4",
+    "video_sha256": "2c3ced28971d318ac92394f8782ebbaa6b44e40ede1069bf552799d152eaa633",
+    "frames": 263,
+    "fps": 30.0,
+    "duration_s": 8.766666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 263,
+    "finger_detected_frames": 178,
+    "finger_first_visible_s": 1.0333333333333334,
+    "finger_last_visible_s": 6.933333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.242640687119285,
+    "object_start_xy_m": [
+      0.08187123388051987,
+      0.13706298172473907
+    ],
+    "object_end_xy_m": [
+      0.16991746425628662,
+      0.1396671086549759
+    ],
+    "observed_object_displacement_m": 0.08808473284543342,
+    "largest_object_frame_step_m": 0.0017166644022059024,
+    "largest_finger_frame_step_m": 0.016249402493943053,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.2972972972973,
+        540.5945945945946
+      ],
+      "center_table_xy_m": [
+        0.1708984673023224,
+        0.13998739421367645
+      ],
+      "corners_px": [
+        [
+          336.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15606144070625305,
+          0.12461372464895248
+        ],
+        [
+          0.1547684371471405,
+          0.15484896302223206
+        ],
+        [
+          0.1859176754951477,
+          0.1557433307170868
+        ],
+        [
+          0.1862173080444336,
+          0.12554852664470673
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_015": {
+    "video": "data/raw/train_015.mp4",
+    "video_sha256": "61a6228582010e27e97c7cc94133da2d0e1d2d3642bb9551c07dd6d4bdc33f8d",
+    "frames": 270,
+    "fps": 30.0,
+    "duration_s": 9.0,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 270,
+    "finger_detected_frames": 198,
+    "finger_first_visible_s": 1.2333333333333334,
+    "finger_last_visible_s": 7.8,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 7.762087348130012,
+    "object_start_xy_m": [
+      0.16783686727285385,
+      0.08285104483366013
+    ],
+    "object_end_xy_m": [
+      0.17116393148899078,
+      0.13820548355579376
+    ],
+    "observed_object_displacement_m": 0.0554543347497808,
+    "largest_object_frame_step_m": 0.0010914594171448765,
+    "largest_finger_frame_step_m": 0.025261034810436084,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.6756756756757,
+        542.0
+      ],
+      "center_table_xy_m": [
+        0.17104074358940125,
+        0.1396639049053192
+      ],
+      "corners_px": [
+        [
+          335.0,
+          512.0
+        ],
+        [
+          333.0,
+          571.0
+        ],
+        [
+          395.0,
+          574.0
+        ],
+        [
+          396.0,
+          513.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1554318517446518,
+          0.12455358356237411
+        ],
+        [
+          0.15466077625751495,
+          0.15436053276062012
+        ],
+        [
+          0.18595287203788757,
+          0.15576282143592834
+        ],
+        [
+          0.18622392416000366,
+          0.1249803975224495
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_002": {
+    "video": "data/raw/validation_002.mp4",
+    "video_sha256": "feb3c073d5817d38564589f433f669c876411a95ce7295a8ef13d1cc88ca043f",
+    "frames": 229,
+    "fps": 30.0,
+    "duration_s": 7.633333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 229,
+    "finger_detected_frames": 156,
+    "finger_first_visible_s": 1.0,
+    "finger_last_visible_s": 6.166666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.949747468305833,
+    "object_start_xy_m": [
+      0.24737432599067688,
+      0.09243614971637726
+    ],
+    "object_end_xy_m": [
+      0.17178454995155334,
+      0.1368173211812973
+    ],
+    "observed_object_displacement_m": 0.0876555909354531,
+    "largest_object_frame_step_m": 0.0015975031644593206,
+    "largest_finger_frame_step_m": 0.030777052284177275,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.5813953488372,
+        534.2325581395348
+      ],
+      "center_table_xy_m": [
+        0.17102006077766418,
+        0.14012031257152557
+      ],
+      "corners_px": [
+        [
+          334.0,
+          504.0
+        ],
+        [
+          333.0,
+          564.0
+        ],
+        [
+          395.0,
+          565.0
+        ],
+        [
+          395.0,
+          505.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15556442737579346,
+          0.12481225281953812
+        ],
+        [
+          0.1551353931427002,
+          0.155133917927742
+        ],
+        [
+          0.18636594712734222,
+          0.15567000210285187
+        ],
+        [
+          0.18630671501159668,
+          0.12538805603981018
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_034": {
+    "video": "data/raw/train_034.mp4",
+    "video_sha256": "3ab494998f89ecbbdd17e83ef74aafcc4958ed1003cb528e99c300529205add7",
+    "frames": 268,
+    "fps": 30.0,
+    "duration_s": 8.933333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 268,
+    "finger_detected_frames": 221,
+    "finger_first_visible_s": 0.5333333333333333,
+    "finger_last_visible_s": 7.866666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 50,
+    "max_corner_shift_px": 13.5,
+    "object_start_xy_m": [
+      0.03789376653730869,
+      0.08520529046654701
+    ],
+    "object_end_xy_m": [
+      0.16978275775909424,
+      0.1373354196548462
+    ],
+    "observed_object_displacement_m": 0.14181768710104176,
+    "largest_object_frame_step_m": 0.0036776110855004742,
+    "largest_finger_frame_step_m": 0.015986929285817953,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.64864864864865,
+        535.4864864864865
+      ],
+      "center_table_xy_m": [
+        0.1709149181842804,
+        0.14000482857227325
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          565.0
+        ],
+        [
+          390.0,
+          566.0
+        ],
+        [
+          391.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15595489740371704,
+          0.12468647211790085
+        ],
+        [
+          0.155117005109787,
+          0.15538829565048218
+        ],
+        [
+          0.1857006549835205,
+          0.15583279728889465
+        ],
+        [
+          0.18602705001831055,
+          0.1251729130744934
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_040": {
+    "video": "data/raw/train_040.mp4",
+    "video_sha256": "af33e7875159ea5f9503332c4507c44c0c5523a6f841c28e57ec160835c6142a",
+    "frames": 208,
+    "fps": 30.0,
+    "duration_s": 6.933333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 208,
+    "finger_detected_frames": 129,
+    "finger_first_visible_s": 0.7,
+    "finger_last_visible_s": 4.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.656854249492381,
+    "object_start_xy_m": [
+      0.09978345036506653,
+      0.13658665120601654
+    ],
+    "object_end_xy_m": [
+      0.17176809906959534,
+      0.13547027111053467
+    ],
+    "observed_object_displacement_m": 0.07199330492227739,
+    "largest_object_frame_step_m": 0.0018289780447639148,
+    "largest_finger_frame_step_m": 0.026060974606285998,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.24242424242425,
+        535.5454545454545
+      ],
+      "center_table_xy_m": [
+        0.1710563451051712,
+        0.13993260264396667
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          565.0
+        ],
+        [
+          391.0,
+          566.0
+        ],
+        [
+          392.0,
+          508.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15574707090854645,
+          0.12458395957946777
+        ],
+        [
+          0.15493489801883698,
+          0.15532784163951874
+        ],
+        [
+          0.18609412014484406,
+          0.15573163330554962
+        ],
+        [
+          0.18639789521694183,
+          0.12554897367954254
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_041": {
+    "video": "data/raw/train_041.mp4",
+    "video_sha256": "32e658195b5b862f945413843ed5086940b5c016cf4111b434325d9a6768bf70",
+    "frames": 208,
+    "fps": 30.0,
+    "duration_s": 6.933333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 208,
+    "finger_detected_frames": 124,
+    "finger_first_visible_s": 1.4333333333333333,
+    "finger_last_visible_s": 5.533333333333333,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.0,
+    "object_start_xy_m": [
+      0.2318848967552185,
+      0.13738663494586945
+    ],
+    "object_end_xy_m": [
+      0.17156444489955902,
+      0.13818855583667755
+    ],
+    "observed_object_displacement_m": 0.0603257821266003,
+    "largest_object_frame_step_m": 0.001634366461756696,
+    "largest_finger_frame_step_m": 0.028262044881572485,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.64285714285717,
+        534.8095238095239
+      ],
+      "center_table_xy_m": [
+        0.17090122401714325,
+        0.14029619097709656
+      ],
+      "corners_px": [
+        [
+          332.0,
+          505.0
+        ],
+        [
+          330.0,
+          563.0
+        ],
+        [
+          390.0,
+          565.0
+        ],
+        [
+          392.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15542273223400116,
+          0.12482275813817978
+        ],
+        [
+          0.15459464490413666,
+          0.1549939662218094
+        ],
+        [
+          0.18569044768810272,
+          0.15594413876533508
+        ],
+        [
+          0.18652760982513428,
+          0.12581191956996918
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_004": {
+    "video": "data/raw/validation_004.mp4",
+    "video_sha256": "064fbbfb3a2f6a6940ddb9cdd9e205f7daa320a49da31e9febb889fcbc43bb4c",
+    "frames": 214,
+    "fps": 30.0,
+    "duration_s": 7.133333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 214,
+    "finger_detected_frames": 136,
+    "finger_first_visible_s": 1.2,
+    "finger_last_visible_s": 5.7,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 6.020797289396148,
+    "object_start_xy_m": [
+      0.06126866303384304,
+      0.13512523472309113
+    ],
+    "object_end_xy_m": [
+      0.17010144889354706,
+      0.1389467716217041
+    ],
+    "observed_object_displacement_m": 0.10889985960620725,
+    "largest_object_frame_step_m": 0.0020464226902240615,
+    "largest_finger_frame_step_m": 0.01733718814208117,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.258064516129,
+        534.1290322580645
+      ],
+      "center_table_xy_m": [
+        0.17085038125514984,
+        0.13985809683799744
+      ],
+      "corners_px": [
+        [
+          334.0,
+          504.0
+        ],
+        [
+          332.0,
+          564.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          506.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15550455451011658,
+          0.12456817924976349
+        ],
+        [
+          0.15458233654499054,
+          0.1549631804227829
+        ],
+        [
+          0.1859152615070343,
+          0.15550172328948975
+        ],
+        [
+          0.18634004890918732,
+          0.12564727663993835
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_007": {
+    "video": "data/raw/train_007.mp4",
+    "video_sha256": "74965b948da138a4100ec53e2c8eb69c977dccd8895a520ca8e4638b05a0ee5b",
+    "frames": 308,
+    "fps": 30.0,
+    "duration_s": 10.266666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 308,
+    "finger_detected_frames": 225,
+    "finger_first_visible_s": 1.2666666666666666,
+    "finger_last_visible_s": 8.733333333333333,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.70087712549569,
+    "object_start_xy_m": [
+      0.05676933377981186,
+      0.10299922525882721
+    ],
+    "object_end_xy_m": [
+      0.17034867405891418,
+      0.14068052172660828
+    ],
+    "observed_object_displacement_m": 0.11966681512319498,
+    "largest_object_frame_step_m": 0.0015460490976731706,
+    "largest_finger_frame_step_m": 0.014258148296447132,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        356.1666666666667,
+        546.4444444444445
+      ],
+      "center_table_xy_m": [
+        0.17088794708251953,
+        0.13974960148334503
+      ],
+      "corners_px": [
+        [
+          328.0,
+          517.0
+        ],
+        [
+          325.0,
+          575.0
+        ],
+        [
+          385.0,
+          576.0
+        ],
+        [
+          385.0,
+          518.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.156033456325531,
+          0.12426411360502243
+        ],
+        [
+          0.15456272661685944,
+          0.1547401398420334
+        ],
+        [
+          0.18607258796691895,
+          0.15527284145355225
+        ],
+        [
+          0.18597745895385742,
+          0.12482642382383347
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_039": {
+    "video": "data/raw/train_039.mp4",
+    "video_sha256": "e2db2ab994ae89b912e2a5c8a5b7a94efbf32141913de089620951b014c41946",
+    "frames": 273,
+    "fps": 30.0,
+    "duration_s": 9.1,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 273,
+    "finger_detected_frames": 198,
+    "finger_first_visible_s": 1.1333333333333333,
+    "finger_last_visible_s": 7.7,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 74,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.23202311992645264,
+      0.0231254231184721
+    ],
+    "object_end_xy_m": [
+      0.17056581377983093,
+      0.13714197278022766
+    ],
+    "observed_object_displacement_m": 0.12952518703160076,
+    "largest_object_frame_step_m": 0.001780698939630025,
+    "largest_finger_frame_step_m": 0.030935914379782155,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.975,
+        535.4
+      ],
+      "center_table_xy_m": [
+        0.17094843089580536,
+        0.1399601846933365
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          564.0
+        ],
+        [
+          391.0,
+          566.0
+        ],
+        [
+          392.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15583138167858124,
+          0.12471230328083038
+        ],
+        [
+          0.15497668087482452,
+          0.15485675632953644
+        ],
+        [
+          0.1860707700252533,
+          0.1558062732219696
+        ],
+        [
+          0.18641386926174164,
+          0.1251823604106903
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_021": {
+    "video": "data/raw/train_021.mp4",
+    "video_sha256": "15ef0ccd66236ff5aa9736da459d67b54bed286e5decdd844c022e91bd0e05cf",
+    "frames": 270,
+    "fps": 30.0,
+    "duration_s": 9.0,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 270,
+    "finger_detected_frames": 177,
+    "finger_first_visible_s": 1.5333333333333334,
+    "finger_last_visible_s": 7.4,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.1478150704935,
+    "object_start_xy_m": [
+      0.1721416562795639,
+      0.023007091134786606
+    ],
+    "object_end_xy_m": [
+      0.17301829159259796,
+      0.13811564445495605
+    ],
+    "observed_object_displacement_m": 0.11511189137936337,
+    "largest_object_frame_step_m": 0.0017305121512849935,
+    "largest_finger_frame_step_m": 0.020533111460720593,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.97222222222223,
+        540.4166666666666
+      ],
+      "center_table_xy_m": [
+        0.1712048202753067,
+        0.13977430760860443
+      ],
+      "corners_px": [
+        [
+          336.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1560428887605667,
+          0.1245151162147522
+        ],
+        [
+          0.15476375818252563,
+          0.15471377968788147
+        ],
+        [
+          0.18587036430835724,
+          0.1555938422679901
+        ],
+        [
+          0.18615643680095673,
+          0.12493576109409332
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_006": {
+    "video": "data/raw/validation_006.mp4",
+    "video_sha256": "855e67eedcdf574e4e04c745a06c12a22b1ba3aaa469b3568e070eca35d0d394",
+    "frames": 216,
+    "fps": 30.0,
+    "duration_s": 7.2,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 216,
+    "finger_detected_frames": 135,
+    "finger_first_visible_s": 1.2,
+    "finger_last_visible_s": 5.666666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.301162633521313,
+    "object_start_xy_m": [
+      0.16965322196483612,
+      0.03760735131800175
+    ],
+    "object_end_xy_m": [
+      0.17058627307415009,
+      0.13920466601848602
+    ],
+    "observed_object_displacement_m": 0.10160159909529884,
+    "largest_object_frame_step_m": 0.0016445059943086303,
+    "largest_finger_frame_step_m": 0.025819237251480633,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.72972972972974,
+        533.6216216216217
+      ],
+      "center_table_xy_m": [
+        0.17100119590759277,
+        0.13999874889850616
+      ],
+      "corners_px": [
+        [
+          335.0,
+          503.0
+        ],
+        [
+          332.0,
+          563.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          505.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15598534047603607,
+          0.12453574687242508
+        ],
+        [
+          0.15456201136112213,
+          0.15480495989322662
+        ],
+        [
+          0.18576383590698242,
+          0.15581899881362915
+        ],
+        [
+          0.18619169294834137,
+          0.12558408081531525
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_036": {
+    "video": "data/raw/train_036.mp4",
+    "video_sha256": "cf2bd9e92fb45969d904ea6b3ff92ec009094afbe19d60f37e67afd4e118a9a0",
+    "frames": 253,
+    "fps": 30.0,
+    "duration_s": 8.433333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 253,
+    "finger_detected_frames": 175,
+    "finger_first_visible_s": 1.4666666666666666,
+    "finger_last_visible_s": 7.266666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.23606797749979,
+    "object_start_xy_m": [
+      0.10536572709679604,
+      0.021956137381494045
+    ],
+    "object_end_xy_m": [
+      0.1703266054391861,
+      0.13899432122707367
+    ],
+    "observed_object_displacement_m": 0.13385758175346849,
+    "largest_object_frame_step_m": 0.00208459370420453,
+    "largest_finger_frame_step_m": 0.03504084236551651,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.0,
+        535.425
+      ],
+      "center_table_xy_m": [
+        0.1710136979818344,
+        0.14006240665912628
+      ],
+      "corners_px": [
+        [
+          332.0,
+          506.0
+        ],
+        [
+          331.0,
+          565.0
+        ],
+        [
+          390.0,
+          566.0
+        ],
+        [
+          392.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15536460280418396,
+          0.12480077892541885
+        ],
+        [
+          0.1550450325012207,
+          0.15543822944164276
+        ],
+        [
+          0.18560487031936646,
+          0.1558958888053894
+        ],
+        [
+          0.18645499646663666,
+          0.12529665231704712
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_020": {
+    "video": "data/raw/train_020.mp4",
+    "video_sha256": "266a11e56d20b026fa54177067cfa0635f385d956b46090a051663f143ddf249",
+    "frames": 285,
+    "fps": 30.0,
+    "duration_s": 9.5,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 285,
+    "finger_detected_frames": 175,
+    "finger_first_visible_s": 1.9333333333333333,
+    "finger_last_visible_s": 7.733333333333333,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.2792482525110245,
+      0.1388690322637558
+    ],
+    "object_end_xy_m": [
+      0.17145000398159027,
+      0.13984277844429016
+    ],
+    "observed_object_displacement_m": 0.10780264638513179,
+    "largest_object_frame_step_m": 0.001943396524710469,
+    "largest_finger_frame_step_m": 0.016352423556814176,
+    "independent_goal": {
+      "source": "independent drawn square in original opening frame; reviewed outline",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.8292682926829,
+        540.7317073170732
+      ],
+      "center_table_xy_m": [
+        0.1711176335811615,
+        0.1400953084230423
+      ],
+      "corners_px": [
+        [
+          335.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          397.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15553492307662964,
+          0.12470551580190659
+        ],
+        [
+          0.15475817024707794,
+          0.1548260599374771
+        ],
+        [
+          0.18584582209587097,
+          0.1557309925556183
+        ],
+        [
+          0.18663336336612701,
+          0.12514398992061615
+        ]
+      ],
+      "success_center_tolerance_m": 0.01,
+      "review_note": "Default gray<90 outline was fragmented. Reviewed gray<110 mask with 3x3 closing gives the visible independent square; cross centroid uses unclosed mask. No demonstrated endpoint used."
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_007": {
+    "video": "data/raw/validation_007.mp4",
+    "video_sha256": "daabd15973652fb28c47e27bf405ef1eaa25559b5eb1fe30ffd5016908b035ab",
+    "frames": 256,
+    "fps": 30.0,
+    "duration_s": 8.533333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 256,
+    "finger_detected_frames": 173,
+    "finger_first_visible_s": 1.1,
+    "finger_last_visible_s": 6.833333333333333,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 7.211102550927978,
+    "object_start_xy_m": [
+      0.050280557945370674,
+      0.17444418370723724
+    ],
+    "object_end_xy_m": [
+      0.1698129028081894,
+      0.13515695929527283
+    ],
+    "observed_object_displacement_m": 0.12582315951524933,
+    "largest_object_frame_step_m": 0.0020571020867937795,
+    "largest_finger_frame_step_m": 0.025610168705092286,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.0681818181818,
+        535.9318181818181
+      ],
+      "center_table_xy_m": [
+        0.17090870440006256,
+        0.14005595445632935
+      ],
+      "corners_px": [
+        [
+          335.0,
+          505.0
+        ],
+        [
+          332.0,
+          565.0
+        ],
+        [
+          394.0,
+          567.0
+        ],
+        [
+          395.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15616202354431152,
+          0.12436854839324951
+        ],
+        [
+          0.15477323532104492,
+          0.15476836264133453
+        ],
+        [
+          0.18606698513031006,
+          0.15578687191009521
+        ],
+        [
+          0.1864602267742157,
+          0.125421941280365
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_010": {
+    "video": "data/raw/train_010.mp4",
+    "video_sha256": "8d471ad34fbf59b49a0902e26bfda3637f8508f411332f256b9c1fc92ca66e6e",
+    "frames": 295,
+    "fps": 30.0,
+    "duration_s": 9.833333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 295,
+    "finger_detected_frames": 214,
+    "finger_first_visible_s": 1.3333333333333333,
+    "finger_last_visible_s": 8.433333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.47213595499958,
+    "object_start_xy_m": [
+      0.06748110800981522,
+      0.1720941811800003
+    ],
+    "object_end_xy_m": [
+      0.16957464814186096,
+      0.13889656960964203
+    ],
+    "observed_object_displacement_m": 0.107355355482016,
+    "largest_object_frame_step_m": 0.0012367945554013194,
+    "largest_finger_frame_step_m": 0.021490850339718124,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        356.10526315789474,
+        546.2105263157895
+      ],
+      "center_table_xy_m": [
+        0.17104178667068481,
+        0.13990850746631622
+      ],
+      "corners_px": [
+        [
+          326.0,
+          518.0
+        ],
+        [
+          326.0,
+          576.0
+        ],
+        [
+          385.0,
+          576.0
+        ],
+        [
+          384.0,
+          517.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1552402228116989,
+          0.12508168816566467
+        ],
+        [
+          0.15533247590065002,
+          0.15551914274692535
+        ],
+        [
+          0.18618853390216827,
+          0.15553918480873108
+        ],
+        [
+          0.1855863779783249,
+          0.12460961192846298
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_001": {
+    "video": "data/raw/validation_001.mp4",
+    "video_sha256": "8260034e2284924360a3a2532ba80eab07f7f05b5efa75bd8ed5b9bbdf1786df",
+    "frames": 268,
+    "fps": 30.0,
+    "duration_s": 8.933333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 268,
+    "finger_detected_frames": 199,
+    "finger_first_visible_s": 1.1666666666666667,
+    "finger_last_visible_s": 7.766666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 78,
+    "max_corner_shift_px": 12.539936203984453,
+    "object_start_xy_m": [
+      0.08805695176124573,
+      0.09877654910087585
+    ],
+    "object_end_xy_m": [
+      0.17011429369449615,
+      0.13949640095233917
+    ],
+    "observed_object_displacement_m": 0.09160520563786481,
+    "largest_object_frame_step_m": 0.003106568573434389,
+    "largest_finger_frame_step_m": 0.014832585185019212,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        363.8484848484849,
+        534.1212121212121
+      ],
+      "center_table_xy_m": [
+        0.17103682458400726,
+        0.1399405151605606
+      ],
+      "corners_px": [
+        [
+          334.0,
+          504.0
+        ],
+        [
+          332.0,
+          564.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          506.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.155925914645195,
+          0.12469232827425003
+        ],
+        [
+          0.15501797199249268,
+          0.1550101339817047
+        ],
+        [
+          0.18627676367759705,
+          0.15554611384868622
+        ],
+        [
+          0.1866910308599472,
+          0.12577269971370697
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_003": {
+    "video": "data/raw/validation_003.mp4",
+    "video_sha256": "65c7cb5b9add1f440af936d156d17370ee37e6ae455b49a5f25cf72bd3e600a2",
+    "frames": 233,
+    "fps": 30.0,
+    "duration_s": 7.766666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 233,
+    "finger_detected_frames": 152,
+    "finger_first_visible_s": 1.3333333333333333,
+    "finger_last_visible_s": 6.366666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.11112218350172043,
+      0.056504255160689354
+    ],
+    "object_end_xy_m": [
+      0.17107254266738892,
+      0.13791975378990173
+    ],
+    "observed_object_displacement_m": 0.10110652294058942,
+    "largest_object_frame_step_m": 0.001960514980440209,
+    "largest_finger_frame_step_m": 0.02704941950454939,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.54761904761904,
+        533.8809523809524
+      ],
+      "center_table_xy_m": [
+        0.17119163274765015,
+        0.14000080525875092
+      ],
+      "corners_px": [
+        [
+          334.0,
+          504.0
+        ],
+        [
+          332.0,
+          563.0
+        ],
+        [
+          394.0,
+          565.0
+        ],
+        [
+          395.0,
+          505.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15575267374515533,
+          0.12488369643688202
+        ],
+        [
+          0.15481780469417572,
+          0.15468744933605194
+        ],
+        [
+          0.18605388700962067,
+          0.15571558475494385
+        ],
+        [
+          0.18649795651435852,
+          0.12544414401054382
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_026": {
+    "video": "data/raw/train_026.mp4",
+    "video_sha256": "b4b1b36a7ca9ff3b9f346d70233c44142c64e7a5f958bafe81f482fdb7a060e9",
+    "frames": 320,
+    "fps": 30.0,
+    "duration_s": 10.666666666666666,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 320,
+    "finger_detected_frames": 206,
+    "finger_first_visible_s": 1.5666666666666667,
+    "finger_last_visible_s": 8.4,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.716990566028302,
+    "object_start_xy_m": [
+      0.2513735443353653,
+      0.1842203363776207
+    ],
+    "object_end_xy_m": [
+      0.16749513149261475,
+      0.14369206130504608
+    ],
+    "observed_object_displacement_m": 0.09315647707689022,
+    "largest_object_frame_step_m": 0.0016030550434770329,
+    "largest_finger_frame_step_m": 0.01630993698779514,
+    "independent_goal": {
+      "source": "independent drawn square in original opening frame; reviewed outline",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.6744186046512,
+        543.4883720930233
+      ],
+      "center_table_xy_m": [
+        0.1712622046470642,
+        0.13991418480873108
+      ],
+      "corners_px": [
+        [
+          332.0,
+          514.0
+        ],
+        [
+          331.0,
+          573.0
+        ],
+        [
+          392.0,
+          574.0
+        ],
+        [
+          392.0,
+          514.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1554924100637436,
+          0.12464098632335663
+        ],
+        [
+          0.1549624651670456,
+          0.1550128161907196
+        ],
+        [
+          0.1863093078136444,
+          0.15568087995052338
+        ],
+        [
+          0.18634416162967682,
+          0.12483086436986923
+        ]
+      ],
+      "success_center_tolerance_m": 0.01,
+      "review_note": "Default gray<90 outline was fragmented. Reviewed gray<110 mask with 3x3 closing matches visible independent square; cross centroid uses unclosed mask. No demonstrated endpoint used."
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_024": {
+    "video": "data/raw/train_024.mp4",
+    "video_sha256": "e9203ab339d3b1dabe88af989f0ad65b1d2f83f03d9c0cf260b897b72e3d40c9",
+    "frames": 299,
+    "fps": 30.0,
+    "duration_s": 9.966666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 299,
+    "finger_detected_frames": 207,
+    "finger_first_visible_s": 1.5666666666666667,
+    "finger_last_visible_s": 8.433333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 6.363961030678928,
+    "object_start_xy_m": [
+      0.11243309825658798,
+      0.04774906486272812
+    ],
+    "object_end_xy_m": [
+      0.16981194913387299,
+      0.13938690721988678
+    ],
+    "observed_object_displacement_m": 0.10811950184806242,
+    "largest_object_frame_step_m": 0.001405506790330655,
+    "largest_finger_frame_step_m": 0.012139487620111281,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.14285714285717,
+        542.8571428571429
+      ],
+      "center_table_xy_m": [
+        0.17074164748191833,
+        0.14000242948532104
+      ],
+      "corners_px": [
+        [
+          333.0,
+          513.0
+        ],
+        [
+          331.0,
+          571.0
+        ],
+        [
+          391.0,
+          573.0
+        ],
+        [
+          392.0,
+          514.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15569554269313812,
+          0.12448089569807053
+        ],
+        [
+          0.15466107428073883,
+          0.15446065366268158
+        ],
+        [
+          0.18561667203903198,
+          0.1556461751461029
+        ],
+        [
+          0.18614405393600464,
+          0.1251852959394455
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_038": {
+    "video": "data/raw/train_038.mp4",
+    "video_sha256": "5b01f3e1a243c297365de7ad782bf865fcf6b4592c9284e87299998a078fe288",
+    "frames": 286,
+    "fps": 30.0,
+    "duration_s": 9.533333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 286,
+    "finger_detected_frames": 185,
+    "finger_first_visible_s": 1.6333333333333333,
+    "finger_last_visible_s": 7.766666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.27499930560588837,
+      0.1861635148525238
+    ],
+    "object_end_xy_m": [
+      0.17125676572322845,
+      0.13862547278404236
+    ],
+    "observed_object_displacement_m": 0.11411564320902719,
+    "largest_object_frame_step_m": 0.0019294484418306101,
+    "largest_finger_frame_step_m": 0.023225645186881513,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.72222222222223,
+        534.7777777777778
+      ],
+      "center_table_xy_m": [
+        0.17119161784648895,
+        0.13976925611495972
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          564.0
+        ],
+        [
+          391.0,
+          566.0
+        ],
+        [
+          392.0,
+          507.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1556885689496994,
+          0.12487347424030304
+        ],
+        [
+          0.1548474282026291,
+          0.15497761964797974
+        ],
+        [
+          0.1859329491853714,
+          0.155912846326828
+        ],
+        [
+          0.18625977635383606,
+          0.1253271996974945
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_017": {
+    "video": "data/raw/train_017.mp4",
+    "video_sha256": "8c21043cbde630760542a31898c17f6b1f9bf48f291da79f45e9ecc5f50d7120",
+    "frames": 297,
+    "fps": 30.0,
+    "duration_s": 9.9,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 297,
+    "finger_detected_frames": 183,
+    "finger_first_visible_s": 1.9,
+    "finger_last_visible_s": 7.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.656854249492381,
+    "object_start_xy_m": [
+      0.2513759881258011,
+      0.13699708133935928
+    ],
+    "object_end_xy_m": [
+      0.17249318957328796,
+      0.13981539011001587
+    ],
+    "observed_object_displacement_m": 0.07893312848103214,
+    "largest_object_frame_step_m": 0.0015015688104377983,
+    "largest_finger_frame_step_m": 0.014062568439676407,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.2258064516129,
+        540.1935483870968
+      ],
+      "center_table_xy_m": [
+        0.17081591486930847,
+        0.13994327187538147
+      ],
+      "corners_px": [
+        [
+          335.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15553605556488037,
+          0.12481340765953064
+        ],
+        [
+          0.15476001799106598,
+          0.1549568921327591
+        ],
+        [
+          0.18585559725761414,
+          0.1558634489774704
+        ],
+        [
+          0.18613620102405548,
+          0.12524868547916412
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_035": {
+    "video": "data/raw/train_035.mp4",
+    "video_sha256": "3e4f5e7a761dd86c64cc13a15b8a28251fada15c9c8563f40da23bfc79ad89df",
+    "frames": 291,
+    "fps": 30.0,
+    "duration_s": 9.7,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 291,
+    "finger_detected_frames": 202,
+    "finger_first_visible_s": 1.5,
+    "finger_last_visible_s": 8.2,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.0615528128088303,
+    "object_start_xy_m": [
+      0.2794498801231384,
+      0.09092985838651657
+    ],
+    "object_end_xy_m": [
+      0.1691766232252121,
+      0.1398649364709854
+    ],
+    "observed_object_displacement_m": 0.12064341280819736,
+    "largest_object_frame_step_m": 0.0015056248678791257,
+    "largest_finger_frame_step_m": 0.024604902137327238,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.1578947368421,
+        535.6315789473684
+      ],
+      "center_table_xy_m": [
+        0.17123085260391235,
+        0.14013411104679108
+      ],
+      "corners_px": [
+        [
+          333.0,
+          506.0
+        ],
+        [
+          331.0,
+          565.0
+        ],
+        [
+          391.0,
+          566.0
+        ],
+        [
+          392.0,
+          508.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15600629150867462,
+          0.12476599961519241
+        ],
+        [
+          0.1551816165447235,
+          0.15544308722019196
+        ],
+        [
+          0.18626870214939117,
+          0.1558590829372406
+        ],
+        [
+          0.18658840656280518,
+          0.12574444711208344
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_011": {
+    "video": "data/raw/train_011.mp4",
+    "video_sha256": "86b39edaed174083ecf6c909982a0a5a1eecf2b0cb2998b534568107ed61e24b",
+    "frames": 297,
+    "fps": 30.0,
+    "duration_s": 9.9,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 297,
+    "finger_detected_frames": 187,
+    "finger_first_visible_s": 1.7666666666666666,
+    "finger_last_visible_s": 7.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 7.280109889280518,
+    "object_start_xy_m": [
+      0.25467802584171295,
+      0.16751396656036377
+    ],
+    "object_end_xy_m": [
+      0.16869866847991943,
+      0.14180678129196167
+    ],
+    "observed_object_displacement_m": 0.08974023215242397,
+    "largest_object_frame_step_m": 0.0020628985162040665,
+    "largest_finger_frame_step_m": 0.019378220197807407,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        367.93939393939394,
+        538.3333333333334
+      ],
+      "center_table_xy_m": [
+        0.17094258964061737,
+        0.13965630531311035
+      ],
+      "corners_px": [
+        [
+          336.0,
+          509.0
+        ],
+        [
+          336.0,
+          570.0
+        ],
+        [
+          399.0,
+          570.0
+        ],
+        [
+          398.0,
+          508.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1551470309495926,
+          0.12514100968837738
+        ],
+        [
+          0.15520882606506348,
+          0.15529784560203552
+        ],
+        [
+          0.1862853765487671,
+          0.1553034484386444
+        ],
+        [
+          0.18573783338069916,
+          0.1246858462691307
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_002": {
+    "video": "data/raw/train_002.mp4",
+    "video_sha256": "588d01fa08c7522dfaea918a64fa61586734ccf799b1fd5d3343a5032a2bf368",
+    "frames": 254,
+    "fps": 30.0,
+    "duration_s": 8.466666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 254,
+    "finger_detected_frames": 146,
+    "finger_first_visible_s": 1.7666666666666666,
+    "finger_last_visible_s": 6.6,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 6,
+    "max_corner_shift_px": 9.656603957913983,
+    "object_start_xy_m": [
+      0.23426426202058792,
+      0.11063118651509285
+    ],
+    "object_end_xy_m": [
+      0.16867536306381226,
+      0.13684765994548798
+    ],
+    "observed_object_displacement_m": 0.07063431988409559,
+    "largest_object_frame_step_m": 0.004012995098014831,
+    "largest_finger_frame_step_m": 0.029783535626184018,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        368.258064516129,
+        545.0
+      ],
+      "center_table_xy_m": [
+        0.17116689682006836,
+        0.13973468542099
+      ],
+      "corners_px": [
+        [
+          336.0,
+          515.0
+        ],
+        [
+          335.0,
+          575.0
+        ],
+        [
+          398.0,
+          577.0
+        ],
+        [
+          399.0,
+          516.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15517324209213257,
+          0.12481889128684998
+        ],
+        [
+          0.1547253578901291,
+          0.15457485616207123
+        ],
+        [
+          0.18588793277740479,
+          0.15561018884181976
+        ],
+        [
+          0.18635495007038116,
+          0.12539613246917725
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_022": {
+    "video": "data/raw/train_022.mp4",
+    "video_sha256": "ad19245d3f487a492d11582ac6fb1bf29ade5efb373e4febc82e3e410415873a",
+    "frames": 347,
+    "fps": 30.0,
+    "duration_s": 11.566666666666666,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 347,
+    "finger_detected_frames": 264,
+    "finger_first_visible_s": 1.0666666666666667,
+    "finger_last_visible_s": 9.833333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 140,
+    "max_corner_shift_px": 6.020797289396148,
+    "object_start_xy_m": [
+      0.07684522867202759,
+      0.08030308410525322
+    ],
+    "object_end_xy_m": [
+      0.16995012760162354,
+      0.13597142696380615
+    ],
+    "observed_object_displacement_m": 0.1084780466329832,
+    "largest_object_frame_step_m": 0.0015248938802334472,
+    "largest_finger_frame_step_m": 0.014088878236566042,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.2647058823529,
+        540.7941176470588
+      ],
+      "center_table_xy_m": [
+        0.17093808948993683,
+        0.1400546282529831
+      ],
+      "corners_px": [
+        [
+          335.0,
+          510.0
+        ],
+        [
+          334.0,
+          571.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          396.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15556327998638153,
+          0.12458273023366928
+        ],
+        [
+          0.15529276430606842,
+          0.15535621345043182
+        ],
+        [
+          0.18602252006530762,
+          0.15570944547653198
+        ],
+        [
+          0.18630333244800568,
+          0.12497634440660477
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_030": {
+    "video": "data/raw/train_030.mp4",
+    "video_sha256": "c19d9b102f83d29e9bfae2876af50aee429188f31aaa63ade6825e30db8ebd35",
+    "frames": 276,
+    "fps": 30.0,
+    "duration_s": 9.2,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 276,
+    "finger_detected_frames": 186,
+    "finger_first_visible_s": 1.6,
+    "finger_last_visible_s": 7.766666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 7.280109889280518,
+    "object_start_xy_m": [
+      0.12814754992723465,
+      0.022010743618011475
+    ],
+    "object_end_xy_m": [
+      0.17219841480255127,
+      0.13773319125175476
+    ],
+    "observed_object_displacement_m": 0.123823114088638,
+    "largest_object_frame_step_m": 0.0025231177569964925,
+    "largest_finger_frame_step_m": 0.027226425625496188,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.51612903225805,
+        541.9677419354839
+      ],
+      "center_table_xy_m": [
+        0.1709810495376587,
+        0.1401354819536209
+      ],
+      "corners_px": [
+        [
+          333.0,
+          512.0
+        ],
+        [
+          331.0,
+          571.0
+        ],
+        [
+          392.0,
+          572.0
+        ],
+        [
+          392.0,
+          513.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15585851669311523,
+          0.12460894882678986
+        ],
+        [
+          0.15474972128868103,
+          0.1549483835697174
+        ],
+        [
+          0.18606296181678772,
+          0.15567046403884888
+        ],
+        [
+          0.18615961074829102,
+          0.12535688281059265
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_037": {
+    "video": "data/raw/train_037.mp4",
+    "video_sha256": "718dff17ee3ec446cfcb5b6954120eb51454ce2e5dd13d008993408f5e0f1e82",
+    "frames": 265,
+    "fps": 30.0,
+    "duration_s": 8.833333333333334,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 265,
+    "finger_detected_frames": 187,
+    "finger_first_visible_s": 0.9333333333333333,
+    "finger_last_visible_s": 7.133333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 5.656854249492381,
+    "object_start_xy_m": [
+      0.04870535433292389,
+      0.18528427183628082
+    ],
+    "object_end_xy_m": [
+      0.168919175863266,
+      0.13867145776748657
+    ],
+    "observed_object_displacement_m": 0.12893454665969445,
+    "largest_object_frame_step_m": 0.0019228274634607427,
+    "largest_finger_frame_step_m": 0.024480336651299256,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        361.97297297297297,
+        535.3243243243244
+      ],
+      "center_table_xy_m": [
+        0.17092758417129517,
+        0.13983209431171417
+      ],
+      "corners_px": [
+        [
+          332.0,
+          506.0
+        ],
+        [
+          331.0,
+          564.0
+        ],
+        [
+          390.0,
+          566.0
+        ],
+        [
+          392.0,
+          508.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15524029731750488,
+          0.1246006041765213
+        ],
+        [
+          0.15493115782737732,
+          0.15480709075927734
+        ],
+        [
+          0.18558576703071594,
+          0.15574581921100616
+        ],
+        [
+          0.1864185780286789,
+          0.12557920813560486
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_012": {
+    "video": "data/raw/train_012.mp4",
+    "video_sha256": "a0c236d79183c246d8048a96ab01c1822bdb06be3b20e4ceb6d599ab202c01f0",
+    "frames": 273,
+    "fps": 30.0,
+    "duration_s": 9.1,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 273,
+    "finger_detected_frames": 201,
+    "finger_first_visible_s": 1.3,
+    "finger_last_visible_s": 7.966666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.1213203435596424,
+    "object_start_xy_m": [
+      0.2057499885559082,
+      0.051015693694353104
+    ],
+    "object_end_xy_m": [
+      0.17046567797660828,
+      0.1383785605430603
+    ],
+    "observed_object_displacement_m": 0.09421917573976882,
+    "largest_object_frame_step_m": 0.001319475370730468,
+    "largest_finger_frame_step_m": 0.016217149938490043,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.47058823529414,
+        540.5882352941177
+      ],
+      "center_table_xy_m": [
+        0.17107893526554108,
+        0.14005009829998016
+      ],
+      "corners_px": [
+        [
+          335.0,
+          510.0
+        ],
+        [
+          333.0,
+          570.0
+        ],
+        [
+          394.0,
+          572.0
+        ],
+        [
+          396.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15570290386676788,
+          0.12469612807035446
+        ],
+        [
+          0.1548760086297989,
+          0.15483762323856354
+        ],
+        [
+          0.18546248972415924,
+          0.1557959020137787
+        ],
+        [
+          0.18629534542560577,
+          0.12518689036369324
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_003": {
+    "video": "data/raw/train_003.mp4",
+    "video_sha256": "857db84a2a450afd536dcf038f6406039342295724c864ed13b6f686a428d4ce",
+    "frames": 233,
+    "fps": 30.0,
+    "duration_s": 7.766666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 233,
+    "finger_detected_frames": 169,
+    "finger_first_visible_s": 0.9666666666666667,
+    "finger_last_visible_s": 6.566666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 2.0615528128088303,
+    "object_start_xy_m": [
+      0.1339336335659027,
+      0.07824944704771042
+    ],
+    "object_end_xy_m": [
+      0.16837690770626068,
+      0.1369304060935974
+    ],
+    "observed_object_displacement_m": 0.0680425902509077,
+    "largest_object_frame_step_m": 0.0014869132617105682,
+    "largest_finger_frame_step_m": 0.01740693423256156,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        365.10526315789474,
+        540.8421052631579
+      ],
+      "center_table_xy_m": [
+        0.17122706770896912,
+        0.1397680640220642
+      ],
+      "corners_px": [
+        [
+          334.0,
+          511.0
+        ],
+        [
+          333.0,
+          571.0
+        ],
+        [
+          395.0,
+          572.0
+        ],
+        [
+          395.0,
+          511.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1554829180240631,
+          0.12475235760211945
+        ],
+        [
+          0.1551448255777359,
+          0.1549811065196991
+        ],
+        [
+          0.18634265661239624,
+          0.15542423725128174
+        ],
+        [
+          0.18618284165859222,
+          0.12473009526729584
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_001": {
+    "video": "data/raw/train_001.mp4",
+    "video_sha256": "78031327803cb962a3f5e89a45bad071fce21cff9b191ed07044352deb366160",
+    "frames": 301,
+    "fps": 30.0,
+    "duration_s": 10.033333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 301,
+    "finger_detected_frames": 179,
+    "finger_first_visible_s": 1.9666666666666666,
+    "finger_last_visible_s": 7.9,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.6097722286464435,
+    "object_start_xy_m": [
+      0.09366252645850182,
+      0.11040357872843742
+    ],
+    "object_end_xy_m": [
+      0.17082317173480988,
+      0.13596907258033752
+    ],
+    "observed_object_displacement_m": 0.08128566697362939,
+    "largest_object_frame_step_m": 0.0013830204203526743,
+    "largest_finger_frame_step_m": 0.026783412947424274,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        355.9142857142857,
+        546.0285714285715
+      ],
+      "center_table_xy_m": [
+        0.17089800536632538,
+        0.1397489309310913
+      ],
+      "corners_px": [
+        [
+          327.0,
+          517.0
+        ],
+        [
+          326.0,
+          576.0
+        ],
+        [
+          385.0,
+          576.0
+        ],
+        [
+          385.0,
+          518.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15569230914115906,
+          0.12449498474597931
+        ],
+        [
+          0.1552758514881134,
+          0.1554550975561142
+        ],
+        [
+          0.18617308139801025,
+          0.15547509491443634
+        ],
+        [
+          0.18607833981513977,
+          0.12507230043411255
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_008": {
+    "video": "data/raw/train_008.mp4",
+    "video_sha256": "7daa18e8012ceec7113c9f5a3dc3fd439dc35a35664392f722ea3bf7790f4d26",
+    "frames": 282,
+    "fps": 30.0,
+    "duration_s": 9.4,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 282,
+    "finger_detected_frames": 170,
+    "finger_first_visible_s": 1.8333333333333333,
+    "finger_last_visible_s": 7.466666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 4,
+    "max_corner_shift_px": 4.301162633521313,
+    "object_start_xy_m": [
+      0.2585003823041916,
+      0.10405905544757843
+    ],
+    "object_end_xy_m": [
+      0.17126257717609406,
+      0.14040745794773102
+    ],
+    "observed_object_displacement_m": 0.09450735954348222,
+    "largest_object_frame_step_m": 0.0016628677827624666,
+    "largest_finger_frame_step_m": 0.02086421136371691,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        368.46666666666664,
+        538.0
+      ],
+      "center_table_xy_m": [
+        0.17128758132457733,
+        0.13953684270381927
+      ],
+      "corners_px": [
+        [
+          337.0,
+          508.0
+        ],
+        [
+          336.0,
+          570.0
+        ],
+        [
+          399.0,
+          570.0
+        ],
+        [
+          399.0,
+          509.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.1557268351316452,
+          0.12470216304063797
+        ],
+        [
+          0.15533386170864105,
+          0.15528981387615204
+        ],
+        [
+          0.18636806309223175,
+          0.1553332805633545
+        ],
+        [
+          0.18627998232841492,
+          0.1252741664648056
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_027": {
+    "video": "data/raw/train_027.mp4",
+    "video_sha256": "08534477f43c509e0438514edc96b372b0efd65ea9cbb251b0e83845fabc1ffa",
+    "frames": 320,
+    "fps": 30.0,
+    "duration_s": 10.666666666666666,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 320,
+    "finger_detected_frames": 251,
+    "finger_first_visible_s": 0.7333333333333333,
+    "finger_last_visible_s": 9.066666666666666,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 39,
+    "max_corner_shift_px": 5.315072906367325,
+    "object_start_xy_m": [
+      0.23336496204137802,
+      0.053823068737983704
+    ],
+    "object_end_xy_m": [
+      0.16777604818344116,
+      0.13793154060840607
+    ],
+    "observed_object_displacement_m": 0.10665899240777353,
+    "largest_object_frame_step_m": 0.0015160596429990851,
+    "largest_finger_frame_step_m": 0.02088252509656153,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.7878787878788,
+        542.0
+      ],
+      "center_table_xy_m": [
+        0.17114146053791046,
+        0.14014223217964172
+      ],
+      "corners_px": [
+        [
+          332.0,
+          513.0
+        ],
+        [
+          332.0,
+          572.0
+        ],
+        [
+          392.0,
+          572.0
+        ],
+        [
+          391.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15533846616744995,
+          0.12511003017425537
+        ],
+        [
+          0.15527112782001495,
+          0.15546779334545135
+        ],
+        [
+          0.18610858917236328,
+          0.1556587815284729
+        ],
+        [
+          0.1856769621372223,
+          0.12481849640607834
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_031": {
+    "video": "data/raw/train_031.mp4",
+    "video_sha256": "9f6314f41362ac0c72240d4a9b8587a2a8eecda50f07990730343598d3ee9609",
+    "frames": 414,
+    "fps": 30.0,
+    "duration_s": 13.8,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 414,
+    "finger_detected_frames": 316,
+    "finger_first_visible_s": 1.8666666666666667,
+    "finger_last_visible_s": 12.366666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 2,
+    "max_corner_shift_px": 6.4031242374328485,
+    "object_start_xy_m": [
+      0.039990322664380074,
+      0.16769685596227646
+    ],
+    "object_end_xy_m": [
+      0.1701442152261734,
+      0.13889175653457642
+    ],
+    "observed_object_displacement_m": 0.1333032989165179,
+    "largest_object_frame_step_m": 0.0014335699220295393,
+    "largest_finger_frame_step_m": 0.017632424901543035,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.4375,
+        542.1875
+      ],
+      "center_table_xy_m": [
+        0.17107044160366058,
+        0.1397474855184555
+      ],
+      "corners_px": [
+        [
+          332.0,
+          513.0
+        ],
+        [
+          333.0,
+          573.0
+        ],
+        [
+          392.0,
+          572.0
+        ],
+        [
+          391.0,
+          513.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15539827942848206,
+          0.12456907331943512
+        ],
+        [
+          0.1558728665113449,
+          0.1555613875389099
+        ],
+        [
+          0.18626512587070465,
+          0.15521952509880066
+        ],
+        [
+          0.18579916656017303,
+          0.12478668242692947
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "validation_005": {
+    "video": "data/raw/validation_005.mp4",
+    "video_sha256": "8b7c29553c72788381387cee8b76a76e35138f6d53b0bbb2b5af0c4ed40ac8e8",
+    "frames": 251,
+    "fps": 30.0,
+    "duration_s": 8.366666666666667,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 251,
+    "finger_detected_frames": 152,
+    "finger_first_visible_s": 1.6333333333333333,
+    "finger_last_visible_s": 6.666666666666667,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 4.242640687119285,
+    "object_start_xy_m": [
+      0.26423218846321106,
+      0.13644223660230637
+    ],
+    "object_end_xy_m": [
+      0.17128466069698334,
+      0.1389869600534439
+    ],
+    "observed_object_displacement_m": 0.09298235604294205,
+    "largest_object_frame_step_m": 0.0017730862910318001,
+    "largest_finger_frame_step_m": 0.027275276935306306,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        364.52941176470586,
+        533.6176470588235
+      ],
+      "center_table_xy_m": [
+        0.17094522714614868,
+        0.1398511677980423
+      ],
+      "corners_px": [
+        [
+          333.0,
+          504.0
+        ],
+        [
+          334.0,
+          565.0
+        ],
+        [
+          395.0,
+          564.0
+        ],
+        [
+          394.0,
+          504.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.155036062002182,
+          0.12490545213222504
+        ],
+        [
+          0.15562894940376282,
+          0.15561598539352417
+        ],
+        [
+          0.18629956245422363,
+          0.15515801310539246
+        ],
+        [
+          0.18572254478931427,
+          0.12498218566179276
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  },
+  "train_032": {
+    "video": "data/raw/train_032.mp4",
+    "video_sha256": "37b7c9e9f88867fb344edaca42b8feec8d81a815e8161254dac694821280b899",
+    "frames": 409,
+    "fps": 30.0,
+    "duration_s": 13.633333333333333,
+    "frame_size_px": [
+      720,
+      1280
+    ],
+    "decoded_overlay_frames": null,
+    "image_orientation": "display",
+    "overlay_generated": false,
+    "object_detected_frames": 409,
+    "finger_detected_frames": 302,
+    "finger_first_visible_s": 1.8,
+    "finger_last_visible_s": 11.833333333333334,
+    "finger_missing_inside_visible_interval": 0,
+    "calibration_fallback_frames": 0,
+    "max_corner_shift_px": 12.509996003196804,
+    "object_start_xy_m": [
+      0.28104640543460846,
+      0.1641475260257721
+    ],
+    "object_end_xy_m": [
+      0.17101211845874786,
+      0.13766731321811676
+    ],
+    "observed_object_displacement_m": 0.11317573052834587,
+    "largest_object_frame_step_m": 0.0030235378236981667,
+    "largest_finger_frame_step_m": 0.018072042802003984,
+    "independent_goal": {
+      "source": "independent drawn square in opening frame",
+      "center_source": "black centre-cross centroid",
+      "center_px": [
+        362.5813953488372,
+        542.3023255813954
+      ],
+      "center_table_xy_m": [
+        0.1707978993654251,
+        0.14000611007213593
+      ],
+      "corners_px": [
+        [
+          332.0,
+          513.0
+        ],
+        [
+          332.0,
+          572.0
+        ],
+        [
+          392.0,
+          572.0
+        ],
+        [
+          391.0,
+          512.0
+        ]
+      ],
+      "corners_table_xy_m": [
+        [
+          0.15508542954921722,
+          0.12480629235506058
+        ],
+        [
+          0.1550179123878479,
+          0.1552179455757141
+        ],
+        [
+          0.18588954210281372,
+          0.15538433194160461
+        ],
+        [
+          0.18545754253864288,
+          0.1244843453168869
+        ]
+      ],
+      "success_center_tolerance_m": 0.01
+    },
+    "limitations": [
+      "No lens distortion or marker-height correction",
+      "Tracks marker centres, not physical finger contact point",
+      "No interpolation of missing detections",
+      "Object endpoint is observed outcome; independent target saved separately when present",
+      "No robot actions or pushing success evaluation generated at this checkpoint"
+    ]
+  }
+}

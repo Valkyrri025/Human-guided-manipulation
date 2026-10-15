@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 parser=argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--manifest',type=Path,default=Path('data/manifests/goal_batch.json'))
+parser.add_argument('--manifest',type=Path,default=Path('data/manifests/human_object_teacher.json'))
 parser.add_argument('--output',type=Path,default=Path('outputs/batch_baseline'))
 parser.add_argument('--track',action='store_true',help='Regenerate tracks from originals using reviewed calibrations before replay')
 parser.add_argument('--approach',choices=['clearance','recorded'],default='clearance')
@@ -17,7 +17,7 @@ parser.add_argument('--goal-dwell-s',type=float,default=.2)
 parser.add_argument('--no-video',action='store_true',help='Skip full-batch rendering; successful examples still render unless --success-videos 0')
 parser.add_argument('--success-videos',type=int,default=3,help='When using --no-video, render and retain up to this many successful examples, preferring different recording sides; 0 disables')
 parser.add_argument('--examples-output',type=Path,help='Where to keep successful example videos; default OUTPUT/successful_examples')
-parser.add_argument('--push-controller',choices=['finger-replay','human-object-feedback'],default='finger-replay')
+parser.add_argument('--push-controller',choices=['finger-replay','human-object-feedback'],default='human-object-feedback')
 args=parser.parse_args()
 if args.success_videos<0:parser.error('--success-videos must be nonnegative')
 manifest=json.loads(args.manifest.read_text());args.output.mkdir(parents=True,exist_ok=True)

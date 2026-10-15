@@ -1,85 +1,73 @@
-# Benchmark 2: learn the complete approach–push–withdraw episode
+# Benchmark 2: learn approach, push and withdrawal together
 
-**Latest result:** extending the same model to 1,000 epochs improves complete validation success from **2/9 to 5/9**. See [the controlled comparison and videos](benchmark-2-epochs1000.md). The [original 200-epoch run and failures](benchmark-2-results.md) remain preserved. A later [2,000-epoch comparison](benchmark-2-epochs2000.md) lowers supervised loss but scores 3/9; the 1,000-epoch/epoch-877 checkpoint remains the better controller.
+One recurrent policy predicts **all movement and phase selection** from robot reset through withdrawal. The three supervised phase targets are approach (including lower/settle), push (including goal dwell), and withdraw. Ground-truth phase is never a runtime input. All XYZ and rotation commands are learned; only the closed gripper, low-level OSC, reset and task monitors remain external.
 
-All three phases are trained **together in one recurrent policy**, not in three separate training runs. The phase labels are supervised targets; the model never receives ground-truth phase as an input, either during training or evaluation.
+The same 37 successful full teacher episodes provide **12,938 training steps**; six successful validation references provide **1,983 offline validation steps**. Evaluation always uses all nine validation starts. Human recordings guide pushing; approach/orientation/withdrawal labels come from the scripted simulation teacher. No benchmark-2 test score exists.
 
-1. **Approach:** move from the existing fixed Panda reset pose to the cube, rotate the paddle, lower and settle.
-2. **Push:** move the cube into the drawn square, including goal settling.
-3. **Withdraw:** lift the tool clear while leaving the cube inside the square.
+## Models and measured results
 
-The same 37 successful training teacher rollouts provide 12,938 steps: 6,660 approach, 3,318 push and 2,960 withdrawal. Six successful validation references provide 1,983 steps for supervised validation. All nine validation starts are used for closed-loop evaluation. Test data are not loaded for benchmark-2 training or development evaluation. The benchmark-1 test set has already been seen and cannot be claimed as a new blind test for later methods.
+| Model / epoch budget | Selected epoch | Validation joint loss | Full validation successes | Evidence |
+|---|---:|---:|---:|---|
+| GRU64 / 200 | 193 | 0.007057 | 2/9 | [Result](../results/benchmark2/gru64_200/summary.json) |
+| **GRU64 / 1,000** | **877** | 0.003547 | **5/9** | [Best controller](../results/benchmark2/gru64_1000/best.pt) · [result](../results/benchmark2/gru64_1000/summary.json) |
+| GRU64 / 2,000 | 1,958 | 0.002821 | 3/9 | [Result](../results/benchmark2/gru64_2000/summary.json) |
+| Residual GRU128 / GPU / 2,000 | 857 | **0.002620** | 1/9 | [Checkpoint](../results/benchmark2/gru128_gpu/best.pt) · [result](../results/benchmark2/gru128_gpu/summary.json) |
 
-## Model and training
+The current best controller remains **GRU64 epoch 877**. Longer original-model runs exactly reproduce their earlier optimization-history prefixes. Data, optimizer and limits were unchanged. The larger model also changes regularization/state paths and backend, so it is not a width-only ablation. Lowest demonstration loss did not reliably select the best physical controller.
 
-The network observes 15 causal state features: end-effector minus cube X/Y, goal minus cube X/Y, end-effector and cube height, cube heading sine/cosine, six entries representing the grip-site rotation, and whole-cube goal containment from known geometry. Position normalization uses training data only. It receives no future human trajectory, teacher target position, episode time, episode identifier or ground-truth phase.
+## Architecture and training
 
-A 64-unit encoder and 64-unit GRU maintain episode history. A phase head predicts approach/push/withdraw probabilities. Three action heads inside the same network predict candidate control actions; their mixture is weighted by the **predicted** phase probabilities, including during training. Thus movement uses the network's own phase estimates rather than perfect teacher labels. Hidden state resets at every episode. These heads are jointly optimized parts of one model, not independently trained controllers.
+Both variants use 15 causal features: relative end-effector/cube/goal XY, end-effector/cube heights, cube heading sine/cosine, grip-site rotation represented by two matrix columns, and known-goal containment. Training statistics normalize position/height only. No future trajectory, true phase, episode identifier or reference target enters the network.
 
-There are six learned outputs: world-frame OSC XYZ and three rotation-vector controller commands. Learning all three rotation commands lets the model align and maintain the downward paddle orientation as well as learn yaw. Unlike benchmark 1, no scripted height or orientation controller generates Cartesian commands. The gripper remains closed. Robosuite's OSC controller still converts Cartesian commands into joint torques.
+- **Original:** Linear64/ReLU → one GRU64 → phase head and three action heads, 27,349 parameters.
+- **Larger:** residual encoder128 with normalization/SiLU → two GRU128 layers with 10% inter-layer dropout → current-state residual fusion → deeper heads, 268,373 parameters.
 
-Training minimizes phase-balanced normalized action MSE plus 0.2 times phase cross-entropy. Training-derived inverse-frequency weights balance the three phases. Whole sequences stay in source-episode splits; padding is masked. Adam uses learning rate 0.001, batch size eight episodes, seed 7 and 200 epochs on CPU. The best checkpoint is selected by the joint supervised validation loss; this is not a claim of best closed-loop task performance.
+Each network's own phase probabilities mix its three six-action heads during both training and evaluation. Outputs are bounded world-frame XYZ (±0.2) and rotation-vector commands (±0.3). Hidden state resets each episode. Adam uses learning rate 0.001, batch size eight episodes, seed 7, phase-balanced normalized action MSE plus 0.2 phase cross-entropy. `best.pt` means minimum supervised validation loss, not best simulator score.
 
-Human recordings guide the pushing references. Robot approach, orientation, lowering and withdrawal labels are generated by the scripted teacher. They are synthetic robot guidance, not personally recorded human approach/withdrawal or direct robot demonstrations. Teacher yaw is fixed during each push, so this dataset does not teach deliberate changing yaw along a curved push. Robot initial joint-pose diversity is also limited: this first run uses the same reset pose as benchmark 1.
+## Evaluation rules
 
-## Closed-loop rules fixed before evaluation
+- 30-second full-episode cap.
+- 10-second push budget from first predicted push until goal dwell; predicting withdrawal early does not stop the clock.
+- Whole cube inside the square for 0.2 s; no requested cube orientation.
+- After goal dwell: predicted withdrawal, end-effector at least 0.948 m high, no cube contact, cube still inside, for 0.2 s.
+- Finite state, cube on table, lift below 5 mm, displacement before predicted push below 2 mm, and no paddle-tip/table contact.
 
-The policy acts from robot reset until withdrawal, with no scripted movement stages or externally supplied phase. The simulator state, known goal, low-level OSC controller, closed gripper and task/timeout monitors remain external.
+These criteria are stricter than benchmark 1 because approach, orientation, height and withdrawal are learned. More time did not rescue the seven initial failures when tested with 20-second pushing / 60-second total caps; [diagnostic evidence](../results/benchmark2/gru64_200/time_limit_diagnostic/summary.json).
 
-- Full episode cap: **30 s**, including approach and withdrawal.
-- Push budget: **10 s**, starting at the first predicted push step and counting until goal dwell is achieved. Predicting withdrawal early does not stop this clock. If no push is predicted, the full-episode cap still applies.
-- Goal: whole projected cube inside the square continuously for **0.2 s**; no requested cube orientation.
-- Withdrawal: after goal dwell, predicted withdrawal with end-effector height at least **0.948 m** (80 mm above the nominal pushing height), no tool/cube contact, and cube still inside, continuously for **0.2 s**.
-- Physical validity: finite states/actions, object lift below 5 mm, cube remains on table, cube displacement below 2 mm before the first predicted push, and **no paddle/table contact**.
+## Larger-model diagnosis
 
-The pre-push displacement gate is now explicitly tied to the learned phase prediction; it is no longer the benchmark-1 scripted phase boundary. Table contact and withdrawal completion make the full-episode criterion stricter than benchmark 1. Report goal attainment separately from complete-task success. Phase switches are predictions, not movement commands supplied by the evaluator.
+The GPU run correctly evaluated epoch 857. Recomputed CPU/GPU losses agree (0.0026197515 / 0.0026197508); saved action sequences reproduce from saved inputs. [Audit](../results/benchmark2/gru128_gpu/loss_audit.json). This found no obvious loading or inference-mode error.
+
+Three episodes complete placement/withdrawal (002, 005, 008), but 005 and 008 have table contact and fail physical validity. Episode 007 predicts withdrawal before pushing, returns to approach and never touches the cube. Episode 003 also makes no cube contact. Other failures time out. [All eight requested failure videos](failure-videos.md) are retained.
+
+The model reaches 100% phase accuracy on saved teacher states while failing on its own trajectories. Successful demonstrations provide little recovery-state coverage; small height/orientation errors can alter contact. Training beyond the selected epoch further reduces training loss but worsens validation loss. Next comparisons should assess saved checkpoints by **closed-loop validation**, and investigate training-split perturbation/corrective examples. More capacity or epochs alone is not an established fix.
 
 ## Commands
 
-From the project root, with the learning environment active:
+See [environment setup](../README.md#environment) and [data preparation](data.md). Existing caches are ready on this PC. No training runs automatically.
+
+Original architecture:
 
 ```bash
 source .venv/bin/activate
-python -m humanoid_push.episode_data
-python -m humanoid_push.episode_train --epochs 200
-MUJOCO_GL=egl python -m humanoid_push.episode_eval \
-  --checkpoint outputs/benchmark2_training/best.pt
-```
-
-Use a fresh `--output` folder for reruns; existing data/checkpoints/results are protected. Preparation writes `outputs/benchmark2_dataset/`; training writes `outputs/benchmark2_training/`; evaluation writes `outputs/benchmark2_validation/`. Successful videos are retained up to one per available recording side, three total. Failed videos are removed while numeric evidence remains.
-
-Benchmark 1's code, checkpoint and frozen results remain unchanged. Benchmark 2 is a harder task; matching teacher labels offline does not establish successful autonomous episodes.
-
-## Training-duration comparison
-
-A separate 1,000-epoch experiment uses the same dataset, 64-unit GRU architecture, seed 7, Adam settings, phase balancing and supervised validation checkpoint selection as the initial 200-epoch run. Because the original checkpoints do not contain optimizer state, it reruns from the same initialization rather than resetting Adam midway through a continuation. The first 200 epochs are compared with the original history. The best supervised-validation checkpoint is then evaluated on all nine validation starts with the original 10-second push and 30-second episode limits. No benchmark-2 test evaluation is involved.
-
-```bash
-python -m humanoid_push.episode_train --epochs 1000 \
-  --output outputs/benchmark2_training_1000
-MUJOCO_GL=egl python -m humanoid_push.episode_eval \
-  --checkpoint outputs/benchmark2_training_1000/best.pt \
-  --output outputs/benchmark2_validation_1000
-```
-
-The original 200-epoch model and its 2/9 result stay intact. Experiment inputs and code hashes are recorded in `data/manifests/benchmark2_epochs1000_protocol.json`.
-
-## 2,000-epoch extension
-
-The late 1,000-epoch curve showed diminishing returns: validation action MSE averaged 0.003762 at epochs 801–900 and 0.003706 at 901–1,000 (about 1.5% lower), while joint validation loss was approximately flat (0.004106 versus 0.004132). This motivates a bounded 2,000-epoch same-model comparison, not a claim that the loss was steadily decreasing. Model complexity remains unchanged to isolate training duration.
-
-```bash
 python -m humanoid_push.episode_train --epochs 2000 \
-  --output outputs/benchmark2_training_2000
+  --output outputs/experiments/gru64_2000
 MUJOCO_GL=egl python -m humanoid_push.episode_eval \
-  --checkpoint outputs/benchmark2_training_2000/best.pt \
-  --output outputs/benchmark2_validation_2000
+  --checkpoint results/benchmark2/gru64_1000/best.pt \
+  --output outputs/reproductions/gru64_best
 ```
 
-The same-seed optimization is rerun because existing checkpoints lack optimizer state. Its first 1,000 epochs are checked against the preceding run. Checkpoint selection remains minimum supervised validation joint loss over the full run; it does not automatically choose epoch 2,000. Original 10-second push / 30-second episode limits and all-nine validation remain fixed. Test data are not used. Experiment settings and the measured late-loss windows are saved in `data/manifests/benchmark2_epochs2000_protocol.json`.
+Larger architecture on the TITAN V:
 
-## Larger model, user-started GPU run
+```bash
+source .venv-gpu/bin/activate
+python -u -m humanoid_push.advanced_train --device cuda --epochs 2000 \
+  --output outputs/experiments/gru128_gpu
+MUJOCO_GL=egl python -m humanoid_push.advanced_eval \
+  --checkpoint results/benchmark2/gru128_gpu/best.pt \
+  --output outputs/reproductions/gru128_gpu
+```
 
-A separate 268,373-parameter residual two-layer GRU128 implementation is ready. It preserves the same 15 inputs, action limits and phase/motion targets, with a richer state encoder, deeper heads and inter-layer dropout. The TITAN V GPU environment and forward/backward execution are verified; no actual training was started. See [architecture, reasoning and training/evaluation commands](benchmark-2-advanced.md). The existing epoch-877 policy remains the best measured controller until the new model is evaluated.
+`advanced_train` retains snapshots every 100 epochs in addition to `best.pt` and `last.pt`; existing larger-model snapshots are in `outputs/checkpoints/gru128_gpu/`. CPU and GPU environments are separate; the CUDA wheel supports the TITAN V without changing system CUDA. See [GPU preflight](../results/benchmark2/gru128_gpu/preflight.json). The tests verify streamed and batched recurrent equivalence, causal features, bounds, gradients and checkpoint compatibility.
 
-The user-trained larger model now has a measured result: 1/9 physically valid episodes at minimum-loss epoch 857. The [loss audit and failure videos](benchmark-2-advanced-results.md) confirm correct checkpoint use and distinguish goal completion from table-contact validity. All eight failures are retained at the user's request. The smaller 1,000-epoch model remains the best controller (5/9).
+Use new output directories. Do not supply test data for learning/selection. Preserve historical baselines and the requested failure videos.

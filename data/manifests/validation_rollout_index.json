@@ -12,8 +12,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_001/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_001/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_001/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_001/metrics.json"
     },
     {
       "episode": "validation_002",
@@ -21,8 +21,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_002/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_002/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_002/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_002/metrics.json"
     },
     {
       "episode": "validation_003",
@@ -30,8 +30,8 @@
       "training_eligible": false,
       "validation_reference_eligible": false,
       "teacher_success": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_003/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_003/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_003/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_003/metrics.json"
     },
     {
       "episode": "validation_004",
@@ -39,8 +39,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_004/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_004/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_004/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_004/metrics.json"
     },
     {
       "episode": "validation_005",
@@ -48,8 +48,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_005/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_005/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_005/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_005/metrics.json"
     },
     {
       "episode": "validation_006",
@@ -57,8 +57,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_006/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_006/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_006/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_006/metrics.json"
     },
     {
       "episode": "validation_007",
@@ -66,8 +66,8 @@
       "training_eligible": false,
       "validation_reference_eligible": false,
       "teacher_success": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_007/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_007/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_007/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_007/metrics.json"
     },
     {
       "episode": "validation_008",
@@ -75,8 +75,8 @@
       "training_eligible": false,
       "validation_reference_eligible": true,
       "teacher_success": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_008/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_008/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_008/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_008/metrics.json"
     },
     {
       "episode": "validation_009",
@@ -84,8 +84,8 @@
       "training_eligible": false,
       "validation_reference_eligible": false,
       "teacher_success": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_009/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_009/metrics.json"
+      "robot_rollout": "data/robot_rollouts/validation/validation_009/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_009/metrics.json"
     }
   ]
 }

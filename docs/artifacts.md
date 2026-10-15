@@ -1,68 +1,25 @@
-# Where project files belong
+# Folder guide
 
-As of **11 October 2026**, all 42 training videos are calibrated and tracked. All 42 have teacher replays (37 validated successes); nine validation sources are now processed separately; test remains reserved for final frozen evaluation.
-
-## Files to keep
-
-| Location | Purpose |
+| Folder | Important contents |
 |---|---|
-| `data/raw/` | Original personally recorded videos and measurements; unchanged, local, excluded from Git |
-| `data/calibration/` | Reviewed per-video calibration and independent goals |
-| `data/processed/` | Local extracted CSV/NPZ tracks, quality reports and useful native previews |
-| `data/processed/legacy/` | Historical coordinate-frame tracks supporting archived experiments |
-| `data/samples/` | Public numeric copies needed to reproduce robot replay without original videos |
-| `data/viewing/` | Compatible playback copies for originals that need them; these are not replacements for the source files |
-| `data/manifests/` | Provenance, selected contact segments, split assignments and expert eligibility |
-| `outputs/human_object_teacher/` | All 32 current teacher state/action rollouts, including four recorded failures |
-| `outputs/training_batch_01/`–`training_batch_03/` | Original finger-only training baseline rollouts and metrics |
-| `outputs/training_batch_04/` | Clips 033–042 with the recorded-object teacher; rollouts, metrics and summary |
-| `outputs/validation_batch_01/` | Nine validation-only teacher rollouts, metrics and summary |
-| `outputs/native_replay_validation/` | Native-direction pilot validation rollouts |
-| `outputs/retargeting_comparison/` | Historical geometric comparison rollouts; legacy inputs, not current policy results |
-| `outputs/smoke/`, `outputs/machine.json` | Setup check and machine information |
-| `docs/examples/` | Canonical published successful videos, previews and numerical evidence |
-| `.venv/`, `uv.lock`, `pyproject.toml` | Working environment and reproducible dependency specification |
+| `src/humanoid_push/` | Simulator, tracking/retargeting and the three learning pipelines (`bc_*`, `episode_*`, `advanced_*`) |
+| `data/raw/` | Original user recordings/measurements; local, ignored by Git, never modified |
+| `data/calibration/`, `data/samples/` | Reviewed geometry and public numeric human tracks |
+| `data/initial_scenes/` | Opening-only test setups |
+| `data/robot_rollouts/train/`, `validation/` | All 51 current teacher rollouts and metrics, including failures |
+| `data/manifests/` | Active source/index/split/quality metadata and cleanup audit |
+| `results/benchmark1/validation/`, `test/` | Benchmark-1 checkpoint, history, all evaluation rollouts, scores and videos |
+| `results/benchmark2/gru64_200/`, `gru64_1000/`, `gru64_2000/` | Original-model comparisons; 1,000-epoch checkpoint is the best controller |
+| `results/benchmark2/gru128_gpu/` | Larger model, history, audits, all nine rollouts, success and eight requested failure videos |
+| `results/teacher/` | Teacher summary and three direction-specific successful replay videos |
+| `outputs/bc_dataset/`, `benchmark2_dataset/` | Small prepared learning caches, local and regenerable |
+| `outputs/checkpoints/` | Unpublished last/periodic checkpoints retained for future selection |
+| `outputs/experiments/`, `outputs/reproductions/` | Recommended locations for new runs; created when needed |
+| `data/archive/development-evidence.tar.gz` | Compressed historical numerical diagnostics and complete 32-episode finger-only baseline |
+| `.venv/`, `.venv-gpu/` | Working CPU/GPU environments; excluded from Git and preserved |
 
-The public numeric copies and local processed tracks have different roles, so both remain. Most of the Python environment's size is dependencies; removing it would require reinstalling the simulator.
+The repository keeps one canonical copy of published benchmark evidence. New guides replace overlapping pilot/batch/progress reports. Obsolete migration scripts, old previews and duplicate generated media are removed. Tests, current training/evaluation code, teacher data, source calibration, dependency files and benchmark records remain.
 
-## Successful videos in future batches
+The cleanup audit records file relocations and the location of a full hash-verified pre-cleanup snapshot outside this project. Original recordings and requested failure videos must retain their hashes. Git history also preserves removed tracked documents; the cleanup does not rewrite repository history.
 
-Batch replay with `--no-video` skips rendering every episode, then automatically renders **up to three successful examples**, preferring different recording sides. Each rendered example must pass the same physical checks and video-decode check. Its full state/action rollout stays in the primary episode folder; the example folder retains only video, preview, metrics and log. Failures remain numerical diagnostics.
-
-```bash
-MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
-  --manifest data/manifests/human_object_teacher.json \
-  --push-controller human-object-feedback --no-video \
-  --examples-output docs/examples/human_object_teacher/successful_examples \
-  --output outputs/human_object_teacher
-```
-
-Set `--success-videos 0` for an explicitly physics-only check. Omit `--no-video` to render every episode. Future reviewed batches should retain their successful examples in a dedicated `docs/examples/<batch>/successful_examples/` folder for GitHub.
-
-Current examples: [recording left](examples/human_object_teacher/successful_examples/train_001/replay.mp4), [right](examples/human_object_teacher/successful_examples/train_002/replay.mp4), [above](examples/human_object_teacher/successful_examples/train_006/replay.mp4), and [slow clip 032](examples/human_object_teacher/train_032_video/replay.mp4).
-
-## Cleanup on 10 October
-
-Obsolete debug folders, inspection contact sheets, duplicate development/repeat runs, identical preview copies and regenerable caches were removed. Small historical numerical diagnostics were consolidated into [one archive](archive/generated-run-evidence.json); their path keys describe the old locations. Historical report commands can regenerate deleted experiment outputs. Existing published reports and distinct successful videos remain.
-
-The [cleanup audit](cleanup-2026-10-10.json) records removed files, sizes, retained experiment directories and hashes confirming every original source/provenance file stayed unchanged. No files in neighbouring projects were touched.
-
-## Learned-policy benchmark 1
-
-Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9). Public metrics, all nine numeric rollouts per split and three successful videos per split are retained in `docs/examples/bc_validation/` and `docs/examples/bc_test/`. The frozen checkpoint is `docs/examples/bc_validation/best.pt`. Initial test geometry and its frozen hashes are in `data/initial_scenes/` and `data/manifests/bc_test_protocol.json`. The original videos are preserved; only opening frames were decoded for test setup.
-
-## Benchmark 2 initial run
-
-`outputs/benchmark2_dataset/` stores full-episode samples, `outputs/benchmark2_training/` stores 200-epoch checkpoints/history, and `outputs/benchmark2_validation/` stores all nine autonomous episode rollouts (2/9 complete successes). Public evidence and two successful videos are in `docs/examples/benchmark2/`. The code/protocol and synthetic teacher-label provenance are documented in `docs/benchmark-2.md` and `data/manifests/benchmark2_protocol.json`.
-
-## Benchmark 2: 1,000-epoch comparison
-
-`outputs/benchmark2_training_1000/` and `outputs/benchmark2_validation_1000/` retain the longer same-model experiment and all-nine validation (5/9). Public checkpoint, history, numeric rollouts/metrics and three successful videos are in `docs/examples/benchmark2_epochs1000/`; protocol/settings are in `data/manifests/benchmark2_epochs1000_protocol.json`. The original 200-epoch model/results remain unchanged.
-
-## Benchmark 2: 2,000-epoch comparison
-
-`outputs/benchmark2_training_2000/` stores best/last weights and full history; `outputs/benchmark2_validation_2000/` stores all nine rollouts (3/9 successes). Public evidence, selected epoch-1,958 checkpoint and two successful videos are in `docs/examples/benchmark2_epochs2000/`. The 1,000-epoch epoch-877 controller remains better (5/9); neither earlier experiment was overwritten. See `data/manifests/benchmark2_epochs2000_protocol.json` for the unchanged settings and original late-loss trend.
-
-## Larger-model trained run and requested failure videos
-
-`outputs/benchmark2_training_advanced_gpu/` retains all trained snapshots and history. `outputs/benchmark2_validation_advanced_gpu/` retains the nine numeric episodes, the success video and all eight requested `validation_XXX/failure.mp4` reference videos. Public copies and audits are in `docs/examples/benchmark2_advanced_run/`. Preserve these failures in future cleanups; they are explicitly requested artifacts. See `docs/benchmark-2-advanced-results.md`.
+Frozen experiment JSON/checkpoint provenance retains original paths used at the time. Those historical path strings are not rewritten inside scientific records. Current commands and active source/index manifests use the canonical paths above. For exact historical layout use the pre-cleanup commit recorded in the cleanup audit; controller/model source and checkpoint bytes are unchanged.

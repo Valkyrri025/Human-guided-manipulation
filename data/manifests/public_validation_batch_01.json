@@ -24,8 +24,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_001/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_001/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_001/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_001/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -49,8 +49,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_002/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_002/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_002/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_002/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -74,8 +74,8 @@
       "expert_eligible": false,
       "teacher_success": false,
       "validation_reference_eligible": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_003/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_003/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_003/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_003/metrics.json",
       "replay_outcome": "timeout"
     },
     {
@@ -99,8 +99,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_004/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_004/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_004/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_004/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -124,8 +124,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_005/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_005/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_005/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_005/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -149,8 +149,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_006/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_006/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_006/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_006/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -174,8 +174,8 @@
       "expert_eligible": false,
       "teacher_success": false,
       "validation_reference_eligible": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_007/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_007/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_007/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_007/metrics.json",
       "replay_outcome": "timeout"
     },
     {
@@ -199,8 +199,8 @@
       "expert_eligible": false,
       "teacher_success": true,
       "validation_reference_eligible": true,
-      "robot_rollout": "outputs/validation_batch_01/validation_008/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_008/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_008/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_008/metrics.json",
       "replay_outcome": "goal_reached"
     },
     {
@@ -224,8 +224,8 @@
       "expert_eligible": false,
       "teacher_success": false,
       "validation_reference_eligible": false,
-      "robot_rollout": "outputs/validation_batch_01/validation_009/rollout.npz",
-      "metrics": "docs/examples/validation_batch_01/validation_009/metrics.json",
+      "robot_rollout": "data/robot_rollouts/validation/validation_009/rollout.npz",
+      "metrics": "data/robot_rollouts/validation/validation_009/metrics.json",
       "replay_outcome": "timeout"
     }
   ],

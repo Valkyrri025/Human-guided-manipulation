@@ -1,7 +1,0 @@
-{
-  "scope": "post-failure tuning retry; do not merge into initial diagnostic count",
-  "source": "goal_right1",
-  "start_direction": "from_below",
-  "tool_yaw_offset_degrees": 180,
-  "command": "push-replay --tracks data/processed/goal_right1/tracks.npz --calibration data/calibration/goal_right1.json --start-s 3.1 --end-s 6.4 --retargeting relative-scaled --start-offset-m 0.0021195635199546814 0.16390606194734575 --tool-yaw-offset-deg 180"
-}

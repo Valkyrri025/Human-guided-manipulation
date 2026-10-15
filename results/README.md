@@ -1,0 +1,13 @@
+# Canonical benchmark evidence
+
+| Result | Validation | Test | Folder |
+|---|---:|---:|---|
+| Pushing-only MLP | 7/9 | 8/9 | [Benchmark 1](benchmark1/) |
+| Full episode GRU64, 200 epochs | 2/9 | — | [Initial run](benchmark2/gru64_200/) |
+| **Full episode GRU64, 1,000 epochs** | **5/9** | — | [Best controller](benchmark2/gru64_1000/) |
+| Full episode GRU64, 2,000 epochs | 3/9 | — | [Longer run](benchmark2/gru64_2000/) |
+| Residual stacked-GRU128, GPU | 1/9 | — | [Larger model](benchmark2/gru128_gpu/) |
+
+Each experiment retains its selected checkpoint, history/configuration, summary and complete numerical evaluation episodes. Video files are in episode subfolders. [All eight larger-model failure clips](../docs/failure-videos.md) are retained on request. The teacher has 37/42 training and 6/9 validation successes; [teacher examples](teacher/).
+
+Offline loss selected checkpoints but did not reliably rank physical control success. See [benchmark 1](../docs/benchmark-1.md) and [benchmark 2](../docs/benchmark-2.md) for protocols, commands and limitations.

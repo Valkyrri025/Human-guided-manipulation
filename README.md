@@ -1,160 +1,53 @@
 # Human-guided manipulation
 
-Robot-learning internship challenge: use personally collected overhead phone video of a human pushing a block to drive a simulated Panda. The first comparison tests absolute replay and geometric retargeting on predefined new simulated starts.
+Personally collected overhead phone recordings guide a simulated Panda pushing a 17 mm block into a drawn square. Human object motion is retargeted into physical simulator rollouts; behavior cloning learns robot actions from those rollouts. These are human-derived robot labels, not direct robot demonstrations.
 
-**Current status:** the nine original pilot recordings use consistent native-display tracking and the user's fixed direction convention. All eight drawn-goal episodes physically replay successfully; the initial pilot also passes its separate endpoint diagnostic. See [current orientation and replay validation](docs/orientation-standardisation.md). An optional recorded-object feedback teacher now provides improved training rollouts; the first pushing-only policy achieves **7/9 validation successes and 8/9 frozen test successes**. The earlier new-start comparison (2/8 absolute, 5/8 relative, 8/8 scaled) uses archived legacy inputs; it has not yet been rerun with the standardised dataset.
+| Method | Validation | Test | What controls the robot |
+|---|---:|---:|---|
+| Recorded-object teacher | 6/9 | — | Scripted feedback tracking human object motion |
+| **Benchmark 1: pushing-only MLP** | **7/9** | **8/9** | Learned pushing XY; scripted approach, height, orientation and withdrawal |
+| Benchmark 2: GRU64, 200 epochs | 2/9 | — | Learned full episode and phase selection |
+| **Benchmark 2: GRU64, 1,000 epochs** | **5/9** | — | Current best full-episode controller; selected epoch 877 |
+| Benchmark 2: GRU64, 2,000 epochs | 3/9 | — | Selected epoch 1,958 by validation loss |
+| Benchmark 2: residual GRU128, GPU | 1/9 | — | Selected epoch 857; two additional completions fail table-contact validity |
 
-**Start with [the complete workflow](docs/workflow.md)** for recording, target definition, tracking, retargeting, saved labels, completed results and remaining work. The first additional batch is complete; use [the recording checklist](docs/recording.md) for any further clips.
+These are small fixed episode sets. Lower demonstration loss did not reliably imply better closed-loop control. Benchmark 1's test set has been seen; it is not a fresh blind test for later methods. Benchmark 2 has no test score.
 
-## Training dataset status
+## Start here
 
-Follow [the new recording plan](docs/recording-plan.md): **all 42 sources tracked and teacher-replayed; 37 validated successful rollouts**, covering left, right and above in your phone view. The full target is 60 new clips (42 training / 9 validation / 9 test). No additional below-side recording is required because of the wall. Exact filenames/positions are in [the schedule](docs/recording-schedule.csv). The [first batch review](docs/training-batch-01.md) reports 8/12 successful physical replays; the [second batch](docs/training-batch-02.md) adds 9/10. The [third batch](docs/training-batch-03.md) adds 3/10 validated successes at the new 10-second push limit. All 42 source clips track continuously during contact. The new [recorded-object feedback teacher](docs/object-trajectory-teacher.md) validates 37/42 rollouts (the retained finger-only baseline is 20/32). Failed replays remain explicit.
+- [Data and workflow](docs/data.md): human recordings → calibration/tracks → teacher → state/action labels; split and provenance rules.
+- [Benchmark 1](docs/benchmark-1.md): model, results, train/evaluate commands.
+- [Benchmark 2](docs/benchmark-2.md): architectures, comparisons, GPU commands and failure analysis.
+- [Failure videos](docs/failure-videos.md): all eight explicitly retained larger-model failures.
+- [Recording guide](docs/recording.md) and [60-episode schedule](docs/recording-schedule.csv).
+- [Folder guide](docs/artifacts.md): where to find data, models, videos and historical evidence.
 
-## Replay from the public numeric samples
+## Environment
 
-Nine pilot samples plus 42 new training and nine validation trajectory samples are included under `data/samples/`; original phone videos stay local. With the environment installed as below:
-
-```bash
-MUJOCO_GL=egl uv run --locked python scripts/run_batch.py \
-  --manifest data/manifests/public_replay.json --no-video --output outputs/public_replay
-```
-
-Current successful videos cover [recording left](docs/examples/native_directions/pilot_goal/replay.mp4), [right](docs/examples/native_directions/goal_right1/replay.mp4), [above](docs/examples/native_directions/goal_above1/replay.mp4) and [below](docs/examples/native_directions/goal_below1/replay.mp4).
-
-Omit `--no-video` to render. These are human-derived simulation replays; a learned pushing policy is available separately below. Reproducing image tracking requires the original videos or your own recordings. See [sample provenance](data/samples/README.md).
-
-## Run checkpoint 1
-
-Tested on Linux, Python 3.12.3, NVIDIA TITAN V (12 GB), driver 580.178.04. No system CUDA changes are needed. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if unavailable, then:
+Linux and Python 3.12; dependencies are pinned in `uv.lock`. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if needed.
 
 ```bash
 git clone https://github.com/Valkyrri025/Human-guided-manipulation.git
 cd Human-guided-manipulation
-uv sync --locked --python 3.12
-uv run --locked python scripts/check_machine.py
-MUJOCO_GL=egl uv run --locked push-smoke
-uv run --locked python -m pytest -q
+uv sync --locked --extra learning --group dev
+source .venv/bin/activate
+MUJOCO_GL=egl push-smoke --output outputs/checks/smoke
+python -m pytest -q
 ```
 
-Outputs:
-
-- `outputs/smoke/panda_motion.mp4`: 9 seconds, 640 × 480, 20 fps.
-- `outputs/smoke/metrics.json`: motion, tracking, finite-state and video-decode checks.
-- `outputs/smoke/trajectory.npz`: scripted XYZ references, achieved XYZ and controller actions.
-- `outputs/smoke/preview.png`: midpoint image.
-- `outputs/machine.json`: Python, GPU, driver, compiler and package availability.
-
-The script returns a nonzero exit code if it detects failed motion, excessive tracking error, nonfinite state, or an incomplete decoded video. Use `--seed 7 --steps 180 --output outputs/smoke` to specify the defaults explicitly. `--camera frontview` gives a view of the arm and table.
-
-If NVIDIA EGL is unavailable, try `MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa uv run --locked push-smoke`; this requires a working OS Mesa library and has not been tested here. The default NVIDIA EGL backend **has** been tested. Library warnings about private macros, optional robot models, and optional whole-body IK did not prevent the Panda OSC test from passing.
-
-## Example output
-
-See [the video](docs/examples/panda_motion.mp4), [preview](docs/examples/preview.png), and [machine-readable metrics](docs/examples/metrics.json). These demonstrate setup only. They must not be counted as human-data replay or task success.
-
-## Independent square-target pilot
-
-The second user recording, `pilot_goal.mp4`, uses a drawn target calibrated from the opening frame. The replay moved the die 11.04 cm and finished 1.90 mm from that target, fully inside the square. This is a collection/tuning pilot, not held-out performance. See [the goal pilot report](docs/goal-pilot.md) for commands and limits, and [the simulation video](docs/examples/native_directions/pilot_goal/replay.mp4).
-
-## Replay the human pilot (checkpoint 3)
-
-See [the physical replay report](docs/pilot-replay.md) for commands, tool geometry, scripted components, action-label provenance, checks and failures.
+For the NVIDIA TITAN V, use the separate CUDA environment (already installed on this PC):
 
 ```bash
-uv run --locked push-replay --termination reference
+UV_PROJECT_ENVIRONMENT=.venv-gpu uv sync --locked --extra learning-gpu --group dev
+source .venv-gpu/bin/activate
 ```
 
-Requires `data/processed/pilot/tracks.npz` (created below) and the saved calibration. Outputs go to `outputs/pilot_replay/`. Selected [video](docs/examples/pilot_replay/replay.mp4), [preview](docs/examples/pilot_replay/preview.png), and [metrics](docs/examples/pilot_replay/metrics.json) are included as examples.
+GPU PyTorch is 2.5.1+cu118; system CUDA and the CPU environment are unchanged. Activate the desired environment and use `python`; an unqualified `uv run` may select the default CPU environment.
 
-## Track the pilot
+`results/` contains the canonical public checkpoints, evaluation rollouts, metrics and videos. The original phone recordings remain local in `data/raw/`; calibrated numeric tracks and derived teacher rollouts are public, so training/evaluation can run without the raw videos. No training is launched automatically.
 
-One personally recorded pilot is now tracked. See [the pilot report](docs/pilot-report.md) for checks and limitations. The original remains at `data/raw/pilot_push.mp4` and is not committed.
+## Attribution and limitations
 
-```bash
-# Use the saved, reviewed geometry and HSV settings:
-uv run --locked push-track
-# Independent geometry/detection checks:
-uv run --locked python -m pytest -q tests/test_tracking.py
-```
+[robosuite](https://github.com/ARISE-Initiative/robosuite) supplies the Panda assets and OSC control; [MuJoCo](https://github.com/google-deepmind/mujoco) supplies physics/rendering. Upstream assets retain their licences. Reference: Zhu et al., *robosuite: A Modular Simulation Framework and Benchmark for Robot Learning*, arXiv:2009.12293.
 
-For a new camera setup, initialise a separate calibration from an opening frame with four unobstructed red L marks:
-
-```bash
-uv run --locked push-track --video data/raw/new_push.mp4 \
-  --calibration data/calibration/new_push.json --initialise-calibration \
-  --width-m 0.30 --height-m 0.297 --output data/processed/new_push
-```
-
-Inspect the overlay before accepting auto-detected corners. HSV thresholds, areas and corner search windows live in the calibration JSON. Missing marker detections are blank in CSV and NaN in NPZ. No missing motion is invented.
-
-## Capture instructions
-
-Follow [the pilot checklist](docs/recording.md). Copy your original recording to `data/raw/pilot_push.mp4`, and save actual measurements in `data/raw/pilot_notes.json`. Raw recordings are ignored by Git to preserve originals and avoid accidental uploads. A public submission will need an intentionally selected, personally collected sample plus its provenance and permission for any visible people.
-
-## Implementation choices
-
-- **Pinned MuJoCo 3.3.7 + robosuite 1.5.2 + Panda:** existing robot model and operational-space control; version lock reduces setup ambiguity.
-- **20 Hz Cartesian control:** a desired world XYZ is converted to a normalised position correction `(desired_xyz - simulated_eef_xyz) / 0.05`, clipped to ±0.25 per axis. Orientation error is converted to a world rotation vector and divided by 0.5; gripper closure is commanded. These scale factors match the loaded controller configuration. The simulator converts these commands into joint torques.
-- **Fixed orientation:** retain the initial end-effector orientation through feedback; pushing will later use a suitable fixed downward orientation and a contact height matched to the block.
-- **No PyTorch dependency at checkpoint 1:** tracking and retargeting use NumPy/OpenCV. PyTorch is absent in the checked environments; GPU tensor compute is untested. GPU EGL rendering works. `nvidia-smi` advertises driver CUDA compatibility, while `nvcc` reports the installed compiler; neither demonstrates that a particular PyTorch wheel supports this GPU.
-- **Preserve provenance:** personally captured videos → colour tracks → calibrated table XY → retargeted robot references → robot actions from simulated state and scripted controller. Do not describe the resulting action labels as directly recorded robot demonstrations.
-
-## What worked / what did not
-
-- Isolated Python 3.12 environment, the pinned simulator stack, Panda operational-space control, NVIDIA EGL video, and decoded-frame validation worked.
-- Initial `agentview` framing cropped most of the robot; the example uses `frontview`.
-- The Codex command sandbox failed at startup (`bwrap` network namespace error); approved direct commands were used. This was a tooling issue rather than a simulator failure.
-- Pilot colour tracking and physical replay worked. A rounded contact missed the endpoint; a body-versus-grip-site orientation mismatch caused early contact and was fixed. The initial geometric comparison on new simulated starts is complete; held-out human-episode evaluation and policy fitting remain untested.
-
-## Remaining checkpoints
-
-1. **Done:** simulation starts, Panda moves, video renders.
-2. **Done:** calibrate and track one personally recorded pilot; inspect overlay and missing detections.
-3. **Done:** custom planar pushing scene and physical pilot replay; see the replay report.
-4. **First batch done:** five goal demonstrations. New collection plan: 60 scheduled clips with a 42/9/9 episode split; inspect the first 12 training clips before continuing.
-5. **First geometric comparison done:** eight new simulated starts, per-trial outcomes and representative failure/success videos. Next: compact imitation policy and separate closed-loop evaluation.
-6. Repository: [Human-guided-manipulation](https://github.com/Valkyrri025/Human-guided-manipulation), with numeric samples, commands, results and attribution.
-
-Choose the success threshold and held-out start set before the final comparison. Keep trajectory selection and parameter tuning separate from held-out evaluation. Report any use of simulator object/target state explicitly. Improvements to a hand-coded retargeter are a valid primary result.
-
-Deadline: the user reports an extension; the new date has not been supplied. The original deadline was 9 October 2026, 23:59 BST / 10 October 2026, 00:59 Europe/Zurich. The challenge PDF has not been inspected on this machine.
-
-## Attribution
-
-[robosuite](https://github.com/ARISE-Initiative/robosuite) supplies the Panda model, Lift setup, controllers and render integration; [MuJoCo](https://github.com/google-deepmind/mujoco) supplies physics and rendering. Their assets and dependencies retain their upstream licences. Source references: [installation](https://robosuite.ai/docs/installation.html), [controller documentation](https://robosuite.ai/docs/modules/controllers.html).
-
-Zhu et al., *robosuite: A Modular Simulation Framework and Benchmark for Robot Learning*, arXiv:2009.12293, 2020.
-
-See [model directions](docs/model-directions.md) for how the task could support a VLA or learned dynamics model; neither is part of the current geometric baseline.
-
-## Planned learning benchmarks
-
-The agreed expansion is pushing-only imitation, then full-episode imitation with validated synthetic approach/withdrawal labels, then a compact learned dynamics model. See [the learning roadmap](docs/learning-roadmap.md). All four direction pilots passed; the active [recording plan](docs/recording-plan.md) covers left/right/above in the native recording view. Begin with 12 training clips, then continue after review. The wall-constrained below direction uses the existing pilot and separately labelled synthetic augmentation.
-
-**Media cleanup:** original recordings and successful simulation videos remain; failed videos, tracking overlays and identical generated-video copies were removed. Small numerical failure evidence is retained. Successful examples live in `docs/examples/`. See [the cleanup audit](docs/cleanup-report.json). The isolated Python environment remains available.
-
-## Artifact locations and retained videos
-
-See [the folder guide](docs/artifacts.md) for canonical rollouts, successful videos and the latest cleanup. With `--no-video`, batch replay now retains up to three successfully rendered examples unless `--success-videos 0` is specified. All 42 training recordings are now tracked; next prepare pushing-only imitation inputs.
-
-The [fourth training-batch review](docs/training-batch-04.md) documents calibration/tracking for clips 033–042. Batch 04 validates 9/10 replays; total teacher success is 37/42.
-
-## Validation references
-
-All nine validation recordings are tracked and teacher-replayed separately: 6/9 successful reference rollouts, with failures retained. Training remains 37/42. See [the validation review](docs/validation-batch-01.md); numerical outputs are in `outputs/validation_batch_01/`. No learned-policy result is reported. Test collection remains reserved for the final frozen evaluation.
-
-## Behavior-cloning implementation
-
-Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training and closed-loop validation commands are implemented. See [the behavior-cloning workflow](docs/behavior-cloning.md) for inputs, labels, split isolation, installation and commands. Current data: 3,318 training pairs from 37 successful teachers; 423 validation reference pairs. The first policy has completed training and achieved **7/9 validation successes**, with 6.68 mm mean final target distance. See [results, failures and successful videos](docs/bc-validation.md). Final frozen test evaluation achieves **8/9 successes** and 5.44 mm mean target distance; see [the test report and videos](docs/bc-test.md).
-
-## Benchmark 2: full-episode imitation
-
-The [benchmark-2 workflow](docs/benchmark-2.md) trains approach/lowering, pushing and withdrawal **jointly in one recurrent policy**. It predicts phase and Cartesian XYZ/rotation actions, with no ground-truth phase input or scripted Cartesian movement at evaluation. Human-derived pushing and scripted teacher approach/withdrawal labels remain explicitly distinguished. The initial 200-epoch run completes **2/9 validation episodes** under stricter full-episode criteria. See [results and failure analysis](docs/benchmark-2-results.md); high offline phase accuracy does not imply reliable execution.
-
-**Benchmark-2 duration comparison:** training the same model for 1,000 epochs improves complete validation success from **2/9 to 5/9**, with unchanged data, architecture and 10-second push / 30-second episode limits. The selected checkpoint is epoch 877. See [the comparison and successful videos](docs/benchmark-2-epochs1000.md). No benchmark-2 test evaluation has run.
-
-**Further duration check:** 2,000 epochs lower supervised validation loss by another 20%, but the selected epoch-1,958 policy completes only **3/9 validation episodes**. The 1,000-epoch policy remains the best full-episode controller at **5/9**. See [loss trends, outcomes and retained evidence](docs/benchmark-2-epochs2000.md). Model/data/time limits remain unchanged; benchmark-2 test evaluation has not run.
-
-**Larger-model option:** a separate residual GRU128 with two recurrent layers is ready for user-started GPU training. CUDA-enabled PyTorch lives in `.venv-gpu`; the CPU `.venv` remains intact. See [architecture comparison and commands](docs/benchmark-2-advanced.md). The completed user run and failure analysis are reported below.
-
-**Larger-model result:** the user-trained residual GRU128 selects epoch 857 (validation loss 0.002620) but scores only 1/9 under full physical validity; two additional goal/withdrawal completions have table contact. See [the audit and all eight requested failure videos](docs/benchmark-2-advanced-results.md). The GRU64 epoch-877 model remains best at 5/9.
+Policies observe simulator state and a known goal; they are not vision-language models or world models. Scripted synthetic labels, planar calibration, assumed friction and limited initial-pose coverage are disclosed in the guides. The user reported a challenge deadline extension; no updated deadline is recorded.

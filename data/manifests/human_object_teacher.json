@@ -24,8 +24,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_001/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_001/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_001/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_001/rollout.npz"
     },
     {
       "id": "train_002",
@@ -46,8 +46,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_002/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_002/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_002/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_002/rollout.npz"
     },
     {
       "id": "train_003",
@@ -68,8 +68,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": false,
       "replay_outcome": "timeout",
-      "metrics": "docs/examples/human_object_teacher/train_003/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_003/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_003/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_003/rollout.npz"
     },
     {
       "id": "train_004",
@@ -90,8 +90,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_004/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_004/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_004/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_004/rollout.npz"
     },
     {
       "id": "train_005",
@@ -112,8 +112,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_005/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_005/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_005/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_005/rollout.npz"
     },
     {
       "id": "train_006",
@@ -134,8 +134,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_006/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_006/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_006/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_006/rollout.npz"
     },
     {
       "id": "train_007",
@@ -156,8 +156,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_007/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_007/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_007/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_007/rollout.npz"
     },
     {
       "id": "train_008",
@@ -178,8 +178,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_008/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_008/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_008/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_008/rollout.npz"
     },
     {
       "id": "train_009",
@@ -200,8 +200,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": false,
       "replay_outcome": "timeout",
-      "metrics": "docs/examples/human_object_teacher/train_009/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_009/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_009/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_009/rollout.npz"
     },
     {
       "id": "train_010",
@@ -222,8 +222,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_010/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_010/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_010/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_010/rollout.npz"
     },
     {
       "id": "train_011",
@@ -244,8 +244,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_011/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_011/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_011/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_011/rollout.npz"
     },
     {
       "id": "train_012",
@@ -266,8 +266,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_012/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_012/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_012/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_012/rollout.npz"
     },
     {
       "id": "train_013",
@@ -288,8 +288,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_013/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_013/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_013/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_013/rollout.npz"
     },
     {
       "id": "train_014",
@@ -310,8 +310,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_014/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_014/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_014/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_014/rollout.npz"
     },
     {
       "id": "train_015",
@@ -332,8 +332,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_015/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_015/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_015/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_015/rollout.npz"
     },
     {
       "id": "train_016",
@@ -354,8 +354,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_016/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_016/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_016/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_016/rollout.npz"
     },
     {
       "id": "train_017",
@@ -376,8 +376,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_017/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_017/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_017/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_017/rollout.npz"
     },
     {
       "id": "train_018",
@@ -398,8 +398,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_018/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_018/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_018/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_018/rollout.npz"
     },
     {
       "id": "train_019",
@@ -420,8 +420,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_019/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_019/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_019/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_019/rollout.npz"
     },
     {
       "id": "train_020",
@@ -442,8 +442,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_020/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_020/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_020/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_020/rollout.npz"
     },
     {
       "id": "train_021",
@@ -464,8 +464,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_021/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_021/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_021/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_021/rollout.npz"
     },
     {
       "id": "train_022",
@@ -486,8 +486,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": false,
       "replay_outcome": "timeout",
-      "metrics": "docs/examples/human_object_teacher/train_022/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_022/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_022/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_022/rollout.npz"
     },
     {
       "id": "train_023",
@@ -508,8 +508,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_023/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_023/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_023/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_023/rollout.npz"
     },
     {
       "id": "train_024",
@@ -530,8 +530,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_024/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_024/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_024/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_024/rollout.npz"
     },
     {
       "id": "train_025",
@@ -552,8 +552,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_025/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_025/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_025/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_025/rollout.npz"
     },
     {
       "id": "train_026",
@@ -574,8 +574,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_026/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_026/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_026/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_026/rollout.npz"
     },
     {
       "id": "train_027",
@@ -596,8 +596,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": false,
       "replay_outcome": "timeout",
-      "metrics": "docs/examples/human_object_teacher/train_027/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_027/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_027/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_027/rollout.npz"
     },
     {
       "id": "train_028",
@@ -618,8 +618,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_028/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_028/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_028/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_028/rollout.npz"
     },
     {
       "id": "train_029",
@@ -640,8 +640,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_029/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_029/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_029/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_029/rollout.npz"
     },
     {
       "id": "train_030",
@@ -662,8 +662,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_030/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_030/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_030/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_030/rollout.npz"
     },
     {
       "id": "train_031",
@@ -684,8 +684,8 @@
       "finger_baseline_expert_eligible": true,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_031/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_031/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_031/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_031/rollout.npz"
     },
     {
       "id": "train_032",
@@ -706,8 +706,8 @@
       "finger_baseline_expert_eligible": false,
       "expert_eligible": true,
       "replay_outcome": "goal_reached",
-      "metrics": "docs/examples/human_object_teacher/train_032/metrics.json",
-      "robot_rollout": "outputs/human_object_teacher/train_032/rollout.npz"
+      "metrics": "data/robot_rollouts/train/train_032/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_032/rollout.npz"
     },
     {
       "id": "train_033",
@@ -730,8 +730,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_033/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_033/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_033/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_033/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -755,8 +755,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_034/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_034/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_034/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_034/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -780,8 +780,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_035/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_035/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_035/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_035/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -805,8 +805,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_036/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_036/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_036/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_036/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -830,8 +830,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_037/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_037/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_037/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_037/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -855,8 +855,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_038/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_038/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_038/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_038/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -880,8 +880,8 @@
       "replay_status": "timeout",
       "replay_outcome": "timeout",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_039/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_039/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_039/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_039/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -905,8 +905,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_040/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_040/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_040/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_040/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -930,8 +930,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_041/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_041/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_041/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_041/metrics.json",
       "finger_baseline_expert_eligible": null
     },
     {
@@ -955,8 +955,8 @@
       "replay_status": "validated_success",
       "replay_outcome": "goal_reached",
       "push_controller": "human-object-feedback",
-      "robot_rollout": "outputs/training_batch_04/train_042/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_042/metrics.json",
+      "robot_rollout": "data/robot_rollouts/train/train_042/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_042/metrics.json",
       "finger_baseline_expert_eligible": null
     }
   ],

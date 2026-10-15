@@ -8,295 +8,295 @@
       "episode": "train_001",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_001/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_001/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_001/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_001/metrics.json"
     },
     {
       "episode": "train_002",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_002/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_002/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_002/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_002/metrics.json"
     },
     {
       "episode": "train_003",
       "expert_eligible": false,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_003/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_003/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_003/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_003/metrics.json"
     },
     {
       "episode": "train_004",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_004/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_004/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_004/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_004/metrics.json"
     },
     {
       "episode": "train_005",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_005/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_005/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_005/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_005/metrics.json"
     },
     {
       "episode": "train_006",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_006/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_006/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_006/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_006/metrics.json"
     },
     {
       "episode": "train_007",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_007/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_007/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_007/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_007/metrics.json"
     },
     {
       "episode": "train_008",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_008/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_008/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_008/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_008/metrics.json"
     },
     {
       "episode": "train_009",
       "expert_eligible": false,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_009/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_009/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_009/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_009/metrics.json"
     },
     {
       "episode": "train_010",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_010/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_010/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_010/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_010/metrics.json"
     },
     {
       "episode": "train_011",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_011/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_011/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_011/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_011/metrics.json"
     },
     {
       "episode": "train_012",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_012/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_012/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_012/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_012/metrics.json"
     },
     {
       "episode": "train_013",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_013/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_013/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_013/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_013/metrics.json"
     },
     {
       "episode": "train_014",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_014/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_014/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_014/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_014/metrics.json"
     },
     {
       "episode": "train_015",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_015/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_015/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_015/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_015/metrics.json"
     },
     {
       "episode": "train_016",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_016/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_016/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_016/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_016/metrics.json"
     },
     {
       "episode": "train_017",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_017/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_017/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_017/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_017/metrics.json"
     },
     {
       "episode": "train_018",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_018/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_018/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_018/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_018/metrics.json"
     },
     {
       "episode": "train_019",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_019/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_019/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_019/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_019/metrics.json"
     },
     {
       "episode": "train_020",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_020/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_020/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_020/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_020/metrics.json"
     },
     {
       "episode": "train_021",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_021/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_021/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_021/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_021/metrics.json"
     },
     {
       "episode": "train_022",
       "expert_eligible": false,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_022/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_022/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_022/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_022/metrics.json"
     },
     {
       "episode": "train_023",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_023/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_023/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_023/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_023/metrics.json"
     },
     {
       "episode": "train_024",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_024/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_024/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_024/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_024/metrics.json"
     },
     {
       "episode": "train_025",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_025/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_025/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_025/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_025/metrics.json"
     },
     {
       "episode": "train_026",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_026/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_026/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_026/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_026/metrics.json"
     },
     {
       "episode": "train_027",
       "expert_eligible": false,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_027/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_027/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_027/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_027/metrics.json"
     },
     {
       "episode": "train_028",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_028/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_028/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_028/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_028/metrics.json"
     },
     {
       "episode": "train_029",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_029/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_029/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_029/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_029/metrics.json"
     },
     {
       "episode": "train_030",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_030/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_030/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_030/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_030/metrics.json"
     },
     {
       "episode": "train_031",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_031/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_031/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_031/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_031/metrics.json"
     },
     {
       "episode": "train_032",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/human_object_teacher/train_032/rollout.npz",
-      "metrics": "docs/examples/human_object_teacher/train_032/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_032/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_032/metrics.json"
     },
     {
       "episode": "train_033",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_033/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_033/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_033/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_033/metrics.json"
     },
     {
       "episode": "train_034",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_034/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_034/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_034/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_034/metrics.json"
     },
     {
       "episode": "train_035",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_035/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_035/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_035/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_035/metrics.json"
     },
     {
       "episode": "train_036",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_036/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_036/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_036/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_036/metrics.json"
     },
     {
       "episode": "train_037",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_037/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_037/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_037/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_037/metrics.json"
     },
     {
       "episode": "train_038",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_038/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_038/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_038/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_038/metrics.json"
     },
     {
       "episode": "train_039",
       "expert_eligible": false,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_039/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_039/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_039/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_039/metrics.json"
     },
     {
       "episode": "train_040",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_040/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_040/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_040/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_040/metrics.json"
     },
     {
       "episode": "train_041",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_041/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_041/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_041/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_041/metrics.json"
     },
     {
       "episode": "train_042",
       "expert_eligible": true,
       "split": "train",
-      "robot_rollout": "outputs/training_batch_04/train_042/rollout.npz",
-      "metrics": "docs/examples/training_batch_04/train_042/metrics.json"
+      "robot_rollout": "data/robot_rollouts/train/train_042/rollout.npz",
+      "metrics": "data/robot_rollouts/train/train_042/metrics.json"
     }
   ]
 }

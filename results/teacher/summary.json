@@ -1,0 +1,10 @@
+{
+  "method": "scripted human-object feedback teacher",
+  "training_successes": 37,
+  "training_sources": 42,
+  "validation_successes": 6,
+  "validation_sources": 9,
+  "finger_baseline_successes": 20,
+  "finger_baseline_sources": 32,
+  "historical_baseline_archive": "data/archive/development-evidence.tar.gz"
+}
