@@ -1,5 +1,5 @@
 PROJECT FILE INVENTORY — 15 October 2026
-Paths relative to humanoid-push/. Original recordings are included in the public repository.
+Paths relative to humanoid-push/. Original recordings and benchmark-2 test evidence are public.
 Includes local generated caches and checkpoints; these remain ignored by Git.
 Excluded: .git/, .venv/, .venv-gpu/, .cache/, .pytest_cache/, __pycache__/ internals.
 These excluded directories are preserved. Empty folders are omitted.
@@ -1064,6 +1064,51 @@ results/benchmark2/gru64_augmented/validation_009/
   failure.mp4
   failure_video.json
   metrics.json
+  rollout.npz
+
+results/benchmark2/test/
+  audit.json
+  protocol.json
+  summary.json
+
+results/benchmark2/test/test_001/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/test/test_002/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/test/test_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/test/test_004/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/test/test_005/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/test/test_006/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/test/test_007/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/test/test_008/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/test/test_009/
+  metrics.json
+  policy.mp4
   rollout.npz
 
 results/teacher/

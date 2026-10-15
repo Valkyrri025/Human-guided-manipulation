@@ -7,6 +7,22 @@ from humanoid_push.episode_model import EpisodePolicy,save_policy,load_policy
 from humanoid_push.episode_train import objective
 
 
+def test_test_scene_requires_explicit_split_and_uses_opening_only(tmp_path):
+    import json
+    from humanoid_push.episode_eval import load_scene
+    (tmp_path/'calibration.json').write_text('{}')
+    (tmp_path/'opening.json').write_text(json.dumps({'opening_frames_used':30,'target_xy_m':[.01,.02]}))
+    ep={'split':'test','calibration':'calibration.json','initial_scene':'opening.json',
+        'metrics':'must_not_read_future_teacher_metrics.json'}
+    with pytest.raises(ValueError,match='explicitly requested'):
+        load_scene(tmp_path,ep)
+    _,scene=load_scene(tmp_path,ep,expected_split='test')
+    assert scene['target_xy_m']==[.01,.02]
+    (tmp_path/'opening.json').write_text(json.dumps({'opening_frames_used':300}))
+    with pytest.raises(ValueError,match='opening-only'):
+        load_scene(tmp_path,ep,expected_split='test')
+
+
 def test_features_include_actual_height_orientation_and_goal_not_phase():
     state=np.array([.02,.01,.968,0,0,.8085])
     q=Rotation.from_euler('z',90,degrees=True).as_quat()

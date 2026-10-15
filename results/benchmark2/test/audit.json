@@ -1,0 +1,32 @@
+{
+  "checkpoint_and_frozen_inputs_unchanged": true,
+  "all_9_rollouts_finite_and_complete": true,
+  "video_audits": [
+    {
+      "video": "outputs/experiments/benchmark2_test/test_002/policy.mp4",
+      "frames": 326,
+      "sha256": "15702b153f79f207dcdbfeed08fcb1130833fd3d8afd3ee2d562e645d1b2af8a"
+    },
+    {
+      "video": "outputs/experiments/benchmark2_test/test_009/policy.mp4",
+      "frames": 306,
+      "sha256": "805563b73031dbbf1e3d37121e5b1c34cc7aaeebd5ce00a843f6e62061f6de33"
+    },
+    {
+      "video": "outputs/experiments/benchmark2_test/test_007/policy.mp4",
+      "frames": 360,
+      "sha256": "111f7445d6560fd79719b4dfd026415613a785bde652987f11332d8c1d5a24c5"
+    },
+    {
+      "video": "outputs/experiments/benchmark2_test/test_008/policy.mp4",
+      "frames": 330,
+      "sha256": "56fd6c1de5a2921f618421bcb9d2eef24e66a8589604222790bae3b09922f3ec",
+      "saved_actions_and_states_array_equal": true
+    }
+  ],
+  "test_future_path_used": false,
+  "checkpoint_selected_before_benchmark2_test": true,
+  "training_performed": false,
+  "github_push_performed": false,
+  "all_four_success_videos_retained": true
+}

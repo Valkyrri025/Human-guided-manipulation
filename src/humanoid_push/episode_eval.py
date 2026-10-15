@@ -1,4 +1,4 @@
-"""Benchmark 2 validation: learned actions from reset through withdrawal."""
+"""Benchmark 2 held-out evaluation: learned actions from reset through withdrawal."""
 import argparse
 import hashlib
 import json
@@ -15,13 +15,22 @@ WITHDRAWAL_HEIGHT_M=.948
 DWELL_S=.2
 
 
-def evaluate_episode(model,root,episode,output,render=False,episode_timeout=EPISODE_TIMEOUT_S):
+def load_scene(root,episode,expected_split='validation'):
+    if expected_split not in ('validation','test') or episode['split']!=expected_split:
+        raise ValueError('Episode does not belong to the explicitly requested held-out split')
+    c=json.loads((root/episode['calibration']).read_text())
+    scene_key='initial_scene' if expected_split=='test' else 'metrics'
+    m=json.loads((root/episode[scene_key]).read_text())
+    if expected_split=='test' and m.get('opening_frames_used')!=30:
+        raise ValueError('Test requires frozen opening-only initial scenes')
+    return c,m
+
+
+def evaluate_episode(model,root,episode,output,render=False,episode_timeout=EPISODE_TIMEOUT_S,expected_split='validation'):
     from robosuite.controllers import load_composite_controller_config
     from .push_env import PlanarPush
     import imageio.v2 as imageio
-    if episode['split']!='validation':raise ValueError('Benchmark 2 development evaluates validation only')
-    c=json.loads((root/episode['calibration']).read_text())
-    m=json.loads((root/episode['metrics']).read_text())
+    c,m=load_scene(root,episode,expected_split)
     polygon,size=geometry(c);goal=np.asarray(m['target_xy_m']);start=np.asarray(m['initial_object_xyz_m'])[:2]
     config=load_composite_controller_config(robot='Panda')
     config['body_parts']['right']['input_ref_frame']='world'
@@ -111,31 +120,46 @@ def main():
     p.add_argument('--manifest',type=Path,default=Path('data/manifests/public_validation_batch_01.json'))
     p.add_argument('--output',type=Path,default=Path('outputs/benchmark2_validation'))
     p.add_argument('--success-videos',type=int,default=3)
+    p.add_argument('--split',choices=['validation','test'],default='validation')
+    p.add_argument('--protocol',type=Path,help='Required frozen checkpoint, evaluator and scene hashes for test evaluation')
     a=p.parse_args()
     if a.output.exists() and any(a.output.iterdir()):p.error('Choose a fresh output folder')
     if a.success_videos<0:p.error('success-videos must be nonnegative')
     torch.set_num_threads(1);model,metadata=load_policy(a.checkpoint)
     episodes=json.loads((a.root/a.manifest).read_text())['episodes']
-    if len(episodes)!=9 or len({e['id'] for e in episodes})!=9 or any(e['split']!='validation' for e in episodes):
-        p.error('All nine distinct validation starts are required; no benchmark-2 test access during development')
+    if len(episodes)!=9 or len({e['id'] for e in episodes})!=9 or any(e['split']!=a.split for e in episodes):
+        p.error('All nine distinct starts from the explicitly requested held-out split are required')
+    if a.split=='test':
+        if a.protocol is None:p.error('Test evaluation requires --protocol frozen before the run')
+        protocol=json.loads((a.root/a.protocol).read_text())
+        if protocol.get('benchmark')!=2 or protocol.get('split')!='test':p.error('Wrong frozen test protocol')
+        if hashlib.sha256(a.checkpoint.read_bytes()).hexdigest()!=protocol['checkpoint_sha256']:
+            p.error('Checkpoint differs from frozen protocol')
+        required={str(a.manifest),'src/humanoid_push/episode_eval.py','src/humanoid_push/episode_data.py',
+                  'src/humanoid_push/episode_model.py','src/humanoid_push/push_env.py','src/humanoid_push/task_rules.py'}
+        required.update(e[k] for e in episodes for k in ['calibration','initial_scene'])
+        if not required<=set(protocol['input_sha256']):p.error('Incomplete evaluator/scene hashes in protocol')
+        for path,digest in protocol['input_sha256'].items():
+            if hashlib.sha256((a.root/path).read_bytes()).hexdigest()!=digest:p.error(f'Frozen input changed: {path}')
     rows=[];sides=set()
     for ep in episodes:
-        directory=a.output/ep['id'];r=evaluate_episode(model,a.root,ep,directory)
+        directory=a.output/ep['id'];r=evaluate_episode(model,a.root,ep,directory,expected_split=a.split)
         side=ep['recording_start_side']
         if r['passed'] and side not in sides and len(sides)<a.success_videos:
-            repeat=evaluate_episode(model,a.root,ep,directory,render=True)
+            repeat=evaluate_episode(model,a.root,ep,directory,render=True,expected_split=a.split)
             if not repeat['passed']:raise RuntimeError('Rendered replay disagreed with successful numerical evaluation')
             sides.add(side)
         rows.append(r)
         (a.output/'progress.json').write_text(json.dumps(rows,indent=2)+'\n')
         print(f"{ep['id']}: {r['passed']} ({r['stop_reason']}, {r['episode_elapsed_s']:.2f}s)",flush=True)
-    summary={'benchmark':2,'split':'validation','successes':sum(r['passed'] for r in rows),'total':len(rows),
+    summary={'benchmark':2,'split':a.split,'successes':sum(r['passed'] for r in rows),'total':len(rows),
         'mean_final_target_distance_m':float(np.mean([r['final_target_distance_m'] for r in rows])),
         'checkpoint_sha256':hashlib.sha256(a.checkpoint.read_bytes()).hexdigest(),
-        'checkpoint_metadata':metadata,'episodes':rows,'test_used':False,
+        'checkpoint_metadata':metadata,'episodes':rows,'test_used':a.split=='test',
+        'frozen_protocol':str(a.protocol) if a.protocol else None,
         'comparison_note':'Benchmark 2 requires learned approach, orientation, height, phase and withdrawal; benchmark 1 scripts these.'}
     (a.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
-    print(f"Benchmark 2 validation: {summary['successes']}/9",flush=True)
+    print(f"Benchmark 2 {a.split}: {summary['successes']}/9",flush=True)
 
 
 if __name__=='__main__':main()

@@ -4,7 +4,7 @@
 |---|---:|---:|---|
 | Pushing-only MLP | 7/9 | 8/9 | [Benchmark 1](benchmark1/) |
 | Full episode GRU64, 200 epochs | 2/9 | — | [Initial run](benchmark2/gru64_200/) |
-| **Full episode GRU64, 1,000 epochs** | **5/9** | — | [Best controller](benchmark2/gru64_1000/) |
+| **Full episode GRU64, 1,000 epochs** | **5/9** | **4/9** | [Best controller](benchmark2/gru64_1000/) · [Test evidence](benchmark2/test/) |
 | Full episode GRU64, 2,000 epochs | 3/9 | — | [Longer run](benchmark2/gru64_2000/) |
 | Residual stacked-GRU128, GPU | 1/9 | — | [Larger model](benchmark2/gru128_gpu/) |
 | GRU64, three additional successful teachers | 1/9 | — | [Augmented model](benchmark2/gru64_augmented/) |

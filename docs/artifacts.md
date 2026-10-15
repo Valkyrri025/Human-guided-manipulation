@@ -29,6 +29,7 @@ Benchmark 2 is closed. Read [its short final report](benchmark-2.md) first. The 
 | `results/benchmark2/gru64_augmented/` | `best.pt`, `history.json`, `configuration.json`, `summary.json`, `augmentation_comparison.json`, `failure_video_audit.json`; all nine episode folders with `metrics.json`, `rollout.npz`, plus success `policy.mp4` or **eight `failure.mp4` clips** and their `failure_video.json` audits |
 | `results/teacher/` | Original teacher `summary.json`, representative successful `train_001.mp4`, `train_002.mp4`, `train_006.mp4` |
 | `results/teacher/augmentation/` | `summary.json`, `summary.csv`, `augmentation_audit.json`, six replay videos `train_043.mp4`–`train_048.mp4` showing both useful and unsuccessful retargeting |
+| `results/benchmark2/test/` | Frozen original-model test result (4/9): `summary.json`, `audit.json`, `protocol.json`, nine episode folders with `metrics.json` and `rollout.npz`, and all four success `policy.mp4` videos. |
 | `outputs/bc_dataset/` | Local baseline benchmark-1 cache: `dataset.npz`, `provenance.json` |
 | `outputs/benchmark2_dataset/` | Local original benchmark-2 cache: `dataset.npz`, `provenance.json` |
 | `outputs/benchmark2_augmented_dataset/` | Local augmented 40-teacher cache: `dataset.npz`, `provenance.json` |

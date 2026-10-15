@@ -7,7 +7,7 @@ A small robot-learning project built from personally collected phone videos of a
 | Benchmark | What the policy learns | Validation | Test |
 |---|---|---:|---:|
 | **1: learned pushing** | XY pushing actions; approach, height, orientation and withdrawal are scripted | **7/9** | **8/9** |
-| **2: full-episode learning** | Approach, pushing, withdrawal, end-effector height/orientation and phase selection | **5/9** | Not evaluated |
+| **2: full-episode learning** | Approach, pushing, withdrawal, end-effector height/orientation and phase selection | **5/9** | **4/9** |
 
 Benchmark 1 uses a small MLP; benchmark 2 uses a GRU. Policies act from current simulator state and the known goal, without reading future human trajectories. Benchmark 2 is concluded; its best original GRU64 is retained. These are small fixed evaluation sets, not evidence of broad robustness.
 

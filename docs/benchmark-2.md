@@ -1,6 +1,6 @@
 # Benchmark 2: full-episode imitation — final report
 
-**Closed on 15 October 2026.** Retain GRU64 epoch **877**, with **5/9 validation successes**. No further training or recordings are planned for this benchmark. No benchmark-2 test evaluation was performed.
+**Closed on 15 October 2026.** Retain GRU64 epoch **877**, with **5/9 validation successes**. No further training or recordings are planned for this benchmark. A subsequent frozen-model test evaluation achieved **4/9**; no retraining or test-based tuning was performed.
 
 ## Experiments
 
@@ -41,4 +41,22 @@ source .venv/bin/activate
 MUJOCO_GL=egl python -m humanoid_push.episode_eval \
   --checkpoint results/benchmark2/gru64_1000/best.pt \
   --output outputs/reproductions/benchmark2_best
+```
+
+## Frozen-model test evaluation — 15 October 2026
+
+At the user’s request, the original GRU64 epoch 877 was frozen and evaluated on all nine existing opening-only test scenes. Result: **4/9 (44.4%)**, with successes **test_002, 007, 008 and 009**. Mean final cube-centre distance over all nine episodes was **28.69 mm**. All five failures hit the 10-second push limit; test_003 and test_004 also had table contact. The 30-second episode cap, task validity and withdrawal rules were unchanged.
+
+The checkpoint, evaluator, manifest and calibration/initial-scene hashes were locked before testing. The validation regression reproduced original actions, states and features exactly; all 38 tests passed. No human future trajectory was used. These test scenes were previously used for benchmark 1, so this is the first benchmark-2 score on an existing test set, not a newly collected blind test. No training or checkpoint reselection was performed.
+
+Published [summary](../results/benchmark2/test/summary.json), [audit](../results/benchmark2/test/audit.json) and [frozen protocol](../results/benchmark2/test/protocol.json) are retained. Each test folder contains metrics and a complete numerical rollout; all four successful episodes have `policy.mp4`. The frozen test evidence is published under `results/benchmark2/test/`.
+
+Reproduce with the same frozen protocol and a fresh output folder:
+
+```bash
+MUJOCO_GL=egl python -m humanoid_push.episode_eval \
+  --checkpoint results/benchmark2/gru64_1000/best.pt \
+  --split test --manifest data/manifests/public_test_initial_scenes.json \
+  --protocol results/benchmark2/test/protocol.json \
+  --output outputs/reproductions/benchmark2_test
 ```
