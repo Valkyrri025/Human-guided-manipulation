@@ -1,0 +1,24 @@
+{
+  "benchmark": 2,
+  "scope": "first joint full-episode training and all-nine validation, not test",
+  "model_selection": "minimum phase-balanced supervised validation action MSE + 0.2 phase CE",
+  "episode_timeout_s": 30,
+  "push_timeout_s": 10,
+  "goal_dwell_s": 0.2,
+  "withdrawal_height_m": 0.948,
+  "withdrawal_dwell_s": 0.2,
+  "no_ground_truth_phase_input": true,
+  "scripted_cartesian_movement": false,
+  "table_contact_invalid": true,
+  "phase_boundary_for_pre_push_gate": "first predicted push",
+  "code_sha256": {
+    "src/humanoid_push/episode_data.py": "c296ff3f21f9880fcef69509410cc196fbfc56cbc1324834259f704a6d233359",
+    "src/humanoid_push/episode_model.py": "b49456c40355c80f1cf0c1eff49063772a81aa8894d09ab052b115d8b36f1f84",
+    "src/humanoid_push/episode_train.py": "52b37486fc1cd1fa4314418e3971761e36bbd9f0acb342aeabfa6271fe14035d",
+    "src/humanoid_push/episode_eval.py": "7affee5c47523e7c4de782fd2fb9548224f6c4d38383b8ad7f96dc3cb35a8005",
+    "src/humanoid_push/push_env.py": "bb12403698fd3ab59a62c96ed202c9714ca00f1e555d85089cb6200d55075ea0",
+    "src/humanoid_push/task_rules.py": "71a6ed5217a7a366b3b13b59f46f5de245016c00d91842b126720d1a90a3835b"
+  },
+  "benchmark1_test_already_seen": true,
+  "benchmark2_test_not_used": true
+}

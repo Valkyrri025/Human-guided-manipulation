@@ -50,3 +50,7 @@ The [cleanup audit](cleanup-2026-10-10.json) records removed files, sizes, retai
 ## Learned-policy benchmark 1
 
 Validation: `outputs/bc_validation_run02/` (7/9); test: `outputs/bc_test/` (8/9). Public metrics, all nine numeric rollouts per split and three successful videos per split are retained in `docs/examples/bc_validation/` and `docs/examples/bc_test/`. The frozen checkpoint is `docs/examples/bc_validation/best.pt`. Initial test geometry and its frozen hashes are in `data/initial_scenes/` and `data/manifests/bc_test_protocol.json`. The original videos are preserved; only opening frames were decoded for test setup.
+
+## Benchmark 2 initial run
+
+`outputs/benchmark2_dataset/` stores full-episode samples, `outputs/benchmark2_training/` stores 200-epoch checkpoints/history, and `outputs/benchmark2_validation/` stores all nine autonomous episode rollouts (2/9 complete successes). Public evidence and two successful videos are in `docs/examples/benchmark2/`. The code/protocol and synthetic teacher-label provenance are documented in `docs/benchmark-2.md` and `data/manifests/benchmark2_protocol.json`.

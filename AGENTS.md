@@ -9,3 +9,5 @@
 - Follow `docs/artifacts.md` for canonical artifact locations and update the workflow/report/schedule after each reviewed batch.
 
 - Reviewing an uploaded training batch normally includes calibration, tracking, teacher replay, saved state/action rollouts, physical validation and retained successful example videos. Treat tracking-only results as an intermediate checkpoint unless the user explicitly limits scope. Name batch outputs `outputs/training_batch_XX/`; identify the controller method in metrics/manifests rather than adding a suffix. Preserve prior method outputs and distinguish their results.
+
+- Benchmark 2 jointly learns all three phases and six Cartesian action components with a GRU; phase labels are training targets, not runtime inputs. The first 200-epoch run completes 2/9 full validation episodes. Preserve this initial checkpoint and failure evidence; benchmark-2 test evaluation has not run. Do not claim offline phase accuracy as task success or add scripted movement while labelling it fully learned. See `docs/benchmark-2.md` and `docs/benchmark-2-results.md`.

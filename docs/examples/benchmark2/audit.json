@@ -1,0 +1,11 @@
+{
+  "regression_tests_passed": 34,
+  "benchmark1_checkpoint_and_code_unchanged": true,
+  "benchmark2_code_matches_pre_evaluation_protocol": true,
+  "all_nine_validation_rollouts_finite": true,
+  "successful_videos_fully_decoded_frames": {
+    "validation_004": 338,
+    "validation_005": 309
+  },
+  "benchmark2_test_evaluation_performed": false
+}

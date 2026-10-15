@@ -146,3 +146,7 @@ All nine validation recordings are tracked and teacher-replayed separately: 6/9 
 ## Behavior-cloning implementation
 
 Pushing-only dataset preparation, the 8–64–64–2 MLP, supervised training and closed-loop validation commands are implemented. See [the behavior-cloning workflow](docs/behavior-cloning.md) for inputs, labels, split isolation, installation and commands. Current data: 3,318 training pairs from 37 successful teachers; 423 validation reference pairs. The first policy has completed training and achieved **7/9 validation successes**, with 6.68 mm mean final target distance. See [results, failures and successful videos](docs/bc-validation.md). Final frozen test evaluation achieves **8/9 successes** and 5.44 mm mean target distance; see [the test report and videos](docs/bc-test.md).
+
+## Benchmark 2: full-episode imitation
+
+The [benchmark-2 workflow](docs/benchmark-2.md) trains approach/lowering, pushing and withdrawal **jointly in one recurrent policy**. It predicts phase and Cartesian XYZ/rotation actions, with no ground-truth phase input or scripted Cartesian movement at evaluation. Human-derived pushing and scripted teacher approach/withdrawal labels remain explicitly distinguished. The initial 200-epoch run completes **2/9 validation episodes** under stricter full-episode criteria. See [results and failure analysis](docs/benchmark-2-results.md); high offline phase accuracy does not imply reliable execution.

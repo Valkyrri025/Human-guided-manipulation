@@ -166,3 +166,9 @@ The user completed 200 training epochs and all-nine closed-loop validation. The 
 ## Frozen test benchmark completed
 
 The epoch-143 pushing-only policy achieved **8/9 successes** on opening scenes extracted from the nine test recordings, with 5.44 mm mean final target distance. Only the opening 30 frames supplied starting cube positions and independent drawn-goal calibration; no test pushing trajectory was loaded. The checkpoint/task rules were frozen before test access, and code/geometry were committed before evaluation. All nine numeric rollouts plus three successful videos are retained. See [the final test report](bc-test.md). Benchmark 1 is complete; keep this frozen baseline for subsequent methods.
+
+## Benchmark 2: joint recurrent training
+
+The complete successful robot episodes now supply 12,938 training steps and 1,983 validation reference steps. A single GRU policy learns approach/lowering, push and withdrawal together, predicting both phase and six Cartesian controller actions. Scripted teacher phase labels supervise training but are never provided as runtime inputs. No scripted Cartesian approach, orientation, height or withdrawal command remains. The first 200-epoch run selects epoch 193 by joint supervised validation loss (99.85% validation phase accuracy on teacher states). Actual closed-loop completion is assessed separately. See [the full benchmark-2 procedure and criteria](benchmark-2.md).
+
+The initial benchmark-2 closed-loop run completes 2/9 episodes (004, 005). Episode 008 reaches the goal but fails withdrawal; six others time out during pushing. All numerical evidence and two successful videos are retained. See [the initial result](benchmark-2-results.md). No benchmark-2 test evaluation was performed.

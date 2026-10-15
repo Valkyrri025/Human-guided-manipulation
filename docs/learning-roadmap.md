@@ -6,7 +6,7 @@
 
 **Active collection plan:** [recording-plan.md](recording-plan.md), 60 new clips across recording left/right/above, split 42 train / 9 validation / 9 test. All 42 training sources are tracked and teacher-replayed; next is imitation input preparation. The below side uses the existing pilot and explicitly synthetic augmentation due to the wall. The old left-only roadmap/schedule are retained in `docs/archive/`.
 
-Agreed direction: collect a broader personally recorded dataset, train a pushing-only imitation policy, extend imitation to the whole robot episode, then investigate a compact learned dynamics model. These are planned benchmarks; no learned model has been trained yet. The geometric baseline is complete and remains an independent non-learning reference.
+Agreed direction: collect a broader personally recorded dataset, train a pushing-only imitation policy, extend imitation to the whole robot episode, then investigate a compact learned dynamics model. Benchmark 1 is complete (7/9 validation, 8/9 frozen test); benchmark 2 now has a joint recurrent training implementation. The geometric baseline is complete and remains an independent non-learning reference.
 
 ## What the geometric baseline used
 
@@ -23,7 +23,7 @@ Every trial used `pilot_goal` (contact segment 3.1–8.2 s). The other four squa
 ## Benchmark 2: learn approach, push and withdrawal
 
 - Source: the same human-derived episodes, with scripted robot approach/lowering/withdrawal retained as synthetic expert labels.
-- Learn: Cartesian XYZ motion across all phases; orientation may remain scripted initially and must be disclosed. Use phase/progress information or policy memory to resolve phase ambiguity, especially when the cube is already in the square but withdrawal is unfinished.
+- Learn: Cartesian XYZ and rotation commands across all phases, plus supervised phase predictions. One recurrent policy is trained jointly on all three phases; phase labels are targets, not runtime inputs. See [benchmark 2](benchmark-2.md).
 - Script: low-level controller, reset, fixed tool definition and task success/timeout monitor. If phase transitions remain scripted, label this as phase-conditioned imitation, rather than claiming autonomous learned sequencing.
 - Expand robot initial poses/approach offsets in simulation, with checked expert labels, if the original identical scripted approach offers insufficient variety. These are synthetic augmentations, not new human demonstrations.
 - Evaluate: target success plus a defined withdrawal-clearance endpoint, full-episode completion time, and approach/tool-table contacts. Preserve the 10-second pushing benchmark for comparison; define a separate full-episode cap before this benchmark. The current approach alone takes about 9 simulated seconds, so a 10-second total cap would be inappropriate.
