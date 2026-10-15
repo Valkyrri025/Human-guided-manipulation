@@ -1,0 +1,88 @@
+{
+  "video": "data/raw/train_045.mp4",
+  "video_sha256": "b86c89799d75183ce5a644bf2de92c8a6777abb6b477ba96d22ea4c391f73433",
+  "frames": 312,
+  "fps": 30.0,
+  "duration_s": 10.4,
+  "frame_size_px": [
+    720,
+    1280
+  ],
+  "decoded_overlay_frames": null,
+  "image_orientation": "display",
+  "overlay_generated": false,
+  "object_detected_frames": 312,
+  "finger_detected_frames": 229,
+  "finger_first_visible_s": 1.3,
+  "finger_last_visible_s": 8.9,
+  "finger_missing_inside_visible_interval": 0,
+  "calibration_fallback_frames": 0,
+  "max_corner_shift_px": 2.5,
+  "object_start_xy_m": [
+    0.08893834799528122,
+    0.11740656569600105
+  ],
+  "object_end_xy_m": [
+    0.16962847113609314,
+    0.13718430697917938
+  ],
+  "observed_object_displacement_m": 0.08307860749160235,
+  "largest_object_frame_step_m": 0.0016955644280894067,
+  "largest_finger_frame_step_m": 0.014148051624828042,
+  "independent_goal": {
+    "source": "independent drawn square in opening frame",
+    "center_source": "black centre-cross centroid",
+    "center_px": [
+      359.45714285714286,
+      539.4285714285714
+    ],
+    "center_table_xy_m": [
+      0.1709243804216385,
+      0.14016474783420563
+    ],
+    "corners_px": [
+      [
+        330.0,
+        510.0
+      ],
+      [
+        328.0,
+        568.0
+      ],
+      [
+        388.0,
+        570.0
+      ],
+      [
+        389.0,
+        510.0
+      ]
+    ],
+    "corners_table_xy_m": [
+      [
+        0.15576638281345367,
+        0.12496556341648102
+      ],
+      [
+        0.15477444231510162,
+        0.15480944514274597
+      ],
+      [
+        0.18558718264102936,
+        0.1559230387210846
+      ],
+      [
+        0.18608158826828003,
+        0.12508445978164673
+      ]
+    ],
+    "success_center_tolerance_m": 0.01
+  },
+  "limitations": [
+    "No lens distortion or marker-height correction",
+    "Tracks marker centres, not physical finger contact point",
+    "No interpolation of missing detections",
+    "Object endpoint is observed outcome; independent target saved separately when present",
+    "No robot actions or pushing success evaluation generated at this checkpoint"
+  ]
+}

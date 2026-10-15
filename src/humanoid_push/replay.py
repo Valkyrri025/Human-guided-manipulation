@@ -24,7 +24,7 @@ from .retargeting import adapt_reference
 from .teacher import object_tracking_target
 
 
-def prepare_reference(tracks_path, calibration_path, start_s, end_s, radius):
+def prepare_reference(tracks_path, calibration_path, start_s, end_s, radius, *, require_continuous_finger=True):
     tracks = np.load(tracks_path)
     calibration = json.loads(calibration_path.read_text())
     if 'image_orientation' in tracks.files and tracks['image_orientation'].item()!=calibration.get('image_orientation','stored'):
@@ -33,8 +33,10 @@ def prepare_reference(tracks_path, calibration_path, start_s, end_s, radius):
         raise ValueError('Tracks do not match this calibration; regenerate tracks')
     time, obj, finger = tracks['time_s'], tracks['object_xy_m'], tracks['finger_xy_m']
     selected = (time >= start_s) & (time <= end_s)
-    if selected.sum() < 5 or not np.isfinite(finger[selected]).all():
+    if selected.sum() < 5 or (require_continuous_finger and not np.isfinite(finger[selected]).all()):
         raise ValueError('Contact segment must contain at least five valid finger detections with no gaps')
+    if not require_continuous_finger and not np.isfinite(obj[selected]).all():
+        raise ValueError('Human-object teacher requires continuous finite object tracks throughout contact')
     obj_start = np.median(obj[:30], axis=0)
     obj_end = np.median(obj[-15:], axis=0)
     direction = obj_end-obj_start
@@ -133,7 +135,8 @@ def main():
         parser.error('--goal-dwell-s cannot be negative')
     args.output.mkdir(parents=True, exist_ok=True)
     tool_radius=.004
-    reference = prepare_reference(args.tracks, args.calibration, args.start_s, args.end_s, tool_radius)
+    reference = prepare_reference(args.tracks, args.calibration, args.start_s, args.end_s, tool_radius,
+                                  require_continuous_finger=args.push_controller=='finger-replay')
     if args.push_controller=='human-object-feedback' and not np.isfinite(reference['object_reference_xy']).all():
         parser.error('Human-object teacher requires continuous finite object tracks throughout contact')
     if args.push_controller=='human-object-feedback' and (args.retargeting!='absolute' or np.any(np.asarray(args.start_offset_m)!=0)):
@@ -319,6 +322,7 @@ def main():
             'push_tracking_rmse_m':float(np.sqrt(np.mean(np.sum((states[push,:3]-goals[push])**2,axis=1)))),
             'finite_state':finite, 'tracks_sha256':hashlib.sha256(args.tracks.read_bytes()).hexdigest(),
             'push_controller':args.push_controller,
+            'missing_finger_reference_frames':int(np.sum(~np.isfinite(reference['reference_xy']).all(axis=1))),
             'observations':('simulator eef pose for control; cube pose/orientation for termination, logging and diagnostics; no XY steering from cube state' if args.push_controller=='finger-replay' else 'scripted teacher: simulator cube position/orientation steers XY to the recorded human object trajectory; fixed initial tool yaw; feedback gain 0.75 capped at 6 mm'),
             'limitations':['Pilot tuning result, not held-out success','Target source is recorded explicitly; independent drawn goal used when calibrated',
                           'Assumed table/object friction; marker parallax uncorrected','Scripted height, orientation, approach and withdrawal',

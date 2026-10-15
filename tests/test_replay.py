@@ -34,6 +34,22 @@ def test_replay_rejects_missing_contact_marker_instead_of_inventing_motion(tmp_p
         prepare_reference(tracks,calibration,1.,5.,.004)
 
 
+def test_object_teacher_keeps_real_pause_and_missing_finger_explicit(tmp_path):
+    tracks,calibration,times,_=example(tmp_path,gap=True)
+    data=dict(np.load(tracks))
+    data['object_xy_m'][70:100]=data['object_xy_m'][70]
+    np.savez(tracks,**data)
+    result=prepare_reference(tracks,calibration,1.,5.,.004,require_continuous_finger=False)
+    selected=(times>=1.)&(times<=5.)
+    np.testing.assert_array_equal(result['time_s'],times[selected]-1.)
+    np.testing.assert_allclose(result['object_reference_xy'],data['object_xy_m'][selected]-[.15,.1485])
+    assert np.isnan(result['reference_xy'][80-30]).all()
+    data['object_xy_m'][80]=np.nan
+    np.savez(tracks,**data)
+    with pytest.raises(ValueError,match='continuous finite object'):
+        prepare_reference(tracks,calibration,1.,5.,.004,require_continuous_finger=False)
+
+
 def test_independent_target_does_not_come_from_recorded_endpoint(tmp_path):
     tracks,calibration,_,_=example(tmp_path)
     cfg=json.loads(calibration.read_text())

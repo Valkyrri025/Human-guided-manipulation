@@ -1,0 +1,47 @@
+{
+  "episode": "validation_005",
+  "benchmark": 2,
+  "passed": false,
+  "stop_reason": "completed",
+  "episode_elapsed_s": 15.5,
+  "push_elapsed_s": 3.949999999999994,
+  "push_started_s": 8.95,
+  "episode_timeout_s": 30.0,
+  "push_timeout_s": 10.0,
+  "goal_dwell_achieved": true,
+  "withdrawal_height_threshold_m": 0.948,
+  "final_eef_height_m": 0.9573878257895473,
+  "final_target_distance_m": 0.005244761578261792,
+  "final_cube_inside_goal": true,
+  "finite_state": true,
+  "max_object_lift_m": 0.0,
+  "stayed_on_table": true,
+  "displacement_before_predicted_push_m": 1.2849166231250388e-12,
+  "tool_object_contact_steps": 70,
+  "tool_table_contact_steps": 1,
+  "predicted_phase_steps": [
+    179,
+    80,
+    51
+  ],
+  "phase_transitions": [
+    [
+      0.0,
+      "approach"
+    ],
+    [
+      8.950000000000001,
+      "push"
+    ],
+    [
+      12.950000000000001,
+      "withdraw"
+    ]
+  ],
+  "scripted_movement": false,
+  "ground_truth_phase_supplied": false,
+  "recorded_future_path_accessed": false,
+  "gripper": "fixed closed",
+  "seed": 7,
+  "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+}

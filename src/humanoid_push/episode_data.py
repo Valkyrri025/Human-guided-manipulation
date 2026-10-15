@@ -40,11 +40,14 @@ def features(states,cube_wxyz,eef_xyzw,goal,polygon,size):
     return x
 
 
-def load_split(root,split):
+def load_split(root,split,*,training_index=None):
     if split not in ('train','validation'):
         raise ValueError('Only training and validation may supply learning data')
     filename='training_rollout_index.json' if split=='train' else 'validation_rollout_index.json'
-    index=json.loads((root/'data/manifests'/filename).read_text())
+    index_path=root/'data/manifests'/filename
+    if split=='train' and training_index is not None:
+        index_path=root/Path(training_index)
+    index=json.loads(index_path.read_text())
     episodes=[];sources=[];seen=set()
     for ep in index['episodes']:
         if ep['split']!=split or ep['episode'] in seen:
@@ -85,9 +88,9 @@ def pad(episodes):
     return x,y,phase,mask
 
 
-def prepare(root,output):
+def prepare(root,output,*,training_index=None):
     if output.exists() and any(output.iterdir()):raise ValueError('Choose a fresh dataset output folder')
-    tr,ts=load_split(root,'train');va,vs=load_split(root,'validation')
+    tr,ts=load_split(root,'train',training_index=training_index);va,vs=load_split(root,'validation')
     if ({r['episode'] for r in ts}&{r['episode'] for r in vs} or
         {r['sha256'] for r in ts}&{r['sha256'] for r in vs}):raise ValueError('Source leakage')
     all_x=np.concatenate([r[0] for r in tr]);mean=np.zeros(15,np.float32);std=np.ones(15,np.float32)
@@ -108,6 +111,9 @@ def prepare(root,output):
         'source_provenance':'human-derived pushing; scripted teacher approach/lower/settle/withdrawal',
         'normalization':'first six position/height features, training statistics only',
         'initial_pose_coverage':'one fixed robot reset pose; no claim of arbitrary initial joint configurations'}
+    if training_index is not None:
+        report['training_index']=str(training_index)
+        report['training_index_sha256']=hashlib.sha256((root/Path(training_index)).read_bytes()).hexdigest()
     (output/'provenance.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 
@@ -116,7 +122,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--root',type=Path,default=Path('.'))
     p.add_argument('--output',type=Path,default=Path('outputs/benchmark2_dataset'))
-    a=p.parse_args();r=prepare(a.root,a.output)
+    p.add_argument('--training-index',type=Path,help='Explicit training-only index; default baseline and validation index stay unchanged')
+    a=p.parse_args();r=prepare(a.root,a.output,training_index=a.training_index)
     print(json.dumps({k:r[k] for k in ['train_frames','validation_frames','train_phase_frames']},indent=2))
 
 

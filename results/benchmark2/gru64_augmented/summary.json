@@ -1,0 +1,1003 @@
+{
+  "benchmark": 2,
+  "split": "validation",
+  "successes": 1,
+  "total": 9,
+  "mean_final_target_distance_m": 0.052074867852694176,
+  "checkpoint_sha256": "7b277489c4cdc76be80526a3892898af0403ff3079e62d9479e063b8a47e4791",
+  "checkpoint_metadata": {
+    "status": "trained",
+    "benchmark": 2,
+    "feature_version": "full-episode-gru-v1",
+    "seed": 7,
+    "epochs": 1000,
+    "architecture": "15 -> Linear64/ReLU -> GRU64 -> joint phase3 + phase-mixture action6",
+    "learning_rate": 0.001,
+    "batch_size_episodes": 8,
+    "phase_loss_coefficient": 0.2,
+    "selection": "minimum phase-balanced validation action MSE + 0.2 phase cross-entropy",
+    "dataset_sha256": "0e73f367bb5d4aacf487563c46c48dce724795c28d389283633c3c86756f3476",
+    "provenance": {
+      "feature_version": "full-episode-gru-v1",
+      "feature_names": [
+        "eef_minus_cube_x",
+        "eef_minus_cube_y",
+        "goal_minus_cube_x",
+        "goal_minus_cube_y",
+        "eef_height_above_table",
+        "cube_height_above_table",
+        "cube_yaw_sin",
+        "cube_yaw_cos",
+        "eef_rotation_column_0_0",
+        "eef_rotation_column_0_1",
+        "eef_rotation_column_0_2",
+        "eef_rotation_column_1_0",
+        "eef_rotation_column_1_1",
+        "eef_rotation_column_1_2",
+        "cube_inside_goal"
+      ],
+      "phases": [
+        "approach",
+        "push",
+        "withdraw"
+      ],
+      "phase_mapping": {
+        "approach": 0,
+        "lower": 0,
+        "settle": 0,
+        "human_push": 1,
+        "goal_dwell": 1,
+        "reference_hold": 1,
+        "withdraw": 2,
+        "final_settle": 2
+      },
+      "action_outputs": "world-frame OSC XYZ and rotation-vector commands; gripper fixed closed",
+      "phase_input": false,
+      "memory": "GRU hidden state, reset for each episode; no teacher-forced phase input",
+      "train_sources": [
+        {
+          "episode": "train_001",
+          "frames": 333,
+          "rollout": "data/robot_rollouts/train/train_001/rollout.npz",
+          "sha256": "09a81b01d24fe60770f47fb63c703d2dfecd12fce86ec26439ac3495171d8be2",
+          "phase_frames": [
+            180,
+            73,
+            80
+          ]
+        },
+        {
+          "episode": "train_002",
+          "frames": 318,
+          "rollout": "data/robot_rollouts/train/train_002/rollout.npz",
+          "sha256": "0cc6ead30e592273ff17d24fc12a4a297b0eb323fec22699b41b59013116f615",
+          "phase_frames": [
+            180,
+            58,
+            80
+          ]
+        },
+        {
+          "episode": "train_004",
+          "frames": 348,
+          "rollout": "data/robot_rollouts/train/train_004/rollout.npz",
+          "sha256": "e7c7f669bbf3fd4252163efde75c4ef5fb1e09fbbefe4e22127148ecee76e59b",
+          "phase_frames": [
+            180,
+            88,
+            80
+          ]
+        },
+        {
+          "episode": "train_005",
+          "frames": 327,
+          "rollout": "data/robot_rollouts/train/train_005/rollout.npz",
+          "sha256": "24de60b9b320a2b61e57f0592c240afacdb0d8649349158024102f6c60ca2745",
+          "phase_frames": [
+            180,
+            67,
+            80
+          ]
+        },
+        {
+          "episode": "train_006",
+          "frames": 340,
+          "rollout": "data/robot_rollouts/train/train_006/rollout.npz",
+          "sha256": "d33de2359d5710ce172c8eb29bd699e2cb7bfb167feb71d31df5e6e97587f4eb",
+          "phase_frames": [
+            180,
+            80,
+            80
+          ]
+        },
+        {
+          "episode": "train_007",
+          "frames": 363,
+          "rollout": "data/robot_rollouts/train/train_007/rollout.npz",
+          "sha256": "b8112a76cac9232fcca7235393a1a6380f72c27690a02d2a159b48d7a0da0562",
+          "phase_frames": [
+            180,
+            103,
+            80
+          ]
+        },
+        {
+          "episode": "train_008",
+          "frames": 340,
+          "rollout": "data/robot_rollouts/train/train_008/rollout.npz",
+          "sha256": "f36a1b9156c331af291f2b40a88f52dc5818b99108d541987931209c4beacbe8",
+          "phase_frames": [
+            180,
+            80,
+            80
+          ]
+        },
+        {
+          "episode": "train_010",
+          "frames": 359,
+          "rollout": "data/robot_rollouts/train/train_010/rollout.npz",
+          "sha256": "3bd8435a78f11ea150600baf9e43ec23aab9e8c159e632bc0c05bb5818f40fff",
+          "phase_frames": [
+            180,
+            99,
+            80
+          ]
+        },
+        {
+          "episode": "train_011",
+          "frames": 338,
+          "rollout": "data/robot_rollouts/train/train_011/rollout.npz",
+          "sha256": "0df1ae12b893cf936fb923c251600154aab8c8dbcfb7e2258de00310e5d9c4b6",
+          "phase_frames": [
+            180,
+            78,
+            80
+          ]
+        },
+        {
+          "episode": "train_012",
+          "frames": 359,
+          "rollout": "data/robot_rollouts/train/train_012/rollout.npz",
+          "sha256": "3258efaf4bd9f2166f95e05d9c1c3729337221cbb2314c3c371e0dc4403b0deb",
+          "phase_frames": [
+            180,
+            99,
+            80
+          ]
+        },
+        {
+          "episode": "train_013",
+          "frames": 351,
+          "rollout": "data/robot_rollouts/train/train_013/rollout.npz",
+          "sha256": "8d39a61fd1e4b0893f0727b24485f736bc18a061a2e00b82851db147c83afd5d",
+          "phase_frames": [
+            180,
+            91,
+            80
+          ]
+        },
+        {
+          "episode": "train_014",
+          "frames": 343,
+          "rollout": "data/robot_rollouts/train/train_014/rollout.npz",
+          "sha256": "0691eb37758242c9dd589859aee1c0496efe71adaa4167f053604830bcdc6191",
+          "phase_frames": [
+            180,
+            83,
+            80
+          ]
+        },
+        {
+          "episode": "train_015",
+          "frames": 350,
+          "rollout": "data/robot_rollouts/train/train_015/rollout.npz",
+          "sha256": "25beb2f21436ab705bea38c683061f038e0963e0f6538c9456364bda4d193fbd",
+          "phase_frames": [
+            180,
+            90,
+            80
+          ]
+        },
+        {
+          "episode": "train_016",
+          "frames": 325,
+          "rollout": "data/robot_rollouts/train/train_016/rollout.npz",
+          "sha256": "b653b4ff328c03b757c2b0108c24f37ba2c62aab3e2d0f7e9ed73f25a3b17918",
+          "phase_frames": [
+            180,
+            65,
+            80
+          ]
+        },
+        {
+          "episode": "train_017",
+          "frames": 339,
+          "rollout": "data/robot_rollouts/train/train_017/rollout.npz",
+          "sha256": "a0d5e1f02895c33e08e8090656204488571315a07026401630226ba84dba8477",
+          "phase_frames": [
+            180,
+            79,
+            80
+          ]
+        },
+        {
+          "episode": "train_018",
+          "frames": 332,
+          "rollout": "data/robot_rollouts/train/train_018/rollout.npz",
+          "sha256": "c1f4d5cf0cb21561239720102da6a7dea10a93977b741d956bf00fcd1c1dbcd0",
+          "phase_frames": [
+            180,
+            72,
+            80
+          ]
+        },
+        {
+          "episode": "train_019",
+          "frames": 381,
+          "rollout": "data/robot_rollouts/train/train_019/rollout.npz",
+          "sha256": "11a201397e45916c15a18de0ed292e235a03c4ae6630fffe573a4ffbcdca6c76",
+          "phase_frames": [
+            180,
+            121,
+            80
+          ]
+        },
+        {
+          "episode": "train_020",
+          "frames": 339,
+          "rollout": "data/robot_rollouts/train/train_020/rollout.npz",
+          "sha256": "dff216f239211c5407e7d0feb514f49091ea358047220c974e2860d98d265d88",
+          "phase_frames": [
+            180,
+            79,
+            80
+          ]
+        },
+        {
+          "episode": "train_021",
+          "frames": 343,
+          "rollout": "data/robot_rollouts/train/train_021/rollout.npz",
+          "sha256": "b34102683c200d447408e2fae793ca273dc7847ae947c1bf474f911a54718411",
+          "phase_frames": [
+            180,
+            83,
+            80
+          ]
+        },
+        {
+          "episode": "train_023",
+          "frames": 350,
+          "rollout": "data/robot_rollouts/train/train_023/rollout.npz",
+          "sha256": "a7a9e6973c57b3371646df3c86f41c6149ce41fe6a53e24bcca209af430fc777",
+          "phase_frames": [
+            180,
+            90,
+            80
+          ]
+        },
+        {
+          "episode": "train_024",
+          "frames": 354,
+          "rollout": "data/robot_rollouts/train/train_024/rollout.npz",
+          "sha256": "aa73182d5411e5c16b751e24b2022887cefac722dc2df2cd5b48e3d49b14801f",
+          "phase_frames": [
+            180,
+            94,
+            80
+          ]
+        },
+        {
+          "episode": "train_025",
+          "frames": 364,
+          "rollout": "data/robot_rollouts/train/train_025/rollout.npz",
+          "sha256": "96e8ad1a8194cef5ba713c9b93d720fcf8128a781a5fbabcb90e9e125da1fbbe",
+          "phase_frames": [
+            180,
+            104,
+            80
+          ]
+        },
+        {
+          "episode": "train_026",
+          "frames": 350,
+          "rollout": "data/robot_rollouts/train/train_026/rollout.npz",
+          "sha256": "4edc640c132ba2e8a2d064ec7d448dfb7278882afd3bbcc522a43974e417f812",
+          "phase_frames": [
+            180,
+            90,
+            80
+          ]
+        },
+        {
+          "episode": "train_028",
+          "frames": 363,
+          "rollout": "data/robot_rollouts/train/train_028/rollout.npz",
+          "sha256": "89fda81f3736c9853cad89bee1abb6b53d9a54ee66a215b35df1bcf7bb928a79",
+          "phase_frames": [
+            180,
+            103,
+            80
+          ]
+        },
+        {
+          "episode": "train_029",
+          "frames": 349,
+          "rollout": "data/robot_rollouts/train/train_029/rollout.npz",
+          "sha256": "2f7e61b9a83243d193e80ee2800dff6f4cf8c2c24c839ef7d9a9104b393eacf1",
+          "phase_frames": [
+            180,
+            89,
+            80
+          ]
+        },
+        {
+          "episode": "train_030",
+          "frames": 375,
+          "rollout": "data/robot_rollouts/train/train_030/rollout.npz",
+          "sha256": "10b8cb51b789733ed0cdc2f62d69e6ce50e9c0b4a4be2db4db4af5f1eccac4dc",
+          "phase_frames": [
+            180,
+            115,
+            80
+          ]
+        },
+        {
+          "episode": "train_031",
+          "frames": 418,
+          "rollout": "data/robot_rollouts/train/train_031/rollout.npz",
+          "sha256": "8d4f8de25b08765a59a55013433f8ad76f81710ebd2707fc79550ef1c0f8b9de",
+          "phase_frames": [
+            180,
+            158,
+            80
+          ]
+        },
+        {
+          "episode": "train_032",
+          "frames": 419,
+          "rollout": "data/robot_rollouts/train/train_032/rollout.npz",
+          "sha256": "ee00749be3f290d5499980571825393836226afccf2f2345d2d83608373abc28",
+          "phase_frames": [
+            180,
+            159,
+            80
+          ]
+        },
+        {
+          "episode": "train_033",
+          "frames": 340,
+          "rollout": "data/robot_rollouts/train/train_033/rollout.npz",
+          "sha256": "bfc35dce45444cff175d8426c336b3738b507cc7c9dfacafaee0b85d552003ff",
+          "phase_frames": [
+            180,
+            80,
+            80
+          ]
+        },
+        {
+          "episode": "train_034",
+          "frames": 377,
+          "rollout": "data/robot_rollouts/train/train_034/rollout.npz",
+          "sha256": "a0d90de916132a4fff8b9aa9b7ac654e394cc1d79e539114b1ca82a0b9f2d3bc",
+          "phase_frames": [
+            180,
+            117,
+            80
+          ]
+        },
+        {
+          "episode": "train_035",
+          "frames": 365,
+          "rollout": "data/robot_rollouts/train/train_035/rollout.npz",
+          "sha256": "d4a041b8dd18ea9385ec6aacd4e23baa7ec360dee2a8e74fff4c4f82cf1d46c6",
+          "phase_frames": [
+            180,
+            105,
+            80
+          ]
+        },
+        {
+          "episode": "train_036",
+          "frames": 354,
+          "rollout": "data/robot_rollouts/train/train_036/rollout.npz",
+          "sha256": "67d2da36123872d20d7f1cf03739192245901fb16c0de57ab5812ab12299f30f",
+          "phase_frames": [
+            180,
+            94,
+            80
+          ]
+        },
+        {
+          "episode": "train_037",
+          "frames": 356,
+          "rollout": "data/robot_rollouts/train/train_037/rollout.npz",
+          "sha256": "816f322c93c9f18f15b558a1ad87672891080a2d78680bb0a007e2a4dd82d138",
+          "phase_frames": [
+            180,
+            96,
+            80
+          ]
+        },
+        {
+          "episode": "train_038",
+          "frames": 355,
+          "rollout": "data/robot_rollouts/train/train_038/rollout.npz",
+          "sha256": "69c596ebf6d9db891e7904aa2bfdd9223173ed0bd31da82c076273f7cd895f21",
+          "phase_frames": [
+            180,
+            95,
+            80
+          ]
+        },
+        {
+          "episode": "train_040",
+          "frames": 312,
+          "rollout": "data/robot_rollouts/train/train_040/rollout.npz",
+          "sha256": "03853e882b5335bd7d491810e64febf04e172a2c72781b184eecb4147e01e8a8",
+          "phase_frames": [
+            180,
+            52,
+            80
+          ]
+        },
+        {
+          "episode": "train_041",
+          "frames": 306,
+          "rollout": "data/robot_rollouts/train/train_041/rollout.npz",
+          "sha256": "d3ff29f1404e9200113a169e63c370300a1435df32230b2b0b596d63c7f788f8",
+          "phase_frames": [
+            180,
+            46,
+            80
+          ]
+        },
+        {
+          "episode": "train_042",
+          "frames": 303,
+          "rollout": "data/robot_rollouts/train/train_042/rollout.npz",
+          "sha256": "f1a2ebe619c770df19bf1e65fd520ace3386ae6f59bdd3767a5cdbcce1d985dc",
+          "phase_frames": [
+            180,
+            43,
+            80
+          ]
+        },
+        {
+          "episode": "train_045",
+          "frames": 377,
+          "rollout": "outputs/experiments/augmentation_pilot/train_045/rollout.npz",
+          "sha256": "9e721862eb70c19f548646ae8fbd1a67ca5c10f1720ce01aca03d07a53d24c40",
+          "phase_frames": [
+            180,
+            117,
+            80
+          ]
+        },
+        {
+          "episode": "train_046",
+          "frames": 385,
+          "rollout": "outputs/experiments/augmentation_pilot/train_046/rollout.npz",
+          "sha256": "cedd3dceab0e5a5200921f096f4e2a2db332f90ae2cb2d767bd4b715bb117658",
+          "phase_frames": [
+            180,
+            125,
+            80
+          ]
+        },
+        {
+          "episode": "train_048",
+          "frames": 374,
+          "rollout": "outputs/experiments/augmentation_pilot/train_048/rollout.npz",
+          "sha256": "a773e5ba9bea3450bd7ae41bd520921e611961808b1aa640470716652cbfbaef",
+          "phase_frames": [
+            180,
+            114,
+            80
+          ]
+        }
+      ],
+      "validation_sources": [
+        {
+          "episode": "validation_001",
+          "frames": 344,
+          "rollout": "data/robot_rollouts/validation/validation_001/rollout.npz",
+          "sha256": "296bdcb0cc157178e3cdc97a523899f8f07b7c8dca11f940a182749173aa5b90",
+          "phase_frames": [
+            180,
+            84,
+            80
+          ]
+        },
+        {
+          "episode": "validation_002",
+          "frames": 334,
+          "rollout": "data/robot_rollouts/validation/validation_002/rollout.npz",
+          "sha256": "d6ccef7f8f3c8cdf6303088ec723437546afb690065a93d260607729e07c85d3",
+          "phase_frames": [
+            180,
+            74,
+            80
+          ]
+        },
+        {
+          "episode": "validation_004",
+          "frames": 323,
+          "rollout": "data/robot_rollouts/validation/validation_004/rollout.npz",
+          "sha256": "81a56992bfb740f125cd74bc64c3e412e8d1bd40267f6360181d498c92118a22",
+          "phase_frames": [
+            180,
+            63,
+            80
+          ]
+        },
+        {
+          "episode": "validation_005",
+          "frames": 333,
+          "rollout": "data/robot_rollouts/validation/validation_005/rollout.npz",
+          "sha256": "ec0a2b74271d43d50b67ec8d5372693f58473476b266aa2f5bed35ef468b6480",
+          "phase_frames": [
+            180,
+            73,
+            80
+          ]
+        },
+        {
+          "episode": "validation_006",
+          "frames": 323,
+          "rollout": "data/robot_rollouts/validation/validation_006/rollout.npz",
+          "sha256": "1d312807aee6265784d9c82b18012010659c80c11fd5465d6f486eef7745c37d",
+          "phase_frames": [
+            180,
+            63,
+            80
+          ]
+        },
+        {
+          "episode": "validation_008",
+          "frames": 326,
+          "rollout": "data/robot_rollouts/validation/validation_008/rollout.npz",
+          "sha256": "c01d9468aecfa88395a082f3da8f209e34827175c85f4d2110226b6f9c59f787",
+          "phase_frames": [
+            180,
+            66,
+            80
+          ]
+        }
+      ],
+      "train_frames": 14074,
+      "validation_frames": 1983,
+      "train_phase_frames": [
+        7200,
+        3674,
+        3200
+      ],
+      "phase_weights_train_only": [
+        0.6515740752220154,
+        1.2769007682800293,
+        1.4660416841506958
+      ],
+      "test_used_for_learning": false,
+      "source_provenance": "human-derived pushing; scripted teacher approach/lower/settle/withdrawal",
+      "normalization": "first six position/height features, training statistics only",
+      "initial_pose_coverage": "one fixed robot reset pose; no claim of arbitrary initial joint configurations",
+      "training_index": "data/manifests/benchmark2_augmented_training_index.json",
+      "training_index_sha256": "2a3462c0c7ca00a101aedaceed15e6280441bac3fa107993ea6c51abf2c3270f"
+    },
+    "ground_truth_phase_at_runtime": false,
+    "scripted_movement_at_runtime": false,
+    "epoch": 938,
+    "train_joint_loss": 0.002641595434397459,
+    "validation_joint_loss": 0.0033483754377812147,
+    "validation_action_mse": 0.0032083310652524233,
+    "validation_phase_ce": 0.0007002216880209744,
+    "validation_phase_accuracy": 1.0,
+    "validation_phase_accuracy_by_phase": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "episodes": [
+    {
+      "episode": "validation_001",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 19.450000000000003,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 9.45,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.8707509398939972,
+      "final_target_distance_m": 0.1541090492856542,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 1.561768422353449e-05,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2791157037707523e-12,
+      "tool_object_contact_steps": 134,
+      "tool_table_contact_steps": 0,
+      "predicted_phase_steps": [
+        189,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.450000000000001,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_002",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 19.35,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 9.35,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.8649742288583915,
+      "final_target_distance_m": 0.09002084871468828,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2300508037866754e-12,
+      "tool_object_contact_steps": 0,
+      "tool_table_contact_steps": 23,
+      "predicted_phase_steps": [
+        187,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.35,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_003",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 18.55,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 8.549999999999999,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.8662331197782421,
+      "final_target_distance_m": 0.102859188266052,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.4150347560359933e-12,
+      "tool_object_contact_steps": 0,
+      "tool_table_contact_steps": 65,
+      "predicted_phase_steps": [
+        171,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          8.55,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_004",
+      "benchmark": 2,
+      "passed": true,
+      "stop_reason": "completed",
+      "episode_elapsed_s": 15.950000000000001,
+      "push_elapsed_s": 4.399999999999992,
+      "push_started_s": 9.0,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": true,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.9559591372554775,
+      "final_target_distance_m": 0.003718230696476829,
+      "final_cube_inside_goal": true,
+      "finite_state": true,
+      "max_object_lift_m": 7.521096269669236e-06,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2849027453372912e-12,
+      "tool_object_contact_steps": 79,
+      "tool_table_contact_steps": 0,
+      "predicted_phase_steps": [
+        180,
+        89,
+        50
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.0,
+          "push"
+        ],
+        [
+          13.450000000000001,
+          "withdraw"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_005",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "completed",
+      "episode_elapsed_s": 15.5,
+      "push_elapsed_s": 3.949999999999994,
+      "push_started_s": 8.95,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": true,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.9573878257895473,
+      "final_target_distance_m": 0.005244761578261792,
+      "final_cube_inside_goal": true,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2849166231250388e-12,
+      "tool_object_contact_steps": 70,
+      "tool_table_contact_steps": 1,
+      "predicted_phase_steps": [
+        179,
+        80,
+        51
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          8.950000000000001,
+          "push"
+        ],
+        [
+          12.950000000000001,
+          "withdraw"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_006",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 19.150000000000002,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 9.15,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.8662929554366612,
+      "final_target_distance_m": 0.029527056992112315,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2899403767363538e-12,
+      "tool_object_contact_steps": 191,
+      "tool_table_contact_steps": 0,
+      "predicted_phase_steps": [
+        183,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.15,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_007",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 18.95,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 8.95,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.880467024014117,
+      "final_target_distance_m": 0.03405497211304774,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 6.296136290440124e-06,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.2849304992769221e-12,
+      "tool_object_contact_steps": 104,
+      "tool_table_contact_steps": 0,
+      "predicted_phase_steps": [
+        179,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          8.950000000000001,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_008",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "completed",
+      "episode_elapsed_s": 16.25,
+      "push_elapsed_s": 4.399999999999992,
+      "push_started_s": 9.2,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": true,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.9573588866642874,
+      "final_target_distance_m": 0.004730087115426624,
+      "final_cube_inside_goal": true,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.3418433031375798e-13,
+      "tool_object_contact_steps": 79,
+      "tool_table_contact_steps": 1,
+      "predicted_phase_steps": [
+        184,
+        89,
+        52
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.200000000000001,
+          "push"
+        ],
+        [
+          13.65,
+          "withdraw"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    },
+    {
+      "episode": "validation_009",
+      "benchmark": 2,
+      "passed": false,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 19.450000000000003,
+      "push_elapsed_s": 10.000000000000007,
+      "push_started_s": 9.45,
+      "episode_timeout_s": 30.0,
+      "push_timeout_s": 10.0,
+      "goal_dwell_achieved": false,
+      "withdrawal_height_threshold_m": 0.948,
+      "final_eef_height_m": 0.8667421505002717,
+      "final_target_distance_m": 0.04440961591252783,
+      "final_cube_inside_goal": false,
+      "finite_state": true,
+      "max_object_lift_m": 0.0,
+      "stayed_on_table": true,
+      "displacement_before_predicted_push_m": 1.4429224708027314e-13,
+      "tool_object_contact_steps": 130,
+      "tool_table_contact_steps": 9,
+      "predicted_phase_steps": [
+        189,
+        200,
+        0
+      ],
+      "phase_transitions": [
+        [
+          0.0,
+          "approach"
+        ],
+        [
+          9.450000000000001,
+          "push"
+        ]
+      ],
+      "scripted_movement": false,
+      "ground_truth_phase_supplied": false,
+      "recorded_future_path_accessed": false,
+      "gripper": "fixed closed",
+      "seed": 7,
+      "initial_robot_pose": "same deterministic Panda reset as benchmark 1"
+    }
+  ],
+  "test_used": false,
+  "comparison_note": "Benchmark 2 requires learned approach, orientation, height, phase and withdrawal; benchmark 1 scripts these."
+}

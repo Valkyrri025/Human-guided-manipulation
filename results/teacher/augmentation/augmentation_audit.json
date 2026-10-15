@@ -1,0 +1,133 @@
+{
+  "successful_experts": 3,
+  "total": 6,
+  "episodes": [
+    {
+      "episode": "train_043",
+      "kind": "close",
+      "passed": false,
+      "expert_eligible": false,
+      "source_frames": 264,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 0,
+      "contact_duration_s": 2.4666666666666663,
+      "source_max_deviation_from_endpoint_chord_mm": 2.3228610955424465,
+      "pauses": [],
+      "source_to_sim_object_path_rmse_mm": 4.064902036390668,
+      "final_target_distance_mm": 3.5217270208833087,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_043.mp4",
+      "video_frames": 460
+    },
+    {
+      "episode": "train_044",
+      "kind": "close",
+      "passed": false,
+      "expert_eligible": false,
+      "source_frames": 261,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 0,
+      "contact_duration_s": 3.5,
+      "source_max_deviation_from_endpoint_chord_mm": 7.481310673324081,
+      "pauses": [],
+      "source_to_sim_object_path_rmse_mm": 3.0696672908359206,
+      "final_target_distance_mm": 5.752134855381336,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_044.mp4",
+      "video_frames": 460
+    },
+    {
+      "episode": "train_045",
+      "kind": "pause_resume",
+      "passed": true,
+      "expert_eligible": true,
+      "source_frames": 312,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 0,
+      "contact_duration_s": 5.766666666666666,
+      "source_max_deviation_from_endpoint_chord_mm": 4.046188611872499,
+      "pauses": [
+        {
+          "source_interval_s": [
+            3.5,
+            5.933333333333334
+          ],
+          "duration_s": 2.466666666666667,
+          "sim_max_deviation_from_pause_start_mm": 0.713996207478311
+        }
+      ],
+      "source_to_sim_object_path_rmse_mm": 2.474644961113411,
+      "final_target_distance_mm": 3.0130149309235077,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_045.mp4",
+      "video_frames": 377
+    },
+    {
+      "episode": "train_046",
+      "kind": "pause_resume",
+      "passed": true,
+      "expert_eligible": true,
+      "source_frames": 352,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 20,
+      "contact_duration_s": 6.433333333333334,
+      "source_max_deviation_from_endpoint_chord_mm": 5.434282243340845,
+      "pauses": [
+        {
+          "source_interval_s": [
+            4.466666666666667,
+            6.9
+          ],
+          "duration_s": 2.466666666666667,
+          "sim_max_deviation_from_pause_start_mm": 0.4082381574666591
+        }
+      ],
+      "source_to_sim_object_path_rmse_mm": 2.681623559491584,
+      "final_target_distance_mm": 3.950441622090041,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_046.mp4",
+      "video_frames": 385
+    },
+    {
+      "episode": "train_047",
+      "kind": "curve",
+      "passed": false,
+      "expert_eligible": false,
+      "source_frames": 296,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 0,
+      "contact_duration_s": 5.133333333333333,
+      "source_max_deviation_from_endpoint_chord_mm": 24.485224678329416,
+      "pauses": [],
+      "source_to_sim_object_path_rmse_mm": 44.98664032569489,
+      "final_target_distance_mm": 59.955962145213284,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_047.mp4",
+      "video_frames": 460
+    },
+    {
+      "episode": "train_048",
+      "kind": "curve",
+      "passed": true,
+      "expert_eligible": true,
+      "source_frames": 273,
+      "continuous_object_track": true,
+      "missing_finger_frames_in_segment": 0,
+      "contact_duration_s": 5.366666666666667,
+      "source_max_deviation_from_endpoint_chord_mm": 13.292765170910455,
+      "pauses": [],
+      "source_to_sim_object_path_rmse_mm": 2.507889104478346,
+      "final_target_distance_mm": 3.0115185961393744,
+      "tool_table_contact_steps": 0,
+      "video": "results/teacher/augmentation/train_048.mp4",
+      "video_frames": 374
+    }
+  ],
+  "verification": {
+    "all_raw_sha256_unchanged": true,
+    "all_six_video_frame_counts_verified": true,
+    "tests_passed": 37,
+    "original_51_teacher_references_array_equal": true
+  },
+  "decision": "Enough for a small training-only augmentation pilot; not evidence of policy improvement. Fix teacher failures and add simulation recovery coverage before scaling collection."
+}

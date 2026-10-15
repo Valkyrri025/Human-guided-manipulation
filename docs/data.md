@@ -11,7 +11,7 @@ Original recordings are never rotated, trimmed or overwritten. Tracking uses nat
 - **9 test sources:** benchmark 1 used only the opening 30 frames to define initial scenes. No test future trajectory supplies policy input, training or checkpoint selection.
 - Earlier pilots are development material, not additional independent held-out trials.
 
-`data/raw/` preserves original videos and measurements locally. `data/calibration/` holds reviewed calibration; `data/samples/` holds public time-stamped object/finger tracks. `data/robot_rollouts/train/` and `validation/` contain all 51 current teacher state/action rollouts, including failures. Manifests identify source hashes, contact intervals and eligibility; failures are not silently relabelled as experts.
+`data/raw/` publishes all 75 original personally collected videos and the measurement notes, without rotating, trimming or overwriting the originals. `data/calibration/` holds reviewed calibration; `data/samples/` holds public time-stamped object/finger tracks. `data/robot_rollouts/train/` and `validation/` contain all 51 baseline teacher state/action rollouts, including failures. Manifests identify source hashes, contact intervals and eligibility; failures are not silently relabelled as experts.
 
 The recorded-object feedback teacher follows the human object's recorded path with bounded simulator-state correction and a rigid mounted paddle. Initial approach, fixed tool yaw/height and withdrawal are scripted. The human recordings therefore influence the training labels meaningfully, but these labels are **generated robot actions**, not direct robot demonstrations. The historical finger-only baseline achieved 20/32; the current teacher achieves 37/42 training successes. Historical numerical evidence remains in `data/archive/development-evidence.tar.gz`.
 
@@ -52,3 +52,9 @@ python -m humanoid_push.episode_data
 ```
 
 The caches already exist on this PC under `outputs/bc_dataset/` and `outputs/benchmark2_dataset/`. The full-episode preparer refuses to overwrite an existing dataset; use a new `--output` for an intentional regeneration. Current teacher manifests/indexes point to the relocated canonical data. Frozen experiment provenance retains the paths used at the time; [the folder guide](artifacts.md) explains migration/history.
+
+## Closed augmentation comparison
+
+Six additional training-only recordings, `train_043`–`train_048`, are calibrated and tracked. All six teacher rollouts and metrics are preserved in `data/robot_rollouts/train/`; only successful 045, 046 and 048 extend the separate augmented index to 40 experts. Baseline indexes and splits remain unchanged. The augmented policy scored 1/9 validation, so the original 5/9 benchmark-2 policy is retained. No more recording or training is planned for benchmark 2. See [final report](benchmark-2.md).
+
+The augmented cache is local at `outputs/benchmark2_augmented_dataset/`. To regenerate it into a fresh folder from canonical public teacher data: `python -m humanoid_push.episode_data --training-index data/manifests/benchmark2_augmented_training_index.json --output outputs/reproductions/augmented_dataset`. Do not overwrite the original baseline cache.

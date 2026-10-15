@@ -1,30 +1,27 @@
 # Human-guided manipulation
 
-Personally collected overhead phone recordings guide a simulated Panda pushing a 17 mm block into a drawn square. Human object motion is retargeted into physical simulator rollouts; behavior cloning learns robot actions from those rollouts. These are human-derived robot labels, not direct robot demonstrations.
+A small robot-learning project built from personally collected phone videos of a finger pushing a block into a square. We track the block and finger, calibrate their 2D positions, and retarget the recorded motion to a Panda arm in MuJoCo/robosuite. Successful simulated teacher rollouts provide state/action pairs for behavior cloning.
 
-| Method | Validation | Test | What controls the robot |
-|---|---:|---:|---|
-| Recorded-object teacher | 6/9 | — | Scripted feedback tracking human object motion |
-| **Benchmark 1: pushing-only MLP** | **7/9** | **8/9** | Learned pushing XY; scripted approach, height, orientation and withdrawal |
-| Benchmark 2: GRU64, 200 epochs | 2/9 | — | Learned full episode and phase selection |
-| **Benchmark 2: GRU64, 1,000 epochs** | **5/9** | — | Current best full-episode controller; selected epoch 877 |
-| Benchmark 2: GRU64, 2,000 epochs | 3/9 | — | Selected epoch 1,958 by validation loss |
-| Benchmark 2: residual GRU128, GPU | 1/9 | — | Selected epoch 857; two additional completions fail table-contact validity |
+## Benchmarks
 
-These are small fixed episode sets. Lower demonstration loss did not reliably imply better closed-loop control. Benchmark 1's test set has been seen; it is not a fresh blind test for later methods. Benchmark 2 has no test score.
+| Benchmark | What the policy learns | Validation | Test |
+|---|---|---:|---:|
+| **1: learned pushing** | XY pushing actions; approach, height, orientation and withdrawal are scripted | **7/9** | **8/9** |
+| **2: full-episode learning** | Approach, pushing, withdrawal, end-effector height/orientation and phase selection | **5/9** | Not evaluated |
 
-## Start here
+Benchmark 1 uses a small MLP; benchmark 2 uses a GRU. Policies act from current simulator state and the known goal, without reading future human trajectories. Benchmark 2 is concluded; its best original GRU64 is retained. These are small fixed evaluation sets, not evidence of broad robustness.
 
-- [Data and workflow](docs/data.md): human recordings → calibration/tracks → teacher → state/action labels; split and provenance rules.
-- [Benchmark 1](docs/benchmark-1.md): model, results, train/evaluate commands.
-- [Benchmark 2](docs/benchmark-2.md): architectures, comparisons, GPU commands and failure analysis.
-- [Failure videos](docs/failure-videos.md): all eight explicitly retained larger-model failures.
-- [Recording guide](docs/recording.md) and [60-episode schedule](docs/recording-schedule.csv).
-- [Folder guide](docs/artifacts.md): where to find data, models, videos and historical evidence.
+[Benchmark 1 details](docs/benchmark-1.md) · [Benchmark 2 final report](docs/benchmark-2.md) · [Results and videos](results/README.md)
 
-## Environment
+## Limitations
 
-Linux and Python 3.12; dependencies are pinned in `uv.lock`. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if needed.
+We do not have access to a real robot arm for this project, so human videos are transferred through a scripted simulation teacher rather than collected as direct robot demonstrations. This 2D setup necessarily loses height, force and detailed contact information. A flexible finger can change contact and follow curves that our rigid, fixed-orientation paddle cannot always reproduce.
+
+Human object trajectories guide pushing, while the teacher supplies approach, orientation, height and withdrawal labels. Learning the full sequence therefore adds control difficulty without corresponding measured human supervision. Simulation friction and geometry are approximations, and policies use simulator-state observations rather than camera images. The results demonstrate learning from human-derived data within these limits.
+
+## Installation and quick check
+
+Requires Linux, Python 3.12 and [uv](https://docs.astral.sh/uv/getting-started/installation/). Dependencies are pinned in `uv.lock`.
 
 ```bash
 git clone https://github.com/Valkyrri025/Human-guided-manipulation.git
@@ -35,19 +32,10 @@ MUJOCO_GL=egl push-smoke --output outputs/checks/smoke
 python -m pytest -q
 ```
 
-For the NVIDIA TITAN V, use the separate CUDA environment (already installed on this PC):
+For CUDA PyTorch, create a separate environment with `UV_PROJECT_ENVIRONMENT=.venv-gpu uv sync --locked --extra learning-gpu --group dev`, then activate `.venv-gpu/bin/activate`. This does not change system CUDA.
 
-```bash
-UV_PROJECT_ENVIRONMENT=.venv-gpu uv sync --locked --extra learning-gpu --group dev
-source .venv-gpu/bin/activate
-```
+**[Original human recordings](data/raw/)** are included: 48 training videos, nine validation videos, nine test videos and nine earlier pilot/development videos, personally recorded by the project author. For examples, see [a training push](data/raw/train_001.mp4), [pause/resume](data/raw/train_045.mp4) and [a curved push](data/raw/train_048.mp4).
 
-GPU PyTorch is 2.5.1+cu118; system CUDA and the CPU environment are unchanged. Activate the desired environment and use `python`; an unqualified `uv run` may select the default CPU environment.
+Calibrated tracks, teacher rollouts, selected models and evaluation videos are also included. Installed environments remain local. See the [data workflow](docs/data.md) for dataset preparation, benchmark reports for train/evaluate commands, and [folder guide](docs/artifacts.md) for the file inventory.
 
-`results/` contains the canonical public checkpoints, evaluation rollouts, metrics and videos. The original phone recordings remain local in `data/raw/`; calibrated numeric tracks and derived teacher rollouts are public, so training/evaluation can run without the raw videos. No training is launched automatically.
-
-## Attribution and limitations
-
-[robosuite](https://github.com/ARISE-Initiative/robosuite) supplies the Panda assets and OSC control; [MuJoCo](https://github.com/google-deepmind/mujoco) supplies physics/rendering. Upstream assets retain their licences. Reference: Zhu et al., *robosuite: A Modular Simulation Framework and Benchmark for Robot Learning*, arXiv:2009.12293.
-
-Policies observe simulator state and a known goal; they are not vision-language models or world models. Scripted synthetic labels, planar calibration, assumed friction and limited initial-pose coverage are disclosed in the guides. The user reported a challenge deadline extension; no updated deadline is recorded.
+Built with [robosuite](https://github.com/ARISE-Initiative/robosuite) and [MuJoCo](https://github.com/google-deepmind/mujoco); upstream assets retain their licences.

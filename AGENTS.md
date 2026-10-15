@@ -11,3 +11,7 @@
 - Keep documentation consolidated: README plus data, recording, benchmark-1, benchmark-2, failure-video and artifact guides. Add experiment evidence to existing guides/results rather than another overlapping progress report.
 - New runs go under `outputs/experiments/` or `outputs/reproductions/` with explicit output paths. Preserve the user's trained snapshots in `outputs/checkpoints/`. Inspecting results or rendering videos does not authorize new training.
 - The full verified pre-cleanup backup is recorded in `data/manifests/cleanup_audit.json`. Do not delete requested evidence or unique numerical records during future cleanup without preserving it.
+
+- Benchmark 2 is closed at the user’s request. Augmented GRU64 epoch 938 scored 1/9; retain original epoch 877 (5/9). Do not propose further recording/training by default. Preserve both sets of eight failure clips, including `results/benchmark2/gru64_augmented/`. The final report is `docs/benchmark-2.md`; recent-cleanup audit is `data/manifests/benchmark2_closure_cleanup.json`.
+
+- The user explicitly requested publishing original human demonstrations. All 75 original MP4 files and `pilot_notes.json` in `data/raw/` belong in the public repository, with unchanged bytes. Do not re-ignore these sources or describe them as local-only. Installed environments and regenerable caches remain ignored.

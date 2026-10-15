@@ -1,0 +1,17 @@
+{
+  "collector": "user (personally collected; name not supplied)",
+  "recorded_at": null,
+  "rectangle_width_m": 0.3,
+  "rectangle_height_m": 0.297,
+  "dimension_confirmation": "user confirmed horizontal 30 cm; vertical 29.7 cm",
+  "object_dimensions_m": [
+    0.017,
+    0.017,
+    0.017
+  ],
+  "object_dimensions_precision": "approximate",
+  "object_colour": "green paper patch on die top",
+  "finger_marker_colour": "orange patch on fingernail",
+  "camera_mode": "0.5x reported by user",
+  "notes": "Recording time and camera height not supplied. Original preserved. Video has minor image movement; corner positions re-detected per frame."
+}

@@ -1,0 +1,98 @@
+{
+  "scope": "Post-run comparison; no retraining or test use",
+  "common_validation_weights": "Original baseline training-only phase weights; identical validation sequences",
+  "losses": {
+    "baseline": {
+      "epoch": 877,
+      "common_weight_validation_joint_loss": 0.003546674270182848,
+      "common_weight_validation_action_mse": 0.003380079986527562,
+      "validation_phase_ce": 0.0008329717093147337,
+      "phase_accuracy": 1.0,
+      "per_phase_action_mse": [
+        0.0014597770059481263,
+        0.010036783292889595,
+        6.710791058139876e-05
+      ]
+    },
+    "augmented": {
+      "epoch": 938,
+      "common_weight_validation_joint_loss": 0.003392837243154645,
+      "common_weight_validation_action_mse": 0.0032517514191567898,
+      "validation_phase_ce": 0.0007054294692352414,
+      "phase_accuracy": 1.0,
+      "per_phase_action_mse": [
+        0.0013687701430171728,
+        0.009708812460303307,
+        5.840861194883473e-05
+      ]
+    }
+  },
+  "conclusion": "Lower offline error does not imply better autonomous control; augmentation causal effect confounded by changed normalization, sampling and optimization trajectory.",
+  "baseline_successes": 5,
+  "augmented_successes": 1,
+  "validation_episodes": 9,
+  "selected_augmented_epoch": 938,
+  "failures": [
+    {
+      "episode": "validation_001",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 134,
+      "tool_table_contact_steps": 0,
+      "final_target_distance_m": 0.1541090492856542
+    },
+    {
+      "episode": "validation_002",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 0,
+      "tool_table_contact_steps": 23,
+      "final_target_distance_m": 0.09002084871468828
+    },
+    {
+      "episode": "validation_003",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 0,
+      "tool_table_contact_steps": 65,
+      "final_target_distance_m": 0.102859188266052
+    },
+    {
+      "episode": "validation_005",
+      "stop_reason": "completed",
+      "tool_object_contact_steps": 70,
+      "tool_table_contact_steps": 1,
+      "final_target_distance_m": 0.005244761578261792
+    },
+    {
+      "episode": "validation_006",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 191,
+      "tool_table_contact_steps": 0,
+      "final_target_distance_m": 0.029527056992112315
+    },
+    {
+      "episode": "validation_007",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 104,
+      "tool_table_contact_steps": 0,
+      "final_target_distance_m": 0.03405497211304774
+    },
+    {
+      "episode": "validation_008",
+      "stop_reason": "completed",
+      "tool_object_contact_steps": 79,
+      "tool_table_contact_steps": 1,
+      "final_target_distance_m": 0.004730087115426624
+    },
+    {
+      "episode": "validation_009",
+      "stop_reason": "push_timeout",
+      "tool_object_contact_steps": 130,
+      "tool_table_contact_steps": 9,
+      "final_target_distance_m": 0.04440961591252783
+    }
+  ],
+  "integrity": {
+    "evaluated_checkpoint_hash_matches": true,
+    "augmented_dataset_hash_matches": true,
+    "historical_best_hash_unchanged": true
+  }
+}

@@ -1,0 +1,1121 @@
+PROJECT FILE INVENTORY — 15 October 2026
+Paths relative to humanoid-push/. Original recordings are included in the public repository.
+Includes local generated caches and checkpoints; these remain ignored by Git.
+Excluded: .git/, .venv/, .venv-gpu/, .cache/, .pytest_cache/, __pycache__/ internals.
+These excluded directories are preserved. Empty folders are omitted.
+
+./
+  .gitattributes
+  .gitignore
+  AGENTS.md
+  README.md
+  pyproject.toml
+  uv.lock
+
+data/archive/
+  development-evidence.tar.gz
+
+data/calibration/
+  pilot.json
+  test_001.json
+  test_002.json
+  test_003.json
+  test_004.json
+  test_005.json
+  test_006.json
+  test_007.json
+  test_008.json
+  test_009.json
+  train_001.json
+  train_002.json
+  train_003.json
+  train_004.json
+  train_005.json
+  train_006.json
+  train_007.json
+  train_008.json
+  train_009.json
+  train_010.json
+  train_011.json
+  train_012.json
+  train_013.json
+  train_014.json
+  train_015.json
+  train_016.json
+  train_017.json
+  train_018.json
+  train_019.json
+  train_020.json
+  train_021.json
+  train_022.json
+  train_023.json
+  train_024.json
+  train_025.json
+  train_026.json
+  train_027.json
+  train_028.json
+  train_029.json
+  train_030.json
+  train_031.json
+  train_032.json
+  train_033.json
+  train_034.json
+  train_035.json
+  train_036.json
+  train_037.json
+  train_038.json
+  train_039.json
+  train_040.json
+  train_041.json
+  train_042.json
+  train_043.json
+  train_044.json
+  train_045.json
+  train_046.json
+  train_047.json
+  train_048.json
+  validation_001.json
+  validation_002.json
+  validation_003.json
+  validation_004.json
+  validation_005.json
+  validation_006.json
+  validation_007.json
+  validation_008.json
+  validation_009.json
+
+data/initial_scenes/
+  test_001.json
+  test_002.json
+  test_003.json
+  test_004.json
+  test_005.json
+  test_006.json
+  test_007.json
+  test_008.json
+  test_009.json
+
+data/manifests/
+  augmentation_pilot.json
+  benchmark2_augmented_training_index.json
+  benchmark2_closure_cleanup.json
+  cleanup_audit.json
+  human_object_teacher.json
+  public_test_initial_scenes.json
+  public_validation_batch_01.json
+  tracking_quality.json
+  training_rollout_index.json
+  validation_rollout_index.json
+
+data/processed/
+  .gitkeep
+
+data/processed/pilot/
+  orientation_migration.log
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/raw/
+  .gitkeep
+  README.md
+  goal_above1.mp4
+  goal_below1.mp4
+  goal_diag1.mp4
+  goal_left1.mp4
+  goal_left2.mp4
+  goal_left3.mp4
+  goal_right1.mp4
+  pilot_goal.mp4
+  pilot_notes.json
+  pilot_push.mp4
+  test_001.mp4
+  test_002.mp4
+  test_003.mp4
+  test_004.mp4
+  test_005.mp4
+  test_006.mp4
+  test_007.mp4
+  test_008.mp4
+  test_009.mp4
+  train_001.mp4
+  train_002.mp4
+  train_003.mp4
+  train_004.mp4
+  train_005.mp4
+  train_006.mp4
+  train_007.mp4
+  train_008.mp4
+  train_009.mp4
+  train_010.mp4
+  train_011.mp4
+  train_012.mp4
+  train_013.mp4
+  train_014.mp4
+  train_015.mp4
+  train_016.mp4
+  train_017.mp4
+  train_018.mp4
+  train_019.mp4
+  train_020.mp4
+  train_021.mp4
+  train_022.mp4
+  train_023.mp4
+  train_024.mp4
+  train_025.mp4
+  train_026.mp4
+  train_027.mp4
+  train_028.mp4
+  train_029.mp4
+  train_030.mp4
+  train_031.mp4
+  train_032.mp4
+  train_033.mp4
+  train_034.mp4
+  train_035.mp4
+  train_036.mp4
+  train_037.mp4
+  train_038.mp4
+  train_039.mp4
+  train_040.mp4
+  train_041.mp4
+  train_042.mp4
+  train_043.mp4
+  train_044.mp4
+  train_045.mp4
+  train_046.mp4
+  train_047.mp4
+  train_048.mp4
+  validation_001.mp4
+  validation_002.mp4
+  validation_003.mp4
+  validation_004.mp4
+  validation_005.mp4
+  validation_006.mp4
+  validation_007.mp4
+  validation_008.mp4
+  validation_009.mp4
+
+data/robot_rollouts/train/train_001/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_002/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_003/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_004/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_005/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_006/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_007/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_008/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_009/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_010/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_011/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_012/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_013/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_014/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_015/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_016/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_017/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_018/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_019/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_020/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_021/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_022/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_023/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_024/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_025/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_026/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_027/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_028/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_029/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_030/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_031/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_032/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_033/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_034/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_035/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_036/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_037/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_038/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_039/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_040/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_041/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_042/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_043/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_044/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_045/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_046/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_047/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/train/train_048/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_001/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_002/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_003/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_004/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_005/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_006/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_007/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_008/
+  metrics.json
+  rollout.npz
+
+data/robot_rollouts/validation/validation_009/
+  metrics.json
+  rollout.npz
+
+data/samples/
+  README.md
+
+data/samples/pilot/
+  tracks.npz
+
+data/samples/train_001/
+  tracks.npz
+
+data/samples/train_002/
+  tracks.npz
+
+data/samples/train_003/
+  tracks.npz
+
+data/samples/train_004/
+  tracks.npz
+
+data/samples/train_005/
+  tracks.npz
+
+data/samples/train_006/
+  tracks.npz
+
+data/samples/train_007/
+  tracks.npz
+
+data/samples/train_008/
+  tracks.npz
+
+data/samples/train_009/
+  tracks.npz
+
+data/samples/train_010/
+  tracks.npz
+
+data/samples/train_011/
+  tracks.npz
+
+data/samples/train_012/
+  tracks.npz
+
+data/samples/train_013/
+  tracks.npz
+
+data/samples/train_014/
+  tracks.npz
+
+data/samples/train_015/
+  tracks.npz
+
+data/samples/train_016/
+  tracks.npz
+
+data/samples/train_017/
+  tracks.npz
+
+data/samples/train_018/
+  tracks.npz
+
+data/samples/train_019/
+  tracks.npz
+
+data/samples/train_020/
+  tracks.npz
+
+data/samples/train_021/
+  tracks.npz
+
+data/samples/train_022/
+  tracks.npz
+
+data/samples/train_023/
+  tracks.npz
+
+data/samples/train_024/
+  tracks.npz
+
+data/samples/train_025/
+  tracks.npz
+
+data/samples/train_026/
+  tracks.npz
+
+data/samples/train_027/
+  tracks.npz
+
+data/samples/train_028/
+  tracks.npz
+
+data/samples/train_029/
+  tracks.npz
+
+data/samples/train_030/
+  tracks.npz
+
+data/samples/train_031/
+  tracks.npz
+
+data/samples/train_032/
+  tracks.npz
+
+data/samples/train_033/
+  tracks.npz
+
+data/samples/train_034/
+  tracks.npz
+
+data/samples/train_035/
+  tracks.npz
+
+data/samples/train_036/
+  tracks.npz
+
+data/samples/train_037/
+  tracks.npz
+
+data/samples/train_038/
+  tracks.npz
+
+data/samples/train_039/
+  tracks.npz
+
+data/samples/train_040/
+  tracks.npz
+
+data/samples/train_041/
+  tracks.npz
+
+data/samples/train_042/
+  tracks.npz
+
+data/samples/train_043/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/train_044/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/train_045/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/train_046/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/train_047/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/train_048/
+  preview.jpg
+  quality.json
+  tracks.csv
+  tracks.npz
+
+data/samples/validation_001/
+  tracks.npz
+
+data/samples/validation_002/
+  tracks.npz
+
+data/samples/validation_003/
+  tracks.npz
+
+data/samples/validation_004/
+  tracks.npz
+
+data/samples/validation_005/
+  tracks.npz
+
+data/samples/validation_006/
+  tracks.npz
+
+data/samples/validation_007/
+  tracks.npz
+
+data/samples/validation_008/
+  tracks.npz
+
+data/samples/validation_009/
+  tracks.npz
+
+data/viewing/
+  .gitkeep
+
+docs/
+  artifacts.md
+  benchmark-1.md
+  benchmark-2.md
+  data.md
+  failure-videos.md
+  file-inventory.txt
+  recording-schedule.csv
+  recording.md
+
+outputs/
+  .gitkeep
+
+outputs/bc_dataset/
+  dataset.npz
+  provenance.json
+
+outputs/benchmark2_augmented_dataset/
+  dataset.npz
+  provenance.json
+
+outputs/benchmark2_dataset/
+  dataset.npz
+  provenance.json
+
+outputs/checkpoints/benchmark1/
+  last.pt
+
+outputs/checkpoints/gru128_gpu/
+  epoch_0100.pt
+  epoch_0200.pt
+  epoch_0300.pt
+  epoch_0400.pt
+  epoch_0500.pt
+  epoch_0600.pt
+  epoch_0700.pt
+  epoch_0800.pt
+  epoch_0900.pt
+  epoch_1000.pt
+  epoch_1100.pt
+  epoch_1200.pt
+  epoch_1300.pt
+  epoch_1400.pt
+  epoch_1500.pt
+  epoch_1600.pt
+  epoch_1700.pt
+  epoch_1800.pt
+  epoch_1900.pt
+  epoch_2000.pt
+  last.pt
+
+outputs/checkpoints/gru64_1000/
+  last.pt
+
+outputs/checkpoints/gru64_200/
+  last.pt
+
+outputs/checkpoints/gru64_2000/
+  last.pt
+
+outputs/checkpoints/gru64_augmented/
+  last.pt
+
+results/
+  README.md
+
+results/benchmark1/test/
+  audit.json
+  opening_review.jpg
+  protocol.json
+  summary.json
+
+results/benchmark1/test/test_001/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/test/test_002/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/test/test_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/test/test_004/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/test/test_005/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/test/test_006/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/test/test_007/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/test/test_008/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/test/test_009/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/
+  best.pt
+  dataset_provenance.json
+  summary.json
+  training_history.json
+
+results/benchmark1/validation/validation_001/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/validation/validation_002/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/validation/validation_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/validation_004/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark1/validation/validation_005/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/validation_006/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/validation_007/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/validation_008/
+  metrics.json
+  rollout.npz
+
+results/benchmark1/validation/validation_009/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/
+  best.pt
+  configuration.json
+  failure_video_audit.json
+  history.json
+  loss_audit.json
+  preflight.json
+  summary.json
+
+results/benchmark2/gru128_gpu/validation_001/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_002/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_003/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_004/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_005/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_006/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_007/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_008/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru128_gpu/validation_009/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/
+  audit.json
+  best.pt
+  configuration.json
+  history.json
+  protocol.json
+  summary.json
+
+results/benchmark2/gru64_1000/validation_001/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_002/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_004/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_005/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_006/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_007/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_008/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_1000/validation_009/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/
+  audit.json
+  best.pt
+  configuration.json
+  dataset_provenance.json
+  history.json
+  protocol.json
+  summary.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/
+  summary.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_001/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_002/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_003/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_006/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_007/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_008/
+  metrics.json
+
+results/benchmark2/gru64_200/time_limit_diagnostic/validation_009/
+  metrics.json
+
+results/benchmark2/gru64_200/validation_001/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_002/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_004/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_005/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_006/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_007/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_008/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_200/validation_009/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/
+  audit.json
+  best.pt
+  configuration.json
+  history.json
+  protocol.json
+  summary.json
+
+results/benchmark2/gru64_2000/validation_001/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_002/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_003/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_004/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_005/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_006/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_007/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_008/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_2000/validation_009/
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/
+  augmentation_comparison.json
+  best.pt
+  configuration.json
+  failure_video_audit.json
+  history.json
+  summary.json
+
+results/benchmark2/gru64_augmented/validation_001/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_002/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_003/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_004/
+  metrics.json
+  policy.mp4
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_005/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_006/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_007/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_008/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/benchmark2/gru64_augmented/validation_009/
+  failure.mp4
+  failure_video.json
+  metrics.json
+  rollout.npz
+
+results/teacher/
+  summary.json
+  train_001.mp4
+  train_002.mp4
+  train_006.mp4
+
+results/teacher/augmentation/
+  augmentation_audit.json
+  summary.csv
+  summary.json
+  train_043.mp4
+  train_044.mp4
+  train_045.mp4
+  train_046.mp4
+  train_047.mp4
+  train_048.mp4
+
+scripts/
+  calibrate_initial_scene.py
+  check_machine.py
+  render_policy_failures.py
+  run_batch.py
+
+src/humanoid_push/
+  __init__.py
+  advanced_eval.py
+  advanced_model.py
+  advanced_train.py
+  bc_data.py
+  bc_eval.py
+  bc_model.py
+  bc_train.py
+  episode_data.py
+  episode_eval.py
+  episode_model.py
+  episode_train.py
+  push_env.py
+  replay.py
+  retargeting.py
+  smoke.py
+  task_rules.py
+  teacher.py
+  tracking.py
+
+tests/
+  test_advanced_episode.py
+  test_bc.py
+  test_episode_learning.py
+  test_replay.py
+  test_retargeting.py
+  test_task_rules.py
+  test_teacher.py
+  test_tracking.py

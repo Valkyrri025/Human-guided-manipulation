@@ -6,6 +6,9 @@ __pycache__/
 .cache/
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/*.mp4
+!data/raw/pilot_notes.json
+!data/raw/README.md
 data/processed/*
 !data/processed/.gitkeep
 outputs/*
