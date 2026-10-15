@@ -50,3 +50,15 @@ MUJOCO_GL=egl python -m humanoid_push.episode_eval \
 ```
 
 Choose a fresh output directory. This first run establishes benchmark-2 training and an initial evaluation; it does **not** conclude benchmark 2 as solved.
+
+## Time-limit diagnostic (15 October 2026)
+
+The seven failed episodes were replayed with the **same checkpoint and learned controller**, increasing only the push budget from 10 to **20 s** and total cap from 30 to **60 s**. No model was retrained and no official criterion/result was overwritten. Every replay's observations/actions match the original trajectory up to its original stopping point (checked numerically to 1e-7).
+
+**None of the seven failures was rescued.** The two original successful episodes had already finished before the original limits and were not rerun. The six original push failures again exhausted the longer push budget. Their final distances were 41.44, 36.91, 82.88, 22.55, 56.99 and 85.40 mm for episodes 001, 002, 003, 006, 007 and 009. Episode 008 again exhausted the total cap; after 60 s its end-effector height was 0.892 m, below the 0.948 m withdrawal criterion, and final distance was 15.38 mm.
+
+Original phase/progress logs further distinguish these from merely slow successful pushes: 002 predicted withdrawal at 13.80 s without first achieving goal dwell; 003, 006 and 009 had nearly stationary cube positions near timeout; 001 and 007 moved farther from the goal over their final two seconds. 008 first achieved goal dwell, but did not maintain placement and complete clearance during withdrawal. Longer time therefore did not address the observed failure modes. This does not prove that no future time budget could ever change an outcome; it supports prioritizing alignment, contact and recovery learning over increasing limits.
+
+The scripts supplied **teacher labels**, not runtime motion. At runtime the network must reproduce those actions from its own imperfect state trajectory. High supervised accuracy on teacher trajectories does not guarantee that capability. The retained first benchmark-2 score stays **2/9**.
+
+[Diagnostic summary and exact settings](examples/benchmark2/time_limit_diagnostic/summary.json). All seven longer-run metrics are published beside it; full numerical rollouts remain in `outputs/benchmark2_diagnostics/time_limits_20_60/`. No failed video was rendered or retained.

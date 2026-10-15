@@ -1,0 +1,120 @@
+{
+  "scope": "time-limit diagnostic only; original 2/9 benchmark result unchanged",
+  "checkpoint_sha256": "0ef75748c3fd88f7f0f2ab2675a416dbe44ccbf61b8c27d87338a482e6fa91bd",
+  "original_push_timeout_s": 10.0,
+  "original_episode_timeout_s": 30.0,
+  "diagnostic_push_timeout_s": 20.0,
+  "diagnostic_episode_timeout_s": 60.0,
+  "policy_retrained": false,
+  "movement_controller_changed": false,
+  "test_used": false,
+  "episodes": [
+    {
+      "episode": "validation_001",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 29.450000000000003,
+      "final_target_distance_m": 0.041439357880984275,
+      "final_eef_height_m": 0.8720278724764423,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 0
+    },
+    {
+      "episode": "validation_002",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 29.25,
+      "final_target_distance_m": 0.03690727915046821,
+      "final_eef_height_m": 0.9310549318711074,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 9
+    },
+    {
+      "episode": "validation_003",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 28.700000000000003,
+      "final_target_distance_m": 0.0828803737456829,
+      "final_eef_height_m": 0.8904503546456713,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 0
+    },
+    {
+      "episode": "validation_004",
+      "original_passed": true,
+      "diagnostic_passed": true,
+      "rerun": false,
+      "note": "Already finished before original limits; baseline outcome reused"
+    },
+    {
+      "episode": "validation_005",
+      "original_passed": true,
+      "diagnostic_passed": true,
+      "rerun": false,
+      "note": "Already finished before original limits; baseline outcome reused"
+    },
+    {
+      "episode": "validation_006",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 28.900000000000002,
+      "final_target_distance_m": 0.022549637334570674,
+      "final_eef_height_m": 0.885833345231343,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 0
+    },
+    {
+      "episode": "validation_007",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 28.950000000000003,
+      "final_target_distance_m": 0.056992570581787784,
+      "final_eef_height_m": 0.8695928266248469,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 2
+    },
+    {
+      "episode": "validation_008",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "episode_timeout",
+      "episode_elapsed_s": 60.0,
+      "final_target_distance_m": 0.015375866352081699,
+      "final_eef_height_m": 0.891947341663424,
+      "goal_dwell_achieved": true,
+      "tool_table_contact_steps": 0
+    },
+    {
+      "episode": "validation_009",
+      "original_passed": false,
+      "diagnostic_passed": false,
+      "rerun": true,
+      "matches_original_trajectory_until_original_stop": true,
+      "stop_reason": "push_timeout",
+      "episode_elapsed_s": 30.05,
+      "final_target_distance_m": 0.08540038518323792,
+      "final_eef_height_m": 0.8873615900882239,
+      "goal_dwell_achieved": false,
+      "tool_table_contact_steps": 19
+    }
+  ],
+  "diagnostic_successes_including_original_successes": 2,
+  "rescued_failures": 0
+}
